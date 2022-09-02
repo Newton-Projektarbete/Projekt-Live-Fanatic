@@ -2,7 +2,7 @@
 
 Gruppmedlemar - Klass - Github namn
 
-[Trello](https://trello.com/invite/b/NoEzqQ3R/13bea5f0ee6a0821a4eb97585a40ee1d/live-fanatic) <br>
+[Trello](https://trello.com/b/NoEzqQ3R/live-fanatic) <br>
 [Google Drive](https://drive.google.com/drive/folders/18rmPzrKzYQlfpD0omCuNxm2K_i7DfESC) <br>
 
 Scrum Master: <br>
