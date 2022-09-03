@@ -23,3 +23,7 @@ Lukas - SYSM5 - LukasLarss <br>
 * När en funktion är klar ska main mergas in till branchen och sedan läggas som en pull request till main med taggad scrum master
 * Scrum Master godkänner pull requests och alternativt frågar en annan gruppmedlem om input om det behövs.
 * Syntax standard är camleCase
+
+
+## Resurs Hjälpmedel
+* *Figma: [Tutorial](https://www.youtube.com/watch?v=PNJxeD29ZTg&list=PLXDU_eVOJTx55HFubfbTL3ellJjBM2QE2&index=1)* <br> 
