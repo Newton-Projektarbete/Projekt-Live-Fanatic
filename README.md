@@ -6,9 +6,8 @@ Gruppmedlemar - Klass - Github namn
 [Google Drive](https://drive.google.com/drive/folders/18rmPzrKzYQlfpD0omCuNxm2K_i7DfESC) <br>
 
 Scrum Master: <br>
-Sprint 1 - Daniel <br>
-Sprint 2 - <br>
-Sprint 3 - <br>
+Sprint 1 - Daniel (2022-09-05 => 2022-09-13)<br>
+Sprint 2 -  (2022-09-13 => 2022-09-23)<br>
 
 Simon - SYSJM5 - M0ller <br>
 Sanjin - SYSJM5 - Liha86 <br>
