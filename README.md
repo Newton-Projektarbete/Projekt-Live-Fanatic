@@ -1,4 +1,5 @@
 # Projekt-Live-Fanatic
+(dont forget to use "npm install")
 
 Gruppmedlemar - Klass - Github namn
 
