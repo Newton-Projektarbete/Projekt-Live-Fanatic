@@ -1,26 +1,19 @@
 {
-  "name": "projekt-live-fanatic",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "name": "live-fanatic-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "server": "json-server --watch db.json",
-  "all": "concurrently \"npm run server\" \"npm run dev\""
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index",
+    "start": "node index"
   },
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "concurrently": "^7.3.0",
-    "json-server": "^0.17.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.3.0"
-  },
-  "devDependencies": {
-    "@types/react": "^18.0.17",
-    "@types/react-dom": "^18.0.6",
-    "@vitejs/plugin-react": "^2.0.1",
-    "vite": "^3.0.7"
+    "better-sqlite3": "^7.4.6",
+    "cookie-parser": "^1.4.6",
+    "express": "^4.18.1",
+    "express-session": "^1.17.3"
   }
 }
