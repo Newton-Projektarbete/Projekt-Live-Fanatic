@@ -21,9 +21,12 @@ Lukas - SYSM5 - LukasLarss <br>
 ## Grupp / Förhållnings Regler
 * Nya funktioner görs i en egen branch
 * När en funktion är klar ska main mergas in till branchen och sedan läggas som en pull request till main med taggad scrum master
-* Scrum Master godkänner pull requests och alternativt frågar en annan gruppmedlem om input om det behövs.
-* Syntax standard är camleCase
-
+* Scrum Master godkänner pull requests till main branch och alternativt frågar en annan gruppmedlem om input om det behövs.
+* Syntax standard är camelCase
+* Scrum möte i början och slutet av arbetspasset som är max 15 min
+* Syntax för Branch naming: Taskens namn i lowercase och spaces ersätts av "-", exempel: Task: "Design Main Page" skrivs: "design-main-page" <br>
+eller Task: "Create Function Retrieve Concerts" skrivs: "create-function-retrieve-concerts"
+* Innan man skapar nya folders så måste scrum master informeras
 
 ## Resurs Hjälpmedel
 * *Figma: [Tutorial](https://www.youtube.com/watch?v=PNJxeD29ZTg&list=PLXDU_eVOJTx55HFubfbTL3ellJjBM2QE2&index=1)* <br> 
