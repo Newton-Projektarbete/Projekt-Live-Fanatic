@@ -24,7 +24,7 @@ server.use(function(req,res,next){req.bypassVerification = true; next()})
 
 // ACL
 const acl = require('./services/acl.js')
-server.use(acl)
+// server.use(acl)
 
 // start
 server.listen(port,() => {
@@ -35,7 +35,7 @@ server.listen(port,() => {
 // front end directories
 server.use('/', express.static('whatever-directory-for-react-build')) // change 
 /* server.use('/examples', express.static('examples')) */
-server.use('/wwhatever-directory-for-react-build/src/main.jsx', express.static('examples'))
+server.use('/examples', express.static('examples'))
 
 // example REST API routes
 require('./routes/video-example.js')(server, db)
