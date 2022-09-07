@@ -15,7 +15,7 @@ body{
 }
 
 #stream-h1{
-    width: fit-content;
+    width: 50%;
 }
 
 #stream-video{
@@ -26,6 +26,11 @@ body{
 
 #stream-content{
     display: flex;
+    flex-direction: row;
+    /* for mobile view add:
+    flex-direction: column;
+    align-items: center;
+    */
     justify-content: space-evenly;
 }
 
