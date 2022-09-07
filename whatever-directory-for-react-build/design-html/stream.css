@@ -1,0 +1,33 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+}
+
+#stream{
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    border: 1px solid black;
+}
+
+
+
+#stream-h1{
+    width: fit-content;
+    border: 1px solid black;
+}
+
+#stream-video{
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+.stream-filler{
+    width: 10vw;
+    border: 1px solid green;
+}
