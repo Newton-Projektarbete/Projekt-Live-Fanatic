@@ -1,6 +1,4 @@
 import { useEffect, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
 import LiveFanaticRouter from '../components/LiveFanaticRouter'
 
 function App() {
@@ -25,6 +23,7 @@ function App() {
   }, []) */
 
   return <>
+  <h1>I am from react!</h1>
     <LiveFanaticRouter/>
     
   {/* <h2>This is a placeholder page, change for your react build directory</h2>

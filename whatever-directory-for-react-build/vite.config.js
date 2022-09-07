@@ -7,7 +7,7 @@ export default defineConfig({
   ,
   server:{
     proxy:{
-      '/': 'http://localhost:5173'
+      '/data': 'http://localhost:3333'
     }
   }
 })
