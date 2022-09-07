@@ -9,16 +9,13 @@ body{
 
 #stream{
     display: flex;
+    flex-direction: column;
     width: 100%;
     height: fit-content;
-    border: 1px solid black;
 }
-
-
 
 #stream-h1{
     width: fit-content;
-    border: 1px solid black;
 }
 
 #stream-video{
@@ -27,7 +24,41 @@ body{
     align-items: center; 
 }
 
-.stream-filler{
-    width: 10vw;
-    border: 1px solid green;
+#stream-content{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#stream-link::before{
+    content: attr(title) "";
+    color: black;
+}/* title="copy this link to invite a friend" */
+
+
+#stream-link-pos{
+    display: flex;
+    margin-top: 3vh;
+    padding: 0.5vh;
+    justify-content: center;
+}
+
+#stream-artists{
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+#stream-artists>a{
+    padding-bottom: 0.5vh;
+}
+
+#stream-invited>ol{
+    margin: 0;
+    padding: 0.25vh 0.5vh 0.25vh 0.5vh;
+    border: 1px solid rgb(0, 0, 0, 0.2);
+}
+
+#stream-copy-btn{
+    border: 1px solid black;
+    border-radius: 1vh;
+    margin-bottom: 1vh;
 }
