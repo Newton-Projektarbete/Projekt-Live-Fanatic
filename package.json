@@ -12,8 +12,10 @@
   "license": "ISC",
   "dependencies": {
     "better-sqlite3": "^7.4.6",
+    "convert-extension": "^0.3.0",
     "cookie-parser": "^1.4.6",
     "express": "^4.18.1",
     "express-session": "^1.17.3"
-  }
+  },
+  "type": "module"
 }

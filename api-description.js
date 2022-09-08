@@ -1,4 +1,4 @@
-module.exports = function(host, server){
+function api_description(host, server){
     
     server.get("/data", async (req, res) => {
         res.json([
@@ -63,3 +63,5 @@ module.exports = function(host, server){
         ])
     })
 }
+
+export default api_description

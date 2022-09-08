@@ -1,8 +1,21 @@
-const express = require("express");
-const server = express();
-server.use(express.json())
-const db = require("./modules/db.js")('./database/live_fanatic.db')
+// import express from "express"; // new
+/* import sqlite3 from "better-sqlite3";
+import db from "./modules/db.js" */
+ 
+/* "C:/Users/simon/AppData/Local/Microsoft/TypeScript/4.8/node_modules/@types/express/index" */
+//const express = ExpressServer; // new
+//const server = express; // new
+import { createRequire } from "module"; // new
+const require = createRequire(import.meta.url); // new
 
+import dbCheck from "./modules/db.js";
+//const db = dbCheck('./database/live_fanatic.db') // new
+const db = dbCheck('./database/live_fanatic.db')
+
+const express = require("express"); // old
+const server = express(); //old
+server.use(express.json())
+/* const db = require("./modules/db.js")('./database/live_fanatic.db') // old */
 const port = 3333
 const host = `http://localhost:${port}`
 
@@ -27,8 +40,9 @@ const bypass2FA = true
 // set bypass 2FA verification 
 server.use(function(req,res,next){req.bypassVerification = bypass2FA; next()})
 
+import acl from './services/acl.js';
 // ACL
-const acl = require('./services/acl.js')
+//const acl = require('./services/acl.js') // old 
 //server.use(acl) // kommentera bort för att tillfälligt stänga av all autentisering
 
 // start
@@ -42,17 +56,26 @@ server.use('/', express.static( "whatever-directory-for-react-build")) // change
 server.use('/examples', express.static('examples'))
 
 // example REST API routes
-require('./routes/video-example.js')(server, db)
-require('./routes/audio-example.js')(server, db)
+//require('./routes/video-example.js')(server, db)
+//require('./routes/audio-example.js')(server, db)
 
 // custom REST API routes
-require('./api-description.js')(host, server)
+/* require('./api-description.js')(host, server)
 require('./routes/users.js')(server, db)
-require('./routes/login.js')(server, db)
+require('./routes/login.js')(server, db) */
+import api_description from "./api-description.js";
+import users from "./routes/users.js";
+import login from "./routes/login.js";
+api_description(host, server)
+users(server, db)
+login(server, db)
 
 // generic REST API one-to-one table mappings
-require('./routes/generic-routes.js')(server, db)
+require('./routes/generic-routes.cjs')(server, db)
 
+import { dirname } from 'path';
+const __dirname = dirname('C:/Users/simon/JS_Projects/Utveckling av Webbapplikationer/Projekt-Live-Fanatic');
+// C:/Users/simon/JS_Projects/Utveckling av Webbapplikationer/Projekt-Live-Fanatic
 server.get('*', (req, res)=>{
   res.sendFile(__dirname + '/whatever-directory-for-react-build/index.html')
 })

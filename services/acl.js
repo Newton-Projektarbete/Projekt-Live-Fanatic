@@ -1,6 +1,9 @@
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);
+
 const accessList = require('../access-list.json')
 
-module.exports = function(request, response, next){
+ function acl(request, response, next){
 
   if(!request.path.split('/')[1].includes('data')){
     return next() // this acl only protects the routes under /data
@@ -74,3 +77,5 @@ module.exports = function(req, res, next){
   }
 }
 */
+
+export default acl

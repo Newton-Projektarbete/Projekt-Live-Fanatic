@@ -1,6 +1,9 @@
-const encrypt = require('../modules/encrypt.js')
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);
 
-module.exports = function(server, db){
+import encrypt from "../modules/encrypt.js"
+
+function users(server, db){
 
   server.get('/data/users', (req, res)=>{
     let query = "SELECT id, email FROM users"
@@ -55,3 +58,5 @@ module.exports = function(server, db){
 
 
 }
+
+export default users
