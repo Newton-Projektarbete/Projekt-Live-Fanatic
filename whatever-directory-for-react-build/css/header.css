@@ -93,6 +93,11 @@ body {
     margin-right: 16px;
   }
 
+#search-field{
+    display: flex;
+    justify-content: flex-start;
+}
+
   .topnav input[type=text] {
     padding: 6px;
     margin-top: 8px;
