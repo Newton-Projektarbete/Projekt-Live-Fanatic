@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Concert page</title>
- <link rel="stylesheet" href="../css/concert.css">
- <script src="https://kit.fontawesome.com/0ac7bacbee.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/concert.css">
+    <script src="https://kit.fontawesome.com/0ac7bacbee.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -15,17 +15,18 @@
     <div id="concert_content">
         <div class="title_info box">
             <div id="title_content">
-            <h1>Slam Poetry Bonga Freejazz Jam for Dummies</h1>
-            <button onclick="Toggle()" id="like_button" class="default_button"><i class="fa-sharp fa-solid fa-heart"></i></button>
-        </div>
+                <h1>Slam Poetry Bonga Freejazz Jam for Dummies</h1>
+                <button onclick="Toggle()" id="like_button" class="default_button"><i
+                        class="fa-sharp fa-solid fa-heart"></i></button>
+            </div>
             <div id="info" class="box">
                 <i class="fa-solid fa-calendar-days"></i>
-            <p>Thursday 8 september 2022</p>
-            <i class="fa-solid fa-clock"></i>
-            <p>7:30pm</p>
-            <p>|</p>
-            <i class="fa-solid fa-location-dot"></i>
-            <p>Kulturbolaget</p>
+                <p>Thursday 8 september 2022</p>
+                <i class="fa-solid fa-clock"></i>
+                <p>7:30pm</p>
+                <p>|</p>
+                <i class="fa-solid fa-location-dot"></i>
+                <p>Kulturbolaget</p>
             </div>
             <div id="line_up">
                 <p>Line-up:</p>
@@ -34,28 +35,28 @@
                 <p>Cacti touchy</p>
             </div>
             <div class="box" id="button_content">
-            <button id="stream_button" class="default_button">Stream</button>
-            <button id="buy_button" class="default_button">Buy ticket</button>
+                <button id="stream_button" class="default_button">Stream</button>
+                <button id="buy_button" class="default_button">Buy ticket</button>
             </div>
         </div>
 
         <div id="right_content">
             <div id="concert_image">
-    
-    
+
+
             </div>
-            
+
         </div>
     </div>
 
     <script>
         var likebtn = document.getElementById('like_button');
 
-        function Toggle(){
-            if (likebtn.style.color =="red") {
+        function Toggle() {
+            if (likebtn.style.color == "red") {
                 likebtn.style.color = "grey"
             }
-            else{
+            else {
                 likebtn.style.color = "red"
             }
         }
