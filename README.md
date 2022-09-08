@@ -5,7 +5,8 @@ Gruppmedlemar - Klass - Github namn
 
 [Trello](https://trello.com/b/NoEzqQ3R/live-fanatic) <br>
 [Google Drive](https://drive.google.com/drive/folders/18rmPzrKzYQlfpD0omCuNxm2K_i7DfESC) <br>
-[Backend repository](https://github.com/WeeHorse/live-fanatic-backend)
+[Postman](https://app.getpostman.com/join-team?invite_code=c7f1dfd2eb6f4645f2e29e610c5304ca) <br>
+[Backend repository](https://github.com/WeeHorse/live-fanatic-backend) <br>
 
 Scrum Master: <br>
 Sprint 1 - Daniel (2022-09-05 => 2022-09-13)<br>
