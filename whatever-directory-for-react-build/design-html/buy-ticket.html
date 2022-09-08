@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="containerBuy">
+      <div id="leftBuy">
+        <h1>Buy Your Ticket</h1>
+        <img
+          src="https://i.ytimg.com/vi/88ki680YlB4/maxresdefault.jpg"
+          alt=""
+        />
+        <h2>Info</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur
+          odio error cupiditate magnam deleniti id, minima aut dolore! Beatae,
+          ducimus.
+        </p>
+        <h2>Artist</h2>
+        <p>Lorem, ipsum dolor.</p>
+        <h2>Date</h2>
+        <p>Lorem, ipsum dolor.</p>
+        <h2>Location</h2>
+        <p>Lorem.</p>
+      </div>
+
+      <div id="rightBuy">
+        <h2>Price</h2>
+        <h2>Price Amount</h2>
+
+        <h2>Ticket</h2>
+        <h2>Ticket Amount</h2>
+
+        <h2>Total</h2>
+        <h2>Total Amount</h2>
+
+        <button onclick="document.location='confirm-payment.html'">
+          Proceed to Checkout
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
+
+<style>
+  h1 {
+    color: rgba(74, 166, 230, 1);
+    grid-area: title;
+  }
+
+  h2 {
+    color: rgba(36, 93, 165, 1);
+    grid-area: info;
+  }
+
+  #rightBuy > h2 {
+    border: 1px solid black;
+    border-radius: 15%;
+    padding: 2%;
+  }
+
+  p {
+    color: black;
+    grid-area: info;
+  }
+
+  button {
+    background-color: rgba(0, 88, 169, 100%);
+    color: white;
+  }
+
+  .containerBuy {
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  img {
+    width: 9vw;
+    height: 16vh;
+    object-fit: cover;
+    max-width: 100%;
+    border-radius: 10%;
+  }
+
+  #leftBuy {
+    width: 50vh;
+    display: grid;
+    grid-template-areas:
+      ". title .  "
+      "img main info"
+      ". main info"
+      ". main info"
+      ". main info";
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto;
+  }
+
+  #rightBuy {
+    width: 50vh;
+  }
+</style>
