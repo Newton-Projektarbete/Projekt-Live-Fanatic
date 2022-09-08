@@ -1,11 +1,3 @@
-*{
-    box-sizing: border-box;
-}
-body{
-    padding: 0;
-    margin: 0;
-    max-width: 100%;
-}
 
 #stream{
     display: flex;
@@ -63,7 +55,7 @@ body{
 }
 
 #stream-copy-btn{
-    border: 1px solid black;
+    /* border: 1px solid black; */
     border-radius: 1vh;
     margin-bottom: 1vh;
 }
