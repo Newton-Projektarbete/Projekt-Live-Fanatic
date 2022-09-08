@@ -2,6 +2,7 @@ const express = require("express");
 const server = express();
 server.use(express.json())
 const db = require("./modules/db.js")('./database/live_fanatic.db')
+
 const port = 3333
 const host = `http://localhost:${port}`
 
