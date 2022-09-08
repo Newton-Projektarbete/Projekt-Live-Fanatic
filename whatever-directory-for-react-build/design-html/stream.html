@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streaming </title>
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+<script>
+    function copyLink() {
+        var evt = document.getElementById("stream-link").getAttribute('href')
+        navigator.clipboard.writeText(evt);
+    }
+</script>
+<body>
+    <div id="stream">
+        
+        <div id="stream-video">
+            <h1 id="stream-h1">Concert Live</h1>
+
+            <video id="videoPlayer" width="50%" controls muted="muted" >
+                <source src="/video/Chris-Do.mp4" type="video/mp4" />
+            </video>
+        </div>
+        <div id="stream-content">
+            <div>
+                <h2>Going Live 2022/09/13</h2>
+                <h2>Malmö City</h2>
+                <h2>artists:</h2>
+                <ul id="stream-artists">
+                    <a href="#">Simon M</a>
+                    <a href="#">Sanjin</a>
+                    <a href="#">Lukas</a>
+                    <a href="#">Daniel</a>
+                    <a href="#">Barkat</a>
+                    <a href="#">Jonatan</a>
+                    
+                </ul>
+            </div>
+
+            <div>
+                <div id="stream-link-pos">
+                    <a id="stream-link" 
+                    href="http://127.0.0.1:5500/whatever-directory-for-react-build/design-html/stream.html" 
+                    ></a>
+                    <button id="stream-copy-btn" onclick="copyLink()">Share Link</button>      
+                </div>
+
+                <div id="stream-invited">
+                    <ol>example joined user</ol>
+                    <ol>example joined user</ol>
+                    <ol>example joined user</ol>
+                    <ol>example joined user</ol>
+                    <ol>example joined user</ol>
+                    <ol>example joined user</ol>
+                    <ol hidden>you cant see this user</ol>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</body>
+</html>
