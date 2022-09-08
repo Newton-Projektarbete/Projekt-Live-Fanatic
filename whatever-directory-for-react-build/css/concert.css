@@ -1,0 +1,111 @@
+#concert_content{
+    display: flex;
+    flex-direction: row;
+    margin-top: 100px;
+    justify-content: space-around;
+}
+
+.title_info{
+    display: flex;
+    flex-direction: column;
+    padding-top: 5vh;
+    margin: 0;
+
+}
+
+#title_content{
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+}
+
+#title_content>h1{
+    margin-bottom: 0;
+    margin: 0;
+}
+
+#info{
+    display: flex;
+    flex-direction: row;
+    padding-left: 15px;
+
+}
+#info>p{
+    margin-right: 10px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-left: 10px;
+}
+
+#like_button{
+    background: transparent;
+    border: none;
+    font-size: 35px;
+    margin-left: 15px;
+    margin-right: 15px;
+    outline: none;
+    color: grey;
+    padding: 0;
+}
+
+#like-button i:hover{
+    cursor: pointer;
+}
+
+#line_up{
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+}
+
+
+#line_up>p{
+    margin: 0;
+    padding-left: 15px;
+}
+
+#concert_image{
+    background-image: url("../images/franaddressescrowd500.jpg");
+    background-size: contain;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    width: 45vw;
+    height: 55vh;
+}
+
+#button_content{
+    display: flex;
+    flex-direction: row-reverse;
+    padding-right: 10%;
+}
+
+#buy_button{
+    width: 120px;
+    height: 30px;
+    background-color: rgb(237, 176, 78);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#buy_button:hover{
+    background-color: rgb(247, 204, 118);
+
+}
+
+#stream_button{
+    width: 120px;
+    background-color: rgb(51, 185, 51);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#stream_button:hover{
+    background-color: rgb(102, 240, 102);
+
+}
+
+.default_button{
+    width: fit-content;
+    padding: 0;
+}
