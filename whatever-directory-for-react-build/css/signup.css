@@ -1,0 +1,25 @@
+body{
+    justify-content: center;
+}
+
+.signup{
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    row-gap: 10px;
+}
+
+.buttons{
+    margin-top: 10px;
+    display: flex;
+    align-items:;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.signup-btn{
+    background-color: rgb(74, 166, 230, 1);
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
