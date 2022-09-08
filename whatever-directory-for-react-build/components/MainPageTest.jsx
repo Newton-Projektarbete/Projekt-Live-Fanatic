@@ -1,4 +1,4 @@
-function MainPage(){
+function MainPageTest(){
 
     return <>
   <h2>This is a placeholder page, change for your react build directory</h2>
@@ -8,4 +8,4 @@ function MainPage(){
 </>
 }
 
-export default MainPage
+export default MainPageTest
