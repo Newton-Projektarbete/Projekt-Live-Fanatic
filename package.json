@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon index",
-    "start": "node index"
+    "start": "node index",
+    "all": "concurrently \" npm run dev \" \" cd frontend && npm run dev\" "
   },
   "author": "",
   "license": "ISC",
