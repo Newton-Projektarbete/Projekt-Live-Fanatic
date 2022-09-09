@@ -1,4 +1,4 @@
-body{
+div{
     justify-content: center;
 }
 
@@ -11,7 +11,6 @@ body{
 .buttons{
     margin-top: 10px;
     display: flex;
-    align-items:;
     flex-direction: column;
     row-gap: 10px;
 }
