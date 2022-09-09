@@ -116,6 +116,17 @@
 
 }
 
+#tickets_left{
+    display: flex;
+    flex-direction: row-reverse;
+    padding-right: 29%;
+}
+
+#tickets_left>p{
+    margin-top: 4px;
+    color: rgb(235, 55, 55);
+}
+
 .default_button{
     width: fit-content;
     padding: 0;
