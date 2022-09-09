@@ -1,7 +1,7 @@
 @import url("stream.css");
 @import url("header.css");
 @import url("confirm-payment.css");
-
+@import url("profile-page.css");
 @import url("default.css");
 *{
     box-sizing: border-box;
