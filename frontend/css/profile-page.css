@@ -12,12 +12,12 @@
 }
 
 .left-table{
-    grid-area: main;
+    grid-area: main; /* this main in grid looks unused */
     border: 1px solid black;
     display: inline-block;
 }
 
-#profile-td{
+.profile-td{
 width: 15vw;
 }
 
@@ -25,26 +25,26 @@ width: 15vw;
     text-align: left;
 }
 
-#img-profile{
+.img-profile{
    width: 35px;
    object-fit: cover ;
 }
 
 .centrum-table{
-    grid-area: main;
+    grid-area: main; /* this main in grid looks unused */
     border: 1px solid black;
     display: inline-block;
    
 }
 
 .right-table{
-    grid-area: main;
+    grid-area: main; /* this main in grid looks unused */
     border: 1px solid black;
     display: inline-block;
 }
 
 .edit-btn {
-    grid-area: header;
+    grid-area: header; /* this main in grid looks unused */
     grid-column-end: 2;
     background-color: rgba(0, 88, 169, 1);
     color: white;
