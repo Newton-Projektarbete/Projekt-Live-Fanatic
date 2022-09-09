@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+
 import Main from "./Main";
 import MainViewAll from "./MainViewAll";
 import MainGenre from "./MainGenre";
@@ -12,10 +13,6 @@ import LogIn from "./LogIn";
 import SignUp from "./SignUp";
 import QR from "./QR";
 import Stream from "./Stream";
-import AudioTest from "./AudioTest";
-import VideoTest from "./VideoTest";
-import MainPageTest from "./MainPageTest";
-import VideoAudioTest from "./VideoAudioTest";
 
 function LiveFanaticRouter(){
     return <Router>
@@ -35,11 +32,6 @@ function LiveFanaticRouter(){
             <Route path="/sign-up" element={ < SignUp />} />
             <Route path="/qr" element={ < QR />} />
             <Route path="/stream" element={ < Stream />} />
-
-            {/* <Route path="/" element={<MainPageTest />} />
-            <Route path="/audio-test" element={<AudioTest />} />
-            <Route path="/video-test" element={<VideoTest />} />
-            <Route path="/video-audio-test" element={<VideoAudioTest />} /> */}
         </Routes>
         <footer>
         </footer>
