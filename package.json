@@ -7,7 +7,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon index",
-    "start": "node index"
+    "start": "node index",
+    "all": "concurrently \"npm run dev\" \"cd whatever-directory-for-react-build && npm run dev && cd ..\" "
   },
   "author": "",
   "license": "ISC",
