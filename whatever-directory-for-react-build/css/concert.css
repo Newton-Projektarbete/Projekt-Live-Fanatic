@@ -5,11 +5,21 @@
     justify-content: space-around;
 }
 
+#title_background{
+    position: absolute;
+    height: 75px;
+    width: 100%;
+    background: rgb(168, 228, 255);
+    border: none;
+    padding-top: 30px;
+}
+
 .title_info{
     display: flex;
     flex-direction: column;
     padding-top: 5vh;
     margin: 0;
+    position: relative;
 
 }
 
@@ -72,6 +82,7 @@
     background-repeat: no-repeat;
     width: 45vw;
     height: 55vh;
+    position: relative;
 }
 
 #button_content{
