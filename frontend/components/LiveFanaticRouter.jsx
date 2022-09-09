@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Main from "./Main";
 import MainViewAll from "./MainViewAll";
-import MainGenre from "./MainGenre";
 import Profile from "./Profile";
 import ProfileEdit from "./ProfileEdit";
 import AdvancedSearch from "./AdvancedSearch";
@@ -12,10 +11,7 @@ import LogIn from "./LogIn";
 import SignUp from "./SignUp";
 import QR from "./QR";
 import Stream from "./Stream";
-import AudioTest from "./AudioTest";
-import VideoTest from "./VideoTest";
-import MainPageTest from "./MainPageTest";
-import VideoAudioTest from "./VideoAudioTest";
+import ConfirmPayment from "./ConfirmPayment";
 
 function LiveFanaticRouter(){
     return <Router>
@@ -24,7 +20,6 @@ function LiveFanaticRouter(){
         <Routes>
             <Route path="/" element={<Main/>} />
             <Route path="/main-view-all" element={<MainViewAll/>} />
-            <Route path="/main-genre" element={<MainGenre/>} />
             <Route path="/profile" element={ < Profile/>} />
             <Route path="/profile-edit" element={ < ProfileEdit />} />
             <Route path="/search" element={ < AdvancedSearch />} />
@@ -35,11 +30,7 @@ function LiveFanaticRouter(){
             <Route path="/sign-up" element={ < SignUp />} />
             <Route path="/qr" element={ < QR />} />
             <Route path="/stream" element={ < Stream />} />
-
-            {/* <Route path="/" element={<MainPageTest />} />
-            <Route path="/audio-test" element={<AudioTest />} />
-            <Route path="/video-test" element={<VideoTest />} />
-            <Route path="/video-audio-test" element={<VideoAudioTest />} /> */}
+            <Route path="/confirm-payment" element={ < ConfirmPayment />} />
         </Routes>
         <footer>
         </footer>

@@ -31,11 +31,11 @@ input{
 }
 
 a{
-    Color: rgba(23, 62, 129, 1);
+    color: rgba(23, 62, 129, 1);
 }
 
 header{
-    Color: rgba(62, 141, 168, 1);
+    color: rgba(62, 141, 168, 1);
 }
 
 header>h1{
