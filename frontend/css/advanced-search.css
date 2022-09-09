@@ -1,0 +1,28 @@
+.advanced-search{
+    border: 1px solid #000000;
+    width: 70%;
+    display: flex;
+    
+}
+
+.advanced-search .adv-srch-cont{
+
+
+}
+.advanced-search .filter-by-date{
+
+}
+
+.advanced-search .filter-by-genre{
+
+
+}
+
+button{
+    margin: 5px;
+}
+
+input {
+    border: 1px solid gray;
+    border-radius: 4px;
+}
