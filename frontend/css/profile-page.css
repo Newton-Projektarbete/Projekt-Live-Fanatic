@@ -25,7 +25,7 @@ width: 15vw;
     text-align: left;
 }
 
-img{
+#img-profile{
    width: 35px;
    object-fit: cover ;
 }
