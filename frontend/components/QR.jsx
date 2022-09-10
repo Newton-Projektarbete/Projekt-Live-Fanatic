@@ -1,7 +1,9 @@
+import { Link } from "react-router-dom";
+
 function QR(){
-    return <><div>
-        QR page
-    </div>    
+    return <><div className="body">
+        QR page    
+    </div>
     </>
     }
     

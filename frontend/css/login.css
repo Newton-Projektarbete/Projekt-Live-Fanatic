@@ -1,4 +1,4 @@
-#login{
+.login{
     justify-content: center;
 }
 
@@ -15,9 +15,21 @@
     row-gap: 10px;
 }
 
-.login-btn{
+.login-page-btn, .login-page-signup-btn{
     background-color: rgb(74, 166, 230, 1);
     color: white;
     border: none;
     border-radius: 5px;
+    height: 30px;
+    min-width: 100px;
+}
+
+.login-page-btn:hover{
+    background-color: rgba(48, 149, 184, 1);
+    color: black;
+}
+
+.login-page-signup-btn:hover{
+    background-color: rgba(48, 149, 184, 1);
+    color: black;
 }
