@@ -9,9 +9,41 @@
     border: 1px solid rgb(0, 0, 0, 0.4);
 }
 
-.filter-by-artist{
+.filter-by-artist-parent{
     border: 1px solid rgb(0, 0, 0, 0.4);
     padding-bottom: 5px;
+}
+
+.adv-src-filter-by-artist-box{
+    display: grid;
+    max-width: fit-content;
+    align-items: center;
+}
+
+.adv-src-filter-by-artist-search{
+    grid-column: 1;
+    grid-row: 1;
+    padding: 2px 0 2px 0;
+    margin: 0 0 0 5px;
+    border-radius: 5px;
+}
+
+.adv-src-filter-by-artist-search-icon{
+    display: flex;
+    grid-column: 1;
+    grid-row: 1;
+    font-size: 14px;
+    padding-right: 2px;
+    justify-content: flex-end;
+    background-color: transparent;
+}
+
+.adv-src-filter-by-artist-search-icon:hover{
+    color: rgb(0, 0, 0, 0.4);
+}
+
+.adv-src-filter-all{
+    padding-top: 5px;
 }
 
 .filter-by-date{
@@ -33,7 +65,7 @@
     padding: 5px 5px 5px 5px;
     background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
-    border-radius: 40%;
+    border-radius: 20px;
     border-color: rgb(0, 0, 0);
 }
 
