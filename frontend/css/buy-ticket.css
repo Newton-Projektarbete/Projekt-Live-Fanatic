@@ -1,0 +1,126 @@
+.buy-ticket-h1{
+    color: rgba(74, 166, 230, 1);
+    grid-area: title;
+    justify-self: center;
+    align-self: center;
+  }
+
+ .buy-ticket-h2{
+    color: rgba(36, 93, 165, 1);
+  }
+
+.buy-ticket-p{
+    color: black;
+    padding-top: 5%;
+  }
+
+  .containerBuy {
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+.buy-ticket-img{
+    width: 13vw;
+    height: 13vh;
+    object-fit: cover;
+    max-width: 100%;
+    border-radius: 20px;
+    grid-area: img;
+  }
+
+  .leftBuy {
+    margin-left: 10vw;
+    width: 50vh;
+    height: 100vh;
+    display: grid;
+    grid-template-areas:
+      "title title title"
+      "img main1 info1"
+      ". main2 info2"
+      ". main3 info3"
+      ". main4 info4";
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 400px 100px 100px 100px 100px;
+    grid-gap: 10px;
+  }
+
+  .rightBuy {
+    justify-content: center;
+    align-content: center;
+    margin-right: 10vw;
+    width: 50vh;
+    height: 100vh;
+    display: grid;
+    grid-template-areas:
+      "main1 info1"
+      "main2 info2"
+      "main3 info3"
+      "main4 main4";
+    grid-template-columns: 200px 200px;
+    grid-template-rows: 75px 75px 75px 75px;
+    grid-gap: 10px;
+    justify-content: space-evenly;
+  }
+
+  .rightBuy > h2 {
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 2%;
+  }
+
+  .leftBuy > h2:nth-of-type(1) {
+    grid-area: main1;
+  }
+  .leftBuy > h2:nth-of-type(2) {
+    grid-area: main2;
+  }
+  .leftBuy > h2:nth-of-type(3) {
+    grid-area: main3;
+  }
+  .leftBuy > h2:nth-of-type(4) {
+    grid-area: main4;
+  }
+
+  .leftBuy > p:nth-of-type(1) {
+    grid-area: info1;
+  }
+  .leftBuy > p:nth-of-type(2) {
+    grid-area: info2;
+  }
+  .leftBuy > p:nth-of-type(3) {
+    grid-area: info3;
+  }
+  .leftBuy > p:nth-of-type(4) {
+    grid-area: info4;
+  }
+
+  .rightBuy > h2:nth-of-type(1) {
+    grid-area: main1;
+  }
+  .rightBuy > h2:nth-of-type(2) {
+    grid-area: info1;
+    text-align: center;
+  }
+  .rightBuy > h2:nth-of-type(3) {
+    grid-area: main2;
+  }
+  .rightBuy > h2:nth-of-type(4) {
+    grid-area: info2;
+    text-align: center;
+  }
+  .rightBuy > h2:nth-of-type(5) {
+    grid-area: main3;
+  }
+  .rightBuy > h2:nth-of-type(6) {
+    grid-area: info3;
+    text-align: center;
+  }
+.buy-ticket-btn{
+    background-color: rgba(0, 88, 169, 100%);
+    color: white;
+    font-size: x-large;
+    grid-area: main4;
+    border-radius: 20px;
+  }

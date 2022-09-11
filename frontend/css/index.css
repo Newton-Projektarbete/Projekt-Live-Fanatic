@@ -1,8 +1,19 @@
 @import url("stream.css");
 @import url("header.css");
 @import url("confirm-payment.css");
+@import url("profile-page.css");
+@import url("editpage.css");
+@import url("concert.css");
+@import url("login.css");
 @import url("main.css");
-
+<<<<<<<< HEAD:frontend/css/index.css
+@import url("profile-page.css");
+@import url("editpage.css");
+@import url("concert.css");
+@import url("login.css");
+========
+@import url("main.css");
+>>>>>>>> main:whatever-directory-for-react-build/css/index.css
 
 @import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
 @import url("default.css");
