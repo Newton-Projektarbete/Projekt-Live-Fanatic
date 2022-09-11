@@ -1,12 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
 
+
 .main-view-all-content-page {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 100%;
     padding: 50px 20px 20px 20px;
-    border: 1px solid black;
 }
 
 .main-view-all-content-header {
@@ -17,7 +16,6 @@
 }
 
 .main-view-all-h1 {
-    margin-top: 26px;
     color: rgba(74, 166, 230, 1);
 }
 
@@ -30,33 +28,29 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
+    column-gap: 5px;
 }
 
 .main-view-all-icon-box{
-    margin: 5px;
+    color: rgb(0, 0, 0, 0.4);
+    background-color: rgb(255, 255, 255);
     border: 2px solid rgb(0, 0, 0, 0.4);
-    border-radius: 30%; 
+    border-radius: 20px;
 }
 
 .main-view-all-arrow-icon{
     font-size: 48px;
     font-weight: 700;
     color: rgba(0, 0, 0, 0.4);
-    justify-self: center;
 }
-
-
-
 
 .main-view-all-page-btn{
     display: flex;
-    margin: 5px 2px 5px 2px;
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0, 0.4);
+    justify-content: center;
+    align-items: center;
     font-size: 24px;
+    width: 48px;
     max-width: 48px;
-    border-radius: 30%;
-    border: 2px solid rgb(0, 0, 0, 0.4);
     overflow-x: hidden;
 }
 
@@ -73,21 +67,19 @@
     color: rgb(0, 0, 0, 1);
 }
 
-
-
-
-
 .main-view-all-row {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     column-gap: 20px;
     flex-wrap: wrap;
+    padding-top: 20px;
 }
 
 .main-view-all-content-box {
     display: flex;
     flex-direction: column;
+    padding-bottom: 5px;
 }
 
 .main-view-all-img-box {
@@ -112,10 +104,14 @@
     grid-column: 1;
     grid-row: 1;
     background: transparent;
+    color: white;
     border: none;
 }
 
-.main-view-all-like-btn>span {
+.main-view-all-like-btn:hover{
+    color: red;
+}
+.main-view-all-like-icon{
     display: flex;
     justify-content: flex-end;
     align-items: flex-start;
@@ -131,7 +127,7 @@
 .main-view-all-child-div{
     display: flex;
     justify-content: space-between;
-    margin: 0 5px 0 5px;
+    padding: 5px 5px 0 5px;
 }
 
 .main-view-all-child-div>a{
