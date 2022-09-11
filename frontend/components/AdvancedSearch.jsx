@@ -1,6 +1,7 @@
+import { Link } from "react-router-dom";
 function AdvancedSearch(){
-    return <><div>
-        Advanced Search Page
+    return <><div className="body">
+        Advanced Search page
     </div>
     </>
     }

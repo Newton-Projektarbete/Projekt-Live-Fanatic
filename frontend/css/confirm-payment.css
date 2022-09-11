@@ -1,28 +1,29 @@
-#confirm-payment{
+.confirm-payment{
     display: flex;
     justify-content: space-evenly;
     margin-top: 15vh;
 }
 
-#confirm-payment-left-content{}
-#your-tickets{}
-#your-tickets>h2{
+/* .confirm-payment-left-content{}
+.your-tickets{} */
+
+.your-tickets>h2{
     margin-bottom: 0;
 }
-#ticket-list-container{
+.ticket-list-container{
     display: flex;
     flex-direction: row;
 }
-#ticket-container{
+.ticket-container{
     padding-left: 25px;
 }
-#ticket-amount-container{
+.ticket-amount-container{
     list-style-type: none;
 }
 
-#confirm-payment-right-content{
-}
-#email-info{
+/* .confirm-payment-right-content{} */
+
+.email-info{
     margin-bottom: 0;
 }
 .space-between{
@@ -30,15 +31,8 @@
     justify-content: space-between;
 }
 
-#sprite-container{
+.sprite-container{
     background-color: lightgray;
     width: 20vw;
     height: 40vh;
-}
-
-
-
-
-.box{
-    border: 1px solid black;
 }

@@ -1,17 +1,16 @@
-#concert_content{
+.concert_content{
     display: flex;
     flex-direction: row;
-    margin-top: 100px;
     justify-content: space-around;
 }
 
-#title_background{
+.title_background{
     position: absolute;
     height: 75px;
     width: 100%;
     background: rgb(168, 228, 255);
     border: none;
-    padding-top: 30px;
+
 }
 
 .title_info{
@@ -23,32 +22,32 @@
 
 }
 
-#title_content{
+.title_content{
     display: flex;
     flex-direction: row;
     padding: 0;
     margin: 0;
 }
 
-#title_content>h1{
+.title_content>h1{
     margin-bottom: 0;
     margin: 0;
 }
 
-#info{
+.info{
     display: flex;
     flex-direction: row;
     padding-left: 15px;
 
 }
-#info>p{
+.info>p{
     margin-right: 10px;
     margin-top: 0px;
     margin-bottom: 0px;
     padding-left: 10px;
 }
 
-#like_button{
+.like_button{
     background: transparent;
     border: none;
     font-size: 35px;
@@ -59,23 +58,23 @@
     padding: 0;
 }
 
-#like-button i:hover{
+.like-button i:hover{
     cursor: pointer;
 }
 
-#line_up{
+.line_up{
     display: flex;
     flex-direction: column;
     padding-top: 10px;
 }
 
 
-#line_up>p{
+.line_up>p{
     margin: 0;
     padding-left: 15px;
 }
 
-#concert_image{
+.concert_image{
     background-image: url("../images/franaddressescrowd500.jpg");
     background-size: contain;
     background-position: 50% 50%;
@@ -85,49 +84,65 @@
     position: relative;
 }
 
-#button_content{
+.button_content{
     display: flex;
-    flex-direction: row-reverse;
-    padding-right: 10%;
+    flex-direction: row;
+    justify-content: flex-end;
 }
 
-#buy_button{
-    width: 120px;
-    height: 30px;
+.buy_button{
     background-color: rgb(237, 176, 78);
-    border-radius: 5px;
     cursor: pointer;
+    margin-right: 1vh;
 }
 
-#buy_button:hover{
+.buy_button:hover{
     background-color: rgb(247, 204, 118);
-
 }
 
-#stream_button{
-    width: 120px;
+.stream_button{
     background-color: rgb(51, 185, 51);
-    border-radius: 5px;
     cursor: pointer;
 }
 
-#stream_button:hover{
+.stream_button:hover{
     background-color: rgb(102, 240, 102);
 
 }
 
-#tickets_left{
+.tickets_left{
     display: flex;
-    flex-direction: row-reverse;
-    padding-right: 29%;
+    flex-direction: row;
+    justify-content: flex-end;
 }
 
-#tickets_left>p{
+.tickets_left>p{
     margin-top: 4px;
     color: rgb(235, 55, 55);
 }
 
 .default_button{
     width: fit-content;
-    padding: 0;
+    min-width: 80px;
+    min-height: 30px;
+    border-radius: 10%;
+}
+
+
+.like-concert{
+    margin: 5px;
+    color: rgba(36, 93, 165, 1);
+    font-size: 24px;
+    cursor: pointer; 
+    font-variation-settings: 
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48;
+  
+  }
+
+.like-concert:hover{
+    color: red;
+    background-color: none;
 }
