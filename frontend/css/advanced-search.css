@@ -52,8 +52,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 1px solid rgb(0, 0, 0);
-    width: 50vw;
+    
+    row-gap: 10px;
 }
 
 .adv-src-img{
@@ -63,7 +63,6 @@
     background-position: 50% 50%;
     height: 100px;
     width: 100px;
-    margin-right: 20px;
 }
 
 .adv-src-page-btn-box{
@@ -111,6 +110,9 @@
     display: flex;
     flex-direction: row;
     align-items: flex-start;
+    border: 1px solid rgb(0, 0, 0, 0.4);
+    padding: 0 20px 0 20px;
+    column-gap: 20px;
 }
 
 .adv-src-p{
@@ -121,6 +123,6 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: flex-end;
-    border: 2px solid rgb(0, 0, 0, 1);
+    justify-content: space-evenly;
+    height: 100px;
 }
