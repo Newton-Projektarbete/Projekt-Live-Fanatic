@@ -1,27 +1,39 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import AudioTest from "./AudioTest";
-import VideoTest from "./VideoTest";
-import MainPage from "./MainPage";
-import VideoAudioTest from "./VideoAudioTest";
 
+import Main from "./Main";
+import MainViewAll from "./MainViewAll";
+import MainGenre from "./MainGenre";
+import Profile from "./Profile";
+import ProfileEdit from "./ProfileEdit";
+import AdvancedSearch from "./AdvancedSearch";
+import Artist from "./Artist";
+import BuyTicket from "./BuyTicket";
+import Concert from "./Concert";
+import LogIn from "./LogIn";
+import SignUp from "./SignUp";
+import QR from "./QR";
+import Stream from "./Stream";
 
 function LiveFanaticRouter(){
     return <Router>
         <header>
-            {/* <Link to="/" id="exampleID"><h1>Main header</h1></Link> */}
-             <h1 id="exampleID">Main header</h1>
         </header>
         <Routes>
-            <Route path="/" element={<MainPage />} />
-            <Route path="/audio-test" element={<AudioTest />} />
-            <Route path="/video-test" element={<VideoTest />} />
-            <Route path="/video-audio-test" element={<VideoAudioTest />} />
+            <Route path="/" element={<Main/>} />
+            <Route path="/main-view-all" element={<MainViewAll/>} />
+            <Route path="/main-genre" element={<MainGenre/>} />
+            <Route path="/profile" element={ < Profile/>} />
+            <Route path="/profile-edit" element={ < ProfileEdit />} />
+            <Route path="/search" element={ < AdvancedSearch />} />
+            <Route path="/artist" element={ < Artist />} />
+            <Route path="/buy-ticket" element={ < BuyTicket />} />
+            <Route path="/concert" element={ < Concert />} />
+            <Route path="/log-in" element={ < LogIn />} />
+            <Route path="/sign-up" element={ < SignUp />} />
+            <Route path="/qr" element={ < QR />} />
+            <Route path="/stream" element={ < Stream />} />
         </Routes>
         <footer>
-{/*             <nav>
-                <h1>CopyRight example</h1>
-                <Link to="/">Main page</Link>
-            </nav> */}
         </footer>
     </Router>
 }
