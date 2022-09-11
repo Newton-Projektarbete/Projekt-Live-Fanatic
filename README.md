@@ -1,5 +1,9 @@
 # Projekt-Live-Fanatic
 (dont forget to use "npm install")
+(added a command in package.json to run npm install in the frontend folder without going into that folder.
+It's called "npm run i")
+(if you clone the project use the "npm run i" to run npm i in both parent folder and frontend folder)
+(Start project with "npm run all")
 
 Gruppmedlemar - Klass - Github namn
 

@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon index",
     "start": "node index",
-    "all": "concurrently \" npm run dev \" \" cd frontend && npm run dev\" "
+    "all": "concurrently \" npm run dev \" \" cd frontend && npm run dev\" ",
+    "i": " \" npm i \"\" cd frontend && npm i \" "
   },
   "author": "",
   "license": "ISC",
