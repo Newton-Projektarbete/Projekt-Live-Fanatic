@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Topnav</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../css/index.css">
+  <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <header class="topnav">
+
+    <div>
+      <img src="../examples/logo.png" alt="">
+    </div>
+
+    <div class="dropdown">
+      <button class="dropbtn">Genre
+        <i class="fa fa-caret-down"></i>
+      </button>
+
+      <div class="dropdown-content">
+        <ul id="genre-list"></ul>
+        <a href="#">Hiphop</a>
+        <a href="#">Rock</a>
+        <a href="#">Jass</a>
+        <a href="#">Dance</a>
+        <a href="#">House</a>
+        </ul>
+      </div>
+
+    </div>
+    <a href="#concert" class="a-default">Concerts</a>
+    <a href="#calender" class="a-default">Calender</a>
+    <a href="#live" class="a-default">Live</a>
+
+    <div class="nav-right">
+
+      <div class="search-container">
+        <div id="search-field">
+          <form action="/action_page.php">
+            <input type="text" placeholder="Search.." name="search">
+            <button type="submit"><i class="fa fa-search"></i></button>
+          </form>
+        </div>
+
+        <div id="sub-search-container" >
+          <a href="#advanced-search" class="a-default">Advanced search</a>
+          
+          <div>
+            <a id="like-btn" href="#"><i id="like-icon" class="fa badge fa-lg a-default" value=8>&#xf004;</i></a>
+            <a href="#" id="cart-btn"><span id="cart-btn" class="material-symbols-outlined">
+              shopping_cart
+            </span></a>
+          </div>
+          
+        </div>
+      </div>
+
+      <div>
+        <a href="#" class="a-nav-btn">
+          <button id="login-btn">Login</button>
+        </a>
+        <a href="#" class="a-nav-btn">
+          <button class="signup-btn">Signup</button>
+        </a>
+        
+        <a href="#" class="a-nav-btn">
+          <button id="profile-btn">Profile</button>
+        </a>
+        
+      </div>
+
+    </div>
+
+  </header>
+
+</body>
+
+</html>
+</style>
