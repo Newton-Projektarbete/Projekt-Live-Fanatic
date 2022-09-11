@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-
 import Main from "./Main";
 import MainViewAll from "./MainViewAll";
 import Profile from "./Profile";
@@ -102,6 +101,10 @@ function LiveFanaticRouter(){
             <Route path="/confirm-payment" element={ < ConfirmPayment />} />
         </Routes>
         <footer>
+{/*             <nav>
+                <h1>CopyRight example</h1>
+                <Link to="/">Main page</Link>
+            </nav> */}
         </footer>
     </Router>
 }
