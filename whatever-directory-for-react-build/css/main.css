@@ -1,0 +1,107 @@
+    .view_all {
+        text-decoration: none;
+        color: rgba(23, 62, 129, 1);
+    }
+
+    .row {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        column-gap: 20px;
+        width: fit-content;
+        flex-wrap: wrap;
+    }
+
+    .main-content-box {
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .main-content-page {
+        width: fit-content;
+        margin: 50px 20px 20px 20px;
+    }
+
+    .main-content-header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+
+    .main-img-box {
+        display: grid;
+        width: 200px;
+        height: 200px;
+    }
+
+    .main-img {
+        display: grid;
+        grid-column: 1;
+        grid-row: 1;
+        width: 200px;
+        height: 200px;
+        padding: 0;
+        margin: 0;
+        border: 3px solid rgb(54, 113, 241);
+    }
+
+    .main-like-btn {
+        display: grid;
+        grid-column: 1;
+        grid-row: 1;
+        background: transparent;
+        border: none;
+    }
+
+    .main-like-btn>span {
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-start;
+        margin-top: 5px;
+        height: 200px;
+        font-variation-settings:
+            'FILL' 1,
+            'wght' 700,
+            'GRAD' 0,
+            'opsz' 48;
+    }
+
+    .main-h1 {
+        margin-top: 26px;
+        color: rgba(74, 166, 230, 1);
+    }
+
+    .links {
+        padding-left: 2.3em;
+    }
+
+    .artist-title {
+        display: flex;
+        width: 100%";
+
+    }
+
+    .child-div {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 5px 0 5px;
+    }
+
+    .like_button {
+        background: transparent;
+        border: none;
+        font-size: 25px;
+        outline: none;
+        color: rgb(255, 255, 255);
+        padding: 0;
+        margin-left: -50px;
+
+
+    }
+
+    #like-button i:hover {
+        cursor: pointer;
+
+    }

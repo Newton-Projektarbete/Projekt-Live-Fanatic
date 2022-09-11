@@ -4,178 +4,306 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/0ac7bacbee.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/index.css">
     <title>Live Fanatic</title>
   </head>
-  <style>
-    .view_all {
-      position: relative;
-      margin-bottom: 5px;
-      margin-left: 1230px;
-      text-decoration: unset;
-      padding-left: 7em;
-    }
-    img {
-      margin-left: 40px;
-      width: 300px;
-      height: 300px;
-      object-fit: cover;
-      border: 3px solid rgb(54, 113, 241);
-    }
-    h1 {
-      margin-left: 26px;
-      margin-top: 26px;
-      color: rgb(44, 200, 235);
-      padding-left: 0.3em;
-    }
-    .links {
-      padding-left: 2.3em;
-    }
-
-    .child-div {
-      display: flex;
-      justify-content: space-between;
-      width: 305.99px;
-      margin-left: 40px;
-    }
-  </style>
   <body>
-    <div>
-      <h1>Live concert</h1>
-    </div>
-    <div>
-      <a href="#" class="view_all">View all</a>
-    </div>
-    <div>
-      <div class="row">
-        <img
-          src="/whatever-directory-for-react-build/design-html/images/Concerts_Live_Music_d30b0459-d42e-424b-8ccf-31419a06694d.jpg"
-          alt="concert"
-        />
-        <img
-          src="/whatever-directory-for-react-build/design-html/images/aditya-chinchure-494048-unsplash.jpg"
-          alt="concert"
-        />
-        <img
-          src="/whatever-directory-for-react-build/design-html/images/20190628_LiveNation_LollaStockholm_PhotoPaxEngstrom_78-kopia_m8U9F1r.jpg"
-          alt="concert"
-        />
-        <img
-          src="/whatever-directory-for-react-build/design-html/images/e1678e92-9cd8-4745-8e63-3a25ccc18758.jpeg"
-          alt="concert"
-        />
-        <div style="display: flex; width: 100%">
+    <div class="body">
+
+        <div class="main-content-page">
+            <div class="main-content-header">
+                <h1 class="main-h1" >Live concert</h1>
+                <a href="#" class="view_all">View all</a>
+            </div>
+            <div class="row">
+            <div class="main-content-box">
+
+                    <div class="main-img-box"> <img class="main-img" src="/whatever-directory-for-react-build/design-html/images/Concerts_Live_Music_d30b0459-d42e-424b-8ccf-31419a06694d.jpg" alt="">
+                        <button onclick="Toggle()" class="material-symbols-outlined main-like-btn">
+                            <span id="like-btn-1" class="material-symbols-outlined">favorite</span>
+                        </button>
+                    </div>
+
+                    <div class="child-div">
+                      <a href="#">Title</a>
+                      <a href="#">Artist</a>
+                    </div>
+                </div>
+                
+                <div class="main-content-box">
+                    <div class="main-img-box"> <img class="main-img" src="/whatever-directory-for-react-build/design-html/images/Concerts_Live_Music_d30b0459-d42e-424b-8ccf-31419a06694d.jpg" alt="">
+                        <button onclick="Toggle()" class="material-symbols-outlined main-like-btn">
+                            <span id="like-btn-1" class="material-symbols-outlined">favorite</span>
+                        </button>
+                    </div>
             
-          <div class="child-div">
-            <a href="#">Title</a>
-            <a href="#">Artist</a>
+                        <div class="child-div">
+                          <a href="#">Title</a>
+                          <a href="#">Artist</a>
+                        </div>
+            </div>
+        
+            <div class="main-content-box">
+                <div class="main-img-box"> <img class="main-img" src="/whatever-directory-for-react-build/design-html/images/Concerts_Live_Music_d30b0459-d42e-424b-8ccf-31419a06694d.jpg" alt="">
+                    <button onclick="Toggle()" class="material-symbols-outlined main-like-btn">
+                        <span id="like-btn-1" class="material-symbols-outlined">favorite</span>
+                    </button>
+                </div>
+
+                    <div class="child-div">
+                        <a href="#">Title</a>
+                        <a href="#">Artist</a>
+                      </div>
+            </div>
+
           </div>
+        </div>
 
-          <div class="child-div">
-            <a href="#">Title</a>
-            <a href="#">Artist</a>
+
+        <div class="main-content-page">
+            <div class="main-content-header">
+                <h1 class="main-h1" >Recently Added</h1>
+                <a href="#" class="view_all">View all</a>
+            </div>
+            <div class="row">
+            <div class="main-content-box">
+                <div class="main-img-box"> <img class="main-img" src="/whatever-directory-for-react-build/design-html/images/Concerts_Live_Music_d30b0459-d42e-424b-8ccf-31419a06694d.jpg" alt="">
+                    <button onclick="Toggle()" class="material-symbols-outlined main-like-btn">
+                        <span id="like-btn-1" class="material-symbols-outlined">favorite</span>
+                    </button>
+                </div>
+                    <div class="child-div">
+                      <a href="#">Title</a>
+                      <a href="#">Artist</a>
+                    </div>
+    
+                </div>
+                
+                <div class="main-content-box">
+                    <div class="main-img-box"> <img class="main-img" src="/whatever-directory-for-react-build/design-html/images/Concerts_Live_Music_d30b0459-d42e-424b-8ccf-31419a06694d.jpg" alt="">
+                        <button onclick="Toggle()" class="material-symbols-outlined main-like-btn">
+                            <span id="like-btn-1" class="material-symbols-outlined">favorite</span>
+                        </button>
+                    </div>
+            
+                        <div class="child-div">
+                          <a href="#">Title</a>
+                          <a href="#">Artist</a>
+                        </div>
+            </div>
+        
+            <div class="main-content-box">
+                <div class="main-img-box"> <img class="main-img" src="/whatever-directory-for-react-build/design-html/images/Concerts_Live_Music_d30b0459-d42e-424b-8ccf-31419a06694d.jpg" alt="">
+                    <button onclick="Toggle()" class="material-symbols-outlined main-like-btn">
+                        <span id="like-btn-1" class="material-symbols-outlined">favorite</span>
+                    </button>
+                </div>
+                    <div class="child-div">
+                        <a href="#">Title</a>
+                        <a href="#">Artist</a>
+                      </div>
+            </div>
+    
+            <div class="main-content-box">
+                <div class="main-img-box"> <img class="main-img" src="/whatever-directory-for-react-build/design-html/images/Concerts_Live_Music_d30b0459-d42e-424b-8ccf-31419a06694d.jpg" alt="">
+                    <button onclick="Toggle()" class="material-symbols-outlined main-like-btn">
+                        <span id="like-btn-1" class="material-symbols-outlined">favorite</span>
+                    </button>
+                </div>
+                    <div class="child-div">
+                        <a href="#">Title</a>
+                        <a href="#">Artist</a>
+                      </div>
+            </div>
+            <div class="main-content-box">
+                <div class="main-img-box"> <img class="main-img" src="/whatever-directory-for-react-build/design-html/images/Concerts_Live_Music_d30b0459-d42e-424b-8ccf-31419a06694d.jpg" alt="">
+                    <button onclick="Toggle()" class="material-symbols-outlined main-like-btn">
+                        <span id="like-btn-1" class="material-symbols-outlined">favorite</span>
+                    </button>
+                </div>
+                    <div class="child-div">
+                        <a href="#">Title</a>
+                        <a href="#">Artist</a>
+                      </div>
+            </div>
+            <div class="main-content-box">
+                <div class="main-img-box"> <img class="main-img" src="/whatever-directory-for-react-build/design-html/images/Concerts_Live_Music_d30b0459-d42e-424b-8ccf-31419a06694d.jpg" alt="">
+                    <button onclick="Toggle()" class="material-symbols-outlined main-like-btn">
+                        <span id="like-btn-1" class="material-symbols-outlined">favorite</span>
+                    </button>
+                </div>
+                    <div class="child-div">
+                        <a href="#">Title</a>
+                        <a href="#">Artist</a>
+                      </div>
+            </div>
+            <div class="main-content-box">
+                <div class="main-img-box"> <img class="main-img" src="/whatever-directory-for-react-build/design-html/images/Concerts_Live_Music_d30b0459-d42e-424b-8ccf-31419a06694d.jpg" alt="">
+                    <button onclick="Toggle()" class="material-symbols-outlined main-like-btn">
+                        <span id="like-btn-1" class="material-symbols-outlined">favorite</span>
+                    </button>
+                </div>
+                    <div class="child-div">
+                        <a href="#">Title</a>
+                        <a href="#">Artist</a>
+                      </div>
+            </div>
+            <div class="main-content-box">
+                <div class="main-img-box"> <img class="main-img" src="/whatever-directory-for-react-build/design-html/images/Concerts_Live_Music_d30b0459-d42e-424b-8ccf-31419a06694d.jpg" alt="">
+                    <button onclick="Toggle()" class="material-symbols-outlined main-like-btn">
+                        <span id="like-btn-1" class="material-symbols-outlined">favorite</span>
+                    </button>
+                </div>
+                    <div class="child-div">
+                        <a href="#">Title</a>
+                        <a href="#">Artist</a>
+                      </div>
+            </div>
+            <div class="main-content-box">
+                <div class="main-img-box"> <img class="main-img" src="/whatever-directory-for-react-build/design-html/images/Concerts_Live_Music_d30b0459-d42e-424b-8ccf-31419a06694d.jpg" alt="">
+                    <button onclick="Toggle()" class="material-symbols-outlined main-like-btn">
+                        <span id="like-btn-1" class="material-symbols-outlined">favorite</span>
+                    </button>
+                </div>
+                    <div class="child-div">
+                        <a href="#">Title</a>
+                        <a href="#">Artist</a>
+                      </div>
+            </div>
+
           </div>
-          <div class="child-div">
-            <a href="#">Title</a>
-            <a href="#">Artist</a>
+        </div>
+
+        <div class="main-content-page">
+            <div class="main-content-header">
+                <h1 class="main-h1" >Comming Soon</h1>
+                <a href="#" class="view_all">View all</a>
+            </div>
+            <div class="row">
+            <div class="main-content-box">
+                <div class="main-img-box"> <img class="main-img" src="/whatever-directory-for-react-build/design-html/images/Concerts_Live_Music_d30b0459-d42e-424b-8ccf-31419a06694d.jpg" alt="">
+                    <button onclick="Toggle()" class="material-symbols-outlined main-like-btn">
+                        <span id="like-btn-1" class="material-symbols-outlined">favorite</span>
+                    </button>
+                </div>
+                    <div class="child-div">
+                      <a href="#">Title</a>
+                      <a href="#">Artist</a>
+                    </div>
+    
+                </div>
+                
+                <div class="main-content-box">
+                    <div class="main-img-box"> <img class="main-img" src="/whatever-directory-for-react-build/design-html/images/Concerts_Live_Music_d30b0459-d42e-424b-8ccf-31419a06694d.jpg" alt="">
+                        <button onclick="Toggle()" class="material-symbols-outlined main-like-btn">
+                            <span id="like-btn-1" class="material-symbols-outlined">favorite</span>
+                        </button>
+                    </div>
+            
+                        <div class="child-div">
+                          <a href="#">Title</a>
+                          <a href="#">Artist</a>
+                        </div>
+            </div>
+        
+            <div class="main-content-box">
+                <div class="main-img-box"> <img class="main-img" src="/whatever-directory-for-react-build/design-html/images/Concerts_Live_Music_d30b0459-d42e-424b-8ccf-31419a06694d.jpg" alt="">
+                    <button onclick="Toggle()" class="material-symbols-outlined main-like-btn">
+                        <span id="like-btn-1" class="material-symbols-outlined">favorite</span>
+                    </button>
+                </div>
+                    <div class="child-div">
+                        <a href="#">Title</a>
+                        <a href="#">Artist</a>
+                      </div>
+            </div>
+    
+            <div class="main-content-box">
+                <div class="main-img-box"> <img class="main-img" src="/whatever-directory-for-react-build/design-html/images/Concerts_Live_Music_d30b0459-d42e-424b-8ccf-31419a06694d.jpg" alt="">
+                    <button onclick="Toggle()" class="material-symbols-outlined main-like-btn">
+                        <span id="like-btn-1" class="material-symbols-outlined">favorite</span>
+                    </button>
+                </div>
+                    <div class="child-div">
+                        <a href="#">Title</a>
+                        <a href="#">Artist</a>
+                      </div>
+            </div>
+            <div class="main-content-box">
+                <div class="main-img-box"> <img class="main-img" src="/whatever-directory-for-react-build/design-html/images/Concerts_Live_Music_d30b0459-d42e-424b-8ccf-31419a06694d.jpg" alt="">
+                    <button onclick="Toggle()" class="material-symbols-outlined main-like-btn">
+                        <span id="like-btn-1" class="material-symbols-outlined">favorite</span>
+                    </button>
+                </div>
+                    <div class="child-div">
+                        <a href="#">Title</a>
+                        <a href="#">Artist</a>
+                      </div>
+            </div>
+            <div class="main-content-box">
+                <div class="main-img-box"> <img class="main-img" src="/whatever-directory-for-react-build/design-html/images/Concerts_Live_Music_d30b0459-d42e-424b-8ccf-31419a06694d.jpg" alt="">
+                    <button onclick="Toggle()" class="material-symbols-outlined main-like-btn">
+                        <span id="like-btn-1" class="material-symbols-outlined">favorite</span>
+                    </button>
+                </div>
+                    <div class="child-div">
+                        <a href="#">Title</a>
+                        <a href="#">Artist</a>
+                      </div>
+            </div>
+            <div class="main-content-box">
+                <div class="main-img-box"> <img class="main-img" src="/whatever-directory-for-react-build/design-html/images/Concerts_Live_Music_d30b0459-d42e-424b-8ccf-31419a06694d.jpg" alt="">
+                    <button onclick="Toggle()" class="material-symbols-outlined main-like-btn">
+                        <span id="like-btn-1" class="material-symbols-outlined">favorite</span>
+                    </button>
+                </div>
+                    <div class="child-div">
+                        <a href="#">Title</a>
+                        <a href="#">Artist</a>
+                      </div>
+            </div>
+            <div class="main-content-box">
+                <div class="main-img-box"> <img class="main-img" src="/whatever-directory-for-react-build/design-html/images/Concerts_Live_Music_d30b0459-d42e-424b-8ccf-31419a06694d.jpg" alt="">
+                    <button onclick="Toggle()" class="material-symbols-outlined main-like-btn">
+                        <span id="like-btn-1" class="material-symbols-outlined">favorite</span>
+                    </button>
+                </div>
+                    <div class="child-div">
+                        <a href="#">Title</a>
+                        <a href="#">Artist</a>
+                      </div>
+            </div>
+            <div class="main-content-box">
+                <div class="main-img-box"> <img class="main-img" src="/whatever-directory-for-react-build/design-html/images/Concerts_Live_Music_d30b0459-d42e-424b-8ccf-31419a06694d.jpg" alt="">
+                    <button onclick="Toggle()" class="material-symbols-outlined main-like-btn">
+                        <span id="like-btn-1" class="material-symbols-outlined">favorite</span>
+                    </button>
+                </div>
+                    <div class="child-div">
+                        <a href="#">Title</a>
+                        <a href="#">Artist</a>
+                      </div>
+            </div>
+
           </div>
-          <div class="child-div">
-            <a href="#">Title</a>
-            <a href="#">Artist</a>
-          </div>
         </div>
-      </div>
+        
     </div>
-    <div>
-      <h1>Recetly Added</h1>
-      <!-- <button class="view_all">View all</button> -->
-      <a href="#" class="view_all">View all</a>
+    
+    <script>
+        let likebtn = document.getElementsById('like-btn-1');
 
-      <div class="row">
-        <img
-          src="/whatever-directory-for-react-build/design-html/images/Concerts_Live_Music_d30b0459-d42e-424b-8ccf-31419a06694d.jpg"
-          alt=""
-        />
-        <img
-          src="/whatever-directory-for-react-build/design-html/images/Concerts_Live_Music_d30b0459-d42e-424b-8ccf-31419a06694d.jpg"
-          alt="concert"
-        />
-        <img
-          src="/whatever-directory-for-react-build/design-html/images/Concerts_Live_Music_d30b0459-d42e-424b-8ccf-31419a06694d.jpg"
-          alt="concert"
-        />
-        <img
-          src="/whatever-directory-for-react-build/design-html/images/Concerts_Live_Music_d30b0459-d42e-424b-8ccf-31419a06694d.jpg"
-          alt="concert"
-        />
-      </div>
-    </div>
-    <div style="display: flex; width: 100%">
-        <div class="child-div">
-          <a href="#">Title</a>
-          <a href="#">Artist</a>
-        </div>
-
-        <div class="child-div">
-          <a href="#">Title</a>
-          <a href="#">Artist</a>
-        </div>
-        <div class="child-div">
-          <a href="#">Title</a>
-          <a href="#">Artist</a>
-        </div>
-        <div class="child-div">
-          <a href="#">Title</a>
-          <a href="#">Artist</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div>
-    <div>
-      <h1>Comming conserts</h1>
-      <a href="#" class="view_all">View all</a>
-      <div class="row">
-        <img
-          src="/whatever-directory-for-react-build/design-html/images/Concerts_Live_Music_d30b0459-d42e-424b-8ccf-31419a06694d.jpg"
-          alt="concert"
-        />
-
-        <img
-          src="/whatever-directory-for-react-build/design-html/images/Concerts_Live_Music_d30b0459-d42e-424b-8ccf-31419a06694d.jpg"
-          alt="concert"
-        />
-        <img
-          src="/whatever-directory-for-react-build/design-html/images/Concerts_Live_Music_d30b0459-d42e-424b-8ccf-31419a06694d.jpg"
-          alt="concert"
-        />
-        <img
-          src="/whatever-directory-for-react-build/design-html/images/Concerts_Live_Music_d30b0459-d42e-424b-8ccf-31419a06694d.jpg"
-          alt="concert"
-        />
-      </div>
-    </div>
-    <div style="display: flex; width: 100%">
-        <div class="child-div">
-          <a href="#">Title</a>
-          <a href="#">Artist</a>
-        </div>
-
-        <div class="child-div">
-          <a href="#">Title</a>
-          <a href="#">Artist</a>
-        </div>
-        <div class="child-div">
-          <a href="#">Title</a>
-          <a href="#">Artist</a>
-        </div>
-        <div class="child-div">
-          <a href="#">Title</a>
-          <a href="#">Artist</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div>
+        function Toggle() {
+            if (likebtn.style.color == "red") {
+                likebtn.style.color = "white"
+            }
+            else {
+                likebtn.style.color = "red"
+            }
+        }
+    </script>
   </body>
 </html>
