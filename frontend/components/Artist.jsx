@@ -1,7 +1,8 @@
+import { Link } from "react-router-dom";
 function Artist(){
-    return <><div>
+    return <><div className="body">
         Artist Page
-    </div>    
+    </div> 
     </>
     }
     

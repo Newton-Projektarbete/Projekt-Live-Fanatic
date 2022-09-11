@@ -1,22 +1,21 @@
-
-#stream{
+.stream{
     display: flex;
     flex-direction: column;
     width: 100%;
     height: fit-content;
 }
 
-#stream-h1{
+.stream-h1{
     width: 50%;
 }
 
-#stream-video{
+.stream-video{
     display: flex;
     flex-direction: column;
     align-items: center; 
 }
 
-#stream-content{
+.stream-content{
     display: flex;
     flex-direction: row;
     /* for mobile view add:
@@ -26,35 +25,40 @@
     justify-content: space-evenly;
 }
 
-#stream-link::before{
+.stream-link::before{
     content: attr(title) "";
     color: black;
 }/* title="copy this link to invite a friend" */
 
 
-#stream-link-pos{
+.stream-link-pos{
     display: flex;
     margin-top: 3vh;
     padding: 0.5vh;
     justify-content: center;
 }
 
-#stream-artists{
+.stream-artists{
     display: flex;
     flex-direction: column;
     padding: 0;
 }
-#stream-artists>a{
+.stream-artists>a{
     padding-bottom: 0.5vh;
 }
 
-#stream-invited>ol{
+.stream-invited>ol{
     margin: 0;
     padding: 0.25vh 0.5vh 0.25vh 0.5vh;
     border: 1px solid rgb(0, 0, 0, 0.2);
 }
 
-#stream-copy-btn{
+.stream-copy-btn{
     border-radius: 1vh;
     margin-bottom: 1vh;
 }
+
+.stream-copy-btn:hover {
+    background-color: rgba(221, 221, 221, 1);
+    color: black;
+  }

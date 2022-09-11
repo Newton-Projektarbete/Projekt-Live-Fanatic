@@ -1,7 +1,9 @@
+import { Link } from "react-router-dom";
+
 function MainViewAll(){
-    return <><div>
-        Main View All page
-    </div>    
+    return <><div className="body">
+        Main View All page    
+    </div>
     </>
     }
     

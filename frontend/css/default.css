@@ -3,7 +3,7 @@ body{
 }
 
 button{
-    color: white;/* color: rgba(74, 166, 230, 1); */
+    color: white;
     background-color: rgba(74, 166, 230, 1);
 }
 
@@ -31,7 +31,7 @@ input{
 }
 
 a{
-    Color: rgba(23, 62, 129, 1);
+    Color: rgba(48, 149, 184, 1);
 }
 
 header{
