@@ -13,9 +13,9 @@
 @import url("buy-ticket.css");
 @import url("signup.css");
 @import url("main.css");
+@import url("main-view-all.css");
 
 @import url("default.css");
-
 *{
     box-sizing: border-box;
 }
