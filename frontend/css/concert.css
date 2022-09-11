@@ -10,7 +10,6 @@
     width: 100%;
     background: rgb(168, 228, 255);
     border: none;
-
 }
 
 .title_info{
@@ -18,8 +17,6 @@
     flex-direction: column;
     padding-top: 5vh;
     margin: 0;
-    position: relative;
-
 }
 
 .title_content{
@@ -27,11 +24,13 @@
     flex-direction: row;
     padding: 0;
     margin: 0;
+    
 }
 
-.title_content>h1{
+.concert-title-h1{
     margin-bottom: 0;
     margin: 0;
+    padding-right: 50px;
 }
 
 .info{

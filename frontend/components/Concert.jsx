@@ -6,7 +6,7 @@ function Concert(){
         <div className="title_info">
 
             <div className="title_content">
-                <h1>Slam Poetry Bonga Freejazz Jam for Dummies</h1>
+                <h1 className="concert-title-h1">Slam Poetry Bonga Freejazz Jam for Dummies</h1>
                 <button onclick="Toggle()" className="like_button"><i
                         className="material-symbols-outlined like-concert">favorite</i></button>
             </div>
