@@ -14,8 +14,9 @@
 @import url("main.css");
 @import url("main-view-all.css");
 
-@import url("header.css");
+
 @import url("default.css");
+@import url("header.css");
 *{
     box-sizing: border-box;
 }
@@ -24,11 +25,6 @@ body{
     margin: 0;
     height: 200vh;
     max-width: 100%;
-}
-
-input{
-    margin: 0;
-    padding: 0;
 }
 
 .body{

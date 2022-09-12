@@ -23,9 +23,9 @@ function LiveFanaticRouter(){
     </div>
 
     <div className="dropdown">
-        <button className="dropbtn">Genre
+        <div className="dropbtn">Genre
             <i className="fa fa-caret-down"></i>
-        </button>
+        </div>
 
         <div className="dropdown-content">
             <ul className="genre-list"></ul>
