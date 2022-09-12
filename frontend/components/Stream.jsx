@@ -30,9 +30,9 @@ function Stream(){
 
             <div>
                 <div className="stream-link-pos">
-                    <a className="stream-link" 
-                    href="http://127.0.0.1:5500/whatever-directory-for-react-build/design-html/stream.html" 
-                    ></a>
+                    <Link className="stream-link" 
+                    to="/" 
+                    ></Link>
                     <button className="stream-copy-btn" onclick={copyLink}>Share Link</button>      
                 </div>
 
