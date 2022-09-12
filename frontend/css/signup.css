@@ -1,0 +1,42 @@
+.signup-body{
+    display: flex;
+    justify-content: center;
+}
+
+.signup{
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    row-gap: 10px;
+}
+
+.signup-btn-box{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+.parent-signup-page-btn{
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.signup-page-btn{
+    background-color: rgb(74, 166, 230, 1);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+}
+
+.signup-page-btn:hover {
+    background-color: rgba(221, 221, 221, 1);
+    color: black;
+  }
+
+.link{
+    color: rgba(23, 62, 129, 1);
+    text-decoration: none;
+    
+}

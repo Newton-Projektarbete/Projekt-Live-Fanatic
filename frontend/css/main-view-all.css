@@ -1,0 +1,135 @@
+.main-view-all-content-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px 20px 20px;
+}
+
+.main-view-all-content-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+.main-view-all-h1 {
+    color: rgba(74, 166, 230, 1);
+}
+
+.main-view-all {
+    text-decoration: none;
+    color: rgba(23, 62, 129, 1);
+}
+
+.main-view-all-page-btns-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    column-gap: 5px;
+}
+
+.main-view-all-icon-box{
+    color: rgb(0, 0, 0, 0.4);
+    background-color: rgb(255, 255, 255);
+    border: 2px solid rgb(0, 0, 0, 0.4);
+    border-radius: 20px;
+}
+
+.main-view-all-arrow-icon{
+    font-size: 48px;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.main-view-all-page-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    width: 48px;
+    max-width: 48px;
+    overflow-x: hidden;
+}
+
+.main-view-all-arrow-icon:hover{
+    color: rgb(0, 0, 0, 1);
+}
+
+.main-view-all-icon-box:hover{
+    border: 2px solid rgb(0, 0, 0, 1);
+}
+
+.adv-src-page-btn:hover{
+    border: 2px solid rgb(0, 0, 0, 1);
+    color: rgb(0, 0, 0, 1);
+}
+
+.main-view-all-row {
+    display: flex;
+    flex-direction: row;
+    justify-self: center;
+    justify-content: center;
+    column-gap: 20px;
+    flex-wrap: wrap;
+    padding-top: 20px;
+    max-width: 1000px;
+}
+
+.main-view-all-content-box {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 5px;
+}
+
+.main-view-all-img-box {
+    display: grid;
+    width: 200px;
+    height: 200px;
+}
+
+.main-view-all-img {
+    display: grid;
+    grid-column: 1;
+    grid-row: 1;
+    width: 200px;
+    height: 200px;
+    padding: 0;
+    margin: 0;
+    border: 3px solid rgb(54, 113, 241);
+}
+
+.main-view-all-like-btn {
+    display: grid;
+    grid-column: 1;
+    grid-row: 1;
+    background: transparent;
+    color: white;
+    border: none;
+}
+
+.main-view-all-like-btn:hover{
+    color: red;
+}
+.main-view-all-like-icon{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    margin-top: 5px;
+    height: 200px;
+    font-variation-settings:
+        'FILL' 1,
+        'wght' 700,
+        'GRAD' 0,
+        'opsz' 48;
+}
+
+.main-view-all-child-div{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 5px 0 5px;
+}
+
+.main-view-all-child-div>a{
+    text-decoration: none;
+}

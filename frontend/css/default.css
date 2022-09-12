@@ -3,7 +3,7 @@ body{
 }
 
 button{
-    color: white;/* color: rgba(74, 166, 230, 1); */
+    color: white;
     background-color: rgba(74, 166, 230, 1);
 }
 
@@ -19,6 +19,10 @@ h2{
     color: rgba(36, 93, 165, 1);
 }
 
+h3{
+    color: rgba(36, 93, 165, 1);
+}
+
 /* 
 tags background Color: White
 tags text Color: Black
@@ -31,7 +35,7 @@ input{
 }
 
 a{
-    Color: rgba(23, 62, 129, 1);
+    Color: rgba(48, 149, 184, 1);
 }
 
 header{

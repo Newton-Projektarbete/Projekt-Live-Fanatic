@@ -1,5 +1,10 @@
 # Projekt-Live-Fanatic
-(dont forget to use "npm install")
+(dont forget to use "npm install") <br>
+(added a command in package.json to run npm install in the frontend folder without going into that folder. <br>
+It's called "npm run i")<br>
+Must have installed concurrently and express. (npm i -g express) (npm i -g concurrently) <br>
+(if you clone the project use the "npm run i" to run npm i in both parent folder and frontend folder)<br>
+(Start project with "npm run all")<br>
 
 Gruppmedlemar - Klass - Github namn
 

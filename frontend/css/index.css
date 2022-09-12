@@ -1,6 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url("https://kit.fontawesome.com/0ac7bacbee.js");
+
 @import url("stream.css");
 @import url("header.css");
 @import url("confirm-payment.css");
+@import url("advanced-search.css");
+@import url("profile.css");
+@import url("profile-edit.css");
+@import url("concert.css");
+@import url("login.css");
+@import url("buy-ticket.css");
+@import url("signup.css");
+@import url("main.css");
+@import url("main-view-all.css");
 
 @import url("default.css");
 *{
@@ -12,3 +25,15 @@ body{
     max-width: 100%;
 }
 
+.body{
+    padding-top: 100px;
+}
+
+
+.temp-links{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}

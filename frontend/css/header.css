@@ -1,16 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
-
-body {
-    margin: 0;
-    height: 400vh;
-
-  }
-
-  * {
-    box-sizing: border-box;
-  }
-
-  .box-color{
+.box-color{
     border: 1px solid black;
   }
 
@@ -20,7 +8,7 @@ body {
     padding: 10px 20px;
     background-color: rgba(48, 149, 184, 1);
     width: 100%;
-    
+    max-height: 100px;
   }
 
   .nav-right{
@@ -35,6 +23,7 @@ body {
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
+    background-color: rgba(48, 149, 184, 1);
   }
 
 .a-nav-btn{
@@ -42,7 +31,7 @@ body {
     padding: 0;
 }
 
-  #login-btn{
+  .login-btn{
     float: right;
     background-color: rgba(48, 149, 184, 1);
     color: white;
@@ -55,7 +44,7 @@ body {
   }
 
   .topnav a:hover {
-    background-color: #ddd;
+    background-color: rgba(48, 149, 184, 1);
     color: black;
   }
 
@@ -67,11 +56,12 @@ body {
     border-radius: 10px;
     font-size: 17px;
     margin-top: 8px;
+    margin-right: 5px;
     float: right;
     cursor: pointer;
   }
 
-  #profile-btn{
+  .profile-btn{
     display: none;
     background-color: rgba(0, 88, 169, 1);
     color: white;
@@ -84,7 +74,7 @@ body {
   }
 
   .signup-btn:hover {
-    background-color: #ddd;
+    background-color: rgba(221, 221, 221, 1);
     color: black;
   }
 
@@ -93,7 +83,7 @@ body {
     margin-right: 16px;
   }
 
-#search-field{
+.search-field{
     display: flex;
     justify-content: flex-start;
 }
@@ -112,7 +102,7 @@ body {
     float: right;
     padding: 6px 10px;
     margin-top: 8px;
-    background: #ddd;
+    background: rgba(221, 221, 221, 1);
     font-size: 17px;
     border: none;
     cursor: pointer;
@@ -122,7 +112,7 @@ body {
 
 
   .placeholder:hover {
-    background-color: #ddd;
+    background-color: rgba(221, 221, 221, 1);
     color: black;
   }
 
@@ -160,8 +150,7 @@ body {
     background-color: #ddd;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-     
+
   }
 
   .dropdown-content a {
@@ -188,54 +177,81 @@ body {
     color: black;
   }
 
-#sub-search-container{
+.sub-search-container{
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-#sub-search-container>div{
+.sub-search-container>div{
     display: flex;
     align-items: center;
     justify-content: flex-end;
 }
 
-  #like-btn{
-    color: rgb(19, 230, 47);
-    cursor: pointer;  
-}
 
-#cart-btn{
+
+.cart-btn{
     color: white;
+    text-decoration: none;
 }
 
-#cart-btn:hover{
+.cart-btn:hover{
     color: goldenrod;
     background-color: rgba(48, 149, 184, 1);
 }
 
-#like-btn:hover{
-    color: goldenrod;
-    background-color: rgba(48, 149, 184, 1);
-}
-
-#like-icon:after{
-      content:attr(value);
-      font-size:12px;
-      color: #fff;
-      background: red;
-      border-radius:50%;
-      padding: 0 5px;
-      position:relative;
-      left:-8px;
-      top:-10px;
-      opacity:0.9;
-  }
-
-
-  .profile{
+.profile{
    float: right;
-  }
+}
 
+.like-amount{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-self: end;
+  font-size: 70%;
+  color: white;
+  background-color: red;
+  border-radius: 200%;
+  width: 12px;
+  height: 12px;
+  z-index: 1;
+}
 
+.like-box{
+  display: grid;
+  margin-right: 1vh;
+}
+
+.like-link{
+  text-decoration: none;
+  background-color: rgba(48, 149, 184, 1);
+}
+.like-btn, .like-amount{
+  grid-column: 1;
+  grid-row: 1;
   
+}
+
+.like-btn{
+  margin: 5px;
+  color: rgba(19, 230, 47, 1);
+  font-size: 24px;
+  cursor: pointer; 
+  font-variation-settings: 
+  'FILL' 1,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48;
+
+}
+
+.like-btn:hover{
+    color: goldenrod;
+    background-color: rgba(48, 149, 184, 1)
+}
+
+.like-btn:after{
+      content:attr(value);
+  }
