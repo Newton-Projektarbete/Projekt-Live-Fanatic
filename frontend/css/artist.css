@@ -1,3 +1,8 @@
+#artist_parent{
+    display: flex; 
+    flex-direction: column;
+}
+
 #artist_content{
     display: flex;
     flex-direction: row;
@@ -53,12 +58,9 @@
     position: relative;
     background: transparent;
     border: none;
-    font-size: 35px;
-    margin-left: 15px;
-    margin-right: 15px;
+    font-size: 30px;
     outline: none;
     color: grey;
-    padding-bottom: 40px;
 }
 
 #like-button i:hover{
@@ -78,7 +80,6 @@
 }
 
 #artist_image{
-    background-image: url("../images/franaddressescrowd500.jpg");
     background-size: contain;
     background-position: 50% 50%;
     background-repeat: no-repeat;
@@ -130,4 +131,63 @@
 .default_button{
     width: fit-content;
     padding: 0;
+}
+
+.artist-result-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 10px;
+}
+.artist-result-content{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    border: 1px solid rgb(0, 0, 0, 0.4);
+    padding: 0 20px 0 20px;
+    column-gap: 20px;
+}
+.artist-img{
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    height: 100px;
+    width: 100px;
+}
+.artist-result-info{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    height: 100px;
+}
+.artist-p{
+    margin: 2px 0 2px 0;
+}
+
+.button_content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.concert_box{
+    display: flex;
+    flex-direction: row;
+}
+
+.sample_content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.sample_p{
+    margin: 2px;
+    padding: 0;
+
 }
