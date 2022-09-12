@@ -1,45 +1,51 @@
-.profile-body{
-    display: flex;
-    flex-direction: column;
-    padding: 2vh 10vw 0 10vw;
+.profile-body {
+  display: flex;
+  flex-direction: column;
+  padding: 2vh 10vw 0 10vw;
 }
 
-.main-table-content{
-    display: flex;
-    flex-direction: row;
-    margin-top: 10vh;
-    justify-content: space-evenly;
-    column-gap: 1vh;
+.main-table-content {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10vh;
+  justify-content: space-evenly;
+  column-gap: 1vh;
 }
 
-.left-table, .centrum-table, .right-table{
-    border: 1px solid rgba(0, 0, 0, 0.2);
+.left-table,
+.centrum-table,
+.right-table {
+  border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-.profile-td{
-    width: fit-content;
-    padding-right: 1vh;
+.profile-td {
+  width: fit-content;
+  padding-right: 1vh;
 }
 
-.table-header{
-    text-align: left;
+.table-header {
+  text-align: left;
 }
 
-.img-profile{
-   width: 35px;
-   object-fit: cover ;
+.img-profile {
+  width: 35px;
+  object-fit: cover;
 }
 
-
-
-.edit-profile-box{
-    display: flex;
-    justify-content: flex-end;
-    margin-right: 5vw;
+.edit-profile-box {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 5vw;
 }
-
-
- 
-
-
- 
+.edit-btn {
+  background-color: rgba(0, 88, 169, 1);
+  color: white;
+  padding: 6px 10px;
+  border-radius: 10px;
+  font-size: 17px;
+  cursor: pointer;
+}
+.edit-btn:hover {
+  background-color: #ddd;
+  color: black;
+}
