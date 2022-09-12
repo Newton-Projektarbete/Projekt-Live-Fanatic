@@ -32,8 +32,12 @@ body{
 
 .temp-links{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-
+    column-gap: 10px;
+    padding: 10px;
+    background-color: rgb(207, 206, 206);
+    color: white;
 }
+

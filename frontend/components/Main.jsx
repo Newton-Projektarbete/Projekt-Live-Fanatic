@@ -4,17 +4,17 @@ function Main(){
 return <>
 <div className="body">
 
-<div className="main-content-page">
+        <div className="main-content-page">
             <div className="main-content-header">
                 <h1 className="main-h1" >Live concert</h1>
-                <Link to="" className="view_all">View all</Link>
+                <Link to="/main-view-all" className="view_all">View all</Link>
             </div>
             <div className="row">
             <div className="main-content-box">
 
                     <div className="main-img-box"> <img className="main-img" src="../design-html/images/girl-group-itzy-attend-a-red-carpet-event-at-the-mnet-asian-news-photo-1639422911.jpg" alt=""/>
                         <button onclick="Toggle()" className="material-symbols-outlined main-like-btn">
-                            <span id="like-btn-1" className="material-symbols-outlined">favorite</span>
+                            <span className="like-btn-1 material-symbols-outlined">favorite</span>
                         </button>
                     </div>
 
@@ -27,7 +27,7 @@ return <>
                 <div className="main-content-box">
                     <div className="main-img-box"> <img className="main-img" src="../design-html/images/girl-group-itzy-attend-a-red-carpet-event-at-the-mnet-asian-news-photo-1639422911.jpg" alt=""/>
                         <button onclick="Toggle()" className="material-symbols-outlined main-like-btn">
-                            <span id="like-btn-1" className="material-symbols-outlined">favorite</span>
+                            <span className="like-btn-1 material-symbols-outlined">favorite</span>
                         </button>
                     </div>
             
@@ -40,7 +40,7 @@ return <>
             <div className="main-content-box">
                 <div className="main-img-box"> <img className="main-img" src="../design-html/images/girl-group-itzy-attend-a-red-carpet-event-at-the-mnet-asian-news-photo-1639422911.jpg" alt=""/>
                     <button onclick="Toggle()" className="material-symbols-outlined main-like-btn">
-                        <span id="like-btn-1" className="material-symbols-outlined">favorite</span>
+                        <span className="like-btn-1 material-symbols-outlined">favorite</span>
                     </button>
                 </div>
 
@@ -53,17 +53,16 @@ return <>
           </div>
         </div>
 
-
         <div className="main-content-page">
             <div className="main-content-header">
                 <h1 className="main-h1" >Recently Added</h1>
-                <Link to="" className="view_all">View all</Link>
+                <Link to="/main-view-all" className="view_all">View all</Link>
             </div>
             <div className="row">
             <div className="main-content-box">
                 <div className="main-img-box"> <img className="main-img" src="../design-html/images/girl-group-itzy-attend-a-red-carpet-event-at-the-mnet-asian-news-photo-1639422911.jpg" alt=""/>
                     <button onclick="Toggle()" className="material-symbols-outlined main-like-btn">
-                        <span id="like-btn-1" className="material-symbols-outlined">favorite</span>
+                        <span className="like-btn-1 material-symbols-outlined">favorite</span>
                     </button>
                 </div>
                     <div className="child-div">
@@ -76,7 +75,7 @@ return <>
                 <div className="main-content-box">
                     <div className="main-img-box"> <img className="main-img" src="../design-html/images/girl-group-itzy-attend-a-red-carpet-event-at-the-mnet-asian-news-photo-1639422911.jpg" alt=""/>
                         <button onclick="Toggle()" className="material-symbols-outlined main-like-btn">
-                            <span id="like-btn-1" className="material-symbols-outlined">favorite</span>
+                            <span className="like-btn-1 material-symbols-outlined">favorite</span>
                         </button>
                     </div>
             
@@ -89,7 +88,7 @@ return <>
             <div className="main-content-box">
                 <div className="main-img-box"> <img className="main-img" src="../design-html/images/girl-group-itzy-attend-a-red-carpet-event-at-the-mnet-asian-news-photo-1639422911.jpg" alt=""/>
                     <button onclick="Toggle()" className="material-symbols-outlined main-like-btn">
-                        <span id="like-btn-1" className="material-symbols-outlined">favorite</span>
+                        <span className="like-btn-1 material-symbols-outlined">favorite</span>
                     </button>
                 </div>
                     <div className="child-div">
@@ -101,7 +100,7 @@ return <>
             <div className="main-content-box">
                 <div className="main-img-box"> <img className="main-img" src="../design-html/images/girl-group-itzy-attend-a-red-carpet-event-at-the-mnet-asian-news-photo-1639422911.jpg" alt=""/>
                     <button onclick="Toggle()" className="material-symbols-outlined main-like-btn">
-                        <span id="like-btn-1" className="material-symbols-outlined">favorite</span>
+                        <span className="like-btn-1 material-symbols-outlined">favorite</span>
                     </button>
                 </div>
                     <div className="child-div">
@@ -112,7 +111,7 @@ return <>
             <div className="main-content-box">
                 <div className="main-img-box"> <img className="main-img" src="../design-html/images/girl-group-itzy-attend-a-red-carpet-event-at-the-mnet-asian-news-photo-1639422911.jpg" alt=""/>
                     <button onclick="Toggle()" className="material-symbols-outlined main-like-btn">
-                        <span id="like-btn-1" className="material-symbols-outlined">favorite</span>
+                        <span className="like-btn-1 material-symbols-outlined">favorite</span>
                     </button>
                 </div>
                     <div className="child-div">
@@ -123,7 +122,7 @@ return <>
             <div className="main-content-box">
                 <div className="main-img-box"> <img className="main-img" src="../design-html/images/girl-group-itzy-attend-a-red-carpet-event-at-the-mnet-asian-news-photo-1639422911.jpg" alt=""/>
                     <button onclick="Toggle()" className="material-symbols-outlined main-like-btn">
-                        <span id="like-btn-1" className="material-symbols-outlined">favorite</span>
+                        <span className="like-btn-1 material-symbols-outlined">favorite</span>
                     </button>
                 </div>
                     <div className="child-div">
@@ -134,7 +133,7 @@ return <>
             <div className="main-content-box">
                 <div className="main-img-box"> <img className="main-img" src="../design-html/images/girl-group-itzy-attend-a-red-carpet-event-at-the-mnet-asian-news-photo-1639422911.jpg" alt=""/>
                     <button onclick="Toggle()" className="material-symbols-outlined main-like-btn">
-                        <span id="like-btn-1" className="material-symbols-outlined">favorite</span>
+                        <span className="like-btn-1 material-symbols-outlined">favorite</span>
                     </button>
                 </div>
                     <div className="child-div">
@@ -145,7 +144,7 @@ return <>
             <div className="main-content-box">
                 <div className="main-img-box"> <img className="main-img" src="../design-html/images/girl-group-itzy-attend-a-red-carpet-event-at-the-mnet-asian-news-photo-1639422911.jpg" alt=""/>
                     <button onclick="Toggle()" className="material-symbols-outlined main-like-btn">
-                        <span id="like-btn-1" className="material-symbols-outlined">favorite</span>
+                        <span className="like-btn-1 material-symbols-outlined">favorite</span>
                     </button>
                 </div>
                     <div className="child-div">
@@ -156,7 +155,7 @@ return <>
             <div className="main-content-box">
                 <div className="main-img-box"> <img className="main-img" src="../design-html/images/girl-group-itzy-attend-a-red-carpet-event-at-the-mnet-asian-news-photo-1639422911.jpg" alt=""/>
                     <button onclick="Toggle()" className="material-symbols-outlined main-like-btn">
-                        <span id="like-btn-1" className="material-symbols-outlined">favorite</span>
+                        <span className="like-btn-1 material-symbols-outlined">favorite</span>
                     </button>
                 </div>
                     <div className="child-div">
@@ -171,13 +170,13 @@ return <>
         <div className="main-content-page">
             <div className="main-content-header">
                 <h1 className="main-h1" >Coming Soon</h1>
-                <Link to="" className="view_all">View all</Link>
+                <Link to="/main-view-all" className="view_all">View all</Link>
             </div>
             <div className="row">
             <div className="main-content-box">
                 <div className="main-img-box"> <img className="main-img" src="../design-html/images/girl-group-itzy-attend-a-red-carpet-event-at-the-mnet-asian-news-photo-1639422911.jpg" alt=""/>
                     <button onclick="Toggle()" className="material-symbols-outlined main-like-btn">
-                        <span id="like-btn-1" className="material-symbols-outlined">favorite</span>
+                        <span className="like-btn-1 material-symbols-outlined">favorite</span>
                     </button>
                 </div>
                     <div className="child-div">
@@ -190,7 +189,7 @@ return <>
                 <div className="main-content-box">
                     <div className="main-img-box"> <img className="main-img" src="../design-html/images/girl-group-itzy-attend-a-red-carpet-event-at-the-mnet-asian-news-photo-1639422911.jpg" alt=""/>
                         <button onclick="Toggle()" className="material-symbols-outlined main-like-btn">
-                            <span id="like-btn-1" className="material-symbols-outlined">favorite</span>
+                            <span className="like-btn-1 material-symbols-outlined">favorite</span>
                         </button>
                     </div>
             
@@ -203,7 +202,7 @@ return <>
             <div className="main-content-box">
                 <div className="main-img-box"> <img className="main-img" src="../design-html/images/girl-group-itzy-attend-a-red-carpet-event-at-the-mnet-asian-news-photo-1639422911.jpg" alt=""/>
                     <button onclick="Toggle()" className="material-symbols-outlined main-like-btn">
-                        <span id="like-btn-1" className="material-symbols-outlined">favorite</span>
+                        <span className="like-btn-1 material-symbols-outlined">favorite</span>
                     </button>
                 </div>
                     <div className="child-div">
@@ -215,7 +214,7 @@ return <>
             <div className="main-content-box">
                 <div className="main-img-box"> <img className="main-img" src="../design-html/images/girl-group-itzy-attend-a-red-carpet-event-at-the-mnet-asian-news-photo-1639422911.jpg" alt=""/>
                     <button onclick="Toggle()" className="material-symbols-outlined main-like-btn">
-                        <span id="like-btn-1" className="material-symbols-outlined">favorite</span>
+                        <span className="like-btn-1 material-symbols-outlined">favorite</span>
                     </button>
                 </div>
                     <div className="child-div">
@@ -226,7 +225,7 @@ return <>
             <div className="main-content-box">
                 <div className="main-img-box"> <img className="main-img" src="../design-html/images/girl-group-itzy-attend-a-red-carpet-event-at-the-mnet-asian-news-photo-1639422911.jpg" alt=""/>
                     <button onclick="Toggle()" className="material-symbols-outlined main-like-btn">
-                        <span id="like-btn-1" className="material-symbols-outlined">favorite</span>
+                        <span className="like-btn-1 material-symbols-outlined">favorite</span>
                     </button>
                 </div>
                     <div className="child-div">
@@ -237,7 +236,7 @@ return <>
             <div className="main-content-box">
                 <div className="main-img-box"> <img className="main-img" src="../design-html/images/girl-group-itzy-attend-a-red-carpet-event-at-the-mnet-asian-news-photo-1639422911.jpg" alt=""/>
                     <button onclick="Toggle()" className="material-symbols-outlined main-like-btn">
-                        <span id="like-btn-1" className="material-symbols-outlined">favorite</span>
+                        <span className="like-btn-1 material-symbols-outlined">favorite</span>
                     </button>
                 </div>
                     <div className="child-div">
@@ -248,7 +247,7 @@ return <>
             <div className="main-content-box">
                 <div className="main-img-box"> <img className="main-img" src="../design-html/images/girl-group-itzy-attend-a-red-carpet-event-at-the-mnet-asian-news-photo-1639422911.jpg" alt=""/>
                     <button onclick="Toggle()" className="material-symbols-outlined main-like-btn">
-                        <span id="like-btn-1" className="material-symbols-outlined">favorite</span>
+                        <span className="like-btn-1 material-symbols-outlined">favorite</span>
                     </button>
                 </div>
                     <div className="child-div">
@@ -259,7 +258,7 @@ return <>
             <div className="main-content-box">
                 <div className="main-img-box"> <img className="main-img" src="../design-html/images/girl-group-itzy-attend-a-red-carpet-event-at-the-mnet-asian-news-photo-1639422911.jpg" alt=""/>
                     <button onclick="Toggle()" className="material-symbols-outlined main-like-btn">
-                        <span id="like-btn-1" className="material-symbols-outlined">favorite</span>
+                        <span className="like-btn-1 material-symbols-outlined">favorite</span>
                     </button>
                 </div>
                     <div className="child-div">
@@ -270,7 +269,7 @@ return <>
             <div className="main-content-box">
                 <div className="main-img-box"> <img className="main-img" src="../design-html/images/girl-group-itzy-attend-a-red-carpet-event-at-the-mnet-asian-news-photo-1639422911.jpg" alt=""/>
                     <button onclick="Toggle()" className="material-symbols-outlined main-like-btn">
-                        <span id="like-btn-1" className="material-symbols-outlined">favorite</span>
+                        <span className="like-btn-1 material-symbols-outlined">favorite</span>
                     </button>
                 </div>
                     <div className="child-div">
@@ -282,7 +281,7 @@ return <>
           </div>
         </div>
 
-        <div className="temp-links">
+        {/* <div className="temp-links">
         <Link to="/" >Main</Link>
         <Link to="/main-view-all" >Main view all</Link>
         <Link to="/log-in" >Log In</Link>
@@ -296,7 +295,7 @@ return <>
         <Link to="/qr" >QR</Link>
         <Link to="/stream" >Stream</Link>
         <Link to="/search" >Advanced Search</Link>
-        </div>
+        </div> */}
 </div>
 </>
 }

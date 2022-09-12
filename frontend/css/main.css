@@ -99,7 +99,8 @@
 
     }
 
-    #like-button i:hover {
+    .like-btn-1:hover {
         cursor: pointer;
+        color: rgb(255, 0, 0, 1 );
 
     }
