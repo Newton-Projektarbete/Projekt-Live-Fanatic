@@ -5,8 +5,8 @@ function SignUp(){
     <div className="body">
     <div clasName="signup-body">
         <form className="signup">
-            <legend>Sign up</legend>
-            <div className = "email">
+            <h2>Sign up</h2>
+            <div className = "email-signup">
                 <input type="text" className="input-text" placeholder="Email"/>
             </div>
     

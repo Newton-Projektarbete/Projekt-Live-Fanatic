@@ -1,31 +1,37 @@
 import { Link } from "react-router-dom";
-function Concert(){
+function Concert() {
     return <>
-    <div className="body">
-        <div className="concert_content">
+<div className="body">
+    <div className="concert_content">
         <div className="title_info">
 
             <div className="title_content">
-                <h1 className="concert-title-h1">Slam Poetry Bonga Freejazz Jam for Dummies</h1>
+                <h1 className="concert-title-h1">Slam Poetry Bonga Free Jazz Jam for Dummies</h1>
                 <button onclick="Toggle()" className="like_button"><i
                         className="material-symbols-outlined like-concert">favorite</i></button>
             </div>
 
             <div className="info">
-                <i className="fa-so fa-calendar-days"></i>
+            <span class="material-symbols-outlined">
+                    calendar_month
+            </span>
                 <p>Thursday 8 september 2022</p>
-                <i className="fa-so fa-clock"></i>
+                <span class="material-symbols-outlined">
+                    schedule
+            </span>
                 <p>7:30pm</p>
                 <p>|</p>
-                <i className="fa-so fa-location-dot"></i>
+                <span class="material-symbols-outlined">
+                    location_on
+            </span>
                 <p>Andy's garage</p>
             </div>
 
             <div className="line_up">
                 <p>Line-up:</p>
-                <p>Static plants</p>
-                <p>Purge!</p>
-                <p>Cacti pillow</p>
+                <a>Static plants</a>
+                <a>Purge!</a>
+                <a>Cacti pillow</a>
             </div>
 
             <div className="button_content">
@@ -38,21 +44,18 @@ function Concert(){
             </div>
             
             <div className="tickets_left">
-                <p>5 tickets left!</p>
+                <p>5 tickets remaining!</p>
             </div>
-            
-        </div>
-
-        <div className="right_content">
-            <div className="concert_image">
-
-
             </div>
-
-        </div>
-    </div>  
+            <div className="right_content">
+                    <div className="concert_image">
+                    </div>
+            </div>
+        
     </div>
+</div>
+
     </>
-    }
-    
-    export default Concert
+}
+
+export default Concert

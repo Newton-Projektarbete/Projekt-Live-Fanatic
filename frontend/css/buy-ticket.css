@@ -117,10 +117,3 @@
   grid-area: info3;
   text-align: center;
 }
-.buy-ticket-btn{
-  background-color: rgba(0, 88, 169, 100%);
-  color: white;
-  font-size: x-large;
-  grid-area: main4;
-  border-radius: 20px;
-}

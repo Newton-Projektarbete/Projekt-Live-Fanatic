@@ -1,6 +1,6 @@
     .view_all {
         text-decoration: none;
-        color: rgba(23, 62, 129, 1);
+        Color: rgba(48, 149, 184, 1);
     }
 
     .row {
@@ -99,7 +99,8 @@
 
     }
 
-    #like-button i:hover {
+    .like-btn-1:hover {
         cursor: pointer;
+        color: rgb(255, 0, 0, 1 );
 
     }
