@@ -3,8 +3,11 @@ body{
 }
 
 button{
+    background-color: rgb(74, 166, 230, 1);
     color: white;
-    background-color: rgba(74, 166, 230, 1);
+    border: none;
+    border-radius: 5px;
+    height: 30px;
 }
 
 p{
@@ -74,3 +77,28 @@ header>a:hover{
 .videoPlayer{
     z-index: -1;
   }
+
+button:hover{
+    background-color: rgba(48, 149, 184, 1);
+    color: black;
+}
+
+/* .global-icons{
+    background-color: rgba(48, 149, 184, 1);
+    color: black;
+}
+
+.global-icons:hover{
+   
+    color: goldenrod;
+} */
+
+span{
+
+    color: black;
+}
+
+span:hover{
+   
+    color: goldenrod;
+}

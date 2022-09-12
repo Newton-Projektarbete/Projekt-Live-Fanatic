@@ -4,7 +4,6 @@
 @import url("main.css");
 
 @import url("stream.css");
-@import url("header.css");
 @import url("confirm-payment.css");
 @import url("advanced-search.css");
 @import url("profile.css");
@@ -14,8 +13,11 @@
 @import url("buy-ticket.css");
 @import url("signup.css");
 @import url("main-view-all.css");
+@import url("artist.css");
+
 
 @import url("default.css");
+@import url("header.css");
 *{
     box-sizing: border-box;
 }
@@ -26,6 +28,7 @@ html, body, #root{
 body{
     padding: 0;
     margin: 0;
+    height: 200vh;
     max-width: 100%;
 }
 

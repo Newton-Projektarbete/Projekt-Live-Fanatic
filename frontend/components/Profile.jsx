@@ -18,9 +18,9 @@ function Profile(){
                     <table>
                         <tr className="table-header">
                             <th></th>
-                            <th>Concert</th>
-                            <th>Date</th>
-                            <th>Location</th>
+                            <th>Concert:</th>
+                            <th>Date:</th>
+                            <th>Location:</th>
                         </tr>
 
                         <tr>
@@ -29,11 +29,12 @@ function Profile(){
                             <td className="profile-td">2022.12.12</td>
                             <td className="profile-td">Stockholm, Globen</td>
                             <td className="profile-td">
+                            
                                 <a href="#">
-                                    <span className="material-symbols-outlined">print</span>
+                                    <span className="material-symbols-outlined global-icons">print</span>
                                 </a>
                                 <a href="#">
-                                    <span className="material-symbols-outlined">qr_code</span>
+                                    <span className="material-symbols-outlined global-icons">qr_code</span>
                                 </a>
                             </td>
 
@@ -69,9 +70,9 @@ function Profile(){
                     <table>
                         <tr className="table-header">
                             <th></th>
-                            <th>Concert</th>
-                            <th>Date</th>
-                            <th>Location</th>
+                            <th>Concert:</th>
+                            <th>Date:</th>
+                            <th>Location:</th>
                         </tr>
 
                         <tr>
@@ -104,9 +105,9 @@ function Profile(){
                     <table>
                         <tr className="table-header">
                             <th></th>
-                            <th>Concert</th>
-                            <th>Date</th>
-                            <th>Location</th>
+                            <th>Concert:</th>
+                            <th>Date:</th>
+                            <th>Location:</th>
                         </tr>
 
                         <tr>
