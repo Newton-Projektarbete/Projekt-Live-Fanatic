@@ -40,7 +40,12 @@
     margin-top: 8px;
     float: right;
     cursor: pointer;
-    border: none
+    border: none;
+    font-family: inherit;
+  }
+
+  .login-btn:hover{
+    color: black;
   }
 
   .topnav a:hover {
@@ -164,7 +169,7 @@
   }
 
   .dropdown-content a:hover {
-    background-color: red;
+    background-color: rgb(129, 116, 116);
 
   }
 
@@ -188,7 +193,6 @@
     align-items: center;
     justify-content: flex-end;
 }
-
 
 
 .cart-btn{
@@ -236,7 +240,7 @@
 
 .like-btn{
   margin: 5px;
-  color: rgba(19, 230, 47, 1);
+  color: white;
   font-size: 24px;
   cursor: pointer; 
   font-variation-settings: 
