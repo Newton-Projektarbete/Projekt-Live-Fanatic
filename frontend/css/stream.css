@@ -62,3 +62,7 @@
     background-color: rgba(221, 221, 221, 1);
     color: black;
   }
+
+  .videoPlayer{
+    z-index: -1;
+  }

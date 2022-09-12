@@ -4,7 +4,7 @@ function LogIn(){
     return <>
     <div className="body">
         <form className="login">
-            <legend>Login</legend>
+            <h2>Log in</h2>
             <div className = "email">
                 <input type="text" className="input-text" placeholder="Email"/>
             </div>

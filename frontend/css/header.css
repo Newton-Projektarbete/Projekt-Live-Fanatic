@@ -9,6 +9,7 @@
     background-color: rgba(48, 149, 184, 1);
     width: 100%;
     max-height: 100px;
+    z-index: 1;
   }
 
   .nav-right{
@@ -24,23 +25,30 @@
     text-decoration: none;
     font-size: 17px;
     background-color: rgba(48, 149, 184, 1);
+    
   }
 
-.a-nav-btn{
-    margin: 0;
-    padding: 0;
-}
+  .a-default:hover{
+    text-decoration: none;
+  }
 
   .login-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     float: right;
     background-color: rgba(48, 149, 184, 1);
     color: white;
     padding: 6px 10px;
     font-size: 17px;
-    margin-top: 8px;
     float: right;
     cursor: pointer;
-    border: none
+    border: none;
+    font-family: inherit;
+  }
+
+  .login-btn:hover{
+    color: black;
   }
 
   .topnav a:hover {
@@ -50,15 +58,17 @@
 
   .signup-btn {
     /* display: none;  // to hide button */
-    background-color: rgba(0, 88, 169, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(74, 166, 230, 1);
     color: white;
     padding: 6px 10px;
     border-radius: 10px;
     font-size: 17px;
-    margin-top: 8px;
-    margin-right: 5px;
     float: right;
     cursor: pointer;
+    border: solid 1.5px white;
   }
 
   .profile-btn{
@@ -73,11 +83,6 @@
     cursor: pointer;
   }
 
-  .signup-btn:hover {
-    background-color: rgba(221, 221, 221, 1);
-    color: black;
-  }
-
 .search-container {
     float: right;
     margin-right: 16px;
@@ -86,16 +91,39 @@
 .search-field{
     display: flex;
     justify-content: flex-start;
+    flex-direction: row;
+    height: min-content;
 }
 
+.search-field-form{
+  display: grid;
+  margin: 0;
+  padding: 0;
+}
+
+.search-field-input{
+  display: flex;
+  margin: 0;
+  padding: 5px;
+  grid-column: 1;
+  grid-row: 1;
+}
+.search-field-icon{
+  display: flex;
+  grid-column: 1;
+  grid-row: 1;
+  color: black;
+  justify-self: flex-end;
+  align-self: center;
+  margin: 0;
+  padding: 0;
+}
+
+
   .topnav input[type=text] {
-    padding: 6px;
-    margin-top: 8px;
     font-size: 17px;
     border: none;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-
+    border-radius: 10px;
   }
 
   .topnav .search-container button {
@@ -114,6 +142,7 @@
   .placeholder:hover {
     background-color: rgba(221, 221, 221, 1);
     color: black;
+  
   }
 
   img {
@@ -128,17 +157,11 @@
     overflow: hidden;
   }
 
-  .dropbtn {
-    background-color: rgba(48, 149, 184, 1);
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    outline: none;
-    background-color: inherit;
-    font-family: inherit;
-    margin: 0;
+  .dropdown-content>a:hover{
+    text-decoration:none;
   }
+
+  
 
   .dropdown-content {
     overflow: overlay;
@@ -164,7 +187,7 @@
   }
 
   .dropdown-content a:hover {
-    background-color: red;
+    background-color: rgb(129, 116, 116);
 
   }
 
@@ -188,7 +211,6 @@
     align-items: center;
     justify-content: flex-end;
 }
-
 
 
 .cart-btn{
@@ -231,12 +253,11 @@
 .like-btn, .like-amount{
   grid-column: 1;
   grid-row: 1;
-  
 }
 
 .like-btn{
   margin: 5px;
-  color: rgba(19, 230, 47, 1);
+  color: white;
   font-size: 24px;
   cursor: pointer; 
   font-variation-settings: 
@@ -247,11 +268,33 @@
 
 }
 
+
+
 .like-btn:hover{
     color: goldenrod;
-    background-color: rgba(48, 149, 184, 1)
+    background-color: rgba(48, 149, 184, 1);
+
 }
+
+.like-link:hover{
+  text-decoration: none;
+}
+
+
 
 .like-btn:after{
       content:attr(value);
+  }
+
+  .dropbtn {
+    background-color: rgba(48, 149, 184, 1);
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+
   }

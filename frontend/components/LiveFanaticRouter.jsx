@@ -23,16 +23,16 @@ function LiveFanaticRouter(){
     </div>
 
     <div className="dropdown">
-        <button className="dropbtn">Genre
+        <div className="dropbtn">Genre
             <i className="fa fa-caret-down"></i>
-        </button>
+        </div>
 
         <div className="dropdown-content">
             <ul className="genre-list"></ul>
             <Link to="#">Hiphop</Link>
             <Link to="#">Rock</Link>
-            <Link to="#">JLinkss</Link>
-            <Link to="#">DLinknce</Link>
+            <Link to="#">Jazz</Link>
+            <Link to="#">Dance</Link>
             <Link to="#">House</Link>
         </div>
     </div>
@@ -45,9 +45,9 @@ function LiveFanaticRouter(){
 
         <div className="search-container">
             <div className="search-field">
-                <form action="/action_page.php">
-                    <input type="text" placeholder="Search.." name="search"/>
-                        <button type="submit"><i className="fa fa-search"></i></button>
+                <form action="/action_page.php" className="search-field-form">
+                    <input className="search-field-input" type="text" placeholder="Search.." name="search"/>
+                    <span className="material-symbols-outlined search-field-icon">search</span>
                 </form>
             </div>
 
@@ -71,10 +71,10 @@ function LiveFanaticRouter(){
 
         <div>
             <Link to="/log-in" className="a-nav-btn">
-                <button className="login-btn">Login</button>
+                <button className="login-btn">Log in</button>
             </Link>
             <Link to="/sign-up" className="a-nav-btn">
-                <button className="signup-btn">Signup</button>
+                <button className="signup-btn">Sign up</button>
             </Link>
 
             <Link to="/profile" className="a-nav-btn">
@@ -84,6 +84,7 @@ function LiveFanaticRouter(){
         </div>
 
     </div>
+
 </header>
         <Routes>
             <Route path="/" element={<Main />} />
@@ -100,12 +101,23 @@ function LiveFanaticRouter(){
             <Route path="/stream" element={ < Stream />} />
             <Route path="/confirm-payment" element={ < ConfirmPayment />} />
         </Routes>
-        <footer>
-{/*             <nav>
-                <h1>CopyRight example</h1>
-                <Link to="/">Main page</Link>
-            </nav> */}
+        <div className="footer">
+        <footer >
+        <Link to="/" >Main</Link>
+        <Link to="/main-view-all" >Main view all</Link>
+        <Link to="/log-in" >Log In</Link>
+        <Link to="/sign-up" >Sign Up</Link>
+        <Link to="/profile" >Profile</Link>
+        <Link to="/profile-edit" >Profile Edit</Link>
+        <Link to="/concert" >Concert</Link>
+        <Link to="/artist" >Artist</Link>
+        <Link to="/buy-ticket" >Buy Ticket</Link>
+        <Link to="/confirm-payment" >Confirm Payment</Link>
+        <Link to="/qr" >QR</Link>
+        <Link to="/stream" >Stream</Link>
+        <Link to="/search" >Advanced Search</Link>
         </footer>
+        </div>
     </Router>
 }
 
