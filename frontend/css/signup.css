@@ -8,6 +8,7 @@
     flex-direction:column;
     align-items: center;
     row-gap: 10px;
+
 }
 
 .signup-btn-box{
@@ -39,4 +40,9 @@
     color: rgba(23, 62, 129, 1);
     text-decoration: none;
     
+}
+
+.email-signup{
+    margin-bottom: none;
+    color: red;
 }
