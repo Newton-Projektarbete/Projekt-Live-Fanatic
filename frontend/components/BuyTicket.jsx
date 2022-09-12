@@ -9,22 +9,22 @@ function BuyTicket(){
           <h1 className="buy-ticket-h1">Buy Your Ticket</h1>
           <Link to="/artist">
           <img className="buy-ticket-img"
-            src="https://i.ytimg.com/vi/88ki680YlB4/maxresdefault.jpg"
+            src="../images/franaddressescrowd500.jpg"
             alt=""
           />
           </Link>
 
           <h2 className="buy-ticket-h2">Info:</h2>
-          <p className="buy-ticket-p">Slim Shady</p>
+          <p className="buy-ticket-p">Slam Poetry Bonga Free Jazz Jam for Dummies</p>
 
-          <h2 className="buy-ticket-h2">Artist:</h2>
-          <p className="buy-ticket-p">Eminem</p>
+          <h2 className="buy-ticket-h2">Artists:</h2>
+          <p className="buy-ticket-p">Static plants <br /> Purge! <br />Cacti pillow</p>
 
           <h2 className="buy-ticket-h2">Date:</h2>
-          <p className="buy-ticket-p">2022-09-09</p>
+          <p className="buy-ticket-p">Thursday 8 september 2022 7:30pm</p>
 
           <h2 className="buy-ticket-h2">Location:</h2>
-          <p className="buy-ticket-p">Malmö</p>
+          <p className="buy-ticket-p">Andy's garage</p>
         </div>
 
         <div className="rightBuy">

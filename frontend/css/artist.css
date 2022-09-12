@@ -9,7 +9,7 @@
     justify-content: space-around;
 }
 
-.title_background{
+.artist-title_background{
     position: absolute;
     height: 75px;
     width: 100%;
@@ -18,7 +18,7 @@
     padding-top: 30px;
 }
 
-.title_info{
+.artist-title_info{
     display: flex;
     flex-direction: column;
     padding-top: 5vh;
@@ -27,38 +27,38 @@
 
 }
 
-.right_content{
+.artist-right_content{
     display: flex;
     flex-direction: column;
 }
 
-.title_content{
+.artist-title_content{
     display: flex;
     flex-direction: row;
     padding: 0;
     margin: 0;
 }
 
-.title_content>h1{
+.artist-title_content>h1{
     margin-bottom: 0;
     margin: 0;
 }
 
-.info{
+.artist-info{
     display: flex;
     flex-direction: row;
     padding-left: 15px;
     margin-bottom: 60px
 
 }
-.info>p{
+.artist-info>p{
     margin-right: 10px;
     margin-top: 0px;
     margin-bottom: 0px;
     padding-left: 10px;
 }
 
-.like_button{
+.artist-like_button{
     display: flex;
     margin: 10px;
     padding: 0;
@@ -66,7 +66,7 @@
     font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 48;
 }
 
-.like_button_icon{
+.artist-like_button_icon{
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -75,14 +75,14 @@
     width: 100%;
 }
 
-.line_up{
+.artist-line_up{
     display: flex;
     flex-direction: column;
     padding-top: 10px;
 }
 
 
-.line_up>p{
+.artist-line_up>p{
     margin: 0;
     padding-left: 15px;
 }
@@ -96,20 +96,20 @@
     position: relative;
 }
 
-.concert_image{
+.artist-concert_image{
     background: url("../images/houseconcert.jpg") 50% 50% no-repeat;
     width: 120px;
     height: 120px;
     margin-right: 10px;
 }
 
-.concert_content{
+.artist-concert_content{
     display: flex;
     flex-direction:row;
     padding-left: 10px;
 }
 
-.buy_button{
+.artist-buy_button{
     width: 120px;
     height: 30px;
     background-color: rgb(237, 176, 78);
@@ -118,12 +118,12 @@
     margin: 0;
 }
 
-.buy_button:hover{
+.artist-buy_button:hover{
     background-color: rgb(247, 204, 118);
 
 }
 
-.stream_button{
+.artist-stream_button{
     width: 120px;
     height: 30px;
     background-color: rgb(51, 185, 51);
@@ -131,12 +131,12 @@
     cursor: pointer;
 }
 
-.stream_button:hover{
+.artist-stream_button:hover{
     background-color: rgb(102, 240, 102);
 
 }
 
-.default_button{
+.artist-default_button{
     width: fit-content;
     padding: 0;
 }
@@ -174,21 +174,21 @@
     margin: 2px 0 2px 0;
 }
 
-.button_content{
+.artist-button_content{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.concert_box{
+.artist-concert_box{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     column-gap: 10px;
 }
 
-.sample_content{
+.artist-sample_content{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -196,7 +196,7 @@
     margin: 0;
 }
 
-.sample_p{
+.artist-sample_p{
     margin: 2px;
     padding: 0;
 
