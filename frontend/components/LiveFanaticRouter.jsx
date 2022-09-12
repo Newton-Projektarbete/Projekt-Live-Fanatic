@@ -101,7 +101,8 @@ function LiveFanaticRouter(){
             <Route path="/stream" element={ < Stream />} />
             <Route path="/confirm-payment" element={ < ConfirmPayment />} />
         </Routes>
-        <footer className="temp-links">
+        <div className="footer">
+        <footer >
         <Link to="/" >Main</Link>
         <Link to="/main-view-all" >Main view all</Link>
         <Link to="/log-in" >Log In</Link>
@@ -116,6 +117,7 @@ function LiveFanaticRouter(){
         <Link to="/stream" >Stream</Link>
         <Link to="/search" >Advanced Search</Link>
         </footer>
+        </div>
     </Router>
 }
 

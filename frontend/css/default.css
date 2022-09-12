@@ -69,3 +69,8 @@ header>a{
 header>a:hover{
     text-decoration: none;
 }
+
+
+.videoPlayer{
+    z-index: -1;
+  }
