@@ -12,20 +12,26 @@ function Concert(){
             </div>
 
             <div className="info">
-                <i className="fa-so fa-calendar-days"></i>
+            <span class="material-symbols-outlined">
+                    calendar_month
+            </span>
                 <p>Thursday 8 september 2022</p>
-                <i className="fa-so fa-clock"></i>
+                <span class="material-symbols-outlined">
+                    schedule
+            </span>
                 <p>7:30pm</p>
                 <p>|</p>
-                <i className="fa-so fa-location-dot"></i>
+                <span class="material-symbols-outlined">
+                    location_on
+            </span>
                 <p>Andy's garage</p>
             </div>
 
             <div className="line_up">
                 <p>Line-up:</p>
-                <p>Static plants</p>
-                <p>Purge!</p>
-                <p>Cacti pillow</p>
+                <a>Static plants</a>
+                <a>Purge!</a>
+                <a>Cacti pillow</a>
             </div>
 
             <div className="button_content">

@@ -46,6 +46,13 @@
     padding-left: 10px;
 }
 
+.info>a{
+    margin-right: 10px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-left: 10px;
+}
+
 .like_button{
     background: transparent;
     border: none;
@@ -144,4 +151,12 @@
 .like-concert:hover{
     color: red;
     background-color: none;
+}
+
+.info>span:hover{
+    color: black;
+}
+
+.line_up>a{
+    margin-left: 15px;
 }
