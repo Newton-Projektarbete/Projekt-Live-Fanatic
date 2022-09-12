@@ -8,7 +8,7 @@ function QR() {
 
           <img
             className="QR-img"
-            src="/images/qrKod.svg"
+            src="/images/qrKod (1).svg"
             alt=""
           />
 
