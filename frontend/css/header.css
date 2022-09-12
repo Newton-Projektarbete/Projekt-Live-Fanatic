@@ -31,18 +31,15 @@
     text-decoration: none;
   }
 
-.a-nav-btn{
-    margin: 0;
-    padding: 0;
-}
-
   .login-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     float: right;
     background-color: rgba(48, 149, 184, 1);
     color: white;
     padding: 6px 10px;
     font-size: 17px;
-    margin-top: 8px;
     float: right;
     cursor: pointer;
     border: none;
@@ -60,13 +57,14 @@
 
   .signup-btn {
     /* display: none;  // to hide button */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: rgb(74, 166, 230, 1);
     color: white;
     padding: 6px 10px;
     border-radius: 10px;
     font-size: 17px;
-    margin-top: 8px;
-    margin-right: 5px;
     float: right;
     cursor: pointer;
     border: solid 1.5px white;
@@ -84,11 +82,6 @@
     cursor: pointer;
   }
 
-  .signup-btn:hover {
-    background-color: rgba(48, 149, 184, 1);
-    color: black;
-  }
-
 .search-container {
     float: right;
     margin-right: 16px;
@@ -97,16 +90,39 @@
 .search-field{
     display: flex;
     justify-content: flex-start;
+    flex-direction: row;
+    height: min-content;
 }
 
+.search-field-form{
+  display: grid;
+  margin: 0;
+  padding: 0;
+}
+
+.search-field-input{
+  display: flex;
+  margin: 0;
+  padding: 5px;
+  grid-column: 1;
+  grid-row: 1;
+}
+.search-field-icon{
+  display: flex;
+  grid-column: 1;
+  grid-row: 1;
+  color: black;
+  justify-self: flex-end;
+  align-self: center;
+  margin: 0;
+  padding: 0;
+}
+
+
   .topnav input[type=text] {
-    padding: 6px;
-    margin-top: 8px;
     font-size: 17px;
     border: none;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-
+    border-radius: 10px;
   }
 
   .topnav .search-container button {

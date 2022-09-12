@@ -45,9 +45,9 @@ function LiveFanaticRouter(){
 
         <div className="search-container">
             <div className="search-field">
-                <form action="/action_page.php">
-                    <input type="text" placeholder="Search.." name="search"/>
-                        <button type="submit"><i className="fa fa-search"></i></button>
+                <form action="/action_page.php" className="search-field-form">
+                    <input className="search-field-input" type="text" placeholder="Search.." name="search"/>
+                    <span className="material-symbols-outlined search-field-icon">search</span>
                 </form>
             </div>
 

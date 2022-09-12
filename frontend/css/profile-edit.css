@@ -14,5 +14,8 @@
     display: flex;
     flex-direction: row;
     column-gap: 10px;
+    border-radius: 5px;
     
 }
+
+

@@ -3,7 +3,6 @@
 @import url("https://kit.fontawesome.com/0ac7bacbee.js");
 
 @import url("stream.css");
-@import url("header.css");
 @import url("confirm-payment.css");
 @import url("advanced-search.css");
 @import url("profile.css");
@@ -15,6 +14,7 @@
 @import url("main.css");
 @import url("main-view-all.css");
 
+@import url("header.css");
 @import url("default.css");
 *{
     box-sizing: border-box;
@@ -24,6 +24,11 @@ body{
     margin: 0;
     height: 200vh;
     max-width: 100%;
+}
+
+input{
+    margin: 0;
+    padding: 0;
 }
 
 .body{

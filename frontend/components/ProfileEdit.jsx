@@ -4,8 +4,8 @@ function ProfileEdit(){
     return <><div className="body">
         <div className="profile-edit">
         <form className="edit-page">
-            <legend>Edit Profile Info</legend>
-            <div className = "email">
+            <h2>Edit Profile</h2>
+            <div className = "email-edit">
                 <input type="text" className="input-text" placeholder="Change Email"/>
             </div>
     

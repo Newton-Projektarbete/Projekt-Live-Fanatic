@@ -3,8 +3,11 @@ body{
 }
 
 button{
+    background-color: rgb(74, 166, 230, 1);
     color: white;
-    background-color: rgba(74, 166, 230, 1);
+    border: none;
+    border-radius: 5px;
+    height: 30px;
 }
 
 p{
