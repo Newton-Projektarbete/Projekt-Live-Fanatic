@@ -60,7 +60,7 @@
 
   .signup-btn {
     /* display: none;  // to hide button */
-    background-color: rgba(0, 88, 169, 1);
+    background-color: rgb(74, 166, 230, 1);
     color: white;
     padding: 6px 10px;
     border-radius: 10px;
@@ -69,6 +69,7 @@
     margin-right: 5px;
     float: right;
     cursor: pointer;
+    border: solid 1.5px white;
   }
 
   .profile-btn{
@@ -84,7 +85,7 @@
   }
 
   .signup-btn:hover {
-    background-color: rgba(221, 221, 221, 1);
+    background-color: rgba(48, 149, 184, 1);
     color: black;
   }
 

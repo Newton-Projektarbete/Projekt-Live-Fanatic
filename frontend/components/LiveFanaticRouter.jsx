@@ -71,10 +71,10 @@ function LiveFanaticRouter(){
 
         <div>
             <Link to="/log-in" className="a-nav-btn">
-                <button className="login-btn">Login</button>
+                <button className="login-btn">Log in</button>
             </Link>
             <Link to="/sign-up" className="a-nav-btn">
-                <button className="signup-btn">Signup</button>
+                <button className="signup-btn">Sign up</button>
             </Link>
 
             <Link to="/profile" className="a-nav-btn">
