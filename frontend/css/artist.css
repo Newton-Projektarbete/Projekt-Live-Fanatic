@@ -1,16 +1,15 @@
-#artist_parent{
+.artist_parent{
     display: flex; 
     flex-direction: column;
 }
 
-#artist_content{
+.artist_content{
     display: flex;
     flex-direction: row;
-    margin-top: 100px;
     justify-content: space-around;
 }
 
-#title_background{
+.title_background{
     position: absolute;
     height: 75px;
     width: 100%;
@@ -28,58 +27,67 @@
 
 }
 
-#title_content{
+.right_content{
+    display: flex;
+    flex-direction: column;
+}
+
+.title_content{
     display: flex;
     flex-direction: row;
     padding: 0;
     margin: 0;
 }
 
-#title_content>h1{
+.title_content>h1{
     margin-bottom: 0;
     margin: 0;
 }
 
-#info{
+.info{
     display: flex;
     flex-direction: row;
     padding-left: 15px;
     margin-bottom: 60px
 
 }
-#info>p{
+.info>p{
     margin-right: 10px;
     margin-top: 0px;
     margin-bottom: 0px;
     padding-left: 10px;
 }
 
-#like_button{
-    position: relative;
-    background: transparent;
-    border: none;
-    font-size: 30px;
-    outline: none;
+.like_button{
+    display: flex;
+    margin: 10px;
+    padding: 0;
     color: grey;
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 48;
 }
 
-#like-button i:hover{
-    cursor: pointer;
+.like_button_icon{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: grey;
+    width: 100%;
 }
 
-#line_up{
+.line_up{
     display: flex;
     flex-direction: column;
     padding-top: 10px;
 }
 
 
-#line_up>p{
+.line_up>p{
     margin: 0;
     padding-left: 15px;
 }
 
-#artist_image{
+.artist_image{
     background-size: contain;
     background-position: 50% 50%;
     background-repeat: no-repeat;
@@ -88,34 +96,34 @@
     position: relative;
 }
 
-#concert_image{
+.concert_image{
     background: url("../images/houseconcert.jpg") 50% 50% no-repeat;
     width: 120px;
     height: 120px;
     margin-right: 10px;
 }
 
-#concert_content{
+.concert_content{
     display: flex;
     flex-direction:row;
     padding-left: 10px;
 }
 
-#buy_button{
+.buy_button{
     width: 120px;
     height: 30px;
     background-color: rgb(237, 176, 78);
     border-radius: 5px;
     cursor: pointer;
-    margin-left: 10px;
+    margin: 0;
 }
 
-#buy_button:hover{
+.buy_button:hover{
     background-color: rgb(247, 204, 118);
 
 }
 
-#stream_button{
+.stream_button{
     width: 120px;
     height: 30px;
     background-color: rgb(51, 185, 51);
@@ -123,7 +131,7 @@
     cursor: pointer;
 }
 
-#stream_button:hover{
+.stream_button:hover{
     background-color: rgb(102, 240, 102);
 
 }
@@ -145,7 +153,7 @@
     flex-direction: row;
     align-items: flex-start;
     border: 1px solid rgb(0, 0, 0, 0.4);
-    padding: 0 20px 0 20px;
+    padding: 0 5px 0 5px;
     column-gap: 20px;
 }
 .artist-img{
@@ -176,6 +184,8 @@
 .concert_box{
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    column-gap: 10px;
 }
 
 .sample_content{
