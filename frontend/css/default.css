@@ -69,3 +69,28 @@ header>a{
 header>a:hover{
     text-decoration: none;
 }
+
+button:hover{
+    background-color: rgba(48, 149, 184, 1);
+    color: black;
+}
+
+/* .global-icons{
+    background-color: rgba(48, 149, 184, 1);
+    color: black;
+}
+
+.global-icons:hover{
+   
+    color: goldenrod;
+} */
+
+span{
+
+    color: black;
+}
+
+span:hover{
+   
+    color: goldenrod;
+}
