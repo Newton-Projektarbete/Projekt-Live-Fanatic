@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concert page</title>
+    <link rel="stylesheet" href="../css/artist.css">
+    <script src="https://kit.fontawesome.com/0ac7bacbee.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div id="artist_content">
+        <div class="title_info box">
+            <div id="title_content">
+                <h1>Cacti Pillow</h1>
+            </div>
+            <div id="info" class="box">
+                <p>Biography...</p>
+            </div>
+            <h2>Upcoming shows:</h2>
+            <div id="concert_content">
+                <div id="concert_image"></div>
+                <p>Basement lemonade gathering</p>
+                <button onclick="Toggle()" id="like_button" class="default_button"><i
+                    class="fa-sharp fa-solid fa-heart"></i></button>
+            </div>
+            <button id="buy_button" class="default_button">Buy ticket</button>
+        </div>
+
+        <div id="right_content">
+            <div id="artist_image">
+
+
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        let likebtn = document.getElementById('like_button');
+
+        function Toggle() {
+            if (likebtn.style.color == "red") {
+                likebtn.style.color = "grey"
+            }
+            else {
+                likebtn.style.color = "red"
+            }
+        }
+    </script>
+
+
+</body>
+
+</html>
