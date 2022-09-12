@@ -6,19 +6,19 @@ function ProfileEdit(){
         <form className="edit-page">
             <h2>Edit Profile</h2>
             <div className = "email-edit">
-                <input type="text" className="input-text" placeholder="Change Email"/>
+                <input type="text" className="input-text" placeholder="New email"/>
             </div>
     
             <div className = "username">
-                <input type="text" className="input-text" placeholder="Change Username"/>
+                <input type="text" className="input-text" placeholder="New username"/>
             </div>
     
             <div className="password">
-                <input type="password" className="input-text" placeholder="Change Password"/>
+                <input type="password" className="input-text" placeholder="New password"/>
             </div>
     
             <div className="password">
-                <input type="password" className="input-text" placeholder="Repeat new Password"/>
+                <input type="password" className="input-text" placeholder="Repeat password"/>
             </div>
             
             <div className="edit-buttons">
