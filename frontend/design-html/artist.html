@@ -4,9 +4,74 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Concert page</title>
+    <link rel="stylesheet" href="../css/artist.css">
+    <script src="https://kit.fontawesome.com/0ac7bacbee.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-    
+    <div id="artist_parent">
+        <div id="artist_content">
+            <div class="title_info box">
+                <div id="title_content">
+                    <h1>Cacti Pillow</h1>
+                </div>
+                <div id="info" class="box">
+                    <p>Biography...</p>
+                </div>
+                <div class="artist-result-box">
+                    <h2>Upcoming shows:</h2>
+
+                    <div class="artist-result-content">
+                        <Link to="">
+                        <img class="artist-img" src="../images/houseconcert.jpg" alt="">
+                        </Link>
+                        <div class="concert_box">
+                            <div class="artist-result-info">
+                                <Link to="">Basement lemonade gathering</Link>
+                                <p class="artist-p">2022.12.12</p>
+                                <p class="artist-p">Stockholm, Globen</p>
+                            </div>
+                            <div class="button_content">
+                                <button id="buy_button">Buy ticket</button>
+                                <button onclick="Toggle()" id="like_button"><i
+                                        class="fa-sharp fa-solid fa-heart"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="right_content">
+                <img id="artist_image" src="../images/franaddressescrowd500.jpg" alt="">
+                <div class="sample_content">
+                    <h2>Preview samples:</h2>
+                    <Link to="">
+                    <p class="sample_p">Sample 1</p>
+                    </Link>
+                    <Link to="">
+                    <p class="sample_p">Sample 2</p>
+                    </Link>
+                    <Link to="">
+                    <p class="sample_p">Sample 3</p>
+                    </Link>
+                </div>
+
+            </div>
+        </div>
+
+
+        <script>
+            let likebtn = document.getElementById('like_button');
+
+            function Toggle() {
+                if (likebtn.style.color == "red") {
+                    likebtn.style.color = "grey"
+                }
+                else {
+                    likebtn.style.color = "red"
+                }
+            }
+        </script>
 </body>
 </html>
