@@ -31,8 +31,8 @@ function LiveFanaticRouter(){
             <ul className="genre-list"></ul>
             <Link to="#">Hiphop</Link>
             <Link to="#">Rock</Link>
-            <Link to="#">JLinkss</Link>
-            <Link to="#">DLinknce</Link>
+            <Link to="#">Jazz</Link>
+            <Link to="#">Dance</Link>
             <Link to="#">House</Link>
         </div>
     </div>

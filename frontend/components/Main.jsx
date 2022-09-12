@@ -170,7 +170,7 @@ return <>
 
         <div className="main-content-page">
             <div className="main-content-header">
-                <h1 className="main-h1" >Comming Soon</h1>
+                <h1 className="main-h1" >Coming Soon</h1>
                 <Link to="" className="view_all">View all</Link>
             </div>
             <div className="row">

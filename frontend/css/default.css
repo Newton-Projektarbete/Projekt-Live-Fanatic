@@ -36,6 +36,12 @@ input{
 
 a{
     Color: rgba(48, 149, 184, 1);
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
+
 }
 
 header{
@@ -58,4 +64,8 @@ header>button{
 header>a{
     color: rgba(0, 88, 169, 1) ;
     border-color: Black;
+    
+}
+header>a:hover{
+    text-decoration: none;
 }

@@ -24,6 +24,11 @@
     text-decoration: none;
     font-size: 17px;
     background-color: rgba(48, 149, 184, 1);
+    
+  }
+
+  .a-default:hover{
+    text-decoration: none;
   }
 
 .a-nav-btn{
@@ -119,6 +124,7 @@
   .placeholder:hover {
     background-color: rgba(221, 221, 221, 1);
     color: black;
+  
   }
 
   img {
@@ -131,6 +137,10 @@
   .dropdown {
     float: left;
     overflow: hidden;
+  }
+
+  .dropdown-content>a:hover{
+    text-decoration:none;
   }
 
   .dropbtn {
@@ -235,7 +245,6 @@
 .like-btn, .like-amount{
   grid-column: 1;
   grid-row: 1;
-  
 }
 
 .like-btn{
@@ -251,10 +260,19 @@
 
 }
 
+
+
 .like-btn:hover{
     color: goldenrod;
-    background-color: rgba(48, 149, 184, 1)
+    background-color: rgba(48, 149, 184, 1);
+
 }
+
+.like-link:hover{
+  text-decoration: none;
+}
+
+
 
 .like-btn:after{
       content:attr(value);
