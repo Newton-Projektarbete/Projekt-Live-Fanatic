@@ -46,8 +46,12 @@ function Concert() {
             <div className="tickets_left">
                 <p>5 tickets remaining!</p>
             </div>
-
-        </div>
+            </div>
+            <div className="right_content">
+                    <div className="concert_image">
+                    </div>
+            </div>
+        
     </div>
 </div>
 
