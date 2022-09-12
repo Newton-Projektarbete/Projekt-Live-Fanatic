@@ -1,20 +1,18 @@
 import { Link } from "react-router-dom";
 
 function QR() {
-  return (
-    <>
+  return <>
       <div className="body">
-        <div>
-          <h2>QR Code</h2>
-        </div>
-        <div>
+        <div className="QRbody">
+          <h2 className="QR-h2">QR Code</h2>
+
           <img
-            src="https://skapaqrkod.nu/Content/img/default-preview-qr.svg"
+            className="QR-img"
+            src="/images/qrKod.svg"
             alt=""
           />
-        </div>
-        <div>
-          <table>
+
+          <table className="QR-info">
             <tr className="table-header">
               <th></th>
               <th>Concert</th>
@@ -38,16 +36,12 @@ function QR() {
                 <a href="#">
                   <span className="material-symbols-outlined">print</span>
                 </a>
-                <a href="#">
-                  <span className="material-symbols-outlined">qr_code</span>
-                </a>
               </td>
             </tr>
           </table>
         </div>
       </div>
     </>
-  );
 }
 
 export default QR;
