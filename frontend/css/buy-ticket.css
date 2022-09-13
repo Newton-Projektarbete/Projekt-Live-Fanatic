@@ -117,3 +117,12 @@
   grid-area: info3;
   text-align: center;
 }
+.buy-ticket-btn{
+  cursor: pointer;
+  display: flex;
+  background-color: rgba(48, 149, 184, 1);
+  color: white;
+  padding-top: 5px;
+  font-size: 17px;
+  font-family: inherit;
+}
