@@ -48,7 +48,7 @@ function BuyTicket() {
                 className="buy-ticket-btn"
                 onclick="document.location=/confirm-payment"
               >
-                Proceed to Checkout
+                Checkout
               </button>
             </Link>
           </div>
