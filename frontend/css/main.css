@@ -55,6 +55,10 @@
         border: none;
     }
 
+    .main-like-btn:hover{
+        text-decoration: none;
+    }
+
     .main-like-btn>span {
         display: flex;
         justify-content: flex-end;
@@ -99,8 +103,14 @@
 
     }
 
+    .like-btn-1{
+        color: white;
+        text-decoration: none;
+    }
+
     .like-btn-1:hover {
         cursor: pointer;
         color: rgb(255, 0, 0, 1 );
+        text-decoration: none;
 
     }
