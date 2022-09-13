@@ -15,9 +15,9 @@ function QR() {
           <table className="QR-info">
             <tr className="table-header">
               <th></th>
-              <th>Concert</th>
-              <th>Date</th>
-              <th>Location</th>
+              <th>Concert:</th>
+              <th>Date:</th>
+              <th>Location:</th>
             </tr>
 
             <tr>

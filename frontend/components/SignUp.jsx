@@ -19,14 +19,14 @@ function SignUp(){
             </div>
     
             <div className="password">
-                <input type="password" className="input-text" placeholder="Repeat Password"/>
+                <input type="password" className="input-text" placeholder="Repeat password"/>
             </div>
             
             <div className="signup-btn-box">
                 <Link to="#" className ="parent-signup-page-btn">
                 <input className ="signup-page-btn" type="submit" value="Sign up"/>
                 </Link>
-                <Link to="/log-in" className= "link">Already have a account? Login
+                <Link to="/log-in" className= "link">Already have an account? Login
                 </Link>
             </div>     
         </form>
