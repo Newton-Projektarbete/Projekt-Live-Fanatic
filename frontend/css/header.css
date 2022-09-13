@@ -219,7 +219,7 @@
 }
 
 .cart-btn:hover{
-    color: goldenrod;
+    color: black;
     background-color: rgba(48, 149, 184, 1);
 }
 
@@ -271,7 +271,7 @@
 
 
 .like-btn:hover{
-    color: goldenrod;
+    color: red;
     background-color: rgba(48, 149, 184, 1);
 
 }

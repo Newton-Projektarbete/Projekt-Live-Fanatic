@@ -1,8 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
 @import url("https://kit.fontawesome.com/0ac7bacbee.js");
-@import url("main.css");
+@import url("default.css");
 
+@import url("main.css");
 @import url("stream.css");
 @import url("confirm-payment.css");
 @import url("advanced-search.css");
@@ -14,12 +15,9 @@
 @import url("signup.css");
 @import url("main-view-all.css");
 @import url("QR.css"); 
-    
 @import url("artist.css");
-
-
-@import url("default.css");
 @import url("header.css");
+    
 *{
     box-sizing: border-box;
 }
