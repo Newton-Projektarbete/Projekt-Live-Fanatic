@@ -1,0 +1,66 @@
+import { Link } from "react-router-dom";
+import  { useState} from "react"
+import { useEffect } from "react";
+import e from "react"; 
+
+function LogIn(){
+
+    const [inputEmail, setEmail] = useState('')
+    const [inputPass, setPass] = useState('')
+    const [state, setState] = useState({
+        email: "",
+        password: "",
+    });
+
+
+    const handleLogin = ()=>{
+        setState(prev=>({...prev, inputEmail}))
+        setState(prev=>({...prev, inputPass}))
+    }
+
+    useEffect(()=>{
+        (async()=>{
+            let res = await fetch('/data/login', {
+                method: 'POST',
+                headers:{
+                    'Content-Type':'application/json'
+                },
+                body:JSON.stringify({
+                    email: inputEmail,
+                    password: inputPass
+                })
+            })
+            console.log(res)
+            console.log("useEffect runs")
+        })
+    },[handleLogin])
+ 
+
+    return <>
+    <div className="body">
+        <form className="login">
+            <h2>Log in</h2>
+            
+            <div className = "email">
+                <input className="input-text" placeholder="Email" type="text" onChange={(e) => setEmail(e.target.value)} />
+            </div>
+    
+            <div className="password">
+                <input className="input-text" placeholder="Password" type="text" onChange={ (e) => setPass(e.target.value)} />
+                <br></br>
+                {`{
+                    email:${state.email},
+                    password:${state.password}
+                }`}
+            </div>
+            
+            <div className="buttons">
+                <button className ="login-page-btn"
+                onClick={handleLogin}
+                >Log in
+                </button>
+            </div>   
+        </form>
+    </div>   
+    </>
+    }

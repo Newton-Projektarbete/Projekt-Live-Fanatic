@@ -1,0 +1,57 @@
+function LogIn(){
+
+    const [name, setName] = useState('');
+    const [state, setState] = useState({
+        name: "",
+        selected: false,
+    });
+
+    const handleAdd = ()=>{
+        setState((prev) => ({...prev, name }))
+    }
+    const handleSelect = ()=>{
+        setState((prev) => ({...prev, selected: true }))
+    }
+
+    useEffect(()=>{
+        console.log("The state has changed, useEffect runs!")
+    },[state])
+    
+
+/*  
+const [user, setUser] = useState({});
+const id = useLocation().pathname.split("/")[0];
+
+   useEffect(() => {
+        fetch(`/data/users/${id}`)
+        .then((res) => res.json())
+        .then((data) => {
+            setUser(data);
+        });
+        console.log("useEffect runs")
+    }, [id]) */
+
+    return <>
+{/*     <div className="body">
+        <p>Role: {user.roles}</p>
+        <p>Email: {user.email}</p>
+        <Link to="/log-in">Fetch User 1</Link>
+    </div> */}
+
+
+    <div className="body">
+
+        <input type="text" onChange={(e) => setName(e.target.value)} />
+        <button onClick={handleAdd}>Add Name</button>
+        <button onClick={handleSelect}>Select</button>
+        {`{
+            name:${state.name},
+            selected:${state.selected.toString()}
+        }`}
+    </div>    
+
+
+    </>
+    }
+   
+    export default LogIn 

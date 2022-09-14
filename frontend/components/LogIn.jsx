@@ -1,72 +1,116 @@
-import { Link } from "react-router-dom";
-import  { useState} from "react"
+import { Link, useLocation } from "react-router-dom";
+import { useState } from "react"
 import { useEffect } from "react";
-import LoginPost from "./LoginPost"
+import e from "react";
+import axios from "axios"
 
-function Example() {
-    // Declare a new state variable, which we'll call "count"  
-    const [count, setCount] = useState(0);
-    return (
-      <div>
-        <p>You clicked {count} times</p>
-        <button onClick={() => setCount(count + 1)}>
-          Click me
-        </button>
-      </div>
-    );
-  }
+function LogIn() {
 
-  function test(){
-    useEffect(()=>{
-        (async()=>{
-            let res = await fetch('/data/login', {
-                method: 'POST',
-                headers:{
-                    'Content-Type':'application/json'
-                },
-                body:JSON.stringify({
-                    email: userEmail,
-                    password: userPass
-                })
-            })
-            console.log(res)
-            console.log("I got called")
+        const [user, setUser] = useState({
+            user_id: 0,
+            email: "",
+            password: "",
+            roles: "",
+            username: ""
         })
-    },[])
-  }
 
-function LogIn(){
+        const handleChange = (e)=>{
+            setUser(prev=>({...prev, [e.target.name]:e.target.value}))
+          }
 
- /*    const handleSubmit=(e)=>{
+/*     
+email: "exempel@nodehilll.com",
+            password: "abc123",
+const [user, setUser] = useState(null) */
 
+    const loginUser = () => {
+        fetch('/data/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+                email: user.email,
+                password: user.password,
+            })
+        }).then(function (response) {
+            console.log(response)
+            return response.json();
+        }).then(function (myJson) {
+            console.log(myJson);
+        });
     }
+
+    useEffect(() => {
+        loginUser()
+    }, [loginUser])
+
+    /* 
+        useEffect(()=>{
+            (async()=>{
+                let res = await fetch('/data/users', {
+                    method: 'GET',
+                    headers:{
+                        'Content-Type':'application/json'
+                    }
+                })
+                console.log(res)
+            })
+        },[]) */
+
+    /*     const handleLogin = ()=>{
+            useEffect(()=>{
+                (async()=>{
+                    let res = await fetch('/data/login', {
+                        method: 'POST',
+                        headers:{
+                            'Content-Type':'application/json'
+                        },
+                        body:JSON.stringify({
+                            email: user.email,
+                            password: user.password
+                        })
+                    })
+                    console.log(res)
+                    console.log(user)
+                })
+            },[]) 
+    }*/
+
+    /*     
+    email: 'exempel@nodehilll.com',
+            password: 'abc123'
+    email: inputEmail,
+            password: inputPass
+
+            onChange={(e) => setEmail(e.target.value)}
  */
-    return <>
-    <div className="body">
-        <form className="login">
-            <h2>Log in</h2>
-            
-            <div className = "email">
-                <input className="input-text" placeholder="Email" type="text" />
-            </div>
-    
-            <div className="password">
-                <input className="input-text" placeholder="Password" type="text" />
-            </div>
-            
-            <div className="buttons">
-                <button className ="login-page-btn" type="submit" 
-                onClick={LoginPost}
-                /* onClick={()=> useEffect} */
-                >Log in</button>
 
-                <Link to="/sign-up">
-                <button className ="login-page-signup-btn" type="submit">Sign up</button>
-                </Link>
-            </div>   
-        </form>
-    </div>   
+    return <>
+        <div className="body">
+            <form className="login">
+                <h2>Log in</h2>
+
+                <div className="email">
+                    <input className="input-text" placeholder="Email" type="text" name="email" onChange={handleChange} />
+                </div>
+
+                <div className="password">
+                    <input className="input-text" placeholder="Password" type="text" name="password" onChange={handleChange} />
+                </div>
+
+                <div className="buttons">
+                    <button className="login-page-btn"
+                    onClick={loginUser}
+                    >Log in
+                    </button>
+                </div>
+            </form>
+        </div>
+
+
     </>
-    }
-    
-    export default LogIn
+}
+
+export default LogIn 

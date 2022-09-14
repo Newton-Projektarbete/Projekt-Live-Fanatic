@@ -1,6 +1,6 @@
 import LogIn from "./LogIn"
 
-async function LoginPost() {
+/* async function LoginPost() {
     let res = await fetch('/data/login', {
         method: 'POST',
         headers:{
@@ -13,7 +13,7 @@ async function LoginPost() {
     })
     console.log(res)
     console.log("LoginPost got called")
-}
+} */
 
 /* 
 email: 'exempel@nodehilll.com',
@@ -21,4 +21,4 @@ email: 'exempel@nodehilll.com',
 email: props.email,
             password: props.pass
             */
-export default LoginPost
+/* export default LoginPost */
