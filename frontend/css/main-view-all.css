@@ -116,14 +116,19 @@
     justify-content: flex-end;
     align-items: flex-start;
     margin-top: 5px;
+    margin-right: 5px;
     height: 200px;
     font-variation-settings:
         'FILL' 1,
         'wght' 700,
         'GRAD' 0,
         'opsz' 48;
+    color: white; 
 }
 
+.main-view-all-like-icon:hover{
+    color: red;
+}
 .main-view-all-child-div{
     display: flex;
     justify-content: space-between;
