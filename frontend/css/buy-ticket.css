@@ -1,37 +1,19 @@
-.buy-ticket-h1{
-  color: rgba(74, 166, 230, 1);
-  grid-area: title;
-  justify-self: center;
-  align-self: center;
-}
-
-.buy-ticket-h2{
-  color: rgba(36, 93, 165, 1);
-}
-
-.buy-ticket-p{
-  color: black;
-  padding-top: 5%;
-}
-
 .containerBuy {
-  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin-top: 10vh;
+  /* height: 100vh;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: center; */
 }
-
-.buy-ticket-img{
-  width: 13vw;
-  height: 13vh;
-  object-fit: cover;
-  max-width: 100%;
-  border-radius: 20px;
-  grid-area: img;
-}
-
 .leftBuy {
-  margin-left: 10vw;
+  display: flex;
+  flex-direction: row;
+  column-gap: 20px;
+  /* margin-left: 10vw;
   width: 50vh;
   height: 100vh;
   display: grid;
@@ -43,11 +25,13 @@
     ". main4 info4";
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 400px 100px 100px 100px 100px;
-  grid-gap: 10px;
+  grid-gap: 10px; */
 }
 
 .rightBuy {
-  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center;
   align-content: center;
   margin-right: 10vw;
   width: 50vh;
@@ -61,13 +45,79 @@
   grid-template-columns: 200px 200px;
   grid-template-rows: 75px 75px 75px 75px;
   grid-gap: 10px;
-  justify-content: space-evenly;
+  justify-content: space-evenly; */
 }
 
+.buy-ticket-h1{
+  display: flex;
+  justify-content: center;
+  /* color: rgba(74, 166, 230, 1);
+  grid-area: title;
+  justify-self: center;
+  align-self: center; */
+}
+
+.buy-ticket-info-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.buy-ticket-h2-info{
+  margin: 0;
+  /* color: rgba(36, 93, 165, 1); */
+}
+
+.artist-info-container{
+  margin-top: 20px;
+}
+.buy-ticket-h2-artist{
+  margin-top: 0;
+  align-items: flex-start;
+}
+
+.buy-ticket-p{
+  color: black;
+  margin: 0;
+  padding: 0;
+}
+
+.buy-ticket-img{
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 20px;
+
+  /* grid-area: img; */
+}
+.buy-ticket-btn{
+  cursor: pointer;
+  display: flex;
+  background-color: rgba(48, 149, 184, 1);
+  color: white;
+  padding: 5px;
+  font-size: 17px;
+  /* font-family: inherit; */
+}
+
+.rightBuy-btn{
+  display: flex;
+  align-self: center;
+}
+
+.rightBuy-subContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  column-gap: 30px;
+}
+
+/* 
 .rightBuy > h2 {
   border: 1px solid black;
   border-radius: 10px;
-  padding: 2%;
+  padding: 2%; 
 }
 
 .leftBuy > h2:nth-of-type(1) {
@@ -116,13 +166,4 @@
 .rightBuy > h2:nth-of-type(6) {
   grid-area: info3;
   text-align: center;
-}
-.buy-ticket-btn{
-  cursor: pointer;
-  display: flex;
-  background-color: rgba(48, 149, 184, 1);
-  color: white;
-  padding-top: 5px;
-  font-size: 17px;
-  font-family: inherit;
-}
+} */
