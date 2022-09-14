@@ -59,6 +59,12 @@ module.exports = function(host, server){
                 methods: ["GET"],
                 description:"Get audio stream",
                 link: host  + "/data/audio_streams/1"
+            },
+            {
+                route:"/data/concert",
+                methods: ["GET"],
+                description:"Get concert list",
+                link: host  + "/data/concert"
             }
         ])
     })
