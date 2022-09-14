@@ -23,7 +23,7 @@ email: "exempel@nodehilll.com",
             password: "abc123",
 const [user, setUser] = useState(null) */
 
-    const loginUser = () => {
+/*     const loginUser = () => {
         fetch('/data/login', {
             method: 'POST',
             headers: {
@@ -41,6 +41,27 @@ const [user, setUser] = useState(null) */
             console.log(myJson);
         });
     }
+ */
+    const loginUser = () => {
+
+        fetch('/data/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+                email: user.email,
+                password: user.password,
+            })
+        }).then(function (response) {
+            console.log(response)
+            return response.json();
+        }).then(function (myJson) {
+            console.log(myJson);
+        });
+}
+
 
     useEffect(() => {
         loginUser()
