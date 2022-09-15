@@ -87,8 +87,21 @@
 
     .child-div {
         display: flex;
+        flex-direction: column;
         justify-content: space-between;
         margin: 0 5px 5px 5px;
+        max-width: 200px;
+    }
+
+    .child-div-div{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        column-gap: 5px;
+    }
+    .child-div-div>p{
+        margin: 0px;
+        
     }
 
     .like_button {
