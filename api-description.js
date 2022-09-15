@@ -64,7 +64,7 @@ module.exports = function(host, server){
                 route:"/data/concert",
                 methods: ["GET"],
                 description:"Get concert list",
-                link: host  + "/data/concert/concert_id"
+                link: host  + "/data/concert"
             },
             {
                 route:"/data/concert/1",
