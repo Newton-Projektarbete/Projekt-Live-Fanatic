@@ -3,7 +3,7 @@ const accessList = require('../access-list.json')
 module.exports = function(request, response, next){
 
   if(!request.path.split('/')[1].includes('data')){
-    return next() // this acl only protects the routes under /data
+   return next() // this acl only protects the routes under /data
   }
 
   // we may have user roles from the db, OR the anonymous role from here

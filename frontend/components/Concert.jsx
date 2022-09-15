@@ -1,30 +1,43 @@
 import { Link } from "react-router-dom";
+import {useEffect } from 'react'
+import { useState } from "react";
+
 function Concert() {
+    const [concert, setConcert] = useState([]);
 
     useEffect (()=>{
-        console.log(location)
-        fetch('/data/concert', {
-            method: 'GET'
-        }),[]}
-        );
+        const getConcert= async ()=>{
+            const res= await fetch('/data/concert');
+            const getdata = await res.json();
+            setConcert(getdata);
+            
+        }
+        getConcert();
+        
+        },[]);
+        
 
 
     return <>
 <div className="body">
     <div className="concert_content">
         <div className="title_info">
+        {concert.map( (getCon) => {
+            return(
+                <div key={getCon}>
+                <h1 className="concert-title-h1">{getCon.concert_name}</h1>
 
-            <div className="title_content">
-                <h1 className="concert-title-h1">Slam Poetry Bonga Free Jazz Jam for Dummies</h1>
-                <div className="like_button"><i
-                        className="material-symbols-outlined like-concert">favorite</i></div>
-            </div>
+                <div className="title_content">
+                
+            <div className="like_button"><i
+                    className="material-symbols-outlined like-concert">favorite</i></div>
+             </div>
 
-            <div className="info">
+             <div className="info">
             <span className="material-symbols-outlined">
                     calendar_month
             </span>
-                <p>Thursday 8 september 2022</p>
+                <p>{getCon.performance_date}</p>
                 <span className="material-symbols-outlined">
                     schedule
             </span>
@@ -55,15 +68,20 @@ function Concert() {
             <div className="tickets_left">
                 <p>5 tickets remaining!</p>
             </div>
-            </div>
             <div className="right_content">
                     <div className="concert_image">
                     </div>
             </div>
-        
-    </div>
-</div>
-
+            
+                </div>
+            
+            )
+            
+        })}
+        </div>
+    
+        </div>
+        </div>
     </>
 }
 
