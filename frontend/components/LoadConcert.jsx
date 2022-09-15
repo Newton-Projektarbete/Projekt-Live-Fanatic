@@ -20,7 +20,7 @@ function LoadConcert(){
     <div className='body'>
         <h2>Use Effect Example</h2>
         <p>Current variable value: <em>{variableName.map(concert => 
-        <li key={concerts.id}>
+        <li key={concerts.concert_id}>
             {concert.concert_name}/{concert.location}
         </li>)}</em></p>
     </div>
