@@ -1,12 +1,11 @@
-import { useState, useEffect } from 'react'
-import reactLogo from './assets/react.svg'
+import {BrowserRouter as Router } from 'react-router-dom'
 import LiveFanaticRouter from '../components/LiveFanaticRouter'
 
 function App() {
 
-  return <>
+  return <Router>
     <LiveFanaticRouter/>  
-  </>
+  </Router>
 }
 
 export default App
