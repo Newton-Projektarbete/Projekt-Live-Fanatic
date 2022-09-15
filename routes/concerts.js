@@ -13,4 +13,10 @@ module.exports = function(server, db){
       res.json(result)
     })
 
+    server.get('/data/concert/recently-added', (req, res)=>{
+      let query = "SELECT * FROM concert ORDER BY added_date"
+      let result = db.prepare(query).all()
+      res.json(result)
+    })
+
   }
