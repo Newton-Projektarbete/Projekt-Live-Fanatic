@@ -6,6 +6,7 @@ module.exports = function(server, db){
     let query = "SELECT id, email FROM users"
     let result = db.prepare(query).all()
     res.json(result)
+    console.log(result)
   })
 
   server.get('/data/users/:id', (req, res)=>{
