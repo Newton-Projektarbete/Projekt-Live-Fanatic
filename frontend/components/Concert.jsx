@@ -1,5 +1,14 @@
 import { Link } from "react-router-dom";
 function Concert() {
+
+    useEffect (()=>{
+        console.log(location)
+        fetch('/data/concert', {
+            method: 'GET'
+        }),[]}
+        );
+
+
     return <>
 <div className="body">
     <div className="concert_content">
@@ -12,16 +21,16 @@ function Concert() {
             </div>
 
             <div className="info">
-            <span class="material-symbols-outlined">
+            <span className="material-symbols-outlined">
                     calendar_month
             </span>
                 <p>Thursday 8 september 2022</p>
-                <span class="material-symbols-outlined">
+                <span className="material-symbols-outlined">
                     schedule
             </span>
                 <p>7:30pm</p>
                 <p>|</p>
-                <span class="material-symbols-outlined">
+                <span className="material-symbols-outlined">
                     location_on
             </span>
                 <p>Andy's garage</p>
