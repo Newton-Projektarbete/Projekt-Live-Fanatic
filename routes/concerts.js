@@ -7,11 +7,11 @@ module.exports = function(server, db){
       })
 
     
-    server.get('/data/concert/1', (req, res)=>{
-      let query = "SELECT * FROM concert WHERE concert_id = 1"
+/*     server.get('/data/concert/:concert_id', (req, res)=>{
+      let query = "SELECT * FROM concert"
       let result = db.prepare(query).all()
       res.json(result)
-    })
+    }) */
 
     server.get('/data/concert/recently-added', (req, res)=>{
       let query = "SELECT * FROM concert ORDER BY added_date"

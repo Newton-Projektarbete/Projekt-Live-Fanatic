@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useState, useEffect } from 'react';
 
 function Main() {
@@ -193,7 +193,7 @@ function Main() {
 
                     <div className="child-div-div">
                         <p>Title:</p>
-                        <Link to="">{concertSortedByPerformanceDate[i].concert_name}</Link>
+                        <Link to={"/concert/" + concertSortedByPerformanceDate[i].concert_id}>{concertSortedByPerformanceDate[i].concert_name}</Link>
                     </div>
                     <div className="child-div-div">
                         <p>Artist:</p>
@@ -208,15 +208,18 @@ function Main() {
     }
 
     
-
-
-
+/*     function concertUrl() {
+        let {id} = useParams();
+        return {id}
+    }
+ */
     return <>
         <div className="body">
 
             <div className="main-content-page">
                 <div className="main-content-header">
                     <h1 className="main-h1" >Live concerts today </h1>
+                    <Link to="/concert/:id" className="view_all">View all</Link>
                     <Link to="/main-view-all" className="view_all">View all</Link>
                 </div>
                 <div className="row">
