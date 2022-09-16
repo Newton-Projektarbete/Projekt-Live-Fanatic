@@ -55,11 +55,16 @@ function LiveFanaticRouter(){
         }
     },[location.pathname, isLoggedIn])
     
-    
+    const logoutUser = () => {
 
-function header(){
+        fetch('/data/login', {
+            method: 'DELETE'
+        })
+    }
 
-    let result = "";
+function Header(){
+
+    const result = "";
         
     if(isLoggedIn && isLoaded){
         result = <header className="topnav">
@@ -118,7 +123,7 @@ function header(){
         
         <div>
             <Link to="/sign-out" className="a-nav-btn">
-                <button className="login-btn" type="button">Log out</button>
+                <button className="login-btn" onClick={logoutUser} type="button">Log out</button>
             </Link>
         
             <Link to="/profile" className="a-nav-btn">
@@ -203,7 +208,7 @@ return result
 
     return <>
     <div>
-        {header()}
+        {Header}
     </div>
     
         <Routes>
