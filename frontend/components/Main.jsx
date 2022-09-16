@@ -182,7 +182,7 @@ function Main() {
             if(today < concertSortedByPerformanceDate[i].performance_date){
                 concertArr[i] = <div className="main-content-box">
                 <div className="main-img-box"> <img className="main-img" src={
-                    variableName[i].concert_image_url} alt="" />
+                    concertSortedByPerformanceDate[i].concert_image_url} alt="" />
 
                     <div to="" onClick="Toggle()" className="material-symbols-outlined main-like-btn">
                         <span className="like-btn-1 material-symbols-outlined">favorite</span>
@@ -193,11 +193,11 @@ function Main() {
 
                     <div className="child-div-div">
                         <p>Title:</p>
-                        <Link to="">{variableName[i].concert_name}</Link>
+                        <Link to="">{concertSortedByPerformanceDate[i].concert_name}</Link>
                     </div>
                     <div className="child-div-div">
                         <p>Artist:</p>
-                        <Link to="">{variableName[i].artist_name}</Link>
+                        <Link to="">{concertSortedByPerformanceDate[i].artist_name}</Link>
                     </div>
                 </div>
             </div>
@@ -221,26 +221,6 @@ function Main() {
                 </div>
                 <div className="row">
                     {liveConcertsToday()}
-
-                    {/* <div className="main-content-box">
-                        <div className="main-img-box"> <img className="main-img" src={
-                            variableName[0].concert_image_url} alt="" />
-
-                            <div to="" onclick="Toggle()" className="material-symbols-outlined main-like-btn">
-                                <span className="like-btn-1 material-symbols-outlined">favorite</span>
-                            </div>
-                        </div>
-                        <div className="child-div">
-                            <div className="child-div-div">
-                                <p>Title:</p>
-                                <Link to="">{variableName[0].concert_name}</Link>
-                            </div>
-                            <div className="child-div-div">
-                                <p>Artist:</p>
-                                <Link to="">{variableName[0].artist_name}</Link>
-                            </div>
-                        </div>
-                    </div> */}
                 </div>
             </div>
 
