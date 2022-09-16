@@ -124,7 +124,7 @@ function Main() {
                 <div className="main-img-box"> <img className="main-img" src={
                     variableName[i].concert_image_url} alt="" />
 
-                    <div to="" onClick="Toggle()" className="material-symbols-outlined main-like-btn">
+                    <div  className="material-symbols-outlined main-like-btn">
                         <span className="like-btn-1 material-symbols-outlined">favorite</span>
                     </div>
                 </div>
@@ -154,7 +154,7 @@ function Main() {
                 <div className="main-img-box"> <img className="main-img" src={
                     concertSortedByRecently[i].concert_image_url} alt="" />
 
-                    <div to="" onClick="Toggle()" className="material-symbols-outlined main-like-btn">
+                    <div  className="material-symbols-outlined main-like-btn">
                         <span className="like-btn-1 material-symbols-outlined">favorite</span>
                     </div>
                 </div>
@@ -184,7 +184,7 @@ function Main() {
                 <div className="main-img-box"> <img className="main-img" src={
                     concertSortedByPerformanceDate[i].concert_image_url} alt="" />
 
-                    <div to="" onClick="Toggle()" className="material-symbols-outlined main-like-btn">
+                    <div className="material-symbols-outlined main-like-btn">
                         <span className="like-btn-1 material-symbols-outlined">favorite</span>
                     </div>
                 </div>

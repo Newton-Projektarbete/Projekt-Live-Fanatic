@@ -34,13 +34,16 @@ function LiveFanaticRouter() {
             setisLoaded(true)
             setisLoggedIn(myJson.loggedIn)
         });
+
+        
+
     }, []);
 
     useEffect(() => {
         if (isLoaded == false) return;
-
+        
         const currentUrl = location.pathname;
-
+        
         if (isLoggedIn) {
             if (loggedOutURLs.some(url => currentUrl === url)) {
                 navigate("/", { replace: true });
@@ -51,21 +54,11 @@ function LiveFanaticRouter() {
             }
         }
     }, [location.pathname, isLoggedIn])
+    
+    
 
-    if (!isLoaded) return;
 
-
-/*     useEffect(() => {
-        async function load() {
-            let concerts = await fetch('data/concert/')
-            concerts = await concerts.json()
-            console.log(concerts)
-            setAllConcerts(concerts)
-        }
-        load();
-    }, []) */
-
-/*     const [allConcerts, setAllConcerts] = useState([
+    const [allConcerts, setAllConcerts] = useState([
         {
             concert_id: 0,
             concert_name: "",
@@ -80,17 +73,27 @@ function LiveFanaticRouter() {
             price: 0,
             artist_name: ""
         }
-    ]) */
+    ])
 
-/*     function routesConcerts() {
-        const result = []
-        for (let i = 0; i < allConcerts.length; i++) {
-            result[i] = <Route path={"/concert"+ allConcerts[i].concert_id} element={< Concert />} />
+    useEffect( ()=> {
+        async function load() {
+            let concerts = await fetch('data/concert/')
+            concerts = await concerts.json()
+            setAllConcerts(concerts)
         }
-        return result
-    } */
+        load()
+    })
 
-    return <>
+    const data = [{
+        name: "someone",
+        age: "50"
+    },
+    {
+        name: "hello",
+        age: "300"
+    },]
+    
+    return <> 
         <header className="topnav">
             <div>
                 <Link to="/">
@@ -170,8 +173,13 @@ function LiveFanaticRouter() {
             <Route path="/search" element={< AdvancedSearch />} />
             <Route path="/artist" element={< Artist />} />
             <Route path="/buy-ticket" element={< BuyTicket />} />
-            <Route path="/concert" element={< Concert />} />
-            <Route path="/concert/:concert_id" element={< Concert />} />
+            {/* <Route path="/concert" element={< Concert {...allConcerts}/>} /> */}
+            <Route path="/concert/:concert_id" element={< Concert {...data}/>} />
+    
+{/*             { 
+            allConcerts.map( (concert)=> <Link to={"/concert/" + concert.concert_id}></Link>)
+            }
+            <Route path="/concert/:concert_id" element={< Concert />}/> */}
             
             <Route path="/log-in" element={< LogIn />} />
             <Route path="/sign-up" element={< SignUp />} />
@@ -179,6 +187,7 @@ function LiveFanaticRouter() {
             <Route path="/stream" element={< Stream />} />
             <Route path="/confirm-payment" element={< ConfirmPayment />} />
         </Routes>
+ 
         <div className="footer">
             <footer >
                 <Link to="/" >Main</Link>
