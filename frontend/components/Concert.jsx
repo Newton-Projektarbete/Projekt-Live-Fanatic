@@ -16,8 +16,6 @@ function Concert() {
         
         },[]);
         
-
-
     return <>
 <div className="body">
     <div className="concert_content">
@@ -46,7 +44,7 @@ function Concert() {
                 <span className="material-symbols-outlined">
                     location_on
             </span>
-                <p>Andy's garage</p>
+                <p>{getCon.location}</p>
             </div>
 
             <div className="line_up">
