@@ -8,7 +8,7 @@ module.exports = function(server, db){
 
       request.session.passwordAttempts = request.session.passwordAttempts || 1
 
-      if (request.session.passwordAttempts > 90000) {
+      if (request.session.passwordAttempts > 9) {
         response.status(401)
         response.json({error: "Too many attempts. You must verify your account using two-factor authentication"})
         return
