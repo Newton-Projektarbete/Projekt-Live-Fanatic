@@ -6,9 +6,9 @@ module.exports = function(server, db){
         res.json(result)
       })
 
-    
-/*     server.get('/data/concert/:concert_id', (req, res)=>{
-      let query = "SELECT * FROM concert"
+
+/*     server.get("/data/concert/:concert_id", (req, res)=>{
+      let query = "SELECT * FROM concert WHERE concert_id = ?"
       let result = db.prepare(query).all()
       res.json(result)
     }) */

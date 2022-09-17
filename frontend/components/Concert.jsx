@@ -1,9 +1,69 @@
-import { Link, useParams } from "react-router-dom";
+import { Link, renderMatches, useParams } from "react-router-dom";
 import { useEffect, useState } from 'react'
 
 
 function Concert(props) {
-/*     const [variableName, variableUpdateMethod] = useState([
+    let params = useParams()
+    let id = params.concert_id - 1;
+/*     let params = useParams()
+    let id = params.concert_id - 1;
+    const concert = (id) =>{
+        const [allConcerts, setAllConcerts] = useState([
+            {
+                concert_id: 0,
+                concert_name: "",
+                performance_date: Date,
+                artist_id: 0,
+                genre: "",
+                location: "",
+                video_url: "",
+                concert_image_url: "",
+                video_name: "",
+                added_date: Date,
+                price: 0,
+                artist_name: ""
+            }
+        ])
+    
+        useEffect(() => {
+            async function load() {
+                let concerts = await fetch('data/concert/')
+                concerts = await concerts.json()
+                variableUpdateMethod(concerts[id])
+            }
+            load()
+        }, [id]);
+
+        return allConcerts
+    } */
+    
+/*     let param = useParams();
+    let id = param.concert_id - 1;
+    const [allConcerts, setAllConcerts] = useState([]) 
+
+    useEffect(()=>{
+        setAllConcerts(props)
+        console.log('useeffect in concert')
+    }, []) */
+
+
+    let oneConcert = localStorage.getItem('allConcerts')
+
+/*     useEffect(() => {
+        getApiData();
+    }, [])
+
+
+    const getApiData = async () => {
+        const response = await fetch("data/concert").then((response) => {
+            return response.json()}).then(data => {
+                setAllConcerts(data)
+            })
+        console.log('Concert Fetching data did run')
+    }*/
+
+/*     let tempId = 0
+    const [allConcerts, setAllConcerts] = useState([
         {
             concert_id: 0,
             concert_name: "",
@@ -19,29 +79,41 @@ function Concert(props) {
             artist_name: ""
         }
     ])
+    const getConcerts = async (tempId) => {
+        const res = await fetch("data/concert").then((res) => {
+            return res.json()
+        }).then(data => {
+            setAllConcerts(data[tempId])
+        })
+        return allConcerts
+    }
+    useEffect(()=> {
+        getConcerts()
+    },[]) */
+    
 
-    let params = useParams()
-    let id = params.concert_id - 1;
-
-    useEffect(() => {
-        async function load() {
-            let concerts = await fetch('data/concert/')
-            concerts = await concerts.json()
-            variableUpdateMethod(concerts)
-        }
-        load()
-    }, []);
-
-console.log(variableName[0].concert_name)
-     */
-
-    let param = useParams();
-    let id = param.concert_id -1;
-    console.log(id)
     return <>
         <div className="body">
-            <h2>HEJ </h2>
-            <p>Concert Name: {props[0].name}</p>
+            <h2>Concert </h2>
+            {/* <p>Concert Name: {allConcerts.concert_name}</p> */}
+            {/* <p>Concert Name: {concert.concert_name}</p> */}
+            {/* <p>Concert Name: {allConcerts && allConcerts[0].concert_name}</p> */}
+            {/* <p>Concert Name: {allConcerts && allConcerts[0].concert_name}</p> */}
+            {/* <p>Concert Name: {concertArr[0].concert_name}</p> */}
+            <p>Concert Name: {props[id].name}</p>
+            {/*             <p>Concert Name: {localStorage.getItem('allConcerts')}</p>
+            <p>Concert Name: {oneConcert}</p> */}
+
+
+{/*             <div>
+                {allConcerts &&
+                    allConcerts.map((con) => (
+                        <div className="item-container">
+                            Id:{con.concert_id} <div className="title">Title:{con.concert_name}</div>
+                        </div>
+                    ))}
+            </div> */}
+
         </div>
     </>
 }
@@ -108,6 +180,7 @@ export default Concert
         </div> */}
 
 
-        /* { variableName.map( (con)=> 
-            <div> {con.concert_name}</div>
-            )} */
+/* { variableName.map( (con)=>
+    <div> {con.concert_name}</div>
+    )} */
+

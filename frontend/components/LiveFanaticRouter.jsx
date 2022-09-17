@@ -14,6 +14,8 @@ import Stream from "./Stream";
 import ConfirmPayment from "./ConfirmPayment";
 import { useState, useEffect } from 'react'
 import { useNavigate, useLocation } from "react-router-dom";
+import { TempConcert } from "./TempConcert";
+import { useMemo } from "react";
 
 function LiveFanaticRouter() {
     let location = useLocation();
@@ -35,15 +37,15 @@ function LiveFanaticRouter() {
             setisLoggedIn(myJson.loggedIn)
         });
 
-        
+
 
     }, []);
 
     useEffect(() => {
         if (isLoaded == false) return;
-        
+
         const currentUrl = location.pathname;
-        
+
         if (isLoggedIn) {
             if (loggedOutURLs.some(url => currentUrl === url)) {
                 navigate("/", { replace: true });
@@ -54,9 +56,19 @@ function LiveFanaticRouter() {
             }
         }
     }, [location.pathname, isLoggedIn])
-    
-    
 
+
+    async function load() {
+        let concerts = await fetch('data/concert/')
+        concerts = await concerts.json()
+        setAllConcerts(concerts)
+         localStorage.setItem('allConcerts', JSON.stringify(allConcerts[0])) 
+    }
+
+    useEffect(() => {
+        load()
+        console.log('LiveFanaticRouter Fetching data')
+    }, [])
 
     const [allConcerts, setAllConcerts] = useState([
         {
@@ -73,27 +85,30 @@ function LiveFanaticRouter() {
             price: 0,
             artist_name: ""
         }
-    ])
-
-    useEffect( ()=> {
-        async function load() {
-            let concerts = await fetch('data/concert/')
-            concerts = await concerts.json()
-            setAllConcerts(concerts)
-        }
-        load()
-    })
+    ]) 
 
     const data = [{
-        name: "someone",
+        name: "I am page One",
         age: "50"
     },
     {
-        name: "hello",
-        age: "300"
-    },]
-    
-    return <> 
+        name: "I am page Two",
+        age: "50"
+    },
+    {
+        name: "I am page Three",
+        age: "50"
+    },
+    {
+        name: "I am page Four",
+        age: "50"
+    },
+    {
+        name: "I am page Five",
+        age: "50"
+    }]
+
+    return <>
         <header className="topnav">
             <div>
                 <Link to="/">
@@ -173,21 +188,23 @@ function LiveFanaticRouter() {
             <Route path="/search" element={< AdvancedSearch />} />
             <Route path="/artist" element={< Artist />} />
             <Route path="/buy-ticket" element={< BuyTicket />} />
-            {/* <Route path="/concert" element={< Concert {...allConcerts}/>} /> */}
-            <Route path="/concert/:concert_id" element={< Concert {...data}/>} />
-    
-{/*             { 
+            {/* <Route path="/concert" element={< Concert {...allConcerts} />} /> */}
+            <Route path="/concert/:concert_id" element={< Concert {...data} />} />
+
+            <Route path="/temp-concert" element={< TempConcert />} />
+
+            {/*             { 
             allConcerts.map( (concert)=> <Link to={"/concert/" + concert.concert_id}></Link>)
             }
             <Route path="/concert/:concert_id" element={< Concert />}/> */}
-            
+
             <Route path="/log-in" element={< LogIn />} />
             <Route path="/sign-up" element={< SignUp />} />
             <Route path="/qr" element={< QR />} />
             <Route path="/stream" element={< Stream />} />
             <Route path="/confirm-payment" element={< ConfirmPayment />} />
         </Routes>
- 
+
         <div className="footer">
             <footer >
                 <Link to="/" >Main</Link>
