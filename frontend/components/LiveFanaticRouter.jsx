@@ -113,17 +113,18 @@ function LiveFanaticRouter() {
 
 
 
-
 // new test 
 const [concerts, setConcerts] = useState([null])
-  useEffect(()=> {
+
+useEffect(()=> {
     fetchConcerts();
+    console.log('useEffect did run')
   },[])
 
   const fetchConcerts = async ()=> {
     const response = await fetch("data/concert/");
     const data = await response.json();
-    setConcerts(data);
+    setConcerts([...data]);
     console.log(concerts)
     console.log('app fetched concerts')
   }
@@ -131,6 +132,10 @@ const [concerts, setConcerts] = useState([null])
   console.log(concerts)
   console.log('--------------')
 
+  const concertArray = []
+  for(let i = 0; i > concerts.length ; i++){
+    concertArray[i] = concerts[i]
+  }
   const data = [{
     name: "one",
     age: "01"
@@ -237,9 +242,15 @@ const [concerts, setConcerts] = useState([null])
             {/* {<Route path="/concert/:concert_id" element={< Concert {...concerts} />} />} */}
 
             {/* <Route path="/concert-parent/*" element={ <ConcertParent {...concerts}/>}/> */}
-            <Route path="/concert-parent/*" element={< ConcertParent {...concerts}/>}/>
-                <Route path="/concert-parent/:id" element={<ConcertChild {...concerts}/>}/>
-            <Route/>
+            <Route path="/concert-parent/" element={< ConcertParent {...concerts} />} />
+            <Route path="/concert-parent/:id" element={<ConcertChild {...concerts}/>}/>
+            
+
+            {/* Nested Routes Parent /child */}
+            {/* <Route path="/concert-parent/" element={< ConcertParent {...concerts}/>}>
+                <Route path=":id" element={<ConcertChild {...concerts}/>}/>
+            </Route> */}
+            
 
 
         {/* <Route path="/concert" element={< Concert {...allConcerts} />} />
