@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 
 function Main() {
 
-    let today = new Date();
+ /*    let today = new Date();
     let dd = String(today.getDate()).padStart(2, '0');
     let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
     let yyyy = today.getFullYear();
@@ -202,11 +202,11 @@ function Main() {
         }
 
         return concertArr
-    }
+    } */
 
     
     return <>
-        <div className="body">
+{/*         <div className="body">
 
             <div className="main-content-page">
                 <div className="main-content-header">
@@ -238,7 +238,7 @@ function Main() {
             </div>
             </div>
             
-        </div>
+        </div> */}
     </>
 }
 

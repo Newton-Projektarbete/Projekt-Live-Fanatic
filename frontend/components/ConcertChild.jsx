@@ -14,7 +14,7 @@ function ConcertChild(concerts) {
             {/* <p>{concerts[0].concert_name}</p> */}
             {/* <p>Concert Name: {concerts[0].concert_name}</p> */}
         </div>
-        <Outlet />
+        {/* <Outlet /> */}
     </>
 }
 

@@ -18,7 +18,7 @@ import ConcertParent from "./ConcertParent";
 import ConcertChild from "./ConcertChild";
 import NotFound from "./NotFound";
 
-function LiveFanaticRouter(concerts) {
+function LiveFanaticRouter() {
     let location = useLocation();
 
     const navigate = useNavigate();
@@ -58,9 +58,7 @@ function LiveFanaticRouter(concerts) {
         }
     }, [location.pathname, isLoggedIn])
 
-    console.log('Router Fetched')
-    console.log(concerts)
-    console.log('--------------')
+
 
 /*     async function load() {
         let concerts = await fetch('data/concert/')
@@ -117,17 +115,42 @@ function LiveFanaticRouter(concerts) {
 
 
 // new test 
-/* const [concerts, setConcerts] = useState(null)
+const [concerts, setConcerts] = useState([null])
   useEffect(()=> {
     fetchConcerts();
   },[])
 
   const fetchConcerts = async ()=> {
-    const response = await fetch("data/concert");
+    const response = await fetch("data/concert/");
     const data = await response.json();
     setConcerts(data);
+    console.log(concerts)
+    console.log('app fetched concerts')
   }
- */
+  console.log('Router Fetched')
+  console.log(concerts)
+  console.log('--------------')
+
+  const data = [{
+    name: "one",
+    age: "01"
+  },
+  {
+    name: "two",
+    age: "02"
+  },
+  {
+    name: "three",
+    age: "03"
+  },
+  {
+    name: "four",
+    age: "04"
+  },
+  {
+    name: "five",
+    age: "05"
+  }]
 
 
     return <>
@@ -214,13 +237,13 @@ function LiveFanaticRouter(concerts) {
             {/* {<Route path="/concert/:concert_id" element={< Concert {...concerts} />} />} */}
 
             {/* <Route path="/concert-parent/*" element={ <ConcertParent {...concerts}/>}/> */}
-            <Route path="/concert-parent/*" element={ <ConcertParent {...concerts}/>}/>
+            <Route path="/concert-parent/*" element={< ConcertParent {...concerts}/>}/>
                 <Route path="/concert-parent/:id" element={<ConcertChild {...concerts}/>}/>
             <Route/>
 
-{/*             <Route path="/concert" element={< Concert {...allConcerts} />} />
-            <Route path="/concert/:concert_id" element={< Concert {...data} />} /> */}
 
+        {/* <Route path="/concert" element={< Concert {...allConcerts} />} />
+            <Route path="/concert/:concert_id" element={< Concert {...data} />} /> */}
             {/*             { 
             allConcerts.map( (concert)=> <Link to={"/concert/" + concert.concert_id}></Link>)
             }

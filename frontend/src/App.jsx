@@ -3,7 +3,7 @@ import {BrowserRouter as Router } from 'react-router-dom'
 import LiveFanaticRouter from '../components/LiveFanaticRouter'
 
 function App() {
-  const [concerts, setConcerts] = useState([null])
+  /* const [concerts, setConcerts] = useState([null])
   useEffect(()=> {
     fetchConcerts();
   },[])
@@ -14,11 +14,11 @@ function App() {
     setConcerts(data);
     console.log(concerts)
     console.log('app fetched concerts')
-  }
+  } */
 
   return <Router>
-    {/* <LiveFanaticRouter />   */}
-    <LiveFanaticRouter {...concerts}/>  
+    <LiveFanaticRouter />  
+    {/* <LiveFanaticRouter {...concerts}/>  */} 
   </Router>
 }
 
