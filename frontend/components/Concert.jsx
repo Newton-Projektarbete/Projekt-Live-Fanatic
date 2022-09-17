@@ -1,8 +1,9 @@
-import { Link, renderMatches, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from 'react'
+import { useMemo } from "react";
 
 
-function Concert(props) {
+function Concert(concerts) {
     let params = useParams()
     let id = params.concert_id - 1;
 /*     let params = useParams()
@@ -46,9 +47,28 @@ function Concert(props) {
         console.log('useeffect in concert')
     }, []) */
 
-
-    let oneConcert = localStorage.getItem('allConcerts')
-
+    /* const [allConcerts, setAllConcerts] = useState([
+        {
+            concert_id: 0,
+            concert_name: "",
+            performance_date: Date,
+            artist_id: 0,
+            genre: "",
+            location: "",
+            video_url: "",
+            concert_image_url: "",
+            video_name: "",
+            added_date: Date,
+            price: 0,
+            artist_name: ""
+        }
+    ]) */
+    /* let oneConcert = JSON.parse(localStorage.getItem('allConcerts')) */
+    
+    /* console.log(allConcerts)
+    useEffect(() =>{
+        setAllConcerts(JSON.parse(localStorage.getItem('allConcerts')))
+    }, []) */
 /*     useEffect(() => {
         getApiData();
     }, [])
@@ -90,19 +110,21 @@ function Concert(props) {
     useEffect(()=> {
         getConcerts()
     },[]) */
-    
+    console.log('concerts : ')
+    console.log(concerts)
 
     return <>
         <div className="body">
             <h2>Concert </h2>
+            <p>Concert Name: {concerts[0].concert_name}</p>
             {/* <p>Concert Name: {allConcerts.concert_name}</p> */}
             {/* <p>Concert Name: {concert.concert_name}</p> */}
             {/* <p>Concert Name: {allConcerts && allConcerts[0].concert_name}</p> */}
             {/* <p>Concert Name: {allConcerts && allConcerts[0].concert_name}</p> */}
             {/* <p>Concert Name: {concertArr[0].concert_name}</p> */}
-            <p>Concert Name: {props[id].name}</p>
-            {/*             <p>Concert Name: {localStorage.getItem('allConcerts')}</p>
-            <p>Concert Name: {oneConcert}</p> */}
+            {/* <p>Concert Name: {props[id].name}</p> */}
+                        {/* <p>Concert Name: {allConcerts}</p> */}
+            {/* <p>Concert Name: {oneConcert}</p> */}
 
 
 {/*             <div>

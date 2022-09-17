@@ -1,4 +1,5 @@
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link, Outlet } from "react-router-dom";
+import Concert from "./Concert";
 import Main from "./Main";
 import MainViewAll from "./MainViewAll";
 import Profile from "./Profile";
@@ -6,7 +7,6 @@ import ProfileEdit from "./ProfileEdit";
 import AdvancedSearch from "./AdvancedSearch";
 import Artist from "./Artist";
 import BuyTicket from "./BuyTicket";
-import Concert from "./Concert";
 import LogIn from "./LogIn";
 import SignUp from "./SignUp";
 import QR from "./QR";
@@ -14,10 +14,11 @@ import Stream from "./Stream";
 import ConfirmPayment from "./ConfirmPayment";
 import { useState, useEffect } from 'react'
 import { useNavigate, useLocation } from "react-router-dom";
-import { TempConcert } from "./TempConcert";
-import { useMemo } from "react";
+import ConcertParent from "./ConcertParent";
+import ConcertChild from "./ConcertChild";
+import NotFound from "./NotFound";
 
-function LiveFanaticRouter() {
+function LiveFanaticRouter(concerts) {
     let location = useLocation();
 
     const navigate = useNavigate();
@@ -57,12 +58,15 @@ function LiveFanaticRouter() {
         }
     }, [location.pathname, isLoggedIn])
 
+    console.log('Router Fetched')
+    console.log(concerts)
+    console.log('--------------')
 
-    async function load() {
+/*     async function load() {
         let concerts = await fetch('data/concert/')
         concerts = await concerts.json()
         setAllConcerts(concerts)
-         localStorage.setItem('allConcerts', JSON.stringify(allConcerts[0])) 
+        localStorage.setItem('allConcerts', JSON.stringify(allConcerts)) 
     }
 
     useEffect(() => {
@@ -106,7 +110,25 @@ function LiveFanaticRouter() {
     {
         name: "I am page Five",
         age: "50"
-    }]
+    }] */
+
+
+
+
+
+// new test 
+/* const [concerts, setConcerts] = useState(null)
+  useEffect(()=> {
+    fetchConcerts();
+  },[])
+
+  const fetchConcerts = async ()=> {
+    const response = await fetch("data/concert");
+    const data = await response.json();
+    setConcerts(data);
+  }
+ */
+
 
     return <>
         <header className="topnav">
@@ -188,10 +210,16 @@ function LiveFanaticRouter() {
             <Route path="/search" element={< AdvancedSearch />} />
             <Route path="/artist" element={< Artist />} />
             <Route path="/buy-ticket" element={< BuyTicket />} />
-            {/* <Route path="/concert" element={< Concert {...allConcerts} />} /> */}
-            <Route path="/concert/:concert_id" element={< Concert {...data} />} />
+            <Route path="/concert" element={< Concert {...concerts} />} />
+            {/* {<Route path="/concert/:concert_id" element={< Concert {...concerts} />} />} */}
 
-            <Route path="/temp-concert" element={< TempConcert />} />
+            {/* <Route path="/concert-parent/*" element={ <ConcertParent {...concerts}/>}/> */}
+            <Route path="/concert-parent/*" element={ <ConcertParent {...concerts}/>}/>
+                <Route path="/concert-parent/:id" element={<ConcertChild {...concerts}/>}/>
+            <Route/>
+
+{/*             <Route path="/concert" element={< Concert {...allConcerts} />} />
+            <Route path="/concert/:concert_id" element={< Concert {...data} />} /> */}
 
             {/*             { 
             allConcerts.map( (concert)=> <Link to={"/concert/" + concert.concert_id}></Link>)
@@ -203,6 +231,8 @@ function LiveFanaticRouter() {
             <Route path="/qr" element={< QR />} />
             <Route path="/stream" element={< Stream />} />
             <Route path="/confirm-payment" element={< ConfirmPayment />} />
+            <Route path="*" element={< NotFound />} />
+
         </Routes>
 
         <div className="footer">

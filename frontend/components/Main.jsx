@@ -13,19 +13,16 @@ function Main() {
         async function load() {
             let concerts = await fetch('data/concert/')
             concerts = await concerts.json()
-            console.log(concerts)
             variableUpdateMethod(concerts)
         }
         async function loadRecently() {
             let concerts = await fetch('data/concert/recently-added')
             concerts = await concerts.json()
-            console.log(concerts)
             setConcertSortedByRecently(concerts)
         }
         async function loadComing() {
             let concerts = await fetch('data/concert/coming-soon')
             concerts = await concerts.json()
-            console.log(concerts)
             setConcertSortedByPerformanceDate(concerts)
 
         }
@@ -163,7 +160,7 @@ function Main() {
 
                     <div className="child-div-div">
                         <p>Title:</p>
-                        <Link to={concertSortedByRecently[i].url + "/"+ variableName[i].concert_id}>{concertSortedByRecently[i].concert_name}</Link>
+                        <Link to="">{concertSortedByRecently[i].concert_name}</Link>
                     </div>
                     <div className="child-div-div">
                         <p>Artist:</p>
@@ -208,18 +205,12 @@ function Main() {
     }
 
     
-/*     function concertUrl() {
-        let {id} = useParams();
-        return {id}
-    }
- */
     return <>
         <div className="body">
 
             <div className="main-content-page">
                 <div className="main-content-header">
                     <h1 className="main-h1" >Live concerts today </h1>
-                    <Link to="/concert/:id" className="view_all">View all</Link>
                     <Link to="/main-view-all" className="view_all">View all</Link>
                 </div>
                 <div className="row">
