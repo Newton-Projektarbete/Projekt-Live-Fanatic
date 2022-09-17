@@ -1,4 +1,5 @@
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link, useNavigate, useLocation } from "react-router-dom";
+import { useState, useEffect } from 'react'
 import Concert from "./Concert";
 import Main from "./Main";
 import MainViewAll from "./MainViewAll";
@@ -12,12 +13,9 @@ import SignUp from "./SignUp";
 import QR from "./QR";
 import Stream from "./Stream";
 import ConfirmPayment from "./ConfirmPayment";
-import { useState, useEffect } from 'react'
-import { useNavigate, useLocation } from "react-router-dom";
 import ConcertParent from "./ConcertParent";
 import ConcertChild from "./ConcertChild";
 import NotFound from "./NotFound";
-import { useRef } from "react";
 import MyComponent from "./MyComponent";
 
 function LiveFanaticRouter() {
@@ -115,7 +113,7 @@ function LiveFanaticRouter() {
 
 
 
-// new test 
+/* // new test 
 const [concerts, setConcerts] = useState([null])
 
 useEffect(()=> {
@@ -132,7 +130,7 @@ useEffect(()=> {
   }
   console.log('Router Fetched')
   console.log(concerts)
-  console.log('--------------')
+  console.log('--------------') */
 
 
     return <>
@@ -215,13 +213,13 @@ useEffect(()=> {
             <Route path="/search" element={< AdvancedSearch />} />
             <Route path="/artist" element={< Artist />} />
             <Route path="/buy-ticket" element={< BuyTicket />} />
-            <Route path="/concert" element={< Concert {...concerts} />} />
+            <Route path="/concert" element={< Concert />} />
             {/* {<Route path="/concert/:concert_id" element={< Concert {...concerts} />} />} */}
 
             {/* <Route path="/concert-parent/*" element={ <ConcertParent {...concerts}/>}/> */}
-            <Route path="/concert-parent/" element={< ConcertParent {...concerts} />} />
+            {/* <Route path="/concert-parent/" element={< ConcertParent {...concerts} />} />
             <Route path="/concert-parent/:id" element={<ConcertChild {...concerts}/>}/>
-            <Route path="/my-component" element={< MyComponent />}/>
+            <Route path="/my-component" element={< MyComponent />}/> */}
             
 
             {/* Nested Routes Parent /child */}

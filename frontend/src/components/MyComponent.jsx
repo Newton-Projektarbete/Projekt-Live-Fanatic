@@ -1,31 +1,30 @@
-import { useFetch } from '../src/hooks/useFetch'
+import { useFetch } from '../hooks/useFetch'
 import { useEffect, useState } from 'react';
 
 function MyComponent(){
     const [ fetchUrl, setFetchUrl ] = useState('');
-    const { cancel: cancelFetchingUsers, data: users, isLoading: isLoadingUsers, error } = useFetch(fetchUrl);
+    const { cancel: cancelFetchingData, data: fetchedData, isLoading: isLoadingData, error } = useFetch(fetchUrl);
 
     useEffect(()=>{
         setFetchUrl('/data/concerts');
-
         return () => {
-            cancelFetchingUsers();
+            cancelFetchingData();
         }
     }, [])
 
     return <>
         {
-            isLoadingUsers ? <>
+            isLoadingData ? <>
                 <h2>Users</h2>
-                {users.map(user =>
+                {fetchedData.map(user =>
                     <div key={user.id}>
                         <p>{user.name}</p>
                     </div>
                 )}
             </>
             : <>
-                <p>Loading users...</p>
-                <button onClick={cancelFetchingUsers}>Cancel</button>
+                <p>Loading Data...</p>
+                <button onClick={cancelFetchingData}>Cancel</button>
             </>
         }
     </>

@@ -1,9 +1,9 @@
 import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from 'react'
 import { useMemo } from "react";
+import { useFetch } from "../hooks/useFetch"
 
-
-function Concert(concerts) {
+function Concert() {
     let params = useParams()
     let id = params.concert_id - 1;
 /*     let params = useParams()
@@ -110,13 +110,29 @@ function Concert(concerts) {
     useEffect(()=> {
         getConcerts()
     },[]) */
-    console.log('concerts : ')
-    console.log(concerts)
 
+    /* const [ fetchUrl, setFetchUrl ] = useState('');
+    const { cancel: cancelFetchingData, data: fetchedData, isLoading: isLoadingData, error } = useFetch(fetchUrl);
+
+    useEffect(()=>{
+        setFetchUrl('/data/concert');
+        return () => {
+            cancelFetchingData();
+        }
+    }, []) */
+
+    const { data, isLoading } = useFetch('/data/concert');
+        
+
+    /* console.log(fetchedData) */
     return <>
         <div className="body">
             <h2>Concert </h2>
-            <p>Concert Name: {concerts[0].concert_name}</p>
+            {/* <p>Concert Name: {fetchedData && fetchedData[0].concert_name}</p> */}
+
+            <p>isLoading: {isLoading ? 'true' : 'false'}</p>
+            <p>data: {data ? JSON.stringify(data) : ''}</p>
+            {/* <p>Concert Name: {concerts[0].concert_name}</p> */}
             {/* <p>Concert Name: {allConcerts.concert_name}</p> */}
             {/* <p>Concert Name: {concert.concert_name}</p> */}
             {/* <p>Concert Name: {allConcerts && allConcerts[0].concert_name}</p> */}
