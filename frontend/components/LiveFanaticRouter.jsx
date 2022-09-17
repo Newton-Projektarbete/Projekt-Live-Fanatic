@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Link, Outlet } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Concert from "./Concert";
 import Main from "./Main";
 import MainViewAll from "./MainViewAll";
@@ -17,6 +17,8 @@ import { useNavigate, useLocation } from "react-router-dom";
 import ConcertParent from "./ConcertParent";
 import ConcertChild from "./ConcertChild";
 import NotFound from "./NotFound";
+import { useRef } from "react";
+import MyComponent from "./MyComponent";
 
 function LiveFanaticRouter() {
     let location = useLocation();
@@ -132,31 +134,6 @@ useEffect(()=> {
   console.log(concerts)
   console.log('--------------')
 
-  const concertArray = []
-  for(let i = 0; i > concerts.length ; i++){
-    concertArray[i] = concerts[i]
-  }
-  const data = [{
-    name: "one",
-    age: "01"
-  },
-  {
-    name: "two",
-    age: "02"
-  },
-  {
-    name: "three",
-    age: "03"
-  },
-  {
-    name: "four",
-    age: "04"
-  },
-  {
-    name: "five",
-    age: "05"
-  }]
-
 
     return <>
         <header className="topnav">
@@ -244,6 +221,7 @@ useEffect(()=> {
             {/* <Route path="/concert-parent/*" element={ <ConcertParent {...concerts}/>}/> */}
             <Route path="/concert-parent/" element={< ConcertParent {...concerts} />} />
             <Route path="/concert-parent/:id" element={<ConcertChild {...concerts}/>}/>
+            <Route path="/my-component" element={< MyComponent />}/>
             
 
             {/* Nested Routes Parent /child */}
