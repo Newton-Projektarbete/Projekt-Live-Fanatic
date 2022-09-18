@@ -1,7 +1,44 @@
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import { useContext } from "react";
+import GlobalContext from "../src/GlobalContext";
+
+import TempConcert from "./TempConcert";
+import { useState } from "react";
+
 function Concert() {
+    let id = useParams().concert_id;
+    let pos = id - 1;
+    const { allConcerts } = useContext(GlobalContext);
+    let concert = [{}]
+
+     allConcerts.map(a => {
+        if (a.concert_id == id) {
+            concert = a
+            return concert
+        }
+    })
     return <>
-<div className="body">
+        <div className="body">
+            <div>
+                <h1>Concert Page id: {id}</h1>
+                <p>{concert.concert_id}</p>
+                <p>{concert.concert_name}</p>
+                {/* {allConcerts.map(a => {
+                    if (a.concert_id == id) {
+                        return <p>{a.concert_name}</p>
+                    }
+                })} */}
+                {/* {allConcerts.map(con => <TempConcert key={con.concert_id} con={con}/>)} */}
+            </div>
+        </div>
+    </>
+}
+export default Concert
+
+{/* {allConcerts.map(obj => <TempConcert key={obj.concert_id} obj={obj}/>)} */ }
+
+
+{/* <div className="body">
     <div className="concert_content">
         <div className="title_info">
 
@@ -53,9 +90,4 @@ function Concert() {
             </div>
         
     </div>
-</div>
-
-    </>
-}
-
-export default Concert
+</div> */}
