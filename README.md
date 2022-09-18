@@ -15,7 +15,7 @@ Gruppmedlemar - Klass - Github namn
 
 Scrum Master: <br>
 Sprint 1 - Daniel (2022-09-05 => 2022-09-13)<br>
-Sprint 2 -  (2022-09-13 => 2022-09-23)<br>
+Sprint 2 - Jonathan (2022-09-13 => 2022-09-23)<br>
 
 Simon - SYSJM5 - M0ller <br>
 Sanjin - SYSJM5 - Liha86 <br>
