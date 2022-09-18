@@ -4,8 +4,7 @@ import { useMemo } from "react";
 import { useFetch } from "../hooks/useFetch"
 
 function Concert(allConcerts) {
-    let params = useParams()
-    let id = params.concert_id - 1;
+    
 /*     let params = useParams()
     let id = params.concert_id - 1;
     const concert = (id) =>{
@@ -125,11 +124,14 @@ function Concert(allConcerts) {
         
 
     /* console.log(fetchedData) */
+
+    let params = useParams()
+    let id = params.concert_id - 1;
     return <>
         <div className="body">
             <h2>Concert </h2>
-            <p>Concert Name: {allConcerts[0].concert_name}</p>
-            {/* <p>Concert Name: {allConcerts[id].concert_name}</p> */}
+            <p>Parent-Concert Name: {allConcerts[0].concert_name}</p>
+            {/* <p>Page nr {id+1}, Concert Name: {allConcerts[id].concert_name}</p> */}
 
 
             {/* <p>Concert Name: {fetchedData && fetchedData[0].concert_name}</p> */}
