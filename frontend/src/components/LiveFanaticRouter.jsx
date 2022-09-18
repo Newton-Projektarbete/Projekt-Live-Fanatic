@@ -133,6 +133,33 @@ useEffect(()=> {
   console.log('--------------') */
 
 
+  // test 
+  useEffect(() => {
+    async function load() {
+        let concerts = await fetch('data/concert/')
+        concerts = await concerts.json()
+        setAllConcerts(concerts)
+        console.log(allConcerts)
+    }
+    load()
+}, [])
+const [allConcerts, setAllConcerts] = useState([
+    {
+        concert_id: 0,
+        concert_name: "",
+        performance_date: Date,
+        artist_id: 0,
+        genre: "",
+        location: "",
+        video_url: "",
+        concert_image_url: "",
+        video_name: "",
+        added_date: Date,
+        price: 0,
+        artist_name: ""
+    }
+])
+
     return <>
         <header className="topnav">
             <div>
@@ -213,7 +240,8 @@ useEffect(()=> {
             <Route path="/search" element={< AdvancedSearch />} />
             <Route path="/artist" element={< Artist />} />
             <Route path="/buy-ticket" element={< BuyTicket />} />
-            <Route path="/concert" element={< Concert />} />
+            <Route path="/concert" element={< Concert {...allConcerts} />} />
+            <Route path="/concert/:concert_id" element={< Concert {...allConcerts} />} />
             {/* {<Route path="/concert/:concert_id" element={< Concert {...concerts} />} />} */}
 
             {/* <Route path="/concert-parent/*" element={ <ConcertParent {...concerts}/>}/> */}

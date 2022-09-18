@@ -27,18 +27,18 @@ h3{
 }
 
 /* 
-tags background Color: White
-tags text Color: Black
-tags border Color: Black
+tags background color: White
+tags text color: Black
+tags border color: Black
 */
 input{
     background-color: white;
     color: black;
-    /* input field place holder text Color: Grey */
+    /* input field place holder text color: Grey */
 }
 
 a{
-    Color: rgba(48, 149, 184, 1);
+    color: rgba(48, 149, 184, 1);
     text-decoration: none;
 }
 
@@ -48,7 +48,7 @@ a:hover{
 }
 
 header{
-    Color: rgba(62, 141, 168, 1);
+    color: rgba(62, 141, 168, 1);
 }
 
 header>h1{

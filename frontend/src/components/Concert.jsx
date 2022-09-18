@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import { useMemo } from "react";
 import { useFetch } from "../hooks/useFetch"
 
-function Concert() {
+function Concert(allConcerts) {
     let params = useParams()
     let id = params.concert_id - 1;
 /*     let params = useParams()
@@ -121,19 +121,22 @@ function Concert() {
         }
     }, []) */
 
-    const { data, isLoading } = useFetch('/data/concert');
+    /* const { data, isLoading } = useFetch('/data/concert'); */
         
 
     /* console.log(fetchedData) */
     return <>
         <div className="body">
             <h2>Concert </h2>
-            {/* <p>Concert Name: {fetchedData && fetchedData[0].concert_name}</p> */}
+            <p>Concert Name: {allConcerts[0].concert_name}</p>
+            {/* <p>Concert Name: {allConcerts[id].concert_name}</p> */}
 
-            <p>isLoading: {isLoading ? 'true' : 'false'}</p>
-            <p>data: {data ? JSON.stringify(data) : ''}</p>
+
+            {/* <p>Concert Name: {fetchedData && fetchedData[0].concert_name}</p> */}
+            {/* <p>isLoading: {isLoading ? 'true' : 'false'}</p>
+            <p>data: {data ? JSON.stringify(data) : ''}</p> */}
+
             {/* <p>Concert Name: {concerts[0].concert_name}</p> */}
-            {/* <p>Concert Name: {allConcerts.concert_name}</p> */}
             {/* <p>Concert Name: {concert.concert_name}</p> */}
             {/* <p>Concert Name: {allConcerts && allConcerts[0].concert_name}</p> */}
             {/* <p>Concert Name: {allConcerts && allConcerts[0].concert_name}</p> */}

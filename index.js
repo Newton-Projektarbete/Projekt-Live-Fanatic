@@ -2,7 +2,6 @@ const express = require("express");
 const server = express();
 server.use(express.json())
 const db = require("./modules/db.js")('./database/live_fanatic.db')
-/* const db = require("./modules/db.js")('./frontend/assets/live_fanatic.db') */
 const port = 3333
 const host = `http://localhost:${port}`
 
@@ -34,7 +33,7 @@ server.listen(port,() => {
 })
 
 // front end directories
-server.use('/', express.static('frontend/dist')) // change 
+server.use('/', express.static('/frontend/dist')) // change 
 /* server.use('/examples', express.static('examples')) */
 server.use('/examples', express.static('examples'))
 
