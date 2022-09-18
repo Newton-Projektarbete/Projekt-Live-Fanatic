@@ -9,7 +9,8 @@ function Concert() {
     let id = useParams().concert_id;
     let pos = id - 1;
     const { allConcerts } = useContext(GlobalContext);
-    let concert = [{}]
+
+    let concert = []
 
      allConcerts.map(a => {
         if (a.concert_id == id) {
@@ -17,6 +18,7 @@ function Concert() {
             return concert
         }
     })
+
     return <>
         <div className="body">
             <div>
