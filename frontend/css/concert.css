@@ -86,7 +86,6 @@
 }
 
 .concert_image{
-    background-image: url("../images/franaddressescrowd500.jpg");
     background-size: contain;
     background-position: 50% 50%;
     background-repeat: no-repeat;

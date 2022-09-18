@@ -1,0 +1,16 @@
+header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    background-color: cornsilk;
+    border-bottom: 1px solid gold;
+    padding:0 2vw;
+}
+
+header>nav>a{
+    margin-right:2vw;
+}
+
+#tidbits{
+    border-top: 1px solid gold;
+}

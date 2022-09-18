@@ -136,7 +136,7 @@ function LiveFanaticRouter(){
             <Route path="/search" element={ < AdvancedSearch />} />
             <Route path="/artist" element={ < Artist />} />
             <Route path="/buy-ticket" element={ < BuyTicket />} />
-            <Route path="/concert" element={ < Concert />} />
+            <Route path="/concert/:concert_id" element={ < Concert />} />
             <Route path="/log-in" element={ < LogIn />} />
             <Route path="/sign-up" element={ < SignUp />} />
             <Route path="/qr" element={ < QR />} />
