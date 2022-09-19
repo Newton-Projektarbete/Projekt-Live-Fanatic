@@ -69,7 +69,7 @@ function Concert() {
         </> 
         :<>
         <div className="body">
-            <h1 className="noMatch">Page Dosen't Exist!</h1> 
+            <h1 className="noMatch">Page not found</h1> 
         </div>
         </>
     }
