@@ -89,173 +89,144 @@ function Main() {
         }
     ])
 
-
-/*     
-let genreStatus = false
-    for(let i =0; i < variableName.length; i++ ){
-        if(genreId == variableName[i].genre) {
-            // return concerts with genre
-            genreStatus = true
-        }
-    }
-    if(genreStatus == true){
-        for(let i =0; i < variableName.length; i++ ){
-            // find genre concerts
-            if(variableName[i].genre === genreId && variableName[i].performance_date === today){
-                
-            }  
-        }  
-    } else {
-        // find all concerts
-        for(let i =0; i < variableName.length; i++ ){
-            // find All concerts
-            if(variableName[i].performance_date === today){
-                
-            }
-        } 
-    } 
-*/
-
-
-
     const liveConcertsToday = () => {
         let concertArr = []
-/* 
-    if genre = true => concerts with genre
-    else show all concerts
-*/
+        /* 
+            if genre = true => concerts with genre
+            else show all concerts
+        */
 
         let genreStatus = false
-        for(let i =0; i < variableName.length; i++ ){
-            if(genreId == variableName[i].genre) {
+        for (let i = 0; i < variableName.length; i++) {
+            if (genreId == variableName[i].genre) {
                 // return concerts with genre
                 genreStatus = true
             }
         }
-        if(genreStatus == true){
-            for(let i =0; i < variableName.length; i++ ){
+        if (genreStatus == true) {
+            for (let i = 0; i < variableName.length; i++) {
                 // find genre concerts
-                if(variableName[i].genre === genreId && variableName[i].performance_date === today){
+                if (variableName[i].genre === genreId && variableName[i].performance_date === today) {
                     concertArr[i] = <div className="main-content-box">
-                    <div className="main-img-box"> <img className="main-img" src={
-                        variableName[i].concert_image_url} alt="" />
-        
-                        <div to="" className="material-symbols-outlined main-like-btn">
-                            <span className="like-btn-1 material-symbols-outlined">favorite</span>
+                        <div className="main-img-box"> <img className="main-img" src={
+                            variableName[i].concert_image_url} alt="" />
+
+                            <div to="" className="material-symbols-outlined main-like-btn">
+                                <span className="like-btn-1 material-symbols-outlined">favorite</span>
+                            </div>
+                        </div>
+
+                        <div className="child-div">
+
+                            <div className="child-div-div">
+                                <p>Title:</p>
+                                <Link to={"/concert/" + variableName[i].concert_id}>{variableName[i].concert_name}</Link>
+                            </div>
+                            <div className="child-div-div">
+                                <p>Artist:</p>
+                                <Link to={"/artist/" + variableName[i].artist_id}>{variableName[i].artist_name}</Link>
+                            </div>
                         </div>
                     </div>
-        
-                    <div className="child-div">
-        
-                        <div className="child-div-div">
-                            <p>Title:</p>
-                            <Link to={"/concert/" + variableName[i].concert_id}>{variableName[i].concert_name}</Link>
-                        </div>
-                        <div className="child-div-div">
-                            <p>Artist:</p>
-                            <Link to={"/artist/" + variableName[i].artist_id}>{variableName[i].artist_name}</Link>
-                        </div>
-                    </div>
-                </div>
-                }  
-            }  
+                }
+            }
         } else {
             // find all concerts
-            for(let i =0; i < variableName.length; i++ ){
-                if(variableName[i].performance_date === today){
+            for (let i = 0; i < variableName.length; i++) {
+                if (variableName[i].performance_date === today) {
                     concertArr[i] = <div className="main-content-box">
-                    <div className="main-img-box"> <img className="main-img" src={
-                        variableName[i].concert_image_url} alt="" />
-        
-                        <div to="" className="material-symbols-outlined main-like-btn">
-                            <span className="like-btn-1 material-symbols-outlined">favorite</span>
+                        <div className="main-img-box"> <img className="main-img" src={
+                            variableName[i].concert_image_url} alt="" />
+
+                            <div to="" className="material-symbols-outlined main-like-btn">
+                                <span className="like-btn-1 material-symbols-outlined">favorite</span>
+                            </div>
+                        </div>
+
+                        <div className="child-div">
+
+                            <div className="child-div-div">
+                                <p>Title:</p>
+                                <Link to={"/concert/" + variableName[i].concert_id}>{variableName[i].concert_name}</Link>
+                            </div>
+                            <div className="child-div-div">
+                                <p>Artist:</p>
+                                <Link to={"/artist/" + variableName[i].artist_id}>{variableName[i].artist_name}</Link>
+                            </div>
                         </div>
                     </div>
-        
-                    <div className="child-div">
-        
-                        <div className="child-div-div">
-                            <p>Title:</p>
-                            <Link to={"/concert/" + variableName[i].concert_id}>{variableName[i].concert_name}</Link>
-                        </div>
-                        <div className="child-div-div">
-                            <p>Artist:</p>
-                            <Link to={"/artist/" + variableName[i].artist_id}>{variableName[i].artist_name}</Link>
-                        </div>
-                    </div>
-                </div>  
                 }
-            } 
+            }
         }
 
-            return concertArr
+        return concertArr
     }
 
     const allConcerts = () => {
         let concertArr = []
 
         let genreStatus = false
-        for(let i =0; i < variableName.length; i++ ){
-            if(genreId == variableName[i].genre) {
+        for (let i = 0; i < variableName.length; i++) {
+            if (genreId == variableName[i].genre) {
                 // return concerts with genre
                 genreStatus = true
             }
         }
-        if(genreStatus == true){
-            for(let i =0; i < variableName.length; i++ ){
+        if (genreStatus == true) {
+            for (let i = 0; i < variableName.length; i++) {
                 // find genre concerts
-                if(variableName[i].genre === genreId && variableName[i].performance_date === today){
+                if (variableName[i].genre === genreId && variableName[i].performance_date === today) {
                     concertArr[i] = <div className="main-content-box">
-                <div className="main-img-box"> <img className="main-img" src={
-                    variableName[i].concert_image_url} alt="" />
+                        <div className="main-img-box"> <img className="main-img" src={
+                            variableName[i].concert_image_url} alt="" />
 
-                    <div to="" className="material-symbols-outlined main-like-btn">
-                        <span className="like-btn-1 material-symbols-outlined">favorite</span>
-                    </div>
-                </div>
+                            <div to="" className="material-symbols-outlined main-like-btn">
+                                <span className="like-btn-1 material-symbols-outlined">favorite</span>
+                            </div>
+                        </div>
 
-                <div className="child-div">
+                        <div className="child-div">
 
-                    <div className="child-div-div">
-                        <p>Title:</p>
-                        <Link to={"/concert/" + variableName[i].concert_id}>{variableName[i].concert_name}</Link>
+                            <div className="child-div-div">
+                                <p>Title:</p>
+                                <Link to={"/concert/" + variableName[i].concert_id}>{variableName[i].concert_name}</Link>
+                            </div>
+                            <div className="child-div-div">
+                                <p>Artist:</p>
+                                <Link to="">{variableName[i].artist_name}</Link>
+                            </div>
+                        </div>
                     </div>
-                    <div className="child-div-div">
-                        <p>Artist:</p>
-                        <Link to="">{variableName[i].artist_name}</Link>
-                    </div>
-                </div>
-            </div>
-                }  
-            }  
+                }
+            }
         } else {
             // find all concerts
-            for(let i =0; i < variableName.length; i++ ){
+            for (let i = 0; i < variableName.length; i++) {
                 // find All concerts
-                if(variableName[i].performance_date === today){
+                if (variableName[i].performance_date === today) {
                     concertArr[i] = <div className="main-content-box">
-                <div className="main-img-box"> <img className="main-img" src={
-                    variableName[i].concert_image_url} alt="" />
+                        <div className="main-img-box"> <img className="main-img" src={
+                            variableName[i].concert_image_url} alt="" />
 
-                    <div to="" className="material-symbols-outlined main-like-btn">
-                        <span className="like-btn-1 material-symbols-outlined">favorite</span>
-                    </div>
-                </div>
+                            <div to="" className="material-symbols-outlined main-like-btn">
+                                <span className="like-btn-1 material-symbols-outlined">favorite</span>
+                            </div>
+                        </div>
 
-                <div className="child-div">
+                        <div className="child-div">
 
-                    <div className="child-div-div">
-                        <p>Title:</p>
-                        <Link to={"/concert/" + variableName[i].concert_id}>{variableName[i].concert_name}</Link>
+                            <div className="child-div-div">
+                                <p>Title:</p>
+                                <Link to={"/concert/" + variableName[i].concert_id}>{variableName[i].concert_name}</Link>
+                            </div>
+                            <div className="child-div-div">
+                                <p>Artist:</p>
+                                <Link to="">{variableName[i].artist_name}</Link>
+                            </div>
+                        </div>
                     </div>
-                    <div className="child-div-div">
-                        <p>Artist:</p>
-                        <Link to="">{variableName[i].artist_name}</Link>
-                    </div>
-                </div>
-            </div>
                 }
-            } 
+            }
         }
 
 
@@ -291,63 +262,63 @@ let genreStatus = false
         let concertArr = []
 
         let genreStatus = false
-        for(let i =0; i < concertSortedByRecently.length; i++ ){
-            if(genreId == concertSortedByRecently[i].genre) {
+        for (let i = 0; i < concertSortedByRecently.length; i++) {
+            if (genreId == concertSortedByRecently[i].genre) {
                 genreStatus = true
             }
         }
-        if(genreStatus == true){
-            for(let i =0; i < concertSortedByRecently.length; i++ ){
-                if(concertSortedByRecently[i].genre === genreId ){
+        if (genreStatus == true) {
+            for (let i = 0; i < concertSortedByRecently.length; i++) {
+                if (concertSortedByRecently[i].genre === genreId) {
                     concertArr[i] = <div className="main-content-box">
-                <div className="main-img-box"> <img className="main-img" src={
-                    concertSortedByRecently[i].concert_image_url} alt="" />
+                        <div className="main-img-box"> <img className="main-img" src={
+                            concertSortedByRecently[i].concert_image_url} alt="" />
 
-                    <div to="" className="material-symbols-outlined main-like-btn">
-                        <span className="like-btn-1 material-symbols-outlined">favorite</span>
-                    </div>
-                </div>
+                            <div to="" className="material-symbols-outlined main-like-btn">
+                                <span className="like-btn-1 material-symbols-outlined">favorite</span>
+                            </div>
+                        </div>
 
-                <div className="child-div">
+                        <div className="child-div">
 
-                    <div className="child-div-div">
-                        <p>Title:</p>
-                        <Link to={"/concert/" + concertSortedByRecently[i].concert_id}>{concertSortedByRecently[i].concert_name}</Link>
+                            <div className="child-div-div">
+                                <p>Title:</p>
+                                <Link to={"/concert/" + concertSortedByRecently[i].concert_id}>{concertSortedByRecently[i].concert_name}</Link>
+                            </div>
+                            <div className="child-div-div">
+                                <p>Artist:</p>
+                                <Link to={"/artist/" + concertSortedByRecently[i].artist_id}>{concertSortedByRecently[i].artist_name}</Link>
+                            </div>
+                        </div>
                     </div>
-                    <div className="child-div-div">
-                        <p>Artist:</p>
-                        <Link to={"/artist/" + concertSortedByRecently[i].artist_id}>{concertSortedByRecently[i].artist_name}</Link>
-                    </div>
-                </div>
-            </div>
-                }  
-            }  
+                }
+            }
         } else {
-            for(let i =0; i < concertSortedByRecently.length; i++ ){
+            for (let i = 0; i < concertSortedByRecently.length; i++) {
                 concertArr[i] = <div className="main-content-box">
-                <div className="main-img-box"> <img className="main-img" src={
-                    concertSortedByRecently[i].concert_image_url} alt="" />
+                    <div className="main-img-box"> <img className="main-img" src={
+                        concertSortedByRecently[i].concert_image_url} alt="" />
 
-                    <div to="" className="material-symbols-outlined main-like-btn">
-                        <span className="like-btn-1 material-symbols-outlined">favorite</span>
+                        <div to="" className="material-symbols-outlined main-like-btn">
+                            <span className="like-btn-1 material-symbols-outlined">favorite</span>
+                        </div>
+                    </div>
+
+                    <div className="child-div">
+
+                        <div className="child-div-div">
+                            <p>Title:</p>
+                            <Link to={"/concert/" + concertSortedByRecently[i].concert_id}>{concertSortedByRecently[i].concert_name}</Link>
+                        </div>
+                        <div className="child-div-div">
+                            <p>Artist:</p>
+                            <Link to={"/artist/" + concertSortedByRecently[i].artist_id}>{concertSortedByRecently[i].artist_name}</Link>
+                        </div>
                     </div>
                 </div>
 
-                <div className="child-div">
-
-                    <div className="child-div-div">
-                        <p>Title:</p>
-                        <Link to={"/concert/" + concertSortedByRecently[i].concert_id}>{concertSortedByRecently[i].concert_name}</Link>
-                    </div>
-                    <div className="child-div-div">
-                        <p>Artist:</p>
-                        <Link to={"/artist/" + concertSortedByRecently[i].artist_id}>{concertSortedByRecently[i].artist_name}</Link>
-                    </div>
-                </div>
-            </div>
-           
-            } 
-        } 
+            }
+        }
 
 
         return concertArr
@@ -356,66 +327,66 @@ let genreStatus = false
     const comingSoon = () => {
         let concertArr = []
         let genreStatus = false
-    for(let i =0; i < concertSortedByPerformanceDate.length; i++ ){
-        if(genreId == concertSortedByPerformanceDate[i].genre) {
-            genreStatus = true
-        }
-    }
-    if(genreStatus == true){
-        for(let i =0; i < concertSortedByPerformanceDate.length; i++ ){
-            if(concertSortedByPerformanceDate[i].genre === genreId && concertSortedByPerformanceDate[i].performance_date > today){
-                concertArr[i] = <div className="main-content-box">
-                    <div className="main-img-box"> <img className="main-img" src={
-                        concertSortedByPerformanceDate[i].concert_image_url} alt="" />
-
-                        <div to="" className="material-symbols-outlined main-like-btn">
-                            <span className="like-btn-1 material-symbols-outlined">favorite</span>
-                        </div>
-                    </div>
-
-                    <div className="child-div">
-
-                        <div className="child-div-div">
-                            <p>Title:</p>
-                            <Link to={"/concert/" + concertSortedByPerformanceDate[i].concert_id}>{concertSortedByPerformanceDate[i].concert_name}</Link>
-                        </div>
-                        <div className="child-div-div">
-                            <p>Artist:</p>
-                            <Link to="">{concertSortedByPerformanceDate[i].artist_name}</Link>
-                        </div>
-                    </div>
-                </div>
-            }  
-        }  
-    } else {
-        for(let i =0; i < concertSortedByPerformanceDate.length; i++ ){
-            if(concertSortedByPerformanceDate[i].performance_date > today){
-                concertArr[i] = <div className="main-content-box">
-                    <div className="main-img-box"> <img className="main-img" src={
-                        concertSortedByPerformanceDate[i].concert_image_url} alt="" />
-
-                        <div to="" className="material-symbols-outlined main-like-btn">
-                            <span className="like-btn-1 material-symbols-outlined">favorite</span>
-                        </div>
-                    </div>
-
-                    <div className="child-div">
-
-                        <div className="child-div-div">
-                            <p>Title:</p>
-                            <Link to={"/concert/" + concertSortedByPerformanceDate[i].concert_id}>{concertSortedByPerformanceDate[i].concert_name}</Link>
-                        </div>
-                        <div className="child-div-div">
-                            <p>Artist:</p>
-                            <Link to="">{concertSortedByPerformanceDate[i].artist_name}</Link>
-                        </div>
-                    </div>
-                </div>
+        for (let i = 0; i < concertSortedByPerformanceDate.length; i++) {
+            if (genreId == concertSortedByPerformanceDate[i].genre) {
+                genreStatus = true
             }
-        } 
-    } 
+        }
+        if (genreStatus == true) {
+            for (let i = 0; i < concertSortedByPerformanceDate.length; i++) {
+                if (concertSortedByPerformanceDate[i].genre === genreId && concertSortedByPerformanceDate[i].performance_date > today) {
+                    concertArr[i] = <div className="main-content-box">
+                        <div className="main-img-box"> <img className="main-img" src={
+                            concertSortedByPerformanceDate[i].concert_image_url} alt="" />
 
-        
+                            <div to="" className="material-symbols-outlined main-like-btn">
+                                <span className="like-btn-1 material-symbols-outlined">favorite</span>
+                            </div>
+                        </div>
+
+                        <div className="child-div">
+
+                            <div className="child-div-div">
+                                <p>Title:</p>
+                                <Link to={"/concert/" + concertSortedByPerformanceDate[i].concert_id}>{concertSortedByPerformanceDate[i].concert_name}</Link>
+                            </div>
+                            <div className="child-div-div">
+                                <p>Artist:</p>
+                                <Link to="">{concertSortedByPerformanceDate[i].artist_name}</Link>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        } else {
+            for (let i = 0; i < concertSortedByPerformanceDate.length; i++) {
+                if (concertSortedByPerformanceDate[i].performance_date > today) {
+                    concertArr[i] = <div className="main-content-box">
+                        <div className="main-img-box"> <img className="main-img" src={
+                            concertSortedByPerformanceDate[i].concert_image_url} alt="" />
+
+                            <div to="" className="material-symbols-outlined main-like-btn">
+                                <span className="like-btn-1 material-symbols-outlined">favorite</span>
+                            </div>
+                        </div>
+
+                        <div className="child-div">
+
+                            <div className="child-div-div">
+                                <p>Title:</p>
+                                <Link to={"/concert/" + concertSortedByPerformanceDate[i].concert_id}>{concertSortedByPerformanceDate[i].concert_name}</Link>
+                            </div>
+                            <div className="child-div-div">
+                                <p>Artist:</p>
+                                <Link to="">{concertSortedByPerformanceDate[i].artist_name}</Link>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        }
+
+
 
         return concertArr
     }
@@ -464,11 +435,3 @@ let genreStatus = false
 export default Main
 
 
-{/* <em>{variableName.map(concert =>
-                                <Link to="" key={concert.concert_id}>
-                                    {concert.concert_name}
-                                </Link>)}</em>
-                            <em>{variableName.map(concert =>
-                                <Link to="" key={concert.concert_id}>
-                                    {concert.artist_name}
-                                </Link>)}</em> */}
