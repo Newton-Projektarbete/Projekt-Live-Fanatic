@@ -7,9 +7,11 @@ export const GlobalProvider = ({ children }) => {
 // useState for all variables 
 const [isLoading, setIsLoading] = useState(true)
 const [allConcerts, setAllConcerts] = useState([])
+const [allArtists, setAllArtists] = useState([])
 // useEffect to run methods upon load
 useEffect(() => {
     loadAllConcerts()
+    loadAllArtists()
   }, []);
 
   const loadAllConcerts = async () => {
@@ -21,11 +23,22 @@ useEffect(() => {
     setIsLoading(false)
   }
 
+  const loadAllArtists = async () => {
+    setIsLoading(true)
+    const response = await fetch("/data/artist")
+    const result = await response.json()
+    /* console.log(result) */
+    setAllArtists(result)
+    setIsLoading(false)
+  }
+
 
     return (
         <GlobalContext.Provider
           value={{
-            allConcerts
+            isLoading,
+            allConcerts,
+            allArtists
           }}
         >
           {children}

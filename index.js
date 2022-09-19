@@ -46,6 +46,7 @@ require('./api-description.js')(host, server)
 require('./routes/users.js')(server, db)
 require('./routes/login.js')(server, db)
 require('./routes/concerts.js')(server, db)
+require('./routes/artists.js')(server, db)
 
 // stream routes
 require('./routes/video-stream.js')(server, db)
