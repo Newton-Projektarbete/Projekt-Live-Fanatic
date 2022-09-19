@@ -17,19 +17,16 @@ function Main() {
         async function load() {
             let concerts = await fetch('data/concert/')
             concerts = await concerts.json()
-            console.log(concerts)
             variableUpdateMethod(concerts)
         }
         async function loadRecently() {
             let concerts = await fetch('data/concert/recently-added')
             concerts = await concerts.json()
-            console.log(concerts)
             setConcertSortedByRecently(concerts)
         }
         async function loadComing() {
             let concerts = await fetch('data/concert/coming-soon')
             concerts = await concerts.json()
-            console.log(concerts)
             setConcertSortedByPerformanceDate(concerts)
 
         }
@@ -95,7 +92,6 @@ function Main() {
             if genre = true => concerts with genre
             else show all concerts
         */
-
         let genreStatus = false
         for (let i = 0; i < variableName.length; i++) {
             if (genreId == variableName[i].genre) {
@@ -254,7 +250,6 @@ function Main() {
                 </div>
             </div>
         }
-
         return concertArr
     }
 
@@ -298,7 +293,6 @@ function Main() {
                 concertArr[i] = <div className="main-content-box">
                     <div className="main-img-box"> <img className="main-img" src={
                         concertSortedByRecently[i].concert_image_url} alt="" />
-
                         <div to="" className="material-symbols-outlined main-like-btn">
                             <span className="like-btn-1 material-symbols-outlined">favorite</span>
                         </div>
@@ -385,15 +379,8 @@ function Main() {
                 }
             }
         }
-
-
-
         return concertArr
     }
-
-
-
-
 
     return <>
         <div className="body">
