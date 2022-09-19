@@ -24,7 +24,7 @@ server.use(function(req,res,next){req.bypassVerification = true; next()})
 
 // ACL
 const acl = require('./services/acl.js')
-// server.use(acl)
+// server.use(acl) // kommentera bort för att tillfälligt stänga av all autentisering
 
 // start
 server.listen(port,() => {
@@ -46,7 +46,14 @@ require('./api-description.js')(host, server)
 require('./routes/users.js')(server, db)
 require('./routes/login.js')(server, db)
 require('./routes/concerts.js')(server, db)
+require('./routes/artists.js')(server, db)
 
+// stream routes
+require('./routes/video-stream.js')(server, db)
+require('./routes/audio-stream.js')(server, db)
+
+// stripe payment api
+require('./routes/checkout.js')(server, db, host)
 
 // generic REST API one-to-one table mappings
 require('./routes/generic-routes.js')(server, db)

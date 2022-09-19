@@ -102,3 +102,9 @@ span:hover{
    
     color: goldenrod;
 }
+
+
+.noMatch{
+    display: flex;
+    justify-content: center;
+}

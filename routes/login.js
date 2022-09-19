@@ -13,6 +13,8 @@ module.exports = function(server, db){
         response.json({error: "Too many attempts. You must verify your account using two-factor authentication"})
         return
       }
+      
+      console.log(request.body.password, typeof request.body.password)
 
       let encryptedPassword = encrypt(request.body.password)
       let user = db.prepare('SELECT * FROM users WHERE email = ? AND password IS NOT NULL AND password = ?').all([request.body.email, encryptedPassword])
