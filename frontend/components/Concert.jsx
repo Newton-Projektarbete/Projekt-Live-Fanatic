@@ -8,15 +8,17 @@ function Concert() {
     const { allConcerts } = useContext(GlobalContext);
 
     let concert = []
+    let pageExist = false
 
     allConcerts.map(a => {
         if (a.concert_id == id) {
             concert = a
+            pageExist = true
             return concert
         }
     })
 
-    return <>
+    return <> { pageExist  ? <>
         <div className="body">
             <div className="concert_content">
                 <div className="title_info">
@@ -64,6 +66,15 @@ function Concert() {
 
             </div>
         </div>
+        </> 
+        :<>
+        <div className="body">
+            <h1 className="noMatch">Page Dosen't Exist!</h1> 
+        </div>
+        </>
+    }
+
+        
 
     </>
 }

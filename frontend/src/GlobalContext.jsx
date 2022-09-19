@@ -8,6 +8,7 @@ export const GlobalProvider = ({ children }) => {
 const [isLoading, setIsLoading] = useState(true)
 const [allConcerts, setAllConcerts] = useState([])
 const [allArtists, setAllArtists] = useState([])
+
 // useEffect to run methods upon load
 useEffect(() => {
     loadAllConcerts()
