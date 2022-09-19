@@ -131,6 +131,7 @@ function LiveFanaticRouter(){
 </header>
         <Routes>
             <Route path="/" element={<Main />} />
+            <Route path="/:genre" element={<Main />} />
             <Route path="/main-view-all" element={<MainViewAll />} />
             <Route path="/profile" element={ < Profile />} />
             <Route path="/profile-edit" element={ < ProfileEdit />} />
