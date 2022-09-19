@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from 'react';
+import GlobalContext from "../src/GlobalContext";
 
 function Main() {
 
@@ -103,11 +104,11 @@ function Main() {
 
                     <div className="child-div-div">
                         <p>Title:</p>
-                        <Link to="">{variableName[i].concert_name}</Link>
+                        <Link to={"/concert/"+ variableName[i].concert_id}>{variableName[i].concert_name}</Link>
                     </div>
                     <div className="child-div-div">
                         <p>Artist:</p>
-                        <Link to="">{variableName[i].artist_name}</Link>
+                        <Link to={"/artist/"}>{variableName[i].artist_name}</Link>
                     </div>
                 </div>
             </div>
@@ -133,7 +134,7 @@ function Main() {
 
                     <div className="child-div-div">
                         <p>Title:</p>
-                        <Link to="">{variableName[i].concert_name}</Link>
+                        <Link to={"/concert/"+ variableName[i].concert_id}>{variableName[i].concert_name}</Link>
                     </div>
                     <div className="child-div-div">
                         <p>Artist:</p>
@@ -163,11 +164,11 @@ function Main() {
 
                     <div className="child-div-div">
                         <p>Title:</p>
-                        <Link to={concertSortedByRecently[i].url + "/"+ variableName[i].concert_id}>{concertSortedByRecently[i].concert_name}</Link>
+                        <Link to={"/concert/" + concertSortedByRecently[i].concert_id}>{concertSortedByRecently[i].concert_name}</Link>
                     </div>
                     <div className="child-div-div">
                         <p>Artist:</p>
-                        <Link to="">{concertSortedByRecently[i].artist_name}</Link>
+                        <Link to={"/artist/" + concertSortedByRecently[i].artist_id}>{concertSortedByRecently[i].artist_name}</Link>
                     </div>
                 </div>
             </div>
@@ -193,7 +194,7 @@ function Main() {
 
                     <div className="child-div-div">
                         <p>Title:</p>
-                        <Link to="">{concertSortedByPerformanceDate[i].concert_name}</Link>
+                        <Link to={"/concert/"+ concertSortedByPerformanceDate[i].concert_id}>{concertSortedByPerformanceDate[i].concert_name}</Link>
                     </div>
                     <div className="child-div-div">
                         <p>Artist:</p>
