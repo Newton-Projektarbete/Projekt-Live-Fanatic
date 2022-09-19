@@ -41,8 +41,8 @@ function Concert() {
                     </div>
 
                     <div className="line_up">
-                        <p>Line-up:</p>
-                        <a>{concert.artist_name}</a>
+                        <p>Artist:</p>
+                        <Link to={"/artist/" + concert.artist_id}>{concert.artist_name}</Link>
                     </div>
 
                     <div className="button_content">
