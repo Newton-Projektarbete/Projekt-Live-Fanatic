@@ -33,11 +33,11 @@ const logoutUser = () => {
         
             <div className="dropdown-content">
                 <ul className="genre-list"></ul>
-                <Link to="#">Hiphop</Link>
-                <Link to="#">Rock</Link>
-                <Link to="#">Jazz</Link>
-                <Link to="#">Dance</Link>
-                <Link to="#">House</Link>
+                <Link to="/rock">Rock</Link>
+                <Link to="/pop">Pop</Link>
+                <Link to="/jazz">Jazz</Link>
+                <Link to="/blues">Blues</Link>
+                <Link to="/hiphop">Hiphop</Link>
             </div>
         </div>
         
@@ -92,11 +92,11 @@ const logoutUser = () => {
 
         <div className="dropdown-content">
             <ul className="genre-list"></ul>
-            <Link to="#">Hiphop</Link>
-            <Link to="#">Rock</Link>
-            <Link to="#">Jazz</Link>
-            <Link to="#">Dance</Link>
-            <Link to="#">House</Link>
+            <Link to="/rock">Rock</Link>
+                <Link to="/pop">Pop</Link>
+                <Link to="/jazz">Jazz</Link>
+                <Link to="/blues">Blues</Link>
+                <Link to="/hiphop">Hiphop</Link>
         </div>
     </div>
 

@@ -129,7 +129,7 @@ function Main() {
         } else {
             // find all concerts
             for (let i = 0; i < variableName.length; i++) {
-                if (variableName[i].performance_date === today) {
+                if (variableName[i].performance_date === today && genreId === undefined) {
                     concertArr[i] = <div className="main-content-box">
                         <div className="main-img-box"> <img className="main-img" src={
                             variableName[i].concert_image_url} alt="" />
@@ -290,7 +290,8 @@ function Main() {
             }
         } else {
             for (let i = 0; i < concertSortedByRecently.length; i++) {
-                concertArr[i] = <div className="main-content-box">
+                if (genreId === undefined) {
+                    concertArr[i] = <div className="main-content-box">
                     <div className="main-img-box"> <img className="main-img" src={
                         concertSortedByRecently[i].concert_image_url} alt="" />
                         <div to="" className="material-symbols-outlined main-like-btn">
@@ -310,7 +311,7 @@ function Main() {
                         </div>
                     </div>
                 </div>
-
+                }
             }
         }
 
@@ -354,7 +355,7 @@ function Main() {
             }
         } else {
             for (let i = 0; i < concertSortedByPerformanceDate.length; i++) {
-                if (concertSortedByPerformanceDate[i].performance_date > today) {
+                if (concertSortedByPerformanceDate[i].performance_date > today && genreId === undefined) {
                     concertArr[i] = <div className="main-content-box">
                         <div className="main-img-box"> <img className="main-img" src={
                             concertSortedByPerformanceDate[i].concert_image_url} alt="" />
