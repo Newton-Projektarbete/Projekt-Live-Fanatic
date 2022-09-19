@@ -14,6 +14,7 @@ import Stream from "./Stream";
 import ConfirmPayment from "./ConfirmPayment";
 import { useState, useEffect } from 'react'
 import { useNavigate, useLocation } from "react-router-dom";
+import NoMatch from "./NoMatch";
 
 function LiveFanaticRouter(){
     let location = useLocation();
@@ -142,6 +143,7 @@ function LiveFanaticRouter(){
             <Route path="/qr" element={ < QR />} />
             <Route path="/stream" element={ < Stream />} />
             <Route path="/confirm-payment" element={ < ConfirmPayment />} />
+            <Route path="*" element={ < NoMatch />} />
         </Routes>
         <div className="footer">
         <footer >
