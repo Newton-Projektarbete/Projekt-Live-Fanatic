@@ -25,16 +25,18 @@ function SignUp(){
 }
 
 
-const handleSubmit = () => {
-    fetch('/data/users', {
+const handleSubmit = async () => {
+    if(password == confirmPassword) {
+       let response = await fetch('/data/users', {
      method: 'POST',
-     values: {
-        email,
-        username,
-        password,
-        confirmPassword
-    }
+     headers:{ 'Content-Type': 'application/json'},
+     body: JSON.stringify({email: email,
+        username: username,
+        password: password})
+     
 })
+    console.log(response)
+    }    
 }
 
 
