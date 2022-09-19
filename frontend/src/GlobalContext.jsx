@@ -1,14 +1,17 @@
 import { createContext, useState, useEffect } from "react";
+import { useNavigate, useLocation,} from "react-router-dom";
 const GlobalContext = createContext();
 
 export const GlobalProvider = ({ children }) => {
+    const loggedInURLs = ["/profile", "/buy-ticket", "/profile-edit"]
+    const loggedOutURLs = ["/sign-up", "/log-in", ]
 
 
 // useState for all variables 
 const [isLoading, setIsLoading] = useState(true)
 const [allConcerts, setAllConcerts] = useState([])
 const [allArtists, setAllArtists] = useState([])
-const [isloggedIn, setIsLoggedIn] = useState(false)
+const [isLoggedIn, setisLoggedIn] = useState(false)
 /*
 const [isLoaded, setisLoaded] = useState(false) */
 
@@ -16,7 +19,6 @@ const [isLoaded, setisLoaded] = useState(false) */
 useEffect(() => {
     loadAllConcerts()
     loadAllArtists()
-    isLoggedIn()
   }, []);
 
 
@@ -29,12 +31,22 @@ useEffect(() => {
     setIsLoading(false)
   }
 
-  const isLoggedIn = async () => {
+ /*  const isLoggedIn = async () => {
     setIsLoading(true)
     const response = await fetch("/data/login")
     const result = await response.json()
-    setIsLoggedIn(true)
-  }
+    setisLoggedIn(myJson.loggedIn)
+  } */
+  useEffect (()=>{
+    fetch('/data/login', {
+        method: 'GET'
+    }).then(function (response) {
+        return response.json();
+    }).then(function (myJson) {
+        setIsLoading(true)
+        setisLoggedIn(myJson.loggedIn)
+      });
+  },[]);
 
   const loadAllArtists = async () => {
     setIsLoading(true)
@@ -44,6 +56,21 @@ useEffect(() => {
     setAllArtists(result)
     setIsLoading(false)
   }
+  useEffect(()=>{
+    if (isLoading == false) return;
+
+    const currentUrl = location.pathname;
+
+      if(isLoggedIn){
+        if (loggedOutURLs.some(url => currentUrl === url)) {
+          navigate("/", { replace: true });
+        }
+      } else {
+        if (loggedInURLs.some(url => currentUrl === url)) {
+          navigate("/log-in", { replace: true });
+        }
+    }
+},[])
 
     return (
         <GlobalContext.Provider
@@ -51,7 +78,7 @@ useEffect(() => {
             isLoading,
             allConcerts,
             allArtists,
-            isloggedIn
+            isLoggedIn
           }}
         >
           {children}

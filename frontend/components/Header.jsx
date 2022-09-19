@@ -1,15 +1,23 @@
 import GlobalContext from "../src/GlobalContext"
 import {Link} from "react-router-dom"
 import { useContext } from "react"
+import LogIn from "./LogIn";
 function Header(){
     /* let isLoggedIn = false */
 
-     const { isloggedIn } = useContext(GlobalContext);
+     const { isLoggedIn } = useContext(GlobalContext);
 
 
 /* {IfThisIsTrue ? DoThis : OtherwiseDoThis } */
+const logoutUser = () => {
+
+    fetch('/data/login', {
+        method: 'DELETE',
+
+    })
+}
     return <>
-        {isloggedIn ? 
+        {isLoggedIn ? 
 /*         <h1>Logged In</h1> */
         <header className="topnav">
         <div>
@@ -56,7 +64,7 @@ function Header(){
         
             <div>
                 <Link to="/log-in" className="a-nav-btn">
-                    <button className="login-btn">Log out</button>
+                    <button className="login-btn" onClick={logoutUser} type="button">Log out</button>
                 </Link>
 
                 <Link to="/profile" className="a-nav-btn">
@@ -74,6 +82,7 @@ function Header(){
         <Link to="/">
         <img src="../examples/logo.png" alt="" />
         </Link>
+
     </div>
 
     <div className="dropdown">
@@ -114,9 +123,6 @@ function Header(){
                             <span className="like-btn material-symbols-outlined">favorite</span>
                             <div className="like-amount">7</div>
                         </div>
-                    </Link>
-                    <Link to="/buy-ticket" >
-                        <span className="cart-btn material-symbols-outlined">shopping_cart</span>
                     </Link>
                 </div>
             </div>
