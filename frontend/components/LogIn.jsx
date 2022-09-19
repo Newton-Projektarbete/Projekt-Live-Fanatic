@@ -35,6 +35,13 @@ function LogIn() {
             navigate("/", { replace: true });
         });
 }
+const logoutUser = () => {
+
+    fetch('/data/login', {
+        method: 'DELETE',
+
+    })
+}
 
     return <>
         <div className="body">
