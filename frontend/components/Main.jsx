@@ -108,7 +108,7 @@ function Main() {
                     </div>
                     <div className="child-div-div">
                         <p>Artist:</p>
-                        <Link to={"/artist/"}>{variableName[i].artist_name}</Link>
+                        <Link to={"/artist/" + variableName[i].artist_id}>{variableName[i].artist_name}</Link>
                     </div>
                 </div>
             </div>

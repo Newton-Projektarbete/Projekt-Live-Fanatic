@@ -3,6 +3,13 @@ import { useContext } from "react";
 import GlobalContext from "../src/GlobalContext";
 
 function Artist() {
+
+    let today = new Date();
+    let dd = String(today.getDate()).padStart(2, '0');
+    let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    let yyyy = today.getFullYear();
+    today = dd + '-' + mm + '-' + yyyy;
+
     let id = useParams().artist_id;
     const { allArtists, allConcerts } = useContext(GlobalContext);
 
@@ -18,7 +25,7 @@ function Artist() {
     const upcomingConcerts = () => {
         let concerts = []
         for (let i = 0; i < allConcerts.length; i++) {
-            if (allConcerts[i].artist_id == artist.artist_id) {
+            if (allConcerts[i].artist_id == artist.artist_id && allConcerts[i].performance_date>=today) {
                 concerts[i] = <div className="artist-result-content">
                 <Link to="">
                     <img className="artist-img" src={allConcerts[i].concert_image_url} alt="" />
