@@ -1,19 +1,24 @@
 import { createContext, useState, useEffect } from "react";
-
 const GlobalContext = createContext();
 
 export const GlobalProvider = ({ children }) => {
+
 
 // useState for all variables 
 const [isLoading, setIsLoading] = useState(true)
 const [allConcerts, setAllConcerts] = useState([])
 const [allArtists, setAllArtists] = useState([])
+const [isloggedIn, setIsLoggedIn] = useState(false)
+/*
+const [isLoaded, setisLoaded] = useState(false) */
 
 // useEffect to run methods upon load
 useEffect(() => {
     loadAllConcerts()
     loadAllArtists()
+    isLoggedIn()
   }, []);
+
 
   const loadAllConcerts = async () => {
     setIsLoading(true)
@@ -22,6 +27,13 @@ useEffect(() => {
     /* console.log(result) */
     setAllConcerts(result)
     setIsLoading(false)
+  }
+
+  const isLoggedIn = async () => {
+    setIsLoading(true)
+    const response = await fetch("/data/login")
+    const result = await response.json()
+    setIsLoggedIn(true)
   }
 
   const loadAllArtists = async () => {
@@ -33,13 +45,13 @@ useEffect(() => {
     setIsLoading(false)
   }
 
-
     return (
         <GlobalContext.Provider
           value={{
             isLoading,
             allConcerts,
-            allArtists
+            allArtists,
+            isloggedIn
           }}
         >
           {children}
