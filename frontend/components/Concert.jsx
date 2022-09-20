@@ -55,7 +55,7 @@ function Concert() {
                     </div>
 
                     <div className="tickets_left">
-                        <p>5 tickets remaining!</p>
+                        <p>Remaining tickets: {concert.ticket_saldo}</p>
                     </div>
                 </div>
                 <div className="right_content">
