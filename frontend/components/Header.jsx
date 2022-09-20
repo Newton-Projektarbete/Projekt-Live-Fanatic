@@ -1,30 +1,41 @@
 import GlobalContext from "../src/GlobalContext"
-import {Link} from "react-router-dom"
-import { useContext, useEffect, useState } from "react"
+import {Link, useNavigate} from "react-router-dom"
+import { useContext } from "react"
 function Header(){
-     const { isLoggedIn, setisLoggedIn } = useContext(GlobalContext);
-
-     const [headerPage, setHeaderPage] = useState("")
-/* const [isLoggedIn, setisLoggedIn] = useState(false) */
+    const navigate = useNavigate();
+    const { isLoggedIn, setisLoggedIn } = useContext(GlobalContext);
 
 /* {IfThisIsTrue ? DoThis : OtherwiseDoThis } */
 const logoutUser = () => {
 
     fetch('/data/login', {
         method: 'DELETE',
-    })
-    
+    }).then(function (response) {
+        console.log(response)
+        if(response.ok == true){
+            window.location.reload(true)
+        } else {
+            console.log("fail")
+        }
+    }).then( navigate("/"))
+          
 }
+
+/* if(response.ok == true){
+    window.location.reload(true)
+} else {
+    console.log("fail")
+}
+
+}).then(navigate("/")) */
+
   
 
 
-
-
-
-
 function reloadPage() {
-    window.location.reload(false)
+    
 }
+
 /* if(window.performance.navigation)
 console.log(window.performance.addEventListener("loading")) */
     return <>
@@ -51,8 +62,6 @@ console.log(window.performance.addEventListener("loading")) */
             </div>
         </div>
         
-        <Link to="concert" className="a-default">Concerts</Link>
-        
         <div className="nav-right">
         
             <div className="search-container">
@@ -66,14 +75,28 @@ console.log(window.performance.addEventListener("loading")) */
                 <div className="sub-search-container">
         
                     <Link to="/search" className="a-default">Advanced search</Link>
+                    <div>
+                    <Link to="/profile" className="like-link" >
+                        <div className="like-box">
+                            <span className="like-btn material-symbols-outlined">favorite</span>
+                            <div className="like-amount">7</div>
+                        </div>
+                    </Link>
+                    <Link to="/profile" className="like-link" >
+                        <div className="like-box">
+                            <span className="cart-btn material-symbols-outlined">shopping_cart</span>
+                        </div>
+                    </Link>
+
+
+                    </div>
                 </div>
         
             </div>
         
             <div>
-                <Link to="/log-in" className="a-nav-btn">
-                    <button className="login-btn" onClick={logoutUser} type="button">Log out</button>
-                </Link>
+
+                <button className="login-btn" onClick={logoutUser} type="button">Log out</button>
 
                 <Link to="/profile" className="a-nav-btn">
                 <button className="profile-btn">Profile</button>
@@ -108,9 +131,9 @@ console.log(window.performance.addEventListener("loading")) */
         </div>
     </div>
 
-    <Link to="concert" className="a-default">Concerts</Link>
+{/*     <Link to="concert" className="a-default">Concerts</Link>
     <Link to="#calender" className="a-default">Calender</Link>
-    <Link to="#live" className="a-default">Live</Link>
+    <Link to="#live" className="a-default">Live</Link> */}
 
     <div className="nav-right">
 
@@ -124,15 +147,7 @@ console.log(window.performance.addEventListener("loading")) */
 
             <div className="sub-search-container">
 
-                <Link to="/search" className="a-default">Advanced search</Link>
-                <div>
-                    <Link to="/profile" className="like-link" >
-                        <div className="like-box">
-                            <span className="like-btn material-symbols-outlined">favorite</span>
-                            <div className="like-amount">7</div>
-                        </div>
-                    </Link>
-                </div>
+                <Link to="/search" className="a-default">Advanced search</Link>  
             </div>
 
         </div>
