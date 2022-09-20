@@ -24,15 +24,18 @@ function SignUp(){
 
 }
 
-
+let role = "user"
 const handleSubmit = async () => {
     if(password == confirmPassword) {
        let response = await fetch('/data/users', {
      method: 'POST',
      headers:{ 'Content-Type': 'application/json'},
-     body: JSON.stringify({email: email,
+     body: JSON.stringify({
+        email: email,
         username: username,
-        password: password})
+        password: password,
+        roles: role
+    })
      
 })
     console.log(response)

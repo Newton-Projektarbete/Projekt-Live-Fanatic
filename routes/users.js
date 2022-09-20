@@ -21,7 +21,7 @@ module.exports = function(server, db){
     let encryptedPassword = encrypt(user.password)
     let result
     try{
-      result = db.prepare('INSERT INTO users (email, password) VALUES(?,?)').run([user.email, encryptedPassword])
+      result = db.prepare('INSERT INTO users (email, password, roles) VALUES(?,?,?)').run([user.email, encryptedPassword, user.roles])
     }catch(e){
       console.error(e)
     }
