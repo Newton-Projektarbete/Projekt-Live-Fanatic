@@ -4,8 +4,15 @@ import GlobalContext from "../src/GlobalContext";
 
 function Profile(){
 
-    
+    let id = useParams().ticket_id;
     const { allTickets, sortedConcerts, allConcerts} = useContext(GlobalContext);
+
+    allTickets.map(a => {
+        if (a.ticket_id == id) {
+            ticket = a
+            return ticket
+        }
+    })
 
 
     let today = new Date();
@@ -42,7 +49,7 @@ function Profile(){
                                 <span className="material-symbols-outlined global-icons">print</span>
                             </a>
                             <a href="#">
-                                <span className="material-symbols-outlined global-icons">qr_code</span>
+                            <Link to={"/profile/" + allTickets[x].ticket_id}><span className="material-symbols-outlined global-icons">qr_code</span></Link>
                             </a>
                         </td>
     
@@ -86,7 +93,7 @@ function Profile(){
                                 <span className="material-symbols-outlined global-icons">print</span>
                             </a>
                             <a href="#">
-                                <span className="material-symbols-outlined global-icons">qr_code</span>
+                            <Link to={"/profile/" + allTickets[x].ticket_id}><span className="material-symbols-outlined global-icons">qr_code</span></Link>
                             </a>
                         </td>
     
