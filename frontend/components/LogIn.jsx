@@ -31,10 +31,9 @@ function LogIn() {
         }).then(function (response) {
             console.log(response)
             return response.json();
-        }).then(function (myJson) {
-            navigate("/", { replace: true });
-        });
-}
+        }).then( (res) => navigate("/"));
+    }
+
 
 
 

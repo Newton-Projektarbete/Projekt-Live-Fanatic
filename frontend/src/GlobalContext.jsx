@@ -1,19 +1,35 @@
 import { createContext, useState, useEffect } from "react";
-
+import { useNavigate, useLocation,} from "react-router-dom";
 const GlobalContext = createContext();
 
 export const GlobalProvider = ({ children }) => {
+  const loggedInURLs = ["/profile", "/buy-ticket", "/profile-edit"]
+  const loggedOutURLs = ["/sign-up", "/log-in", ]
+
 
 // useState for all variables 
 const [isLoading, setIsLoading] = useState(true)
 const [allConcerts, setAllConcerts] = useState([])
 const [allArtists, setAllArtists] = useState([])
+const [allTickets, setAllTickets] = useState([])
+const [isLoggedIn, setisLoggedIn] = useState(false)
+
+const [validTickets, setValidTickets] = useState([])
+const [sortedConcerts, setSortedConcerts] = useState([])
+/*
+const [isLoaded, setisLoaded] = useState(false) */
 
 // useEffect to run methods upon load
 useEffect(() => {
     loadAllConcerts()
     loadAllArtists()
+    loadAllTickets()
+    loadValidTickets()
+    loadSortedConcerts()
+
   }, []);
+
+
 
   const loadAllConcerts = async () => {
     setIsLoading(true)
@@ -24,6 +40,33 @@ useEffect(() => {
     setIsLoading(false)
   }
 
+
+  const loadValidTickets = async () => {
+    setIsLoading(true)
+    const response = await fetch("/data/ticket/valid")
+    const result = await response.json()
+    /* console.log(result) */
+    setAllTickets(result)
+    setIsLoading(false)
+  }
+
+  const loadSortedConcerts = async () => {
+    setIsLoading(true)
+    const response = await fetch("/data/concert/coming-soon")
+    const result = await response.json()
+    /* console.log(result) */
+    setSortedConcerts(result)
+    setIsLoading(false)
+  }
+
+ /*  const isLoggedIn = async () => {
+    setIsLoading(true)
+    const response = await fetch("/data/login")
+    const result = await response.json()
+    setisLoggedIn(myJson.loggedIn)
+  } */
+
+  
   const loadAllArtists = async () => {
     setIsLoading(true)
     const response = await fetch("/data/artist")
@@ -33,13 +76,52 @@ useEffect(() => {
     setIsLoading(false)
   }
 
+  const loadAllTickets = async () => {
+    setIsLoading(true)
+    const response = await fetch("/data/ticket")
+    const result = await response.json()
+    /* console.log(result) */
+    setAllTickets(result)
+    setIsLoading(false)
+  }
+
+  useEffect (()=>{
+    fetch('/data/login', {
+        method: 'GET'
+    }).then(function (response) {
+        return response.json();
+    }).then(function (myJson) {
+        setIsLoading(true)
+        setisLoggedIn(myJson.loggedIn)
+      });
+  },[]);
+
+  useEffect(()=>{
+    if (isLoading == false) return;
+
+    const currentUrl = location.pathname;
+
+      if(isLoggedIn){
+        if (loggedOutURLs.some(url => currentUrl === url)) {
+          navigate("/", { replace: true });
+        }
+      } else {
+        if (loggedInURLs.some(url => currentUrl === url)) {
+          navigate("/log-in", { replace: true });
+        }
+    }
+},[])
 
     return (
         <GlobalContext.Provider
           value={{
             isLoading,
             allConcerts,
-            allArtists
+            allArtists,
+            allTickets,
+            validTickets,
+            sortedConcerts,
+            isLoggedIn
           }}
         >
           {children}
