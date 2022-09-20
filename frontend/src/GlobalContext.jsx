@@ -12,8 +12,6 @@ const [isLoading, setIsLoading] = useState(true)
 const [allConcerts, setAllConcerts] = useState([])
 const [allArtists, setAllArtists] = useState([])
 const [isLoggedIn, setisLoggedIn] = useState(false)
-/*
-const [isLoaded, setisLoaded] = useState(false) */
 
 // useEffect to run methods upon load
 useEffect(() => {
@@ -37,6 +35,7 @@ useEffect(() => {
     const result = await response.json()
     setisLoggedIn(myJson.loggedIn)
   } */
+
   useEffect (()=>{
     fetch('/data/login', {
         method: 'GET'
@@ -56,6 +55,7 @@ useEffect(() => {
     setAllArtists(result)
     setIsLoading(false)
   }
+
   useEffect(()=>{
     if (isLoading == false) return;
 
@@ -78,7 +78,7 @@ useEffect(() => {
             isLoading,
             allConcerts,
             allArtists,
-            isLoggedIn
+            isLoggedIn,
           }}
         >
           {children}
