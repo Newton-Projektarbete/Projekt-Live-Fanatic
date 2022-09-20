@@ -49,7 +49,7 @@ function Concert() {
                         <Link to="/buy-ticket">
                             <button className="buy_button default_button">Buy ticket</button>
                         </Link>
-                        <Link to="/stream">
+                        <Link to={"/concert/"+ concert.concert_id +"/stream"}>
                             <button className="stream_button default_button">Stream</button>
                         </Link>
                     </div>

@@ -31,17 +31,9 @@ function LogIn() {
         }).then(function (response) {
             console.log(response)
             return response.json();
-        }).then(function (myJson) {
-            navigate("/", { replace: true });
-        });
-}
-const logoutUser = () => {
+        }).then( (res) => navigate("/"));
+    }
 
-    fetch('/data/login', {
-        method: 'DELETE',
-
-    })
-}
 
     return <>
         <div className="body">
