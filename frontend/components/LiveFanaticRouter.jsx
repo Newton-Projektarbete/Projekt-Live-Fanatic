@@ -13,6 +13,7 @@ import SignUp from "./SignUp";
 import QR from "./QR";
 import Stream from "./Stream";
 import ConfirmPayment from "./ConfirmPayment";
+import Header from "./Header";
 import NoMatch from "./NoMatch";
 function LiveFanaticRouter(){
 
