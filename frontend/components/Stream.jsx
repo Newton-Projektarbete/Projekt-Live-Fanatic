@@ -1,7 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 import { useContext, useState } from "react";
 import GlobalContext from "../src/GlobalContext";
-import Youtube from "react-youtube"
 // https://www.npmjs.com/package/react-youtube
 
 function Stream() {
