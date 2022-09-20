@@ -7,8 +7,8 @@ import {QRCodeSVG} from 'qrcode.react';
 
 function QR() {
 
-  /* let id = useParams().concert_id; */
-    const { allTickets } = useContext(GlobalContext);
+  let id = useParams().ticket_id;
+  const { allTickets,allConcerts } = useContext(GlobalContext);
 
     let ticket = []
     let pageExist = false
@@ -19,6 +19,40 @@ function QR() {
             return ticket
         }
     })
+
+    const getConcert = () => {
+      let concert = []
+      for (let i = 0; i < allConcerts.length; i++) {
+          for (let x = 0; x < allTickets.length; x++) {
+            if (allConcerts[i].concert_id == allTickets[x].concert_id && allTickets[x].ticket_id == id) {
+              concert = 
+              <tr>
+              <td className="profile-td">
+                <img
+                  className="img-profile"
+                  src={allConcerts[i].concert_image_url}
+                />
+              </td>
+              <td className="profile-td">
+                <a href=""><Link to={"/artist/" + allConcerts[i].artist_id}>{allConcerts[i].artist_name }</Link></a>
+              </td>
+              <td className="profile-td">{allConcerts[i].performance_date}</td>
+              <td className="profile-td">{allConcerts[i].location}</td>
+              <td className="profile-td">
+                <a href="#">
+                  <span className="material-symbols-outlined">print</span>
+                </a>
+              </td>
+            </tr>
+              
+            }
+      
+          
+          
+        }
+        
+      }return concert
+    }
     
 
  /* // For saving QR as image needs implentention
@@ -55,25 +89,8 @@ function QR() {
               <th>Date:</th>
               <th>Location:</th>
             </tr>
-
-            <tr>
-              <td className="profile-td">
-                <img
-                  className="img-profile"
-                  src="../examples/justin-timberlake.jpg"
-                />
-              </td>
-              <td className="profile-td">
-                <a href="">Justin Timberlake</a>
-              </td>
-              <td className="profile-td">2022.12.12</td>
-              <td className="profile-td">Stockholm, Globen</td>
-              <td className="profile-td">
-                <a href="#">
-                  <span className="material-symbols-outlined">print</span>
-                </a>
-              </td>
-            </tr>
+            {getConcert()}
+           
           </table>
         </div>
       </div>

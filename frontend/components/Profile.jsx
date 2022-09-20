@@ -40,7 +40,7 @@ function Profile(){
     
                     <tr>
                         <td className="profile-td"><img className="img-profile" src={sortedConcerts[i].concert_image_url} /></td>
-                        <td className="profile-td"><Link to="">{sortedConcerts[i].concert_name}</Link></td>
+                        <td className="profile-td"><Link to={"/concert/" + sortedConcerts[i].concert_id}>{sortedConcerts[i].concert_name}</Link></td>
                         <td className="profile-td"><p>{sortedConcerts[i].performance_date}</p></td>
                         <td className="profile-td">{sortedConcerts[i].location}</td>
                         <td className="profile-td">
@@ -84,7 +84,7 @@ function Profile(){
     
                     <tr>
                         <td className="profile-td"><img className="img-profile" src={sortedConcerts[i].concert_image_url} /></td>
-                        <td className="profile-td"><Link to="">{sortedConcerts[i].concert_name}</Link></td>
+                        <td className="profile-td"><Link to={"/concert/" + sortedConcerts[i].concert_id}>{sortedConcerts[i].concert_name}</Link></td>
                         <td className="profile-td"><p>{sortedConcerts[i].performance_date}</p></td>
                         <td className="profile-td">{sortedConcerts[i].location}</td>
                         <td className="profile-td">
