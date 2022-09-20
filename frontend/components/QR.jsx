@@ -78,7 +78,7 @@ function QR() {
           <h2 className="QR-h2">QR Code</h2>
           <p className="QR-img"></p>
           <div className="QR-img">
-          <QRCodeSVG id="MyQRCode" className="QR-img" value={ticket.ticket_id + ticket.user_id + ticket.concert_id} />
+          <QRCodeSVG id="MyQRCode" className="QR-img" value={window.location.href} />
           </div>
           {/* <a onClick={downloadQR}> Download QR </a> */}
 
