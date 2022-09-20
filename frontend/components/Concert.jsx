@@ -41,8 +41,8 @@ function Concert() {
                     </div>
 
                     <div className="line_up">
-                        <p>Line-up:</p>
-                        <a>{concert.artist_name}</a>
+                        <p>Artist:</p>
+                        <Link to={"/artist/" + concert.artist_id}>{concert.artist_name}</Link>
                     </div>
 
                     <div className="button_content">
@@ -69,7 +69,7 @@ function Concert() {
         </> 
         :<>
         <div className="body">
-            <h1 className="noMatch">Page Dosen't Exist!</h1> 
+            <h1 className="noMatch">Page not found</h1> 
         </div>
         </>
     }

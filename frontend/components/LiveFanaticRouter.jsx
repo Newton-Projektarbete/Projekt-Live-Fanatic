@@ -27,7 +27,7 @@ function LiveFanaticRouter(){
     const loggedOutURLs = ["/sign-up", "/log-in"]
   
     useEffect (()=>{
-      console.log(location)
+      /* console.log(location) */
       fetch('/data/login', {
           method: 'GET'
       }).then(function (response) {
@@ -64,11 +64,12 @@ function LiveFanaticRouter(){
         <Routes>
 
             <Route path="/" element={<Main />} />
+            <Route path="/:genre" element={<Main />} />
             <Route path="/main-view-all" element={<MainViewAll />} />
             <Route path="/profile" element={ < Profile />} />
             <Route path="/profile-edit" element={ < ProfileEdit />} />
             <Route path="/search" element={ < AdvancedSearch />} />
-            <Route path="/artist" element={ < Artist />} />
+            <Route path="/artist/:artist_id" element={ < Artist />} />
             <Route path="/buy-ticket" element={ < BuyTicket />} />
             <Route path="/concert/:concert_id" element={ < Concert />} />
             <Route path="/log-in" element={ < LogIn />} />
