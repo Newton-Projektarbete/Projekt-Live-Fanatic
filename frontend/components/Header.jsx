@@ -1,12 +1,12 @@
 import GlobalContext from "../src/GlobalContext"
 import {Link} from "react-router-dom"
-import { useContext } from "react"
-import LogIn from "./LogIn";
+import { useContext, useState, } from "react"
+
 function Header(){
     /* let isLoggedIn = false */
 
      const { isLoggedIn } = useContext(GlobalContext);
-
+    const [searchTerm, setSearchTerm] = useState("")
 
 /* {IfThisIsTrue ? DoThis : OtherwiseDoThis } */
 const logoutUser = () => {
@@ -16,6 +16,41 @@ const logoutUser = () => {
 
     })
 }
+
+function search(){
+    const artists = fetch('data/artist')
+
+    const search = artists.filter(
+    artist =>{
+        return(
+            artist
+            .artist_name
+            .toIgnoreCase()
+            .includes(searchTerm.toIgnoreCase)
+        )
+    }
+)
+}
+
+const handleChange = e =>{
+    setSearchTerm(e.target.value)
+    console.log(searchTerm);
+  }
+
+    const { allArtists } = useContext(GlobalContext);
+
+    let artist = []
+    let pageExist = false
+
+    // allArtists.map(a => {
+    //     if (a.artist_id == id) {
+    //         artist = a
+    //         pageExist = true
+    //         return artist
+    //     }
+    // })
+
+
     return <>
         {isLoggedIn ? 
 /*         <h1>Logged In</h1> */
@@ -49,8 +84,8 @@ const logoutUser = () => {
         
             <div className="search-container">
                 <div className="search-field">
-                    <form action="/action_page.php" className="search-field-form">
-                        <input className="search-field-input" type="text" placeholder="Search.." name="search"/>
+                    <form action="/search" className="search-field-form">
+                        <input className="search-field-input" onChange= {handleChange} type="text" placeholder="Search.." name="search"/>
                         <span className="material-symbols-outlined search-field-icon">search</span>
                     </form>
                 </div>
@@ -108,8 +143,8 @@ const logoutUser = () => {
 
         <div className="search-container">
             <div className="search-field">
-                <form action="/action_page.php" className="search-field-form">
-                    <input className="search-field-input" type="text" placeholder="Search.." name="search"/>
+                <form action="/search" className="search-field-form">
+                    <input className="search-field-input" onChange={handleChange} type="text" placeholder="Search..logut" name="search"/>
                     <span className="material-symbols-outlined search-field-icon">search</span>
                 </form>
             </div>

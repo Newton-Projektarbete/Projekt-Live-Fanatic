@@ -1,6 +1,28 @@
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import { useContext } from "react";
+import GlobalContext from "../src/GlobalContext";
+import Header from "../components/Header"
 
 function AdvancedSearch(){
+
+    let searchTerm = useParams("?search=")
+    console.log("searchTerm")
+    console.log(searchTerm)
+    console.log("-----------")
+    const { allArtists, allConcerts } = useContext(GlobalContext);
+
+
+
+
+let artist = []
+allArtists.map(a => {
+    if (a.artist_name == searchTerm) {
+        artist = a
+        pageExist = true
+        return artist
+    }
+})
+
     return <><div className="body">
 
          <div className="advanced-search">
@@ -80,41 +102,15 @@ function AdvancedSearch(){
             </div>
 
             <div className="adv-src-result-box">
-                <h2>Result</h2>
+                <h2>Result {Header.searchTerm}</h2>
 
                 <div className="adv-src-result-content">
-                    <Link to="">
-                        <div className="adv-src-img"></div>
-                    </Link>
                     <div className="adv-src-result-info">
-                        <Link to="">Justin Timberlake</Link>
-                        <p className="adv-src-p">2022.12.12</p>
-                        <p className="adv-src-p">Stockholm, Globen</p>
+                        <Link to="">
+                            {artist.artist_name}
+                        </Link>
                     </div>
                 </div>
-
-                <div className="adv-src-result-content">
-                    <Link to="">
-                        <div className="adv-src-img"></div>
-                    </Link>
-                    <div className="adv-src-result-info">
-                        <Link to="">Justin Timberlake</Link>
-                        <p className="adv-src-p">2022.12.12</p>
-                        <p className="adv-src-p">Stockholm, Globen</p>
-                    </div>
-                </div>
-
-                <div className="adv-src-result-content">
-                    <Link to="">
-                        <div className="adv-src-img"></div>
-                    </Link>
-                    <div className="adv-src-result-info">
-                        <Link to="">Justin Timberlake</Link>
-                        <p className="adv-src-p">2022.12.12</p>
-                        <p className="adv-src-p">Stockholm, Globen</p>
-                    </div>
-                </div> 
-
             </div>
         </div>
 </div>
