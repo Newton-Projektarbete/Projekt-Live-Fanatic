@@ -1,4 +1,5 @@
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link,useNavigate, useLocation  } from "react-router-dom";
+import { useState, useEffect } from 'react'
 import Main from "./Main";
 import MainViewAll from "./MainViewAll";
 import Profile from "./Profile";
@@ -12,10 +13,8 @@ import SignUp from "./SignUp";
 import QR from "./QR";
 import Stream from "./Stream";
 import ConfirmPayment from "./ConfirmPayment";
-import { useState, useEffect } from 'react'
-import { useNavigate, useLocation } from "react-router-dom";
-import NoMatch from "./NoMatch";
 import Header from "./Header";
+import NoMatch from "./NoMatch";
 
 function LiveFanaticRouter(){
 
@@ -24,8 +23,8 @@ function LiveFanaticRouter(){
     const navigate = useNavigate();
     const [isLoaded, setisLoaded] = useState(false)
     const [isLoggedIn, setisLoggedIn] = useState(false)
-    const loggedInURLs = ["/profile", "/buy-ticket"]
-    const loggedOutURLs = ["/sign-up", "/log-in"]
+    const loggedInURLs = ["/profile", "/buy-ticket", "/profile-edit"]
+    const loggedOutURLs = ["/sign-up", "/log-in", ]
   
     useEffect (()=>{
       /* console.log(location) */
@@ -38,6 +37,8 @@ function LiveFanaticRouter(){
           setisLoggedIn(myJson.loggedIn)
         });
     },[]);
+
+    
 
     useEffect(()=>{
         if (isLoaded == false) return;
@@ -54,9 +55,12 @@ function LiveFanaticRouter(){
             }
         }
     },[location.pathname, isLoggedIn])
-
-    if(!isLoaded) return;
     
+    const logoutUser = () => {
+        fetch('/data/login', {
+            method: 'DELETE'
+        })
+    }
 
     return <>
         <div>
