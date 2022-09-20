@@ -12,58 +12,16 @@ import SignUp from "./SignUp";
 import QR from "./QR";
 import Stream from "./Stream";
 import ConfirmPayment from "./ConfirmPayment";
-import { useState, useEffect } from 'react'
-import { useNavigate, useLocation } from "react-router-dom";
 import NoMatch from "./NoMatch";
 import Header from "./Header";
 
-function LiveFanaticRouter(){
-
-
-    let location = useLocation();
-    const navigate = useNavigate();
-    const [isLoaded, setisLoaded] = useState(false)
-    const [isLoggedIn, setisLoggedIn] = useState(false)
-    const loggedInURLs = ["/profile", "/buy-ticket"]
-    const loggedOutURLs = ["/sign-up", "/log-in"]
-  
-    useEffect (()=>{
-      /* console.log(location) */
-      fetch('/data/login', {
-          method: 'GET'
-      }).then(function (response) {
-          return response.json();
-      }).then(function (myJson) {
-          setisLoaded(true)
-          setisLoggedIn(myJson.loggedIn)
-        });
-    },[]);
-
-    useEffect(()=>{
-        if (isLoaded == false) return;
-
-        const currentUrl = location.pathname;
-  
-          if(isLoggedIn){
-            if (loggedOutURLs.some(url => currentUrl === url)) {
-              navigate("/", { replace: true });
-            }
-          } else {
-            if (loggedInURLs.some(url => currentUrl === url)) {
-              navigate("/log-in", { replace: true });
-            }
-        }
-    },[location.pathname, isLoggedIn])
-
-    if(!isLoaded) return;
-    
+function LiveFanaticRouter(){  
 
     return <>
         <div>
         <Header/>
         </div>
         <Routes>
-
             <Route path="/" element={<Main />} />
             <Route path="/:genre" element={<Main />} />
             <Route path="/main-view-all" element={<MainViewAll />} />
