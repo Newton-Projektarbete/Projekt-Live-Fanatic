@@ -5,7 +5,22 @@ import GlobalContext from "../src/GlobalContext";
 function Main() {
 
     let genreId = useParams().genre
-    console.log(genreId);
+    let pageExist = false;
+    let genreStatus = false
+
+    let genreArr = ["rock", "pop", "jazz", "blues", "hiphop" ]
+
+    for(let i = 0; i < genreArr.length; i++) {
+        if (genreId === genreArr[i]) {
+            pageExist = true;
+            genreStatus = true;
+        }
+        else if (genreId === undefined) {
+            pageExist = true;
+            genreStatus = false;
+        }
+    }
+
     let today = new Date();
     let dd = String(today.getDate()).padStart(2, '0');
     let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
@@ -85,20 +100,11 @@ function Main() {
             artist_name: ""
         }
     ])
+    
 
     const liveConcertsToday = () => {
         let concertArr = []
-        /* 
-            if genre = true => concerts with genre
-            else show all concerts
-        */
-        let genreStatus = false
-        for (let i = 0; i < variableName.length; i++) {
-            if (genreId == variableName[i].genre) {
-                // return concerts with genre
-                genreStatus = true
-            }
-        }
+
         if (genreStatus == true) {
             for (let i = 0; i < variableName.length; i++) {
                 // find genre concerts
@@ -161,13 +167,6 @@ function Main() {
     const allConcerts = () => {
         let concertArr = []
 
-        let genreStatus = false
-        for (let i = 0; i < variableName.length; i++) {
-            if (genreId == variableName[i].genre) {
-                // return concerts with genre
-                genreStatus = true
-            }
-        }
         if (genreStatus == true) {
             for (let i = 0; i < variableName.length; i++) {
                 // find genre concerts
@@ -256,12 +255,6 @@ function Main() {
     const recentlyAdded = () => {
         let concertArr = []
 
-        let genreStatus = false
-        for (let i = 0; i < concertSortedByRecently.length; i++) {
-            if (genreId == concertSortedByRecently[i].genre) {
-                genreStatus = true
-            }
-        }
         if (genreStatus == true) {
             for (let i = 0; i < concertSortedByRecently.length; i++) {
                 if (concertSortedByRecently[i].genre === genreId) {
@@ -292,25 +285,25 @@ function Main() {
             for (let i = 0; i < concertSortedByRecently.length; i++) {
                 if (genreId === undefined) {
                     concertArr[i] = <div className="main-content-box">
-                    <div className="main-img-box"> <img className="main-img" src={
-                        concertSortedByRecently[i].concert_image_url} alt="" />
-                        <div to="" className="material-symbols-outlined main-like-btn">
-                            <span className="like-btn-1 material-symbols-outlined">favorite</span>
+                        <div className="main-img-box"> <img className="main-img" src={
+                            concertSortedByRecently[i].concert_image_url} alt="" />
+                            <div to="" className="material-symbols-outlined main-like-btn">
+                                <span className="like-btn-1 material-symbols-outlined">favorite</span>
+                            </div>
+                        </div>
+
+                        <div className="child-div">
+
+                            <div className="child-div-div">
+                                <p>Title:</p>
+                                <Link to={"/concert/" + concertSortedByRecently[i].concert_id}>{concertSortedByRecently[i].concert_name}</Link>
+                            </div>
+                            <div className="child-div-div">
+                                <p>Artist:</p>
+                                <Link to={"/artist/" + concertSortedByRecently[i].artist_id}>{concertSortedByRecently[i].artist_name}</Link>
+                            </div>
                         </div>
                     </div>
-
-                    <div className="child-div">
-
-                        <div className="child-div-div">
-                            <p>Title:</p>
-                            <Link to={"/concert/" + concertSortedByRecently[i].concert_id}>{concertSortedByRecently[i].concert_name}</Link>
-                        </div>
-                        <div className="child-div-div">
-                            <p>Artist:</p>
-                            <Link to={"/artist/" + concertSortedByRecently[i].artist_id}>{concertSortedByRecently[i].artist_name}</Link>
-                        </div>
-                    </div>
-                </div>
                 }
             }
         }
@@ -321,12 +314,7 @@ function Main() {
 
     const comingSoon = () => {
         let concertArr = []
-        let genreStatus = false
-        for (let i = 0; i < concertSortedByPerformanceDate.length; i++) {
-            if (genreId == concertSortedByPerformanceDate[i].genre) {
-                genreStatus = true
-            }
-        }
+
         if (genreStatus == true) {
             for (let i = 0; i < concertSortedByPerformanceDate.length; i++) {
                 if (concertSortedByPerformanceDate[i].genre === genreId && concertSortedByPerformanceDate[i].performance_date > today) {
@@ -383,7 +371,7 @@ function Main() {
         return concertArr
     }
 
-    return <>
+    return <> {pageExist ? <>
         <div className="body">
 
             <div className="main-content-page">
@@ -417,6 +405,16 @@ function Main() {
             </div>
 
         </div>
+
+    </>
+        : <>
+            <div className="body">
+                <h1 className="noMatch">Page not found</h1>
+            </div>
+        </>
+
+    }
+
     </>
 }
 
