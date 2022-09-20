@@ -3,8 +3,8 @@ import { useNavigate, useLocation,} from "react-router-dom";
 const GlobalContext = createContext();
 
 export const GlobalProvider = ({ children }) => {
-    const loggedInURLs = ["/profile", "/buy-ticket", "/profile-edit"]
-    const loggedOutURLs = ["/sign-up", "/log-in", ]
+  const loggedInURLs = ["/profile", "/buy-ticket", "/profile-edit"]
+  const loggedOutURLs = ["/sign-up", "/log-in", ]
 
 
 // useState for all variables 
@@ -13,6 +13,7 @@ const [allConcerts, setAllConcerts] = useState([])
 const [allArtists, setAllArtists] = useState([])
 const [allTickets, setAllTickets] = useState([])
 const [isLoggedIn, setisLoggedIn] = useState(false)
+
 const [validTickets, setValidTickets] = useState([])
 const [sortedConcerts, setSortedConcerts] = useState([])
 /*
@@ -28,7 +29,6 @@ useEffect(() => {
 
   }, []);
 
-  
 
 
   const loadAllConcerts = async () => {
@@ -65,6 +65,7 @@ useEffect(() => {
     const result = await response.json()
     setisLoggedIn(myJson.loggedIn)
   } */
+
   
   const loadAllArtists = async () => {
     setIsLoading(true)
@@ -121,8 +122,6 @@ useEffect(() => {
             validTickets,
             sortedConcerts,
             isLoggedIn
-
-
           }}
         >
           {children}

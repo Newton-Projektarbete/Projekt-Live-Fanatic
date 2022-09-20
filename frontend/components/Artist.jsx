@@ -64,6 +64,7 @@ function Artist() {
             </audio>
             </div>
             count++  
+            console.log(artist.audio_url)
             }    
         }
         return audioSamples
