@@ -68,6 +68,7 @@ function LiveFanaticRouter(){
             <Route path="/:genre" element={<Main />} />
             <Route path="/main-view-all" element={<MainViewAll />} />
             <Route path="/profile" element={ < Profile />} />
+            <Route path="/profile/:ticket_id" element={ < QR />} />
             <Route path="/profile-edit" element={ < ProfileEdit />} />
             <Route path="/search" element={ < AdvancedSearch />} />
             <Route path="/artist/:artist_id" element={ < Artist />} />

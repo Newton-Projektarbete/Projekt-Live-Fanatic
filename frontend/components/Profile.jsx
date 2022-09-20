@@ -4,8 +4,15 @@ import GlobalContext from "../src/GlobalContext";
 
 function Profile(){
 
-    
+    let id = useParams().ticket_id;
     const { allTickets, sortedConcerts, allConcerts} = useContext(GlobalContext);
+
+    allTickets.map(a => {
+        if (a.ticket_id == id) {
+            ticket = a
+            return ticket
+        }
+    })
 
 
     let today = new Date();
@@ -33,7 +40,7 @@ function Profile(){
     
                     <tr>
                         <td className="profile-td"><img className="img-profile" src={sortedConcerts[i].concert_image_url} /></td>
-                        <td className="profile-td"><Link to="">{sortedConcerts[i].concert_name}</Link></td>
+                        <td className="profile-td"><Link to={"/concert/" + sortedConcerts[i].concert_id}>{sortedConcerts[i].concert_name}</Link></td>
                         <td className="profile-td"><p>{sortedConcerts[i].performance_date}</p></td>
                         <td className="profile-td">{sortedConcerts[i].location}</td>
                         <td className="profile-td">
@@ -42,7 +49,7 @@ function Profile(){
                                 <span className="material-symbols-outlined global-icons">print</span>
                             </a>
                             <a href="#">
-                                <span className="material-symbols-outlined global-icons">qr_code</span>
+                            <Link to={"/profile/" + allTickets[x].ticket_id}><span className="material-symbols-outlined global-icons">qr_code</span></Link>
                             </a>
                         </td>
     
@@ -77,7 +84,7 @@ function Profile(){
     
                     <tr>
                         <td className="profile-td"><img className="img-profile" src={sortedConcerts[i].concert_image_url} /></td>
-                        <td className="profile-td"><Link to="">{sortedConcerts[i].concert_name}</Link></td>
+                        <td className="profile-td"><Link to={"/concert/" + sortedConcerts[i].concert_id}>{sortedConcerts[i].concert_name}</Link></td>
                         <td className="profile-td"><p>{sortedConcerts[i].performance_date}</p></td>
                         <td className="profile-td">{sortedConcerts[i].location}</td>
                         <td className="profile-td">
@@ -86,7 +93,7 @@ function Profile(){
                                 <span className="material-symbols-outlined global-icons">print</span>
                             </a>
                             <a href="#">
-                                <span className="material-symbols-outlined global-icons">qr_code</span>
+                            <Link to={"/profile/" + allTickets[x].ticket_id}><span className="material-symbols-outlined global-icons">qr_code</span></Link>
                             </a>
                         </td>
     
