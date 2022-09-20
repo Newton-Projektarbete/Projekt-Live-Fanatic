@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, Routes, Route } from "react-router-dom";
 import { useContext, useState } from "react";
 import GlobalContext from "../src/GlobalContext";
 // https://www.npmjs.com/package/react-youtube
@@ -28,8 +28,7 @@ function Stream() {
     const loadArtists = () => {
         let load = []
         for (let i = 0; i < 1; i++) { // add artist[i].length when we have more artists
-            load[i] = <Link to={"artist" + artist.artist_id}>{artist.artist_name}</Link>
-
+            load[i] = <Link to={"/" + "artist/"+ artist.artist_id}>{artist.artist_name}</Link>
         }
         return load
     }
@@ -59,11 +58,8 @@ function Stream() {
                     <div>
                         <div className="stream-link-pos">
                             <h4 className="noMargin">Share Link with Friend: </h4>
-                            <h5 className="noMargin">{window.location.href}</h5>
-                        {/* <Link className="stream-link"
-                                to="/"
-                            ></Link> */}
-                            {/* <button className="stream-copy-btn" onClick={copyToClipboard}>Share Link</button> */}
+
+                            <button className="stream-copy-btn" onClick={() => {navigator.clipboard.writeText(window.location.href)}} >Copy Link</button>
                         </div>
 
                         {<div className="stream-invited">
@@ -78,10 +74,6 @@ function Stream() {
             </div>
         </div>
     </>
-}
-function copyLink() {
-    var evt = document.getElementsByClassName("stream-link").getAttribute('href')
-    navigator.clipboard.writeText(evt);
 }
 
 export default Stream
