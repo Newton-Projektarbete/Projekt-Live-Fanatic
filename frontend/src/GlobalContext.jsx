@@ -3,8 +3,8 @@ import { useNavigate, useLocation,} from "react-router-dom";
 const GlobalContext = createContext();
 
 export const GlobalProvider = ({ children }) => {
-    const loggedInURLs = ["/profile", "/buy-ticket", "/profile-edit"]
-    const loggedOutURLs = ["/sign-up", "/log-in", ]
+  const loggedInURLs = ["/profile", "/buy-ticket", "/profile-edit"]
+  const loggedOutURLs = ["/sign-up", "/log-in", ]
 
 
 // useState for all variables 

@@ -18,43 +18,6 @@ import NoMatch from "./NoMatch";
 import Header from "./Header";
 
 function LiveFanaticRouter(){
-
-    let location = useLocation();
-    const navigate = useNavigate();
-    const [isLoaded, setisLoaded] = useState(false)
-    const [isLoggedIn, setisLoggedIn] = useState(false)
-    const loggedInURLs = ["/profile", "/buy-ticket"]
-    const loggedOutURLs = ["/sign-up", "/log-in"]
-  
-    useEffect (()=>{
-      console.log(location)
-      fetch('/data/login', {
-          method: 'GET'
-      }).then(function (response) {
-          return response.json();
-      }).then(function (myJson) {
-          setisLoaded(true)
-          setisLoggedIn(myJson.loggedIn)
-        });
-    },[]);
-
-    useEffect(()=>{
-        if (isLoaded == false) return;
-
-        const currentUrl = location.pathname;
-  
-          if(isLoggedIn){
-            if (loggedOutURLs.some(url => currentUrl === url)) {
-              navigate("/", { replace: true });
-            }
-          } else {
-            if (loggedInURLs.some(url => currentUrl === url)) {
-              navigate("/log-in", { replace: true });
-            }
-        }
-    },[location.pathname, isLoggedIn])
-
-    if(!isLoaded) return;
     
 
     return <>
