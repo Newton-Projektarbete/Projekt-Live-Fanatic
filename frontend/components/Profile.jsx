@@ -5,25 +5,22 @@ import GlobalContext from "../src/GlobalContext";
 function Profile(){
 
     
-    const { allTickets, validTickets, allConcerts} = useContext(GlobalContext);
-
-    
+    const { allTickets, sortedConcerts, allConcerts} = useContext(GlobalContext);
 
 
- /*    allConcerts.map(a => {
-        if (a.concert_id == concertId) {
-            concert = a
-            return concert
-        }
-    })  */
+    let today = new Date();
+    let dd = String(today.getDate()).padStart(2, '0');
+    let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    let yyyy = today.getFullYear();
+    today = dd + '-' + mm + '-' + yyyy;
 
 
     const myTickets = () => {
         let tickets = []
 
-        for (let i = 0; i < allConcerts.length; i++) {
+        for (let i = 0; i < sortedConcerts.length; i++) {
             for (let x = 0; x < allTickets.length; x++) {
-               if (allConcerts[i].concert_id == allTickets[x].concert_id) {
+               if (sortedConcerts[i].concert_id == allTickets[x].concert_id && sortedConcerts[i].performance_date >= today) {
                 
                 tickets[i] = 
                 <table>
@@ -35,10 +32,10 @@ function Profile(){
                     </tr>
     
                     <tr>
-                        <td className="profile-td"><img className="img-profile" src={allConcerts[i].concert_image_url} /></td>
-                        <td className="profile-td"><Link to="">{allConcerts[i].concert_name}</Link></td>
-                        <td className="profile-td"><p>{allConcerts[i].performance_date}</p></td>
-                        <td className="profile-td">{allConcerts[i].location}</td>
+                        <td className="profile-td"><img className="img-profile" src={sortedConcerts[i].concert_image_url} /></td>
+                        <td className="profile-td"><Link to="">{sortedConcerts[i].concert_name}</Link></td>
+                        <td className="profile-td"><p>{sortedConcerts[i].performance_date}</p></td>
+                        <td className="profile-td">{sortedConcerts[i].location}</td>
                         <td className="profile-td">
                         
                             <a href="#">
