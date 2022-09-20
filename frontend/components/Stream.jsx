@@ -1,5 +1,5 @@
-import { Link, useParams, Routes, Route } from "react-router-dom";
-import { useContext, useState } from "react";
+import { Link, useParams} from "react-router-dom";
+import { useContext } from "react";
 import GlobalContext from "../src/GlobalContext";
 // https://www.npmjs.com/package/react-youtube
 
