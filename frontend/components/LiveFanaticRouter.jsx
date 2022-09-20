@@ -27,7 +27,7 @@ function LiveFanaticRouter(){
     const loggedOutURLs = ["/sign-up", "/log-in"]
   
     useEffect (()=>{
-      console.log(location)
+      /* console.log(location) */
       fetch('/data/login', {
           method: 'GET'
       }).then(function (response) {
