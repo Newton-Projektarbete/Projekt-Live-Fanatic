@@ -15,59 +15,13 @@ import Stream from "./Stream";
 import ConfirmPayment from "./ConfirmPayment";
 import Header from "./Header";
 import NoMatch from "./NoMatch";
-
 function LiveFanaticRouter(){
-
-
-    let location = useLocation();
-    const navigate = useNavigate();
-    const [isLoaded, setisLoaded] = useState(false)
-    const [isLoggedIn, setisLoggedIn] = useState(false)
-    const loggedInURLs = ["/profile", "/buy-ticket", "/profile-edit"]
-    const loggedOutURLs = ["/sign-up", "/log-in", ]
-  
-    useEffect (()=>{
-      /* console.log(location) */
-      fetch('/data/login', {
-          method: 'GET'
-      }).then(function (response) {
-          return response.json();
-      }).then(function (myJson) {
-          setisLoaded(true)
-          setisLoggedIn(myJson.loggedIn)
-        });
-    },[]);
-
-    
-
-    useEffect(()=>{
-        if (isLoaded == false) return;
-
-        const currentUrl = location.pathname;
-  
-          if(isLoggedIn){
-            if (loggedOutURLs.some(url => currentUrl === url)) {
-              navigate("/", { replace: true });
-            }
-          } else {
-            if (loggedInURLs.some(url => currentUrl === url)) {
-              navigate("/log-in", { replace: true });
-            }
-        }
-    },[location.pathname, isLoggedIn])
-    
-    const logoutUser = () => {
-        fetch('/data/login', {
-            method: 'DELETE'
-        })
-    }
 
     return <>
         <div>
         <Header/>
         </div>
         <Routes>
-
             <Route path="/" element={<Main />} />
             <Route path="/:genre" element={<Main />} />
             <Route path="/main-view-all" element={<MainViewAll />} />

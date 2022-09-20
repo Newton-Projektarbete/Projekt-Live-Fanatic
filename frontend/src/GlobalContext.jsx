@@ -29,8 +29,6 @@ useEffect(() => {
 
   }, []);
 
-
-
   const loadAllConcerts = async () => {
     setIsLoading(true)
     const response = await fetch("/data/concert")
