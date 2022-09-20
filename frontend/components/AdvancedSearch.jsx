@@ -5,7 +5,7 @@ import Header from "../components/Header"
 
 function AdvancedSearch(){
 
-    let searchTerm = useParams("?search=")
+    let searchTerm = useParams()
     console.log("searchTerm")
     console.log(searchTerm)
     console.log("-----------")
