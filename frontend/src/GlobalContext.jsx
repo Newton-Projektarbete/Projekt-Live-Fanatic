@@ -12,6 +12,8 @@ const [isLoading, setIsLoading] = useState(true)
 const [allConcerts, setAllConcerts] = useState([])
 const [allArtists, setAllArtists] = useState([])
 const [isLoggedIn, setisLoggedIn] = useState(false)
+const [allTickets, setAllTickets] = useState([])
+const [validTickets, setValidTickets] = useState([])
 /*
 const [isLoaded, setisLoaded] = useState(false) */
 
@@ -19,6 +21,8 @@ const [isLoaded, setisLoaded] = useState(false) */
 useEffect(() => {
     loadAllConcerts()
     loadAllArtists()
+    loadAllTickets()
+    loadValidTickets()
   }, []);
 
 
@@ -28,6 +32,24 @@ useEffect(() => {
     const result = await response.json()
     /* console.log(result) */
     setAllConcerts(result)
+    setIsLoading(false)
+  }
+
+  const loadAllTickets = async () => {
+    setIsLoading(true)
+    const response = await fetch("/data/ticket")
+    const result = await response.json()
+    /* console.log(result) */
+    setAllTickets(result)
+    setIsLoading(false)
+  }
+
+  const loadValidTickets = async () => {
+    setIsLoading(true)
+    const response = await fetch("/data/ticket/valid")
+    const result = await response.json()
+    /* console.log(result) */
+    setAllTickets(result)
     setIsLoading(false)
   }
 
@@ -78,7 +100,10 @@ useEffect(() => {
             isLoading,
             allConcerts,
             allArtists,
+            allTickets,
+            validTickets,
             isLoggedIn
+
           }}
         >
           {children}
