@@ -1,4 +1,5 @@
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link,useNavigate, useLocation  } from "react-router-dom";
+import { useState, useEffect } from 'react'
 import Main from "./Main";
 import MainViewAll from "./MainViewAll";
 import Profile from "./Profile";
@@ -13,9 +14,7 @@ import QR from "./QR";
 import Stream from "./Stream";
 import ConfirmPayment from "./ConfirmPayment";
 import NoMatch from "./NoMatch";
-import Header from "./Header";
-
-function LiveFanaticRouter(){  
+function LiveFanaticRouter(){
 
     return <>
         <div>
