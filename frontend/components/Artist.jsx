@@ -14,10 +14,11 @@ function Artist() {
     const { allArtists, allConcerts } = useContext(GlobalContext);
 
     let artist = []
-    let concert = []
+    let pageExist = false
     allArtists.map(a => {
         if (a.artist_id == id) {
             artist = a
+            pageExist = true
             return artist
         }
     })
@@ -25,23 +26,23 @@ function Artist() {
     const upcomingConcerts = () => {
         let concerts = []
         for (let i = 0; i < allConcerts.length; i++) {
-            if (allConcerts[i].artist_id == artist.artist_id && allConcerts[i].performance_date>=today) {
+            if (allConcerts[i].artist_id == artist.artist_id && allConcerts[i].performance_date >= today) {
                 concerts[i] = <div className="artist-result-content">
-                <Link to="">
-                    <img className="artist-img" src={allConcerts[i].concert_image_url} alt="" />
-                </Link>
-                <div className="artist-concert_box">
-                    <div className="artist-result-info">
-                        <Link to={"/concert/" + allConcerts[i].concert_id}>{allConcerts[i].concert_name}</Link>
-                        <p className="artist-p">{allConcerts[i].performance_date}</p>
-                        <p className="artist-p">{allConcerts[i].location}</p>
-                    </div>
-                    <div className="artist-button_content">
-                        <button className="artist-buy_button">Buy ticket</button>
-                        <div className="artist-like_button_icon"><span className="material-symbols-outlined like_button">favorite</span></div>
+                    <Link to="">
+                        <img className="artist-img" src={allConcerts[i].concert_image_url} alt="" />
+                    </Link>
+                    <div className="artist-concert_box">
+                        <div className="artist-result-info">
+                            <Link to={"/concert/" + allConcerts[i].concert_id}>{allConcerts[i].concert_name}</Link>
+                            <p className="artist-p">{allConcerts[i].performance_date}</p>
+                            <p className="artist-p">{allConcerts[i].location}</p>
+                        </div>
+                        <div className="artist-button_content">
+                            <button className="artist-buy_button">Buy ticket</button>
+                            <div className="artist-like_button_icon"><span className="material-symbols-outlined like_button">favorite</span></div>
+                        </div>
                     </div>
                 </div>
-            </div>
             }
         }
 
@@ -68,8 +69,7 @@ function Artist() {
         return audioSamples
     }
 
-
-    return <>
+    return <> {pageExist ? <>
         <div className="body">
             <div className="artist_parent">
                 <div className="artist_content">
@@ -97,6 +97,15 @@ function Artist() {
                 </div>
             </div>
         </div>
+    </>
+        : <>
+            <div className="body">
+                <h1 className="noMatch">Page not found</h1>
+            </div>
+        </>
+
+    }
+
     </>
 }
 
