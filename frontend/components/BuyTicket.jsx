@@ -1,6 +1,14 @@
 import { Link } from "react-router-dom";
+import QR from "./QR";
+import React from "react";
 
 function BuyTicket() {
+  ReactDOM.render(
+    <React.StrictMode>
+      <QR text="just a test" />
+    </React.StrictMode>,
+    document.getElementById("root")
+  );
   return <>
     <div className="body">
 
