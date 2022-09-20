@@ -11,6 +11,7 @@ export const GlobalProvider = ({ children }) => {
 const [isLoading, setIsLoading] = useState(true)
 const [allConcerts, setAllConcerts] = useState([])
 const [allArtists, setAllArtists] = useState([])
+const [allTickets, setAllTickets] = useState([])
 const [isLoggedIn, setisLoggedIn] = useState(false)
 /*
 const [isLoaded, setisLoaded] = useState(false) */
@@ -19,7 +20,10 @@ const [isLoaded, setisLoaded] = useState(false) */
 useEffect(() => {
     loadAllConcerts()
     loadAllArtists()
+    loadAllTickets()
   }, []);
+
+  
 
 
   const loadAllConcerts = async () => {
@@ -37,6 +41,25 @@ useEffect(() => {
     const result = await response.json()
     setisLoggedIn(myJson.loggedIn)
   } */
+  
+  const loadAllArtists = async () => {
+    setIsLoading(true)
+    const response = await fetch("/data/artist")
+    const result = await response.json()
+    /* console.log(result) */
+    setAllArtists(result)
+    setIsLoading(false)
+  }
+
+  const loadAllTickets = async () => {
+    setIsLoading(true)
+    const response = await fetch("/data/ticket")
+    const result = await response.json()
+    /* console.log(result) */
+    setAllTickets(result)
+    setIsLoading(false)
+  }
+
   useEffect (()=>{
     fetch('/data/login', {
         method: 'GET'
@@ -48,14 +71,6 @@ useEffect(() => {
       });
   },[]);
 
-  const loadAllArtists = async () => {
-    setIsLoading(true)
-    const response = await fetch("/data/artist")
-    const result = await response.json()
-    /* console.log(result) */
-    setAllArtists(result)
-    setIsLoading(false)
-  }
   useEffect(()=>{
     if (isLoading == false) return;
 
@@ -78,6 +93,7 @@ useEffect(() => {
             isLoading,
             allConcerts,
             allArtists,
+            allTickets,
             isLoggedIn
           }}
         >

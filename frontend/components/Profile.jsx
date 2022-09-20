@@ -33,7 +33,7 @@ function Profile(){
                                 <a href="#">
                                     <span className="material-symbols-outlined global-icons">print</span>
                                 </a>
-                                <a href="#">
+                                <a href="/QR">
                                     <span className="material-symbols-outlined global-icons">qr_code</span>
                                 </a>
                             </td>
