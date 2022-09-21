@@ -14,6 +14,7 @@ const [isLoggedIn, setisLoggedIn] = useState(false)
 const [validTickets, setValidTickets] = useState([])
 const [sortedConcerts, setSortedConcerts] = useState([])
 const [user, setUser] = useState([])
+const [favorites, setFavorites] = useState([])
 /*
 const [isLoaded, setisLoaded] = useState(false) */
 
@@ -25,6 +26,7 @@ useEffect(() => {
     loadValidTickets()
     loadSortedConcerts()
     loadLoggedInUsers()
+    addToFavorite()
   }, []);
 
   const loadAllConcerts = async () => {
@@ -73,13 +75,31 @@ useEffect(() => {
     setIsLoading(false)
   }
 
-/*   const loadUser = async () => {
+/* 
+  const addToFavorite = () => {
+
+   let rawResponse =  fetch('/data/favorite', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+            user_id: user_id,
+            concert_id: concert_id
+        })
+         */
+ 
+  const addToFavorite = async () => {
     setIsLoading(true)
-    const response = await fetch("/data/login")
+    const response = await fetch("/data/favorite")
     const result = await response.json()
-    setUser(result)
+    /* console.log("result:")
+    console.log(result)
+    console.log("--------------") */
+    setFavorites(result)
     setIsLoading(false)
-  } */
+  }
 
   const loadLoggedInUsers = () => {
     fetch('/data/login', {
@@ -130,7 +150,8 @@ useEffect(() => {
             validTickets,
             sortedConcerts,
             isLoggedIn,
-            user
+            user,
+            favorites
           }}
         >
           {children}
