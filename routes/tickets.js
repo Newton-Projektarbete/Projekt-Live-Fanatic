@@ -18,7 +18,3 @@ module.exports = function(server, db){
         res.json(result[0])
       })
 }
-
-  
-  
-  
