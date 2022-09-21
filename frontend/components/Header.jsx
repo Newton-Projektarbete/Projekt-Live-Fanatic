@@ -118,12 +118,9 @@ function Header() {
             </header>
             :
             <header className="topnav"> {/* Logged Out Header */}
-                <div>
-                    <Link to="/">
-                        <img src="../images/logo.png" alt="" />
-                    </Link>
-
-                </div>
+            
+                <button className="headerImg" onClick={() => { navigate("/") }}>
+                </button>
 
                 <div className="dropdown">
                     <div className="dropbtn">Genre
