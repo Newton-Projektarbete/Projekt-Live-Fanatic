@@ -28,6 +28,22 @@
     
   }
 
+  .main-btn{
+    float: left;
+    color: white;
+    text-align: center;
+    padding-left: 20px;
+    padding-top: 32px;
+    padding-right: 10px;
+    text-decoration: none;
+    font-size: 17px;
+    cursor: pointer;
+    border: none;
+    font-family: inherit;
+    background-color: rgba(48, 149, 184, 1);
+    
+  }
+
   .a-default:hover{
     text-decoration: none;
   }

@@ -55,6 +55,8 @@ function Header() {
                 <button className="headerImg" onClick={() => { navigate("/") }}>
                 </button>
 
+                <Link to="/"><button class="main-btn">Main</button></Link>
+
                 <div className="dropdown">
                     <div className="dropbtn">Genre
                         <i className="fa fa-caret-down"></i>

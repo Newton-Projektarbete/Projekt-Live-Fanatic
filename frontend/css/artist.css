@@ -58,11 +58,13 @@
     padding-left: 0px;
 }
 
-.artist-like_button{
+.artist-like-button{
     display: flex;
-    margin: 10px;
+    margin-top: 5px;
+    font-size: 30px;
+    cursor: pointer;
     padding: 0;
-    color: grey;
+    color: rgba(36, 93, 165, 1);
     font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 48;
 }
 
@@ -71,8 +73,13 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    color: grey;
+    color: rgba(36, 93, 165, 1);
     width: 100%;
+}
+
+.artist-like-button:hover{
+    color: red;
+    background-color: none;
 }
 
 .artist-line_up{

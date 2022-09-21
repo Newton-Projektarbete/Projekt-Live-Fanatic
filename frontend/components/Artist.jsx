@@ -38,8 +38,8 @@ function Artist() {
                             <p className="artist-p">{allConcerts[i].location}</p>
                         </div>
                         <div className="artist-button_content">
-                            <button className="artist-buy_button">Buy ticket</button>
-                            <div className="artist-like_button_icon"><span className="material-symbols-outlined like_button">favorite</span></div>
+                            <Link to={"/concert/" + allConcerts[i].concert_id + "/buy-ticket"}><button className="artist-buy_button">Buy ticket</button></Link>
+                            <div className="artist-like_button_icon"><span className="material-symbols-outlined artist-like-button">favorite</span></div>
                         </div>
                     </div>
                 </div>

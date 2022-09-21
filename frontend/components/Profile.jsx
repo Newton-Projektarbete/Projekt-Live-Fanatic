@@ -55,22 +55,20 @@ function Profile() {
             if (user.user_id == favorites[i].user_id) {
                 for (let x = 0; x < allConcerts.length; x++) {
                     if (favorites[i].concert_id == allConcerts[x].concert_id) {
-                        favoriteConcertsList [i] = <table>
+                        favoriteConcertsList[i] = <table>
                             <tr className="table-header">
-                            <th></th>
-                                <th>Concert:</th>
-                                <th>Date:</th>
-                                <th>Location:</th>
-                               
+
                             </tr>
 
                             <tr>
-                            <td className="profile-td"><img className="img-profile" src={allConcerts[x].concert_image_url} /></td>
-                            <td className="profile-td"><Link to={"/concert/" + allConcerts[x].concert_id}>{allConcerts[i].concert_name}</Link></td>
-                            <td className="profile-td">{allConcerts[x].performance_date}</td>
-                            <td className="profile-td">{allConcerts[x].location}</td>
+                                <td className="profile-td"><img className="img-profile" src={allConcerts[x].concert_image_url} /></td>
+                                <td className="profile-td"><Link to={"/concert/" + allConcerts[x].concert_id}>{allConcerts[i].concert_name}</Link></td>
+                                <td className="profile-td">{allConcerts[x].performance_date}</td>
+                                <div className="like_button">
+                            <i className="material-symbols-outlined like-concert-profile">favorite</i>
+                        </div>
                             </tr>
-                            
+
                         </table>
                     }
                 }
@@ -89,18 +87,11 @@ function Profile() {
 
                     tickets[i] =
                         <table>
-                            <tr className="table-header">
-                                <th></th>
-                                <th>Concert:</th>
-                                <th>Date:</th>
-                                <th>Location:</th>
-                            </tr>
 
                             <tr>
                                 <td className="profile-td"><img className="img-profile" src={sortedConcerts[i].concert_image_url} /></td>
                                 <td className="profile-td"><Link to={"/concert/" + sortedConcerts[i].concert_id}>{sortedConcerts[i].concert_name}</Link></td>
                                 <td className="profile-td"><p>{sortedConcerts[i].performance_date}</p></td>
-                                <td className="profile-td">{sortedConcerts[i].location}</td>
                                 <td className="profile-td">
 
                                     <a href="#">
@@ -133,18 +124,10 @@ function Profile() {
 
                     tickets[i] =
                         <table>
-                            <tr className="table-header">
-                                <th></th>
-                                <th>Concert:</th>
-                                <th>Date:</th>
-                                <th>Location:</th>
-                            </tr>
-
                             <tr>
                                 <td className="profile-td"><img className="img-profile" src={sortedConcerts[i].concert_image_url} /></td>
                                 <td className="profile-td"><Link to={"/concert/" + sortedConcerts[i].concert_id}>{sortedConcerts[i].concert_name}</Link></td>
                                 <td className="profile-td"><p>{sortedConcerts[i].performance_date}</p></td>
-                                <td className="profile-td">{sortedConcerts[i].location}</td>
                                 <td className="profile-td">
 
                                     <a href="#">
@@ -181,17 +164,35 @@ function Profile() {
 
                     <div className="left-table">
                         <h2>Active tickets</h2>
+                        <tr className="table-header">
+                            <div className="info-concert">
+                                <b className="concert-align">Concert:</b>
+                                <b>Date:</b>
+                            </div>
+                        </tr>
                         {activeTickets()}
                     </div>
 
                     <div className="centrum-table">
                         <h2>Expired tickets </h2>
+                        <tr className="table-header">
+                            <div className="info-concert">
+                                <b className="concert-align">Concert:</b>
+                                <b>Date:</b>
+                            </div>
+                        </tr>
                         {expiredTickets()}
                     </div>
 
 
                     <div className="right-table">
                         <h2>Liked concerts</h2>
+                        <tr className="table-header">
+                            <div className="info-concert">
+                                <b className="concert-align">Concert:</b>
+                                <b>Date:</b>
+                            </div>
+                        </tr>
                         {favoriteConcerts()}
                     </div>
 
