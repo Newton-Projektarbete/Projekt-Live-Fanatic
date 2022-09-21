@@ -79,6 +79,10 @@ button:hover{
     color: black;
 }
 
+button:active{
+    transform: translateY(4px);
+}
+
 /* .global-icons{
     background-color: rgba(48, 149, 184, 1);
     color: black;

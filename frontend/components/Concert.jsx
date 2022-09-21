@@ -46,10 +46,10 @@ function Concert() {
                     </div>
 
                     <div className="button_content">
-                        <Link to="/buy-ticket">
+                        <Link to={"/concert/" + concert.concert_id + "/buy-ticket"}>
                             <button className="buy_button default_button">Buy ticket</button>
                         </Link>
-                        <Link to={"/concert/"+ concert.concert_id +"/stream"}>
+                        <Link to={"/concert/" + concert.concert_id +"/stream"}>
                             <button className="stream_button default_button">Stream</button>
                         </Link>
                     </div>

@@ -2,8 +2,6 @@ import { createContext, useState, useEffect } from "react";
 const GlobalContext = createContext();
 
 export const GlobalProvider = ({ children }) => {
-  
-
 
 // useState for all variables 
 const [isLoading, setIsLoading] = useState(true)
@@ -15,8 +13,7 @@ const [validTickets, setValidTickets] = useState([])
 const [sortedConcerts, setSortedConcerts] = useState([])
 const [user, setUser] = useState([])
 const [favorites, setFavorites] = useState([])
-/*
-const [isLoaded, setisLoaded] = useState(false) */
+
 
 // useEffect to run methods upon load
 useEffect(() => {
@@ -37,7 +34,6 @@ useEffect(() => {
     setAllConcerts(result)
     setIsLoading(false)
   }
-
 
   const loadValidTickets = async () => {
     setIsLoading(true)
@@ -94,9 +90,6 @@ useEffect(() => {
     setIsLoading(true)
     const response = await fetch("/data/favorite")
     const result = await response.json()
-    /* console.log("result:")
-    console.log(result)
-    console.log("--------------") */
     setFavorites(result)
     setIsLoading(false)
   }
@@ -112,6 +105,17 @@ useEffect(() => {
       setisLoggedIn(myJson.loggedIn)
     });
   }
+
+/*   const getTicketsInCart = async () => {
+    let count = 0
+
+    for (let i = 0; i < allTickets.length; i++) {
+        if (user.user_id === allTickets[i].user_id && allTickets[i].pending === "true") {
+            count ++
+        }
+    }
+    setTicketInCart(count)
+  } */
 
 /*   useEffect (()=>{
     fetch('/data/login', {
