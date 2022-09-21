@@ -25,7 +25,6 @@
     text-decoration: none;
     font-size: 17px;
     background-color: rgba(48, 149, 184, 1);
-    margin-top: 7px;
     
   }
 
@@ -46,6 +45,8 @@
     cursor: pointer;
     border: none;
     font-family: inherit;
+    margin-top: 12px;
+    margin-left: 5px;
   }
 
   .login-btn:hover{
@@ -69,17 +70,25 @@
     float: right;
     cursor: pointer;
     border: solid 1.5px white;
+    margin-top: 11px;
   }
 
   .profile-btn{
     display: flex;
     background-color: rgba(0, 88, 169, 1);
     color: white;
-    padding: 6px 10px;
     border-radius: 10px;
+    height: 25px;
     font-size: 17px;
     float: right;
     cursor: pointer;
+    justify-content: center;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .profile-btn:hover{
+    background-color: rgb(4, 225, 254);
   }
 
 .search-container {
@@ -102,7 +111,7 @@
 
 .search-field-input{
   display: flex;
-  margin: 0;
+  margin-top: 10px;
   padding: 5px;
   grid-column: 1;
   grid-row: 1;
@@ -114,7 +123,7 @@
   color: black;
   justify-self: flex-end;
   align-self: center;
-  margin: 0;
+  margin-top: 10px;
   padding: 0;
 }
 
@@ -213,13 +222,25 @@
 
 
 .cart-btn{
-    color: white;
-    text-decoration: none;
+  margin: 3px;
+  color: white;
+  font-size: 24px;
+  cursor: pointer; 
+  font-variation-settings: 
+  'FILL' 1,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48;
 }
 
 .cart-btn:hover{
     color: black;
     background-color: rgba(48, 149, 184, 1);
+}
+
+.cart-btn, .like-amount{
+  grid-column: 1;
+  grid-row: 1;
 }
 
 .profile{
@@ -231,7 +252,7 @@
   justify-content: center;
   align-items: center;
   justify-self: end;
-  font-size: 70%;
+  font-size: 80%;
   color: white;
   background-color: red;
   border-radius: 200%;
@@ -256,7 +277,7 @@
 }
 
 .like-btn{
-  margin: 5px;
+  margin: 3px;
   color: white;
   font-size: 24px;
   cursor: pointer; 
@@ -294,7 +315,7 @@
     background-color: inherit;
     font-family: inherit;
     margin: 0;
-    margin-top: 5px;
+    margin-top: 16px;
 
   }
   .headerImg{
@@ -302,14 +323,29 @@
     background-image: url("../images/logo.png");
     background-size: contain;
     background-repeat: no-repeat;
+    cursor: pointer;
     height: 80px;
     width: 180px;
-    padding: 2px 2px;
-    margin: 2px 2px;
+    padding: 0px 2px;
+    margin: 0px 2px;
     color: transparent;
     background-color: transparent;
   }
   .headerImg:active{
     transform: none;
+  }
+
+  .profile-icon{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  }
+
+  .profile-icon-btn{
+    font-size: 55px;
+    color: white;
+    text-decoration: none;
+    pointer-events: none;
   }
 

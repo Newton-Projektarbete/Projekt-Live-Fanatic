@@ -87,13 +87,13 @@ function Header() {
                                 <Link to="/profile" className="like-link" >
                                     <div className="like-box">
                                         <span className="like-btn material-symbols-outlined">favorite</span>
-                                        <div className="like-amount">7</div>
+                                        <div className="like-amount">{displayCartNr()}</div>
                                     </div>
                                 </Link>
                                 <Link to="/profile" className="like-link" >
                                     <div className="like-box">
                                         <span className="cart-btn material-symbols-outlined">shopping_cart</span>
-                                        {displayCartNr()}
+                                        <div className="like-amount">{displayCartNr()}</div>
                                     </div>
                                 </Link>
 
@@ -103,27 +103,30 @@ function Header() {
 
                     </div>
 
-                    <div>
+                    <div className="profile-icon">
 
-                        <button className="login-btn" onClick={logoutUser} type="button">Log out</button>
+                        <span class="profile-icon-btn material-symbols-outlined">
+                            account_circle
+                        </span>
+
 
                         <Link to="/profile" className="a-nav-btn">
-                            <button className="profile-btn">Profile</button>
+                            <button className="profile-btn">{user.username}</button>
                         </Link>
 
+
                     </div>
+
+                    <button className="login-btn" onClick={logoutUser} type="button">Log out</button>
 
                 </div>
 
             </header>
             :
             <header className="topnav"> {/* Logged Out Header */}
-                <div>
-                    <Link to="/">
-                        <img src="../images/logo.png" alt="" />
-                    </Link>
 
-                </div>
+                <button className="headerImg" onClick={() => { navigate("/") }}>
+                </button>
 
                 <div className="dropdown">
                     <div className="dropbtn">Genre

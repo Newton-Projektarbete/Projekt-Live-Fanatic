@@ -49,6 +49,7 @@ function SignUp() {
                             },
                             body: JSON.stringify({
                                 email: email,
+                                username: username,
                                 password: password,
                             })
                         }).then(function (response) {
