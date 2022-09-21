@@ -1,5 +1,5 @@
-import { BrowserRouter as Router, Routes, Route, Link,useNavigate, useLocation  } from "react-router-dom";
-import { useState, useEffect } from 'react'
+import { BrowserRouter as Router, Routes, Route, Link, useNavigate, useLocation  } from "react-router-dom";
+import { useState, useEffect, useContext } from 'react'
 import Main from "./Main";
 import MainViewAll from "./MainViewAll";
 import Profile from "./Profile";
@@ -15,7 +15,29 @@ import Stream from "./Stream";
 import ConfirmPayment from "./ConfirmPayment";
 import Header from "./Header";
 import NoMatch from "./NoMatch";
+import GlobalContext from "../src/GlobalContext";
+
 function LiveFanaticRouter(){
+    const loggedInURLs = ["/profile", "/buy-ticket", "/profile-edit"]
+    const loggedOutURLs = ["/sign-up", "/log-in", ]
+    const navigate = useNavigate()
+    const location = useLocation()
+    const { isLoading, isLoggedIn, user} = useContext(GlobalContext);
+
+
+    useEffect(()=>{
+        if (isLoading == false) return;
+        const currentUrl = location.pathname;
+          if(isLoggedIn){
+            if (loggedOutURLs.some(url => currentUrl === url)) {
+              navigate("/", { replace: true });
+            }
+          } else {
+            if (loggedInURLs.some(url => currentUrl === url)) {
+              navigate("/log-in", { replace: true });
+            }
+        }
+    },[])
 
     return <>
         <div>
