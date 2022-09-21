@@ -1,71 +1,46 @@
-import { Link, useParams } from "react-router-dom";
-import { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { useContext } from "react";
 import GlobalContext from "../src/GlobalContext";
 
-
 function AdvancedSearch() {
-    const searchParam = new URLSearchParams(window.location.search).get("search");
     const { allArtists } = useContext(GlobalContext);
-    const [filteredArtists, setFilteredArtists] = useState([])
 
-//Daniels
-/*     useEffect(() => {
-        setFilteredArtists(allArtists.filter(artist => artist.artist_name.includes(searchParam)))
-        searchResult()
-    }, [allArtists, searchParam]); */
-
-
-    // let artist = [];
-    // filteredArtists.map(a => {
-    //     if (a.artist_name == searchParam) {
-    //         artist = a
-    //         return artist
-    //     }else{
-    //         console.log("error")
-    //     }
-    // })
-
-//Daniels 
-/*     const searchResult = () => {
+    const searchResult = () => {
         let artist = []
-
-        // console.log("this is search Term: " + searchParam) 
-        for (let i = 0; i < filteredArtists.length; i++) {
-            if (filteredArtists[i].artist_name.toLowerCase().includes(searchParam.toLowerCase())) {
-                console.log("Searched:" + searchParam)
-                console.log("Found:" + filteredArtists[i].artist_name)
-                artist = <div className="adv-src-result-info">
-                    <Link to="">
-                        {filteredArtists[i].artist_name}
-                    </Link>
-
-                </div>
-            } else {
-                console.log("error")
+        let searchterm = localStorage.getItem('searchterm')
+        if (searchterm != null) {
+            let x = 0
+            for (let i = 0; i < allArtists.length; i++) {
+                if (allArtists[i].artist_name.toLowerCase().includes(searchterm.toLowerCase())) {
+                    artist[x] = <div className="adv-src-result-content">
+                        <Link to="#">
+                            <div >
+                                <img className="adv-src-img" src={allArtists[i].artist_image_url} />
+                            </div>
+                        </Link>
+                        <div className="adv-src-result-info">
+                            <Link to="#">{allArtists[i].artist_name}</Link>
+                            {/* <p className="adv-src-p">2022.12.12</p>
+                            <p className="adv-src-p">Stockholm, Globen</p> */}
+                        </div>
+                    </div>
+                    x++
+                }
             }
         }
         return artist
-    } */
-
-const searchResult = () => {
-    let artist = []
-    let searchterm = localStorage.getItem('searchterm')
-    if(searchterm != null){
-        let x = 0
-        for (let i = 0; i < allArtists.length; i++) {
-            if (allArtists[i].artist_name.toLowerCase().includes(searchterm.toLowerCase())) {
-                artist[x] = <div className="adv-src-result-info">
-                    <Link to="">
-                        {allArtists[i].artist_name}
-                    </Link>
-    
-                </div>
-                x++
-            }
-        }
     }
-    return artist
-}
+
+
+    /* 
+    <div className="adv-src-result-info">
+                        <Link to="">
+                            {allArtists[i].artist_name}
+                       </Link>
+    </div>
+    
+    */
+
     return <><div className="body">
 
         <div className="advanced-search">
@@ -144,19 +119,9 @@ const searchResult = () => {
                 </Link>
             </div>
 
-            <div className="adv-src-result-box">
                 <h2>Result</h2>
-
-                <div className="adv-src-result-content">
-                    <div>
-                        {searchResult()}
-                    </div>
-
-                    {/* {filteredArtists.length ? <div>{filteredArtists.artist_name}</div> : <div>no results found</div>
-                        } */}
-
-
-                </div>
+            <div className="adv-src-result-box">
+                {searchResult()}
             </div>
         </div>
     </div>
