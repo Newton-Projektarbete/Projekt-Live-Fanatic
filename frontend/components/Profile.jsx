@@ -55,29 +55,22 @@ function Profile() {
             if (user.user_id == favorites[i].user_id) {
                 for (let x = 0; x < allConcerts.length; x++) {
                     if (favorites[i].concert_id == allConcerts[x].concert_id) {
-                        console.log("allConcerts[x].concert_id")
-                        console.log(allConcerts[x].concert_id)
-                        console.log("----------------------")
-                        favoriteConcertsList = <table>
+                        favoriteConcertsList [i] = <table>
                             <tr className="table-header">
-                               
+                            <th></th>
                                 <th>Concert:</th>
                                 <th>Date:</th>
                                 <th>Location:</th>
                                
                             </tr>
 
-                            <div>
-                                <p className="profile-td"><img className="img-profile" src={allConcerts[x].concert_image_url} /></p>
-                            </div>
-
-                            <td className="profile-td">{allConcerts[x].concert_name}</td>
-
+                            <tr>
+                            <td className="profile-td"><img className="img-profile" src={allConcerts[x].concert_image_url} /></td>
+                            <td className="profile-td"><Link to={"/concert/" + allConcerts[x].concert_id}>{allConcerts[i].concert_name}</Link></td>
                             <td className="profile-td">{allConcerts[x].performance_date}</td>
-
                             <td className="profile-td">{allConcerts[x].location}</td>
-
-                      
+                            </tr>
+                            
                         </table>
                     }
                 }
