@@ -1,27 +1,46 @@
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate, useLocation } from "react-router-dom";
 import { useContext } from "react";
 import GlobalContext from "../src/GlobalContext";
 import Header from "../components/Header"
 
 function AdvancedSearch(){
 
-    let searchTerm = useParams("?search=")
-    console.log("searchTerm")
-    console.log(searchTerm)
-    console.log("-----------")
+let searchTerm = Header.searchTerm
+
+function CompontentA(searchTerm){
+     const navigate = useNavigate();
+const toComponentB=()=>{
+    navigate('/search?search=', {state:{name:'Astoria'}});
+    }
+    return(
+        <>
+        <div> <a onClick={()=>{toComponentB()}}> Component B </a></div>
+        </>
+    )
+}
+
+function ComponentB() {
+    const location = useLocation();
+    return (<div>{location.state.name}</div>
+    )
+}
+    // let searchTerm = useParams("?search=")
+    // console.log("searchTerm")
+    // console.log(searchTerm)
+    // console.log("-----------")
     const { allArtists, allConcerts } = useContext(GlobalContext);
 
 
 
 
 let artist = []
-allArtists.map(a => {
-    if (a.artist_name == searchTerm) {
-        artist = a
-        pageExist = true
-        return artist
-    }
-})
+// allArtists.map(a => {
+//     if (a.artist_name == searchTerm) {
+//         artist = a
+//         pageExist = true
+//         return artist
+//     }
+// })
 
     return <><div className="body">
 
@@ -102,12 +121,12 @@ allArtists.map(a => {
             </div>
 
             <div className="adv-src-result-box">
-                <h2>Result {Header.searchTerm}</h2>
+                <h2>Result {ComponentB()}</h2>
 
                 <div className="adv-src-result-content">
                     <div className="adv-src-result-info">
                         <Link to="">
-                            {artist.artist_name}
+                            
                         </Link>
                     </div>
                 </div>

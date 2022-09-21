@@ -37,6 +37,8 @@ const handleChange = e =>{
     console.log(searchTerm);
   }
 
+  
+
     const { allArtists } = useContext(GlobalContext);
 
     let artist = []
