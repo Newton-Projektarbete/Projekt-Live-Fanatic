@@ -11,7 +11,7 @@ function AdvancedSearch(){
     console.log("-----------")
     const { allArtists, allConcerts } = useContext(GlobalContext);
 
-
+    
 
 
 let artist = []

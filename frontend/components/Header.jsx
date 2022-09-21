@@ -23,20 +23,6 @@ const logoutUser = () => {
           
 }
 
-/* if(response.ok == true){
-    window.location.reload(true)
-} else {
-    console.log("fail")
-}
-
-}).then(navigate("/")) */
-
-  
-
-
-function reloadPage() {
-    
-}
 
 function search(){
     const artists = fetch('data/artist')
@@ -55,7 +41,7 @@ function search(){
 
 const handleChange = e =>{
     setSearchTerm(e.target.value)
-    console.log(searchTerm);
+    /* console.log(searchTerm); */
   }
 
     const { allArtists } = useContext(GlobalContext);
@@ -70,6 +56,10 @@ const handleChange = e =>{
     //         return artist
     //     }
     // })
+
+    function test(){
+        return navigate("/search")
+    }
 
     return <>
             {isLoggedIn ? 
@@ -172,8 +162,8 @@ const handleChange = e =>{
 
         <div className="search-container">
             <div className="search-field">
-                <form action="/search" className="search-field-form">
-                    <input className="search-field-input" onChange={handleChange} type="text" placeholder="Search..logut" name="search"/>
+                <form onSubmit={test} className="search-field-form">
+                    <input className="search-field-input" onChange={handleChange} type="text" placeholder="Search.." name="search"/>
                     <span className="material-symbols-outlined search-field-icon">search</span>
                 </form>
             </div>
