@@ -38,6 +38,7 @@
   {
     "route": "/data/users*",
     "roles":[
+      {"role": "anonymous", "methods": ["POST", "GET"]},
       {"role": "user", "methods": ["GET","PUT","POST","DELETE"]}
     ]
   },

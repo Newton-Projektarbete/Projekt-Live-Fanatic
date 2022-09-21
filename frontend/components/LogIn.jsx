@@ -2,7 +2,9 @@ import { useState } from "react"
 import { useNavigate } from "react-router-dom";
 
 function LogIn() {
-    const navigate = useNavigate();
+
+        
+        const navigate = useNavigate();
 
         const [user, setUser] = useState({
             user_id: 0,
@@ -29,19 +31,17 @@ function LogIn() {
                 password: user.password,
             })
         }).then(function (response) {
-            console.log(response)
-            return response.json();
-        }).then(function (myJson) {
-            navigate("/", { replace: true });
-        });
-}
-const logoutUser = () => {
+            if(response.ok == true){
+                window.location.reload(true)
+            } else {
+                console.log("fail")
+            }
+            
+        }).then(navigate("/"))
+    }
 
-    fetch('/data/login', {
-        method: 'DELETE',
 
-    })
-}
+
 
     return <>
         <div className="body">

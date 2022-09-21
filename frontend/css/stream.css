@@ -33,9 +33,14 @@
 
 .stream-link-pos{
     display: flex;
-    margin-top: 3vh;
-    padding: 0.5vh;
+    flex-direction: column;
+    margin-top: 10px;
+    padding: 1px;
     justify-content: center;
+}
+
+.noMargin{
+    margin: 5px;
 }
 
 .stream-artists{
