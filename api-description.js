@@ -74,7 +74,7 @@ module.exports = function(host, server){
             },
             {
                 route:"/data/ticket",
-                methods: ["GET"],
+                methods: ["GET", "POST"],
                 description:"Get ticket list",
                 link: host  + "/data/ticket"
             },
@@ -89,6 +89,12 @@ module.exports = function(host, server){
                 methods: ["GET"],
                 description:"Get artist list",
                 link: host  + "/data/artist/1"
+            },
+            {
+                route:"/data/favorite",
+                methods: ["POST"],
+                description:"Add to favorite list",
+                link: host  + "/data/favorite"
             }
         ])
     })

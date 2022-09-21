@@ -1,36 +1,20 @@
-import { Link, useLocation, useNavigate, useParams, useSearchParams } from "react-router-dom"
 import { useContext, useState, useEffect } from "react"
+import { Link, useNavigate, useSearchParams } from "react-router-dom"
 import React from "react"
 import GlobalContext from "../src/GlobalContext"
 
 
 function Header() {
-    let [searchParams, setSearchParams] = useSearchParams();
-    let [query, setQuery] = React.useState(searchParams.get("query"));
-    const [searchTerm, setSearchTerm] = useState([]);
-    const location = useLocation();
+    const { isLoggedIn, allTickets, user } = useContext(GlobalContext);
     const navigate = useNavigate();
-    const { isLoggedIn, setisLoggedIn } = useContext(GlobalContext);
-    // const query = new URLSearchParams(location.search).get("query");
-    const { slug } = useParams();
+    let [searchParams, setSearchParams] = useSearchParams();
+    const [ticketInCart, setTicketInCart] = useState(0)
 
+    useEffect(() => {
+        getTicketsInCart()
+    })
 
-    //     useEffect(()=> {
-    //         const search = async () => {
-    //             try {
-    //                 const {data} = await React.get('API_URL/search?search={query}');
-    //                 setSearchTerm(data.products);
-    //         }catch{
-    //             console.log("error")
-    //         }
-    //     };
-    //     search();
-    // }, []);
-
-
-    /* {IfThisIsTrue ? DoThis : OtherwiseDoThis } */
     const logoutUser = () => {
-
         fetch('/data/login', {
             method: 'DELETE',
         }).then(function (response) {
@@ -41,23 +25,26 @@ function Header() {
                 console.log("fail")
             }
         }).then(navigate("/"))
+    }
+    const getTicketsInCart = async () => {
+        let count = 0
 
+        for (let i = 0; i < allTickets.length; i++) {
+            if (user.user_id === allTickets[i].user_id && allTickets[i].pending === "true"){
+                count++
+            }}
+        setTicketInCart(count)
     }
 
+    const displayCartNr = () => {
 
-    function handleSubmit(){
-        setSearchParams({query});
-        // event.preventDefault();
-        // let params = serializeFormsQuery(event.taget);
-        // setSeachParams(params);
-        // console.log(searchParams)
+        if (ticketInCart != 0) {
+            return <div className="like-amount">{ticketInCart}</div>
+        } else {
+            return <div></div>
+        }
     }
-    const handleChange = e => {
-        setSearchTerm(e.target.value)
-        /* console.log(searchTerm); */
-    }
-    
-    // Simon test (endast i utloggad användare)
+
     const [search, setSearch] = useState('');
     const handleKeyDown = event => {
         if (event.key == 'Enter') {
@@ -70,12 +57,10 @@ function Header() {
 
     return <>
         {isLoggedIn ?
-            <header className="topnav">
-                <div>
-                    <Link to="/">
-                        <img src="../examples/logo.png" alt="" />
-                    </Link>
-                </div>
+            <header className="topnav"> {/* Logged In Header */}
+
+                <button className="headerImg" onClick={() => { navigate("/") }}>
+                </button>
 
                 <div className="dropdown">
                     <div className="dropbtn">Genre
@@ -96,10 +81,10 @@ function Header() {
 
                     <div className="search-container">
                         <div className="search-field">
-                            <SearchForm action="/search" onSubmit={handleSubmit} className="search-field-form">
+                            {/* <SearchForm action="/search" onSubmit={handleSubmit} className="search-field-form">
                                 <TextInput className="search-field-input" type="text" placeholder="Search.." value={query} onChangeText={setQuery} name="search" />
                                 <span className="material-symbols-outlined search-field-icon">search</span>
-                            </SearchForm>
+                            </SearchForm> */}
                         </div>
 
                         <div className="sub-search-container">
@@ -115,17 +100,16 @@ function Header() {
                                 <Link to="/profile" className="like-link" >
                                     <div className="like-box">
                                         <span className="cart-btn material-symbols-outlined">shopping_cart</span>
+                                        {displayCartNr()}
                                     </div>
                                 </Link>
 
 
                             </div>
                         </div>
-
                     </div>
 
                     <div>
-
                         <button className="login-btn" onClick={logoutUser} type="button">Log out</button>
 
                         <Link to="/profile" className="a-nav-btn">
@@ -133,18 +117,13 @@ function Header() {
                         </Link>
 
                     </div>
-
                 </div>
 
             </header>
             :
-            <header className="topnav">
-                <div>
-                    <Link to="/">
-                        <img src="../examples/logo.png" alt="" />
-                    </Link>
-
-                </div>
+            <header className="topnav"> {/* Logged Out Header */}
+                <button className="headerImg" onClick={() => { navigate("/") }}>
+                </button>
 
                 <div className="dropdown">
                     <div className="dropbtn">Genre
@@ -159,29 +138,22 @@ function Header() {
                         <Link to="/blues">Blues</Link>
                         <Link to="/hiphop">Hiphop</Link>
                     </div>
-                </div>
 
+                </div>
                 {/*     <Link to="concert" className="a-default">Concerts</Link>
     <Link to="#calender" className="a-default">Calender</Link>
     <Link to="#live" className="a-default">Live</Link> */}
 
                 <div className="nav-right">
-
                     <div className="search-container">
                         <div className="search-field">
                             <form onKeyDown={handleKeyDown} className="search-field-form">
                                 <input className="search-field-input" type="text" placeholder="Search.." onChange={e => setSearch(e.target.value)}  name="search" />
                                 <span className="material-symbols-outlined search-field-icon">search</span>
                             </form>
-
-                            {/* <form action="/search" onSubmit={handleSubmit}  className="search-field-form">
-                    <input className="search-field-input"  onChangeText={setQuery} type="search" placeholder="Search.." name="search"/>
-                    <span className="material-symbols-outlined search-field-icon">search</span>
-                </form> */}
                         </div>
 
                         <div className="sub-search-container">
-
                             <Link to="/search" className="a-default">Advanced search</Link>
                         </div>
 
@@ -194,7 +166,6 @@ function Header() {
                         <Link to="/sign-up" className="a-nav-btn">
                             <button className="signup-btn">Sign up</button>
                         </Link>
-
                     </div>
 
                 </div>

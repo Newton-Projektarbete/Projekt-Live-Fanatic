@@ -3,70 +3,42 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: flex-start;
-  margin-top: 10vh;
-  /* height: 100vh;
-  display: flex;
-  justify-content: space-between;
-  align-items: center; */
+  margin-top: 5vh;
+
 }
 .leftBuy {
   display: flex;
   flex-direction: row;
-  column-gap: 20px;
-  /* margin-left: 10vw;
-  width: 50vh;
-  height: 100vh;
-  display: grid;
-  grid-template-areas:
-    "title title title"
-    "img main1 info1"
-    ". main2 info2"
-    ". main3 info3"
-    ". main4 info4";
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 400px 100px 100px 100px 100px;
-  grid-gap: 10px; */
+  column-gap: 15px;
+  margin-left: 300px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .rightBuy {
   display: flex;
   flex-direction: column;
-  /* justify-content: center;
-  align-content: center;
-  margin-right: 10vw;
-  width: 50vh;
-  height: 100vh;
-  display: grid;
-  grid-template-areas:
-    "main1 info1"
-    "main2 info2"
-    "main3 info3"
-    "main4 main4";
-  grid-template-columns: 200px 200px;
-  grid-template-rows: 75px 75px 75px 75px;
-  grid-gap: 10px;
-  justify-content: space-evenly; */
+  padding-right: 300px;
 }
 
 .buy-ticket-h1{
   display: flex;
   justify-content: center;
-  /* color: rgba(74, 166, 230, 1);
-  grid-area: title;
-  justify-self: center;
-  align-self: center; */
 }
 
 .buy-ticket-info-container{
   display: flex;
   flex-direction: row;
   align-items: center;
-  column-gap: 10px;
+  column-gap: 2px;
 }
 
 .buy-ticket-h2-info{
   margin: 0;
-  /* color: rgba(36, 93, 165, 1); */
+}
+
+.buy-ticket-h2{
+  padding: 0;
+  margin: 10px;
 }
 
 .artist-info-container{
@@ -88,8 +60,6 @@
   height: 200px;
   object-fit: cover;
   border-radius: 20px;
-
-  /* grid-area: img; */
 }
 .buy-ticket-btn{
   cursor: pointer;
@@ -103,7 +73,10 @@
 
 .rightBuy-btn{
   display: flex;
-  align-self: center;
+  flex-direction: column;
+  column-gap: 10px;
+  align-items: center;
+  row-gap: 10px;
 }
 
 .rightBuy-subContainer{
@@ -113,57 +86,13 @@
   column-gap: 30px;
 }
 
-/* 
-.rightBuy > h2 {
-  border: 1px solid black;
-  border-radius: 10px;
-  padding: 2%; 
-}
+.left-btn{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+  padding-right: 300px
 
-.leftBuy > h2:nth-of-type(1) {
-  grid-area: main1;
 }
-.leftBuy > h2:nth-of-type(2) {
-  grid-area: main2;
-}
-.leftBuy > h2:nth-of-type(3) {
-  grid-area: main3;
-}
-.leftBuy > h2:nth-of-type(4) {
-  grid-area: main4;
-}
-
-.leftBuy > p:nth-of-type(1) {
-  grid-area: info1;
-}
-.leftBuy > p:nth-of-type(2) {
-  grid-area: info2;
-}
-.leftBuy > p:nth-of-type(3) {
-  grid-area: info3;
-}
-.leftBuy > p:nth-of-type(4) {
-  grid-area: info4;
-}
-
-.rightBuy > h2:nth-of-type(1) {
-  grid-area: main1;
-}
-.rightBuy > h2:nth-of-type(2) {
-  grid-area: info1;
-  text-align: center;
-}
-.rightBuy > h2:nth-of-type(3) {
-  grid-area: main2;
-}
-.rightBuy > h2:nth-of-type(4) {
-  grid-area: info2;
-  text-align: center;
-}
-.rightBuy > h2:nth-of-type(5) {
-  grid-area: main3;
-}
-.rightBuy > h2:nth-of-type(6) {
-  grid-area: info3;
-  text-align: center;
-} */

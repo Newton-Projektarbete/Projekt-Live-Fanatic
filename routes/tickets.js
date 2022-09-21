@@ -17,8 +17,15 @@ module.exports = function(server, db){
         let result = db.prepare(query).all()
         res.json(result[0])
       })
-}
 
-  
-  
-  
+      server.post('/data/ticket', (request, response) => {
+        let user = request.body
+        let result
+        try{
+          result = db.prepare('INSERT INTO ticket (user_id, concert_id, pending) VALUES(?,?,?)').run([user.user_id, user.concert_id, user.pending])
+        }catch(e){
+          console.error(e)
+        }
+        response.json(result)
+      })
+}

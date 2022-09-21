@@ -2,8 +2,6 @@ import { createContext, useState, useEffect } from "react";
 const GlobalContext = createContext();
 
 export const GlobalProvider = ({ children }) => {
-  
-
 
 // useState for all variables 
 const [isLoading, setIsLoading] = useState(true)
@@ -14,8 +12,8 @@ const [isLoggedIn, setisLoggedIn] = useState(false)
 const [validTickets, setValidTickets] = useState([])
 const [sortedConcerts, setSortedConcerts] = useState([])
 const [user, setUser] = useState([])
-/*
-const [isLoaded, setisLoaded] = useState(false) */
+const [favorites, setFavorites] = useState([])
+
 
 // useEffect to run methods upon load
 useEffect(() => {
@@ -25,6 +23,7 @@ useEffect(() => {
     loadValidTickets()
     loadSortedConcerts()
     loadLoggedInUsers()
+    addToFavorite()
   }, []);
 
   const loadAllConcerts = async () => {
@@ -35,7 +34,6 @@ useEffect(() => {
     setAllConcerts(result)
     setIsLoading(false)
   }
-
 
   const loadValidTickets = async () => {
     setIsLoading(true)
@@ -73,13 +71,28 @@ useEffect(() => {
     setIsLoading(false)
   }
 
-/*   const loadUser = async () => {
+/* 
+  const addToFavorite = () => {
+
+   let rawResponse =  fetch('/data/favorite', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+            user_id: user_id,
+            concert_id: concert_id
+        })
+         */
+ 
+  const addToFavorite = async () => {
     setIsLoading(true)
-    const response = await fetch("/data/login")
+    const response = await fetch("/data/favorite")
     const result = await response.json()
-    setUser(result)
+    setFavorites(result)
     setIsLoading(false)
-  } */
+  }
 
   const loadLoggedInUsers = () => {
     fetch('/data/login', {
@@ -92,6 +105,17 @@ useEffect(() => {
       setisLoggedIn(myJson.loggedIn)
     });
   }
+
+/*   const getTicketsInCart = async () => {
+    let count = 0
+
+    for (let i = 0; i < allTickets.length; i++) {
+        if (user.user_id === allTickets[i].user_id && allTickets[i].pending === "true") {
+            count ++
+        }
+    }
+    setTicketInCart(count)
+  } */
 
 /*   useEffect (()=>{
     fetch('/data/login', {
@@ -130,7 +154,8 @@ useEffect(() => {
             validTickets,
             sortedConcerts,
             isLoggedIn,
-            user
+            user,
+            favorites
           }}
         >
           {children}
