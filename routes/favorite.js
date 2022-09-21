@@ -1,5 +1,10 @@
 module.exports = function(server, db){
 
+  server.get('/data/favorite', (req, res)=>{
+    let query = "SELECT * FROM favorite"
+    let result = db.prepare(query).all()
+    res.json(result)
+  })
 // lägga till i favorit
 server.post('/data/favorite', (request, response) => {
     let user = request.body

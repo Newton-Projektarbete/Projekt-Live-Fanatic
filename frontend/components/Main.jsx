@@ -1,9 +1,14 @@
 import { Link, useParams } from "react-router-dom";
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import GlobalContext from "../src/GlobalContext";
 
 function Main() {
-
+    const [variableName, variableUpdateMethod] = useState([])
+    const [concertSortedByRecently, setConcertSortedByRecently] = useState([])
+    const [concertSortedByPerformanceDate, setConcertSortedByPerformanceDate] = useState([])
+    
+    const {favorites, user} = useContext(GlobalContext);
+    
     let genreId = useParams().genre
     let pageExist = false;
     let genreStatus = false
@@ -51,22 +56,20 @@ function Main() {
     }, [])
 
 
-    const [favorites] = useState({
-
-    })
-
 /*     const handleChange = (e)=>{
         setFavorite (prev=>({...prev, [e.target.name]:e.target.value}))
       }
  */
 
-    const addToFavorite = async () => {
+    const addToFavorite = async (con) => {
+        console.log("con:" + con)
+        
         fetch('/data/favorite', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json'},
             body: JSON.stringify({
-                user_id: favorites.user_id,
-                concert_id: favorites.concert_id
+                user_id: user.user_id,
+                concert_id: con
             })
         }).then( (res) => {
             if(res.ok == true){
@@ -77,56 +80,6 @@ function Main() {
           })
     }
 
-    const [variableName, variableUpdateMethod] = useState([
-        {
-            concert_id: 0,
-            concert_name: "",
-            performance_date: Date,
-            artist_id: 0,
-            genre: "",
-            location: "",
-            video_url: "",
-            concert_image_url: "",
-            video_name: "",
-            added_date: Date,
-            price: 0,
-            artist_name: ""
-        }
-    ])
-
-    const [concertSortedByRecently, setConcertSortedByRecently] = useState([
-        {
-            concert_id: 0,
-            concert_name: "",
-            performance_date: Date,
-            artist_id: 0,
-            genre: "",
-            location: "",
-            video_url: "",
-            concert_image_url: "",
-            video_name: "",
-            added_date: Date,
-            price: 0,
-            artist_name: ""
-        }
-    ])
-
-    const [concertSortedByPerformanceDate, setConcertSortedByPerformanceDate] = useState([
-        {
-            concert_id: 0,
-            concert_name: "",
-            performance_date: Date,
-            artist_id: 0,
-            genre: "",
-            location: "",
-            video_url: "",
-            concert_image_url: "",
-            video_name: "",
-            added_date: Date,
-            price: 0,
-            artist_name: ""
-        }
-    ])
     
 
     const liveConcertsToday = () => {
@@ -141,7 +94,7 @@ function Main() {
                             variableName[i].concert_image_url} alt="" />
 
                             <div className="material-symbols-outlined main-like-btn">
-                        <span className="like-btn-1 material-symbols-outlined" onClick={addToFavorite()} type="button">favorite</span>
+                        <span className="like-btn-1 material-symbols-outlined" onClick={()=>addToFavorite(variableName[i].concert_id)} type="button">favorite</span>
                        
                             </div>
                             
@@ -170,7 +123,7 @@ function Main() {
                             variableName[i].concert_image_url} alt="" />
 
                             <div to="" className="material-symbols-outlined main-like-btn">
-                                <span className="like-btn-1 material-symbols-outlined">favorite</span>
+                                <span className="like-btn-1 material-symbols-outlined" onClick={()=>addToFavorite(variableName[i].concert_id)}>favorite</span>
                             </div>
                         </div>
 
