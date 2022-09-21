@@ -50,6 +50,33 @@ function Main() {
         loadComing()
     }, [])
 
+
+    const [favorites] = useState({
+
+    })
+
+/*     const handleChange = (e)=>{
+        setFavorite (prev=>({...prev, [e.target.name]:e.target.value}))
+      }
+ */
+
+    const addToFavorite = async () => {
+        fetch('/data/favorite', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                user_id: favorites.user_id,
+                concert_id: favorites.concert_id
+            })
+        }).then( (res) => {
+            if(res.ok == true){
+              alert("Concert added to favorites!")
+            } else {
+              console.log("response failed:")
+            }
+          })
+    }
+
     const [variableName, variableUpdateMethod] = useState([
         {
             concert_id: 0,
@@ -113,9 +140,11 @@ function Main() {
                         <div className="main-img-box"> <img className="main-img" src={
                             variableName[i].concert_image_url} alt="" />
 
-                            <div to="" className="material-symbols-outlined main-like-btn">
-                                <span className="like-btn-1 material-symbols-outlined">favorite</span>
+                            <div className="material-symbols-outlined main-like-btn">
+                        <span className="like-btn-1 material-symbols-outlined" onClick={addToFavorite()} type="button">favorite</span>
+                       
                             </div>
+                            
                         </div>
 
                         <div className="child-div">
