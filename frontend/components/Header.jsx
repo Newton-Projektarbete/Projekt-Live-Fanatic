@@ -1,5 +1,6 @@
 import { Link, useLocation, useNavigate, useParams, useSearchParams } from "react-router-dom"
-import { React, useContext, useState, useEffect } from "react"
+import { useContext, useState, useEffect } from "react"
+import React from "react"
 import GlobalContext from "../src/GlobalContext"
 
 

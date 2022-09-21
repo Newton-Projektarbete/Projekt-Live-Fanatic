@@ -11,6 +11,7 @@ function AdvancedSearch() {
 
     useEffect(() => {
         setFilteredArtists(allArtists.filter(artist => artist.artist_name.includes(searchParam)))
+        searchResult()
     }, [allArtists, searchParam]);
 
 
@@ -28,9 +29,13 @@ function AdvancedSearch() {
     const searchResult = () => {
         let artist = []
 
-        console.log(searchParam)
+        /* console.log("this is search Term: " + searchParam) */
         for (let i = 0; i < filteredArtists.length; i++) {
-            if (filteredArtists[i].artist_name == searchParam) {
+            /* console.log("Searched:" + searchParam)
+                console.log("Found:" + filteredArtists[i].artist_name) */
+            if (filteredArtists[i].artist_name.toLowerCase().includes(searchParam.toLowerCase())) {
+                console.log("Searched:" + searchParam)
+                console.log("Found:" + filteredArtists[i].artist_name)
                 artist = <div className="adv-src-result-info">
                     <Link to="">
                         {filteredArtists[i].artist_name}
@@ -43,6 +48,8 @@ function AdvancedSearch() {
         }
         return artist
     }
+
+
     return <><div className="body">
 
         <div className="advanced-search">
