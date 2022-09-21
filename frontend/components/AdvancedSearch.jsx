@@ -8,11 +8,11 @@ function AdvancedSearch() {
     const { allArtists } = useContext(GlobalContext);
     const [filteredArtists, setFilteredArtists] = useState([])
 
-
-    useEffect(() => {
+//Daniels
+/*     useEffect(() => {
         setFilteredArtists(allArtists.filter(artist => artist.artist_name.includes(searchParam)))
         searchResult()
-    }, [allArtists, searchParam]);
+    }, [allArtists, searchParam]); */
 
 
     // let artist = [];
@@ -25,14 +25,12 @@ function AdvancedSearch() {
     //     }
     // })
 
-
-    const searchResult = () => {
+//Daniels 
+/*     const searchResult = () => {
         let artist = []
 
-        /* console.log("this is search Term: " + searchParam) */
+        // console.log("this is search Term: " + searchParam) 
         for (let i = 0; i < filteredArtists.length; i++) {
-            /* console.log("Searched:" + searchParam)
-                console.log("Found:" + filteredArtists[i].artist_name) */
             if (filteredArtists[i].artist_name.toLowerCase().includes(searchParam.toLowerCase())) {
                 console.log("Searched:" + searchParam)
                 console.log("Found:" + filteredArtists[i].artist_name)
@@ -47,9 +45,27 @@ function AdvancedSearch() {
             }
         }
         return artist
+    } */
+
+const searchResult = () => {
+    let artist = []
+    let searchterm = localStorage.getItem('searchterm')
+    if(searchterm != null){
+        let x = 0
+        for (let i = 0; i < allArtists.length; i++) {
+            if (allArtists[i].artist_name.toLowerCase().includes(searchterm.toLowerCase())) {
+                artist[x] = <div className="adv-src-result-info">
+                    <Link to="">
+                        {allArtists[i].artist_name}
+                    </Link>
+    
+                </div>
+                x++
+            }
+        }
     }
-
-
+    return artist
+}
     return <><div className="body">
 
         <div className="advanced-search">
