@@ -1,15 +1,16 @@
-import GlobalContext from "../src/GlobalContext"
+import { useContext, useState, useEffect, useMemo } from "react"
 import { Link, useNavigate } from "react-router-dom"
-import { useContext } from "react"
-import { useState } from "react";
-import { useEffect } from "react";
-import { useMemo } from "react";
+import GlobalContext from "../src/GlobalContext"
+
 function Header() {
     const navigate = useNavigate();
     const { isLoggedIn, allTickets, user } = useContext(GlobalContext);
-
     const [ticketInCart, setTicketInCart] = useState(0)
 
+
+    useEffect(() => {
+        getTicketsInCart()
+    })
 
     const logoutUser = () => {
 
@@ -26,9 +27,6 @@ function Header() {
 
     }
 
-    useEffect(() => {
-        getTicketsInCart()
-    })
     const getTicketsInCart = async () => {
         let count = 0
 
@@ -53,10 +51,9 @@ function Header() {
     return <>
         {isLoggedIn ?
             <header className="topnav"> {/* Logged In Header */}
-                    
-                    <button className="headerImg" onClick={()=>{navigate("/")}}>
-                    </button>
-                    
+
+                <button className="headerImg" onClick={() => { navigate("/") }}>
+                </button>
 
                 <div className="dropdown">
                     <div className="dropbtn">Genre
