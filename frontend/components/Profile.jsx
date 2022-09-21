@@ -5,7 +5,7 @@ import GlobalContext from "../src/GlobalContext";
 function Profile(){
 
     let id = useParams().ticket_id;
-    const { allTickets, sortedConcerts, allConcerts} = useContext(GlobalContext);
+    const { allTickets, sortedConcerts, allConcerts, user} = useContext(GlobalContext);
 
     allTickets.map(a => {
         if (a.ticket_id == id) {
@@ -21,13 +21,14 @@ function Profile(){
     let yyyy = today.getFullYear();
     today = dd + '-' + mm + '-' + yyyy;
 
+    console.log(user.user_id)
 
     const activeTickets = () => {
         let tickets = []
 
         for (let i = 0; i < sortedConcerts.length; i++) {
             for (let x = 0; x < allTickets.length; x++) {
-               if (sortedConcerts[i].concert_id == allTickets[x].concert_id && sortedConcerts[i].performance_date >= today) {
+               if (sortedConcerts[i].concert_id == allTickets[x].concert_id && sortedConcerts[i].performance_date >= today  && allTickets[x].user_id == user.user_id) {
                 
                 tickets[i] = 
                 <table>
@@ -71,7 +72,7 @@ function Profile(){
 
         for (let i = 0; i < sortedConcerts.length; i++) {
             for (let x = 0; x < allTickets.length; x++) {
-               if (sortedConcerts[i].concert_id == allTickets[x].concert_id && sortedConcerts[i].performance_date < today) {
+               if (sortedConcerts[i].concert_id == allTickets[x].concert_id && sortedConcerts[i].performance_date < today  && allTickets[x].user_id == user.user_id) {
                 
                 tickets[i] = 
                 <table>

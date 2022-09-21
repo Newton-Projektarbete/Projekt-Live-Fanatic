@@ -1,39 +1,59 @@
 import { Link, useParams } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import GlobalContext from "../src/GlobalContext";
-import Header from "../components/Header"
-
-function AdvancedSearch(){
-
-    let searchTerm = useParams()
-    console.log("searchTerm")
-    console.log(searchTerm)
-    console.log("-----------")
-    const { allArtists, allConcerts } = useContext(GlobalContext);
-
-    
 
 
-let artist = []
-allArtists.map(a => {
-    if (a.artist_name == searchTerm) {
-        artist = a
-        pageExist = true
+function AdvancedSearch() {
+    const searchParam = new URLSearchParams(window.location.search).get("search");
+    const { allArtists } = useContext(GlobalContext);
+    const [filteredArtists, setFilteredArtists] = useState([])
+
+
+    useEffect(() => {
+        setFilteredArtists(allArtists.filter(artist => artist.artist_name.includes(searchParam)))
+    }, [allArtists, searchParam]);
+
+
+    // let artist = [];
+    // filteredArtists.map(a => {
+    //     if (a.artist_name == searchParam) {
+    //         artist = a
+    //         return artist
+    //     }else{
+    //         console.log("error")
+    //     }
+    // })
+
+
+    const searchResult = () => {
+        let artist = []
+
+        console.log(searchParam)
+        for (let i = 0; i < filteredArtists.length; i++) {
+            if (filteredArtists[i].artist_name == searchParam) {
+                artist = <div className="adv-src-result-info">
+                    <Link to="">
+                        {filteredArtists[i].artist_name}
+                    </Link>
+
+                </div>
+            } else {
+                console.log("error")
+            }
+        }
         return artist
     }
-})
-
     return <><div className="body">
 
-         <div className="advanced-search">
-             <div className="adv-src-content">
+        <div className="advanced-search">
+            <div className="adv-src-content">
                 <div className="filter-by-artist-parent">
                     <h2 className="adv-src-h2">Filter by artist</h2>
                     <div className="adv-src-filter-by-artist-box">
-                        <input type="text" className="adv-src-filter-by-artist-search"/>
-                            <span className="material-symbols-outlined adv-src-filter-by-artist-search-icon">
-                                search
-                            </span>
+                        <input type="text" className="adv-src-filter-by-artist-search" />
+                        <span className="material-symbols-outlined adv-src-filter-by-artist-search-icon">
+                            search
+                        </span>
                     </div>
                     <div className="adv-src-filter-all">
                         <button className="adv-src-btn">All</button>
@@ -62,7 +82,7 @@ allArtists.map(a => {
                         </div>
                     </div>
                 </div>
-                 <div className="filter-by-genre">
+                <div className="filter-by-genre">
                     <h2 className="adv-src-h2">Filter by genre</h2>
                     <button className="adv-src-btn">All</button>
                     <button className="adv-src-btn">Rock</button>
@@ -81,7 +101,7 @@ allArtists.map(a => {
                     <button className="adv-src-btn">Reggae</button>
                 </div>
 
-            </div> 
+            </div>
 
             <div className="adv-src-page-btn-box">
                 <Link to="" className="adv-src-icon-box">
@@ -102,19 +122,22 @@ allArtists.map(a => {
             </div>
 
             <div className="adv-src-result-box">
-                <h2>Result {Header.searchTerm}</h2>
+                <h2>Result</h2>
 
                 <div className="adv-src-result-content">
-                    <div className="adv-src-result-info">
-                        <Link to="">
-                            {artist.artist_name}
-                        </Link>
+                    <div>
+                        {searchResult()}
                     </div>
+
+                    {/* {filteredArtists.length ? <div>{filteredArtists.artist_name}</div> : <div>no results found</div>
+                        } */}
+
+
                 </div>
             </div>
         </div>
-</div>
-</>
+    </div>
+    </>
 }
-    
-    export default AdvancedSearch
+
+export default AdvancedSearch
