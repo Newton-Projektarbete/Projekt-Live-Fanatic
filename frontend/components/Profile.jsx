@@ -2,10 +2,10 @@ import { Link, useParams } from "react-router-dom";
 import { useContext } from "react";
 import GlobalContext from "../src/GlobalContext";
 
-function Profile(){
+function Profile() {
 
     let id = useParams().ticket_id;
-    const { allTickets, sortedConcerts, allConcerts, user} = useContext(GlobalContext);
+    const { allTickets, sortedConcerts, allConcerts, user, favorites } = useContext(GlobalContext);
 
     allTickets.map(a => {
         if (a.ticket_id == id) {
@@ -21,48 +21,112 @@ function Profile(){
     let yyyy = today.getFullYear();
     today = dd + '-' + mm + '-' + yyyy;
 
-    console.log(user.user_id)
+    /* const testRun = async () => {
+        console.log("I got Runned!")
+    } */
+
+    const addToFavorite = async () => {
+        fetch('/data/favorite', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                user_id: user_id,
+                concert_id: concert_id,
+                roles: "user"
+            })
+        }).then(response => response.json())
+    }
+
+    /* 
+    user = user_id
+    favorites = user_id & concert_id
+    allConcerts = concert_id 
+
+    user_id = favorites user_id
+    =>  favorite user_id 
+    => concert_id
+    
+    */
+
+    const favoriteConcerts = () => {
+
+        let favoriteConcertsList = []
+        for (let i = 0; i < favorites.length; i++) {
+            if (user.user_id == favorites[i].user_id) {
+                for (let x = 0; x < allConcerts.length; x++) {
+                    if (favorites[i].concert_id == allConcerts[x].concert_id) {
+                        console.log("allConcerts[x].concert_id")
+                        console.log(allConcerts[x].concert_id)
+                        console.log("----------------------")
+                        favoriteConcertsList = <table>
+                            <tr className="table-header">
+                               
+                                <th>Concert:</th>
+                                <th>Date:</th>
+                                <th>Location:</th>
+                               
+                            </tr>
+
+                            <div>
+                                <p className="profile-td"><img className="img-profile" src={allConcerts[x].concert_image_url} /></p>
+                            </div>
+
+                            <td className="profile-td">{allConcerts[x].concert_name}</td>
+
+                            <td className="profile-td">{allConcerts[x].performance_date}</td>
+
+                            <td className="profile-td">{allConcerts[x].location}</td>
+
+                      
+                        </table>
+                    }
+                }
+            }
+        }
+        return favoriteConcertsList
+    }
+
 
     const activeTickets = () => {
         let tickets = []
 
         for (let i = 0; i < sortedConcerts.length; i++) {
             for (let x = 0; x < allTickets.length; x++) {
-               if (sortedConcerts[i].concert_id == allTickets[x].concert_id && sortedConcerts[i].performance_date >= today  && allTickets[x].user_id == user.user_id) {
-                
-                tickets[i] = 
-                <table>
-                    <tr className="table-header">
-                        <th></th>
-                        <th>Concert:</th>
-                        <th>Date:</th>
-                        <th>Location:</th>
-                    </tr>
-    
-                    <tr>
-                        <td className="profile-td"><img className="img-profile" src={sortedConcerts[i].concert_image_url} /></td>
-                        <td className="profile-td"><Link to={"/concert/" + sortedConcerts[i].concert_id}>{sortedConcerts[i].concert_name}</Link></td>
-                        <td className="profile-td"><p>{sortedConcerts[i].performance_date}</p></td>
-                        <td className="profile-td">{sortedConcerts[i].location}</td>
-                        <td className="profile-td">
-                        
-                            <a href="#">
-                                <span className="material-symbols-outlined global-icons">print</span>
-                            </a>
-                            <a href="#">
-                            <Link to={"/profile/" + allTickets[x].ticket_id}><span className="material-symbols-outlined global-icons">qr_code</span></Link>
-                            </a>
-                        </td>
-    
-                    </tr>
-    
-                </table> 
-               }
-                
+                if (sortedConcerts[i].concert_id == allTickets[x].concert_id && sortedConcerts[i].performance_date >= today && allTickets[x].user_id == user.user_id) {
+
+                    tickets[i] =
+                        <table>
+                            <tr className="table-header">
+                                <th></th>
+                                <th>Concert:</th>
+                                <th>Date:</th>
+                                <th>Location:</th>
+                            </tr>
+
+                            <tr>
+                                <td className="profile-td"><img className="img-profile" src={sortedConcerts[i].concert_image_url} /></td>
+                                <td className="profile-td"><Link to={"/concert/" + sortedConcerts[i].concert_id}>{sortedConcerts[i].concert_name}</Link></td>
+                                <td className="profile-td"><p>{sortedConcerts[i].performance_date}</p></td>
+                                <td className="profile-td">{sortedConcerts[i].location}</td>
+                                <td className="profile-td">
+
+                                    <a href="#">
+                                        <span className="material-symbols-outlined global-icons">print</span>
+                                    </a>
+                                    <a href="#">
+                                        <Link to={"/profile/" + allTickets[x].ticket_id}><span className="material-symbols-outlined global-icons">qr_code</span></Link>
+                                    </a>
+                                </td>
+
+                            </tr>
+
+                        </table>
+                }
+
             }
-            
+
         }
-        return tickets 
+        return tickets
 
     }
 
@@ -72,108 +136,78 @@ function Profile(){
 
         for (let i = 0; i < sortedConcerts.length; i++) {
             for (let x = 0; x < allTickets.length; x++) {
-               if (sortedConcerts[i].concert_id == allTickets[x].concert_id && sortedConcerts[i].performance_date < today  && allTickets[x].user_id == user.user_id) {
-                
-                tickets[i] = 
-                <table>
-                    <tr className="table-header">
-                        <th></th>
-                        <th>Concert:</th>
-                        <th>Date:</th>
-                        <th>Location:</th>
-                    </tr>
-    
-                    <tr>
-                        <td className="profile-td"><img className="img-profile" src={sortedConcerts[i].concert_image_url} /></td>
-                        <td className="profile-td"><Link to={"/concert/" + sortedConcerts[i].concert_id}>{sortedConcerts[i].concert_name}</Link></td>
-                        <td className="profile-td"><p>{sortedConcerts[i].performance_date}</p></td>
-                        <td className="profile-td">{sortedConcerts[i].location}</td>
-                        <td className="profile-td">
-                        
-                            <a href="#">
-                                <span className="material-symbols-outlined global-icons">print</span>
-                            </a>
-                            <a href="#">
-                            <Link to={"/profile/" + allTickets[x].ticket_id}><span className="material-symbols-outlined global-icons">qr_code</span></Link>
-                            </a>
-                        </td>
-    
-                    </tr>
-    
-                </table> 
-               }
-                
+                if (sortedConcerts[i].concert_id == allTickets[x].concert_id && sortedConcerts[i].performance_date < today && allTickets[x].user_id == user.user_id) {
+
+                    tickets[i] =
+                        <table>
+                            <tr className="table-header">
+                                <th></th>
+                                <th>Concert:</th>
+                                <th>Date:</th>
+                                <th>Location:</th>
+                            </tr>
+
+                            <tr>
+                                <td className="profile-td"><img className="img-profile" src={sortedConcerts[i].concert_image_url} /></td>
+                                <td className="profile-td"><Link to={"/concert/" + sortedConcerts[i].concert_id}>{sortedConcerts[i].concert_name}</Link></td>
+                                <td className="profile-td"><p>{sortedConcerts[i].performance_date}</p></td>
+                                <td className="profile-td">{sortedConcerts[i].location}</td>
+                                <td className="profile-td">
+
+                                    <a href="#">
+                                        <span className="material-symbols-outlined global-icons">print</span>
+                                    </a>
+                                    <a href="#">
+                                        <Link to={"/profile/" + allTickets[x].ticket_id}><span className="material-symbols-outlined global-icons">qr_code</span></Link>
+                                    </a>
+                                </td>
+
+                            </tr>
+
+                        </table>
+                }
+
             }
-            
+
         }
-        return tickets 
+        return tickets
 
     }
 
-    return <> 
-    <div className="body">
-        <div className="profile-body">
-            
-            <div className="edit-profile-box">
-                <Link to="/profile-edit">
-                <button className="edit-btn">Edit profile</button>
-                </Link>
-            </div>
+    return <>
+        <div className="body">
+            <div className="profile-body">
 
-            <div className="main-table-content">
-
-            <div className="left-table">
-            <h2>Active tickets</h2>
-            {activeTickets()}
-            </div> 
-                
-                <div className="centrum-table">
-                    <h2>Expired tickets </h2>
-                    {expiredTickets()}         
+                <div className="edit-profile-box">
+                    <Link to="/profile-edit">
+                        <button className="edit-btn">Edit profile</button>
+                    </Link>
                 </div>
 
-                <div></div>
+                <div className="main-table-content">
 
-                <div className="right-table">
-                    <h2>Liked concerts</h2>
-                    <table>
-                        <tr className="table-header">
-                            <th></th>
-                            <th>Concert:</th>
-                            <th>Date:</th>
-                            <th>Location:</th>
-                        </tr>
+                    <div className="left-table">
+                        <h2>Active tickets</h2>
+                        {activeTickets()}
+                    </div>
 
-                        <tr>
-                            <td className="profile-td"><img className="img-profile" src="../examples/justin-timberlake.jpg" /></td>
-                            <td className="profile-td"><a href="">Justin Timberlake</a></td>
-                            <td className="profile-td">2022.12.12</td>
-                            <td className="profile-td">Stockholm, Globen</td>
-                        </tr>
+                    <div className="centrum-table">
+                        <h2>Expired tickets </h2>
+                        {expiredTickets()}
+                    </div>
 
-                        <tr>
-                            <td className="profile-td"><img className="img-profile" src="../examples/justin-timberlake.jpg" /></td>
-                            <td className="profile-td"><a href="">Justin Timberlake</a></td>
-                            <td className="profile-td">2022.12.12</td>
-                            <td className="profile-td">Stockholm, Globen</td>
-                        </tr>
 
-                        <tr>
-                            <td className="profile-td"><img className="img-profile" src="../examples/justin-timberlake.jpg" /></td>
-                            <td className="profile-td"><a href="">Justin Timberlake</a></td>
-                            <td className="profile-td">2022.12.12</td>
-                            <td className="profile-td">Stockholm, Globen</td>
-                        </tr>
-                    </table>
+                    <div className="right-table">
+                        <h2>Liked concerts</h2>
+                        {favoriteConcerts()}
+                    </div>
+
                 </div>
-                
 
             </div>
-            
+
         </div>
-
-    </div>
     </>
-    }
-    
-    export default Profile
+}
+
+export default Profile
