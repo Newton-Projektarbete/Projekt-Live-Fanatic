@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 function BuyTicket() {
 
   let id = useParams().concert_id;
-  const { allConcerts } = useContext(GlobalContext);
+  const { allConcerts, user } = useContext(GlobalContext);
 
   let concert = []
   let pageExist = false
@@ -17,6 +17,27 @@ function BuyTicket() {
         return concert
     }
 })
+
+const addToCart = async () => {
+  fetch('/data/ticket', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json'},
+    body: JSON.stringify({ 
+        user_id: user.user_id,
+        concert_id: concert.concert_id,
+        pending: "true"
+    })
+  }).then( (res) => {
+    if(res.ok == true){
+      /* alert("Ticket added to cart!") */
+    } else {
+      console.log("response failed:")
+    }
+  }).then(()=>{
+    window.location.reload(true)
+  })
+}
+
 
   return <>
     <div className="body">
@@ -66,10 +87,8 @@ function BuyTicket() {
           </div>
 
           <div className="rightBuy-btn">
-          <Link to={"/concert/" + concert.concert_id + "/buy-ticket/confirm-payment"}>
-            <button>Add to cart
+            <button onClick={() => addToCart()}>Add to cart
             </button>
-          </Link>
           <Link to={"/concert/" + concert.concert_id + "/buy-ticket/confirm-payment"}>
             <button>Checkout
             </button>

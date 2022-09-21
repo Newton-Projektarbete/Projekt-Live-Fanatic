@@ -268,8 +268,6 @@
 
 }
 
-
-
 .like-btn:hover{
     color: red;
     background-color: rgba(48, 149, 184, 1);
@@ -299,3 +297,19 @@
     margin-top: 5px;
 
   }
+  .headerImg{
+    float: left;
+    background-image: url("../images/logo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 80px;
+    width: 180px;
+    padding: 2px 2px;
+    margin: 2px 2px;
+    color: transparent;
+    background-color: transparent;
+  }
+  .headerImg:active{
+    transform: none;
+  }
+

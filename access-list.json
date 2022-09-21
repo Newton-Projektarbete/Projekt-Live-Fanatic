@@ -56,6 +56,14 @@
       {"role": "anonymous", "methods": ["POST","GET"]},
       {"role": "user", "methods": ["GET", "DELETE"]}
     ]
+  },
+
+  {
+    "route": "/data/ticket",
+    "roles":[
+      {"role": "anonymous", "methods": ["POST","GET"]},
+      {"role": "user", "methods": ["GET", "POST"]}
+    ]
   }
 
 ]
