@@ -178,3 +178,9 @@
     justify-content: space-evenly;
     height: 100px;
 }
+
+.adv-src-no-result{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

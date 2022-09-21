@@ -13,13 +13,13 @@ function AdvancedSearch() {
             for (let i = 0; i < allArtists.length; i++) {
                 if (allArtists[i].artist_name.toLowerCase().includes(searchterm.toLowerCase())) {
                     artist[x] = <div className="adv-src-result-content">
-                        <Link to="#">
+                        <Link to={"/artist/" + allArtists[i].artist_id}>
                             <div >
                                 <img className="adv-src-img" src={allArtists[i].artist_image_url} />
                             </div>
                         </Link>
                         <div className="adv-src-result-info">
-                            <Link to="#">{allArtists[i].artist_name}</Link>
+                            <Link to={"/artist/" + allArtists[i].artist_id}>{allArtists[i].artist_name}</Link>
                             {/* <p className="adv-src-p">2022.12.12</p>
                             <p className="adv-src-p">Stockholm, Globen</p> */}
                         </div>
@@ -27,19 +27,15 @@ function AdvancedSearch() {
                     x++
                 }
             }
-        }
+
+            if(x == 0){
+                artist  = <div className="adv-src-no-result">
+                            <h1>No Result</h1>
+                        </div>
+            }
+        } 
         return artist
     }
-
-
-    /* 
-    <div className="adv-src-result-info">
-                        <Link to="">
-                            {allArtists[i].artist_name}
-                       </Link>
-    </div>
-    
-    */
 
     return <><div className="body">
 
