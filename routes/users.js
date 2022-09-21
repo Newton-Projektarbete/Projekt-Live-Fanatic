@@ -3,14 +3,14 @@ const encrypt = require('../modules/encrypt.js')
 module.exports = function(server, db){
 
   server.get('/data/users', (req, res)=>{
-    let query = "SELECT id, email FROM users"
+    let query = "SELECT user_id, email FROM users"
     let result = db.prepare(query).all()
     res.json(result)
     console.log(result)
   })
 
   server.get('/data/users/:id', (req, res)=>{
-    let query = "SELECT id, email FROM users WHERE id = @id"
+    let query = "SELECT user_id, email FROM users WHERE user_id = @id"
     let result = db.prepare(query).all(request.params)
     res.json(result)
   })
@@ -21,7 +21,7 @@ module.exports = function(server, db){
     let encryptedPassword = encrypt(user.password)
     let result
     try{
-      result = db.prepare('INSERT INTO users (email, password) VALUES(?,?)').run([user.email, encryptedPassword])
+      result = db.prepare('INSERT INTO users (email, password, roles) VALUES(?,?,?)').run([user.email, encryptedPassword, user.roles])
     }catch(e){
       console.error(e)
     }

@@ -78,7 +78,6 @@
     padding: 6px 10px;
     border-radius: 10px;
     font-size: 17px;
-    margin-top: 8px;
     float: right;
     cursor: pointer;
   }
@@ -250,6 +249,7 @@
   text-decoration: none;
   background-color: rgba(48, 149, 184, 1);
 }
+
 .like-btn, .like-amount{
   grid-column: 1;
   grid-row: 1;
