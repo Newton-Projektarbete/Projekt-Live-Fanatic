@@ -1,17 +1,31 @@
 import GlobalContext from "../src/GlobalContext"
 import { useContext, useState, } from "react"
-import {Link, useNavigate} from "react-router-dom"
+import {Link, useLocation, useNavigate, useParams, useSearchParams } from "react-router-dom"
+import { useEffect } from "react";
+import React from "react";
 
 function Header(){
-    const { isLoggedIn } = useContext(GlobalContext);
-    const [searchTerm, setSearchTerm] = useState("")
-=======
-import {Link, useNavigate} from "react-router-dom"
-import { useContext } from "react"
-function Header(){
+    let [searchParams, setSearchParams] = useSearchParams();
+    let [query, setQuery] = React.useState( searchParams.get("query"));
+    const [searchTerm, setSearchTerm] = useState([]);
+    const location = useLocation();
     const navigate = useNavigate();
     const { isLoggedIn, setisLoggedIn } = useContext(GlobalContext);
->>>>>>> 002a199fb7924309375a182c45bbcb90d80e9d72
+    // const query = new URLSearchParams(location.search).get("query");
+    const {slug} = useParams();
+
+//     useEffect(()=> {
+//         const search = async () => {
+//             try {
+//                 const {data} = await React.get('API_URL/search?search={query}');
+//                 setSearchTerm(data.products);
+//         }catch{
+//             console.log("error")
+//         }
+//     };
+//     search();
+// }, []);
+
 
 /* {IfThisIsTrue ? DoThis : OtherwiseDoThis } */
 const logoutUser = () => {
@@ -44,25 +58,19 @@ function reloadPage() {
     
 }
 
-function search(){
-    const artists = fetch('data/artist')
-
-    const search = artists.filter(
-    artist =>{
-        return(
-            artist
-            .artist_name
-            .toIgnoreCase()
-            .includes(searchTerm.toIgnoreCase)
-        )
-    }
-)
+function handleSubmit(){
+    setSearchParams({query});
+    // event.preventDefault();
+    // let params = serializeFormsQuery(event.taget);
+    // setSeachParams(params);
+    // console.log(searchParams)
 }
 
-const handleChange = e =>{
-    setSearchTerm(e.target.value)
-    console.log(searchTerm);
-  }
+// const handleChange = e =>{
+//     setSearchTerm(e.target.value)
+//     search()
+//     console.log(searchTerm);
+//   }
 
   
 
@@ -80,10 +88,10 @@ const handleChange = e =>{
     // })
 
 
-=======
+
 /* if(window.performance.navigation)
 console.log(window.performance.addEventListener("loading")) */
->>>>>>> 002a199fb7924309375a182c45bbcb90d80e9d72
+
     return <>
             {isLoggedIn ? 
         <header className="topnav">
@@ -112,10 +120,10 @@ console.log(window.performance.addEventListener("loading")) */
         
             <div className="search-container">
                 <div className="search-field">
-                    <form action="/search" className="search-field-form">
-                        <input className="search-field-input" onChange= {handleChange} type="text" placeholder="Search.." name="search"/>
+                    <SearchForm action="/search" onSubmit= {handleSubmit} className="search-field-form">
+                        <TextInput className="search-field-input"  type="text" placeholder="Search.." value={query} onChangeText={setQuery} name="search"/>
                         <span className="material-symbols-outlined search-field-icon">search</span>
-                    </form>
+                    </SearchForm>
                 </div>
         
                 <div className="sub-search-container">
@@ -185,8 +193,8 @@ console.log(window.performance.addEventListener("loading")) */
 
         <div className="search-container">
             <div className="search-field">
-                <form action="/search" className="search-field-form">
-                    <input className="search-field-input" onChange={handleChange} type="text" placeholder="Search..logut" name="search"/>
+                <form action="/search" onSubmit={handleSubmit}  className="search-field-form">
+                    <input className="search-field-input"  onChangeText={setQuery} type="search" placeholder="Search.." name="search"/>
                     <span className="material-symbols-outlined search-field-icon">search</span>
                 </form>
             </div>
@@ -216,7 +224,7 @@ console.log(window.performance.addEventListener("loading")) */
 }
 export default Header
 
-{/*         {isLoggedIn ? 
+/*         {isLoggedIn ? 
         <header className="topnav">
         <div>
             <Link to="/">
@@ -324,4 +332,4 @@ export default Header
         </div>
     </div>
         </header>
-        } */}
+        } */
