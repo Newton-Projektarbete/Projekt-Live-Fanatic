@@ -1,12 +1,9 @@
 import GlobalContext from "../src/GlobalContext"
-<<<<<<< HEAD
-import {Link} from "react-router-dom"
 import { useContext, useState, } from "react"
+import {Link, useNavigate} from "react-router-dom"
 
 function Header(){
-    /* let isLoggedIn = false */
-
-     const { isLoggedIn } = useContext(GlobalContext);
+    const { isLoggedIn } = useContext(GlobalContext);
     const [searchTerm, setSearchTerm] = useState("")
 =======
 import {Link, useNavigate} from "react-router-dom"
@@ -47,7 +44,6 @@ function reloadPage() {
     
 }
 
-<<<<<<< HEAD
 function search(){
     const artists = fetch('data/artist')
 
