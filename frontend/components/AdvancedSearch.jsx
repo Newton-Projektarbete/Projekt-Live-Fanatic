@@ -42,21 +42,21 @@ function AdvancedSearch() {
         <div className="advanced-search">
             <div className="adv-src-content">
                 <div className="filter-by-artist-parent">
-                    <h2 className="adv-src-h2">Filter by artist</h2>
+                    {/* <h2 className="adv-src-h2">Filter by artist</h2> */}
                     <div className="adv-src-filter-by-artist-box">
-                        <input type="text" className="adv-src-filter-by-artist-search" />
-                        <span className="material-symbols-outlined adv-src-filter-by-artist-search-icon">
+                        {/* <input type="text" className="adv-src-filter-by-artist-search" /> */}
+                       {/*  <span className="material-symbols-outlined adv-src-filter-by-artist-search-icon">
                             search
-                        </span>
+                        </span> */}
                     </div>
-                    <div className="adv-src-filter-all">
+          {/*           <div className="adv-src-filter-all">
                         <button className="adv-src-btn">All</button>
-                    </div>
+                    </div> */}
                 </div>
 
                 <div className="filter-by-date">
-                    <h2 className="adv-src-h2">Filter by date</h2>
-                    <div>
+                    {/* <h2 className="adv-src-h2">Filter by date</h2> */}
+                   {/*  <div>
                         <button className="adv-src-btn">All</button>
                         <button className="adv-src-btn">Tonight</button>
                         <button className="adv-src-btn">This weekend</button>
@@ -64,8 +64,8 @@ function AdvancedSearch() {
                         <button className="adv-src-btn">2022</button>
                         <button className="adv-src-btn">2023</button>
 
-                    </div>
-                    <div className="adv-src-date-from-to">
+                    </div> */}
+                    {/* <div className="adv-src-date-from-to">
                         <div>
                             <h3 className="adv-src-date-from-to-h3">Date From</h3>
                             <input type="date" name="" className="adv-src-filter-by-date" />
@@ -74,9 +74,9 @@ function AdvancedSearch() {
                             <h3 className="adv-src-date-from-to-h3">Date To</h3>
                             <input type="date" name="" className="adv-src-filter-by-date" />
                         </div>
-                    </div>
+                    </div> */}
                 </div>
-                <div className="filter-by-genre">
+             {/*    <div className="filter-by-genre">
                     <h2 className="adv-src-h2">Filter by genre</h2>
                     <button className="adv-src-btn">All</button>
                     <button className="adv-src-btn">Rock</button>
@@ -93,7 +93,7 @@ function AdvancedSearch() {
                     <button className="adv-src-btn">Jazz</button>
                     <button className="adv-src-btn">Funk & Soul</button>
                     <button className="adv-src-btn">Reggae</button>
-                </div>
+                </div> */}
 
             </div>
 
@@ -115,7 +115,7 @@ function AdvancedSearch() {
                 </Link>
             </div>
 
-                <h2>Result</h2>
+                <h1>Result</h1>
             <div className="adv-src-result-box">
                 {searchResult()}
             </div>

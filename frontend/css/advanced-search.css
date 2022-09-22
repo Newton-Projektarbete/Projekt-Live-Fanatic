@@ -154,6 +154,7 @@
 .adv-src-page-btn:hover{
     border: 2px solid rgb(0, 0, 0, 1);
     color: rgb(0, 0, 0, 1);
+    background-color: white;
 }
 
 .adv-src-result-content{
