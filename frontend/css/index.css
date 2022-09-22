@@ -38,7 +38,7 @@ body{
     padding-top: 100px;
 }
 
-footer{
+/* footer{
     display: flex;
     position: fixed;
     bottom: 0;
@@ -46,4 +46,4 @@ footer{
     background-color: rgba(0, 0, 0, 1);
     justify-content: center;
     column-gap: 10px;
-}
+} */
