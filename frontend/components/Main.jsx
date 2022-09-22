@@ -72,9 +72,9 @@ function Main() {
             })
         }).then((res) => {
             if (res.ok == true) {
-                alert("Concert added to favorites!")
+                console.log("Concert added to favorites!")
             } else {
-                alert("Concert already in favorites!")
+                console.log("Concert already in favorites!")
             }
         })
     }
