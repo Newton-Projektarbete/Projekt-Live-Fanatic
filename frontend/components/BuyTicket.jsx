@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 function BuyTicket() {
 
   let id = useParams().concert_id;
-  const { allConcerts, user, allTickets } = useContext(GlobalContext);
+  const { allConcerts, user, allTickets, isLoggedIn } = useContext(GlobalContext);
 
   let today = new Date();
   let dd = String(today.getDate()).padStart(2, '0');
@@ -50,7 +50,7 @@ function BuyTicket() {
 
     let ticketSaldo = concert.ticket_saldo - 1;
 
-    if (exist != true && performed != true && ticketAvailable != false) {
+    if (exist != true && performed != true && ticketAvailable != false && isLoggedIn === true) {
       fetch('/data/concert', {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },

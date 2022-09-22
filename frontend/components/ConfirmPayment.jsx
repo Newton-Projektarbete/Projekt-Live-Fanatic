@@ -75,7 +75,7 @@ function ConfirmPayment() {
                     let p = allConcerts[i].ticket_saldo
                     pendingTickets[count] = <div className="ticket-list-container">
                         <ol className="ticket-container" >
-                            <p><b>{count}. </b>{allConcerts[i].concert_name}   <b>x 1 </b></p>
+                            <p><b>{count}. </b><Link to={"/concert/" + allConcerts[i].concert_id}>{allConcerts[i].concert_name}</Link>   <b>x 1 </b></p>
                         </ol>
                         <ul className="ticket-amount-container" >
                             <p>{allConcerts[i].price}.00 SEK</p>
