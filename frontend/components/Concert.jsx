@@ -5,7 +5,7 @@ import GlobalContext from "../src/GlobalContext";
 function Concert() {
 
     let id = useParams().concert_id;
-    const { allConcerts } = useContext(GlobalContext);
+    const { allConcerts, allTickets, user } = useContext(GlobalContext);
 
     let concert = []
     let pageExist = false
@@ -17,6 +17,19 @@ function Concert() {
             return concert
         }
     })
+
+    function streamAccess() {
+        let streamBtn = '' 
+        for (let i = 0; i < allTickets.length; i++) {
+            if (allTickets[i].pending === "false" && concert.concert_id === allTickets[i].concert_id && allTickets[i].user_id === user.user_id) {
+                streamBtn = <Link to={"/concert/" + concert.concert_id +"/stream"}>
+                <button className="stream_button default_button">Stream</button>
+            </Link>
+
+            }
+        }
+        return streamBtn
+    }
 
     return <> { pageExist  ? <>
         <div className="body">
@@ -49,9 +62,7 @@ function Concert() {
                         <Link to={"/concert/" + concert.concert_id + "/buy-ticket"}>
                             <button className="buy_button default_button">Buy ticket</button>
                         </Link>
-                        <Link to={"/concert/" + concert.concert_id +"/stream"}>
-                            <button className="stream_button default_button">Stream</button>
-                        </Link>
+                        {streamAccess()}
                     </div>
 
                     <div className="tickets_left">

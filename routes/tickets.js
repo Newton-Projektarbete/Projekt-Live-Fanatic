@@ -28,4 +28,15 @@ module.exports = function(server, db){
         }
         response.json(result)
       })
+
+      server.put('/data/ticket', (request, response) => {
+        let user = request.body
+        let result
+        try{
+          result = db.prepare('UPDATE ticket SET pending = ? WHERE user_id = ?').run([user.pending, user.user_id])
+        }catch(e){
+          console.error(e)
+        }
+        response.json(result)
+      })
 }

@@ -61,14 +61,13 @@
     "route": "/data/ticket",
     "roles":[
       {"role": "anonymous", "methods": ["POST","GET"]},
-      {"role": "user", "methods": ["GET", "POST"]}
+      {"role": "user", "methods": ["GET", "POST", "PUT"]}
     ]
   },
   {
     "route": "/data/favorite",
     "roles":[
-      {"role": "user", "methods": ["POST","GET"]},
-      {"role": "user", "methods": ["GET", "DELETE"]}
+      {"role": "user", "methods": ["POST","GET"]}
     ]
   }
 
