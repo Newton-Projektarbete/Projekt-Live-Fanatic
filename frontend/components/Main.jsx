@@ -22,11 +22,85 @@ function Main() {
         }
     }
 
-    const liveTodayLink = () => {
-        if (genreStatus == true){
-            return <Link to={"/view-all/today/"+ genreId} className="view_all">View all</Link>
+    const addToFavorite = async (con) => {
+        let likeExist = false
+        for (let i = 0; i < favorites.length; i++) {
+            if (favorites[i].concert_id == con && user.user_id == favorites[i].user_id) {
+               likeExist = true
+            }
+        }
+        
+        if(likeExist != true){
+            fetch('/data/favorite', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    user_id: user.user_id,
+                    concert_id: con
+                })
+            }).then((res) => {
+                if(res.ok === true){
+                    window.location.reload(true)  
+                }
+
+            }) 
         } else {
-            return<Link to="/view-all/today/" className="view_all">View all</Link>
+            alert("Concert already in favorites!")
+        }
+ 
+    }
+
+    const removeFromFavorite = async (con) => {
+        fetch('/data/favorite', {
+            method: 'DELETE',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                user_id: user.user_id,
+                concert_id: con
+            })
+        }).then((res) => {
+            if (res.ok == true) {
+                console.log("Concert removed from favorites!")
+            } else {
+                console.log("Concert already removed from favorites!")
+            }
+        })
+    }
+
+    const handleClick = async e => {
+        console.log("color: " + e.currentTarget.color)
+        console.log("concert_id: " + e.currentTarget.id)
+        if (favorites.length != 0) {
+            e.currentTarget.style.color = 'red'
+            addToFavorite(e.currentTarget.id)
+        } else {
+            for (let i = 0; i < favorites.length; i++) {
+                if (favorites[i].user_id == user.user_id && favorites[i].concert_id == e.currentTarget.id && e.currentTarget.style.color == 'white') {
+                    e.currentTarget.style.color = 'red'
+                    addToFavorite(e.currentTarget.id)
+                    console.log("Did not find match : adding concert_id " + favorites[i].concert_id + " to user: " + user.user_id)
+
+                } else if (favorites[i].user_id == user.user_id && favorites[i].concert_id == e.currentTarget.id && e.currentTarget.style.color == 'red') {
+                    e.currentTarget.style.color = 'white'
+                    removeFromFavorite(e.currentTarget.id)
+                    console.log("found match : Deleting concert_id " + favorites[i].concert_id + " From user: " + user.user_id)
+                }
+            }
+        }
+
+        /* if(e.currentTarget.style.color == 'red') {
+            e.currentTarget.style.color = 'white'
+        } else if(e.currentTarget.style.color == "white" ) {
+            e.currentTarget.style.color = 'red'
+        } */
+        e.currentTarget.classList.toggle('white', 'red')
+    };
+
+    const liveTodayLink = () => {
+        if (genreStatus == true) {
+            return <Link to={"/view-all/today/" + genreId} className="view_all">View all</Link>
+        } else {
+            return <Link to="/view-all/today/" className="view_all">View all</Link>
         }
     }
     const liveConcertsToday = () => {
@@ -40,10 +114,11 @@ function Main() {
                         <div className="main-img-box"> <img className="main-img" src={
                             allConcerts[i].concert_image_url} alt="" />
 
-                            {/* <div className="material-symbols-outlined main-like-btn">
-                                <span className="like-btn-1 material-symbols-outlined" onClick={() => addToFavorite(allConcerts[i].concert_id)} type="button">favorite</span>
+                            <div className="material-symbols-outlined main-like-btn">
+                                <button className="like-btn-1 material-symbols-outlined"
+                                    onClick={() => addToFavorite(allConcerts[i].concert_id)}>favorite</button>
 
-                            </div> */}
+                            </div>
 
                         </div>
 
@@ -70,10 +145,10 @@ function Main() {
                         <div className="main-img-box"> <img className="main-img" src={
                             allConcerts[i].concert_image_url} alt="" />
 
-                            {/*                            <div className="material-symbols-outlined main-like-btn">
-                                <span className="like-btn-1 material-symbols-outlined" onClick={() => addToFavorite(allConcerts[i].concert_id)} type="button">favorite</span>
-
-                            </div> */}
+                            <div className="material-symbols-outlined main-like-btn">
+                                <button className="like-btn-1 material-symbols-outlined"
+                                    onClick={() => addToFavorite(allConcerts[i].concert_id)}>favorite</button>
+                            </div>
                         </div>
 
                         <div className="child-div">
@@ -92,16 +167,14 @@ function Main() {
                 }
             }
         }
-
-        
         return concertArr
     }
 
     const recentlyLink = () => {
-        if (genreStatus == true){
-            return <Link to={"/view-all/recently/"+ genreId} className="view_all">View all</Link>
+        if (genreStatus == true) {
+            return <Link to={"/view-all/recently/" + genreId} className="view_all">View all</Link>
         } else {
-            return<Link to="/view-all/recently/" className="view_all">View all</Link>
+            return <Link to="/view-all/recently/" className="view_all">View all</Link>
         }
     }
     const recentlyAdded = () => {
@@ -114,9 +187,10 @@ function Main() {
                         <div className="main-img-box"> <img className="main-img" src={
                             concertSortedByRecently[i].concert_image_url} alt="" />
 
-                            {/* <div className="material-symbols-outlined main-like-btn">
-                                <span className="like-btn-1 material-symbols-outlined" onClick={() => addToFavorite(allConcerts[i].concert_id)} type="button">favorite</span>
-                            </div> */}
+                            <div className="material-symbols-outlined main-like-btn">
+                                <button className="like-btn-1 material-symbols-outlined"
+                                    onClick={() => addToFavorite(concertSortedByRecently[i].concert_id)}>favorite</button>
+                            </div>
 
                         </div>
 
@@ -142,9 +216,10 @@ function Main() {
                         <div className="main-img-box"> <img className="main-img" src={
                             concertSortedByRecently[i].concert_image_url} alt="" />
 
-                            {/* <div className="material-symbols-outlined main-like-btn">
-                                <span className="like-btn-1 material-symbols-outlined" onClick={() => addToFavorite(allConcerts[i].concert_id)} type="button">favorite</span>
-                            </div> */}
+                            <div className="material-symbols-outlined main-like-btn">
+                                <button className="like-btn-1 material-symbols-outlined"
+                                    onClick={() => addToFavorite(concertSortedByRecently[i].concert_id)}>favorite</button>
+                            </div>
 
                         </div>
 
@@ -170,10 +245,10 @@ function Main() {
     }
 
     const soonLink = () => {
-        if (genreStatus == true){
-            return <Link to={"/view-all/soon/"+ genreId} className="view_all">View all</Link>
+        if (genreStatus == true) {
+            return <Link to={"/view-all/soon/" + genreId} className="view_all">View all</Link>
         } else {
-            return<Link to="/view-all/soon/" className="view_all">View all</Link>
+            return <Link to="/view-all/soon/" className="view_all">View all</Link>
         }
     }
     const comingSoon = () => {
@@ -186,9 +261,10 @@ function Main() {
                         <div className="main-img-box"> <img className="main-img" src={
                             concertSortedByPerformanceDate[i].concert_image_url} alt="" />
 
-                            {/* <div className="material-symbols-outlined main-like-btn">
-                                <span className="like-btn-1 material-symbols-outlined" onClick={() => addToFavorite(allConcerts[i].concert_id)} type="button">favorite</span>
-                            </div> */}
+                            <div className="material-symbols-outlined main-like-btn">
+                                <button className="like-btn-1 material-symbols-outlined"
+                                    onClick={() => addToFavorite(concertSortedByPerformanceDate[i].concert_id)}>favorite</button>
+                            </div>
 
                         </div>
 
@@ -214,9 +290,10 @@ function Main() {
                         <div className="main-img-box"> <img className="main-img" src={
                             concertSortedByPerformanceDate[i].concert_image_url} alt="" />
 
-                            {/* <div className="material-symbols-outlined main-like-btn">
-                                <span className="like-btn-1 material-symbols-outlined" onClick={() => addToFavorite(allConcerts[i].concert_id)} type="button">favorite</span>
-                            </div> */}
+                            <div className="material-symbols-outlined main-like-btn">
+                                <button className="like-btn-1 material-symbols-outlined"
+                                    onClick={() => addToFavorite(concertSortedByPerformanceDate[i].concert_id)}>favorite</button>
+                            </div>
 
                         </div>
 

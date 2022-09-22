@@ -5,13 +5,15 @@ import GlobalContext from "../src/GlobalContext"
 
 
 function Header() {
-    const { isLoggedIn, allTickets, user } = useContext(GlobalContext);
+    const { isLoggedIn, allTickets, user, favorites } = useContext(GlobalContext);
     const [ticketInCart, setTicketInCart] = useState(0)
+    const [favoritesInCart, setFavoritesInCart] = useState(0)
     const [searchTerm, setSearchTerm] = useState('');
     const navigate = useNavigate();
 
     useEffect(() => {
         getTicketsInCart()
+        getFavoritesInCart()
     })
 
     const logoutUser = () => {
@@ -26,6 +28,8 @@ function Header() {
             }
         }).then(navigate("/"))
     }
+
+
     const getTicketsInCart = async () => {
         let count = 0
 
@@ -36,13 +40,42 @@ function Header() {
         }
         setTicketInCart(count)
     }
+    const getFavoritesInCart = async () => {
+        let count = 0
+        for (let i = 0; i < favorites.length; i++) {
+            if (user.user_id === favorites[i].user_id) {
+                count++
+            }
+        }
+        setFavoritesInCart(count)
+    }
+
 
     const displayCartNr = () => {
 
         if (ticketInCart != 0) {
-            return <div className="like-amount">{ticketInCart}</div>
+            return <div className="like-box">
+                <span className="cart-btn material-symbols-outlined">shopping_cart</span>
+                <div className="like-amount">{ticketInCart}</div>
+            </div>
         } else {
-            return <div></div>
+            return <div className="like-box">
+                <span className="cart-btn material-symbols-outlined">shopping_cart</span>
+            </div>
+        }
+    }
+
+    const displayFavoriteNr = () => {
+
+        if (favoritesInCart > 0) {
+            return <div className="like-box">
+                <span className="like-btn material-symbols-outlined">favorite</span>
+                <div className="like-amount">{favoritesInCart}</div>
+            </div>
+        } else {
+            return <div className="like-box">
+                <span className="like-btn material-symbols-outlined">favorite</span>
+            </div>
         }
     }
 
@@ -94,16 +127,10 @@ function Header() {
                             <Link to="/search" className="a-default">Advanced search</Link>
                             <div>
                                 <Link to="/profile" className="like-link" >
-                                    <div className="like-box">
-                                        <span className="like-btn material-symbols-outlined">favorite</span>
-                                        <div className="like-amount">{displayCartNr()}</div>
-                                    </div>
+                                    {displayFavoriteNr()}
                                 </Link>
                                 <Link to="/cart" className="like-link" >
-                                    <div className="like-box">
-                                        <span className="cart-btn material-symbols-outlined">shopping_cart</span>
-                                        <div className="like-amount">{displayCartNr()}</div>
-                                    </div>
+                                    {displayCartNr()}
                                 </Link>
 
 
@@ -112,9 +139,9 @@ function Header() {
                     </div>
                     <div className="profile-icon">
                         <button className="profile-img-btn" onClick={() => { navigate("/profile") }}>
-                        <span class="profile-icon-btn material-symbols-outlined">
-                            account_circle
-                        </span>
+                            <span class="profile-icon-btn material-symbols-outlined">
+                                account_circle
+                            </span>
                         </button>
 
                         <Link to="/profile" className="a-nav-btn">
@@ -148,7 +175,7 @@ function Header() {
                     </div>
 
                 </div>
-                    {/* <Link to="concert" className="a-default">Concerts</Link>
+                {/* <Link to="concert" className="a-default">Concerts</Link>
                         <Link to="#calender" className="a-default">Calender</Link>
                         <Link to="#live" className="a-default">Live</Link> */}
 
