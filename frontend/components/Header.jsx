@@ -99,7 +99,7 @@ function Header() {
                                         <div className="like-amount">{displayCartNr()}</div>
                                     </div>
                                 </Link>
-                                <Link to="/profile" className="like-link" >
+                                <Link to="/cart" className="like-link" >
                                     <div className="like-box">
                                         <span className="cart-btn material-symbols-outlined">shopping_cart</span>
                                         <div className="like-amount">{displayCartNr()}</div>
@@ -111,10 +111,11 @@ function Header() {
                         </div>
                     </div>
                     <div className="profile-icon">
-
+                        <button className="profile-img-btn" onClick={() => { navigate("/profile") }}>
                         <span class="profile-icon-btn material-symbols-outlined">
                             account_circle
                         </span>
+                        </button>
 
                         <Link to="/profile" className="a-nav-btn">
                             <button className="profile-btn">{user.username}</button>

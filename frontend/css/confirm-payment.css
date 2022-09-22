@@ -1,7 +1,6 @@
 .confirm-payment{
     display: flex;
     justify-content: space-evenly;
-    margin-top: 15vh;
     border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
@@ -13,12 +12,18 @@
 .ticket-list-container{
     display: flex;
     flex-direction: row;
+    margin: 0;
+    justify-content: space-between;
 }
 .ticket-container{
     padding-left: 25px;
+    margin: 0;
+    padding: 2px;
 }
 .ticket-amount-container{
     list-style-type: none;
+    justify-content: right;
+    margin: 0;
 }
 
 /* .confirm-payment-right-content{} */

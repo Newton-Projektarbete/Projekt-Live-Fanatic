@@ -61,7 +61,7 @@
     "route": "/data/ticket",
     "roles":[
       {"role": "anonymous", "methods": ["POST","GET"]},
-      {"role": "user", "methods": ["GET", "POST"]}
+      {"role": "user", "methods": ["GET", "POST", "PUT"]}
     ]
   },
   {

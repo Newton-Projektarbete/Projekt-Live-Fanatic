@@ -49,13 +49,13 @@ function Profile() {
     */
 
     const favoriteConcerts = () => {
-
+        let count = 0
         let favoriteConcertsList = []
         for (let i = 0; i < favorites.length; i++) {
             if (user.user_id == favorites[i].user_id) {
                 for (let x = 0; x < allConcerts.length; x++) {
                     if (favorites[i].concert_id == allConcerts[x].concert_id) {
-                        favoriteConcertsList[i] = <table>
+                        favoriteConcertsList[count] = <table>
                             <tr className="table-header">
 
                             </tr>
@@ -70,6 +70,7 @@ function Profile() {
                             </tr>
 
                         </table>
+                        count++
                     }
                 }
             }
@@ -80,12 +81,12 @@ function Profile() {
 
     const activeTickets = () => {
         let tickets = []
-
+        let count = 0
         for (let i = 0; i < sortedConcerts.length; i++) {
             for (let x = 0; x < allTickets.length; x++) {
-                if (sortedConcerts[i].concert_id == allTickets[x].concert_id && sortedConcerts[i].performance_date >= today && allTickets[x].user_id == user.user_id) {
+                if (sortedConcerts[i].concert_id == allTickets[x].concert_id && sortedConcerts[i].performance_date >= today && allTickets[x].user_id == user.user_id && allTickets[x].pending == "false") {
 
-                    tickets[i] =
+                    tickets[count] =
                         <table>
 
                             <tr>
@@ -105,6 +106,7 @@ function Profile() {
                             </tr>
 
                         </table>
+                        count++
                 }
 
             }
@@ -117,12 +119,13 @@ function Profile() {
 
     const expiredTickets = () => {
         let tickets = []
+        let count = 0;
 
         for (let i = 0; i < sortedConcerts.length; i++) {
             for (let x = 0; x < allTickets.length; x++) {
-                if (sortedConcerts[i].concert_id == allTickets[x].concert_id && sortedConcerts[i].performance_date < today && allTickets[x].user_id == user.user_id) {
+                if (sortedConcerts[i].concert_id == allTickets[x].concert_id && sortedConcerts[i].performance_date < today && allTickets[x].user_id == user.user_id && allTickets[x].pending == "false") {
 
-                    tickets[i] =
+                    tickets[count] =
                         <table>
                             <tr>
                                 <td className="profile-td"><img className="img-profile" src={sortedConcerts[i].concert_image_url} /></td>
@@ -141,6 +144,7 @@ function Profile() {
                             </tr>
 
                         </table>
+                        count++
                 }
 
             }
