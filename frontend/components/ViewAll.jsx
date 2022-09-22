@@ -44,15 +44,15 @@ function ViewAll() {
                 console.log("Showing: liveConcertsToday")
                 return liveConcertsToday()
                 break;
-                case "recently":
+            case "recently":
                 console.log("Showing: recentlyAdded")
                 return recentlyAdded()
                 break;
-                case "soon":
+            case "soon":
                 console.log("Showing: comingSoon")
                 return comingSoon()
                 break;
-                default:
+            default:
                 console.log("Error")
         }
     }
@@ -61,22 +61,25 @@ function ViewAll() {
             case "today":
                 return todayLink()
                 break;
-                case "recently":
+            case "recently":
                 return recentlyLink()
                 break;
-                case "soon":
+            case "soon":
                 return soonLink()
                 break;
-                default:
+            default:
                 console.log("Error")
         }
     }
-    
+
     const todayLink = () => {
-        if (genreStatus == true){
-            return <h1 className="main-view-all-h1" >All Live Concerts Today of {genreId}</h1>
+        if (genreStatus == true) {
+
+            const word = genreId
+            const capitalized = word.charAt(0).toUpperCase() + word.slice(1)
+            return <h1 className="main-view-all-h1" >All {capitalized} live today</h1>
         } else {
-            return <h1 className="main-view-all-h1" >All Live Concerts Today</h1>
+            return <h1 className="main-view-all-h1" >All live concerts today</h1>
         }
     }
     const liveConcertsToday = () => {
@@ -110,7 +113,7 @@ function ViewAll() {
                             </div>
                         </div>
                     </div>
-                count++
+                    count++
                 }
             }
         } else {
@@ -121,7 +124,7 @@ function ViewAll() {
                         <div className="main-img-box"> <img className="main-img" src={
                             allConcerts[i].concert_image_url} alt="" />
 
- {/*                            <div className="material-symbols-outlined main-like-btn">
+                            {/*                            <div className="material-symbols-outlined main-like-btn">
                                 <span className="like-btn-1 material-symbols-outlined" onClick={() => addToFavorite(allConcerts[i].concert_id)} type="button">favorite</span>
 
                             </div> */}
@@ -140,7 +143,7 @@ function ViewAll() {
                         </div>
                     </div>
                     count++
-                } 
+                }
             }
         }
         return concertArr
@@ -148,10 +151,12 @@ function ViewAll() {
 
 
     const recentlyLink = () => {
-        if (genreStatus == true){
-            return <h1 className="main-view-all-h1" >Recently Added {genreId}</h1>
+        if (genreStatus == true) {
+            const word = genreId
+            const capitalized = word.charAt(0).toUpperCase() + word.slice(1)
+            return <h1 className="main-view-all-h1" >All {capitalized} recently added </h1>
         } else {
-            return <h1 className="main-view-all-h1" >Recently Added</h1>
+            return <h1 className="main-view-all-h1" >All recently added</h1>
         }
     }
     const recentlyAdded = () => {
@@ -221,10 +226,12 @@ function ViewAll() {
 
 
     const soonLink = () => {
-        if (genreStatus == true){
-            return <h1 className="main-view-all-h1" >Concerts Comming Soon of {genreId}</h1>
+        if (genreStatus == true) {
+            const word = genreId
+            const capitalized = word.charAt(0).toUpperCase() + word.slice(1)
+            return <h1 className="main-view-all-h1" >All {capitalized} concerts coming soon</h1>
         } else {
-            return <h1 className="main-view-all-h1" >Concerts Comming Soon</h1>
+            return <h1 className="main-view-all-h1" >All concerts coming soon</h1>
         }
     }
     const comingSoon = () => {
@@ -300,7 +307,7 @@ function ViewAll() {
                 {displayHeader()}
             </div>
 
-{/*             <div className="main-view-all-page-btns-box">
+            {/*             <div className="main-view-all-page-btns-box">
 
                 <div href="#" className="main-view-all-icon-box">
                     <span className="material-symbols-outlined main-view-all-arrow-icon">
