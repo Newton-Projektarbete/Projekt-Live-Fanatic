@@ -38,6 +38,25 @@ function ConfirmPayment() {
         }
     }
 
+    const deleteTicket = async (e) => {
+        fetch('/data/ticket', {
+            method: 'DELETE',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                ticket_id: e.currentTarget.id
+            })
+        }).then((res) => {
+            if (res.ok == true) {
+                console.log("Response ok")
+            } else {
+                console.log("Response failed")
+            }
+        }).then(() => {
+            window.location.reload(true)
+        })
+
+    }
+
     function getPendingTickets() {
         let count = 1
         for (let i = 0; i < allConcerts.length; i++) {
@@ -50,7 +69,7 @@ function ConfirmPayment() {
                         <ul className="ticket-amount-container" >
                             <p>{allConcerts[i].price}.00 SEK</p>
                         </ul>
-                        <button className="delete-btn">Delete</button>
+                        <button id={allTickets[x].ticket_id} onClick={(e)=>deleteTicket(e)} className="delete-btn">Delete</button>
                     </div>
                     count++
                 }
