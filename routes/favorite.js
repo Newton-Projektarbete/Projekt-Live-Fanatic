@@ -16,4 +16,18 @@ server.post('/data/favorite', (request, response) => {
     }
     response.json(result)
   })
+
+
+
+server.delete('/data/favorite', (request, response) => {
+  let user = request.body
+  let result
+  try{
+    result = db.prepare('DELETE FROM favorite WHERE user_id = ? AND concert_id = ?').run([user.user_id, user.concert_id])
+  }catch(e){
+    console.error(e)
+  }
+  response.json(result)
+})
+
 }

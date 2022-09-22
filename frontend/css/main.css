@@ -58,7 +58,7 @@
         border: none;
     }
 
-    .main-like-btn:hover{
+    .main-like-btn:hover {
         text-decoration: none;
     }
 
@@ -73,10 +73,10 @@
             'wght' 700,
             'GRAD' 0,
             'opsz' 48;
-            
+
     }
 
-  
+
     .main-h1 {
         margin-top: 0;
         margin-bottom: 5px;
@@ -99,15 +99,16 @@
         max-width: 200px;
     }
 
-    .child-div-div{
+    .child-div-div {
         display: flex;
         flex-direction: row;
         align-items: center;
         column-gap: 5px;
     }
-    .child-div-div>p{
+
+    .child-div-div>p {
         margin: 0px;
-        
+
     }
 
     .like_button {
@@ -122,14 +123,24 @@
 
     }
 
-    .like-btn-1{
-        color: white;
+    .like-btn-1 {
+        display: flex;
+        justify-self: flex-end;
+        background-color: transparent;
         text-decoration: none;
+        font-variation-settings:
+            'FILL' 1,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 48;
+            width: 30px;
+        margin-top: 5px;
+        margin-right: 5px;
     }
 
     .like-btn-1:hover {
         cursor: pointer;
-        color: rgb(255, 0, 0, 1 );
+        background-color: transparent;
+        /* color: rgb(255, 0, 0, 1); */
         text-decoration: none;
-
     }
