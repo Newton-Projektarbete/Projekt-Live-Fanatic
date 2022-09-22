@@ -61,19 +61,12 @@ function Profile() {
                             </tr>
 
                             <tr>
-<<<<<<< HEAD
-                            <td className="profile-td"><img className="img-profile" src={allConcerts[x].concert_image_url} /></td>
-                            <td className="profile-td"><Link to={"/concert/" + allConcerts[x].concert_id}>{allConcerts[x].concert_name}</Link></td>
-                            <td className="profile-td">{allConcerts[x].performance_date}</td>
-                            <td className="profile-td">{allConcerts[x].location}</td>
-=======
-                                <td className="profile-td"><img className="img-profile" src={allConcerts[x].concert_image_url} /></td>
+                    <td className="profile-td"><img className="img-profile" src={allConcerts[x].concert_image_url} /></td>
                                 <td className="profile-td"><Link to={"/concert/" + allConcerts[x].concert_id}>{allConcerts[x].concert_name}</Link></td>
                                 <td className="profile-td">{allConcerts[x].performance_date}</td>
                                 <div className="like_button">
                             <i className="material-symbols-outlined like-concert-profile">favorite</i>
                         </div>
->>>>>>> main
                             </tr>
 
                         </table>
