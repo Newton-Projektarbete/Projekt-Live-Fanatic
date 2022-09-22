@@ -167,7 +167,8 @@ function Main() {
                 }
             }
         }
-        return concertArr
+        const result = concertArr.slice(0, showMax)
+        return result
     }
 
     const recentlyLink = () => {
