@@ -96,6 +96,7 @@ module.exports = function(host, server){
                 description:"Add to favorite list",
                 link: host  + "/data/favorite"
             }
+
         ])
     })
 }

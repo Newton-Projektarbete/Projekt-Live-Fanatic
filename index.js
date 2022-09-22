@@ -48,6 +48,7 @@ require('./routes/login.js')(server, db)
 require('./routes/concerts.js')(server, db)
 require('./routes/artists.js')(server, db)
 require('./routes/tickets.js')(server, db)
+require('./routes/favorite.js')(server, db)
 
 // stream routes
 require('./routes/video-stream.js')(server, db)
