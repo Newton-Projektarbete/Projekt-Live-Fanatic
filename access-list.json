@@ -67,8 +67,7 @@
   {
     "route": "/data/favorite",
     "roles":[
-      {"role": "user", "methods": ["POST","GET"]},
-      {"role": "user", "methods": ["GET", "DELETE"]}
+      {"role": "user", "methods": ["POST","GET"]}
     ]
   }
 
