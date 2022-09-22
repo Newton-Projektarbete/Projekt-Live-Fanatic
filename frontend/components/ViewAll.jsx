@@ -229,7 +229,7 @@ function ViewAll() {
         if (genreStatus == true) {
             const word = genreId
             const capitalized = word.charAt(0).toUpperCase() + word.slice(1)
-            return <h1 className="main-view-all-h1" >All {capitalized} concerts coming soon</h1>
+            return <h1 className="main-view-all-h1" >All {capitalized} coming soon</h1>
         } else {
             return <h1 className="main-view-all-h1" >All concerts coming soon</h1>
         }
