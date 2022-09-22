@@ -44,11 +44,11 @@ const handleSubmit = async () => {
         <form className="edit-page">
             <h2>Edit Profile</h2>
             <div className = "email-edit">
-                <input type="text" className="input-text" value={email} onChange={(e) => handleInputChange(e)} id="email" placeholder=" email"/>
+                <input type="text" className="input-text" value={email} onChange={(e) => handleInputChange(e)} id="email" placeholder="Change email"/>
             </div>
     
             <div className = "username">
-                <input type="text" className="input-text" value={username} onChange={(e) => handleInputChange(e)} id="username" placeholder=" username"/>
+                <input type="text" className="input-text" value={username} onChange={(e) => handleInputChange(e)} id="username" placeholder="Change username"/>
             </div>
             
             <div className="edit-buttons">

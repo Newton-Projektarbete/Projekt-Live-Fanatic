@@ -28,7 +28,7 @@ function Header() {
             }
         }).then(navigate("/"))
     }
-
+    
 
     const getTicketsInCart = async () => {
         let count = 0
