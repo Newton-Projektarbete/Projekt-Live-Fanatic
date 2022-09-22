@@ -62,7 +62,7 @@ module.exports = function(host, server){
             },
             {
                 route:"/data/concert",
-                methods: ["GET"],
+                methods: ["GET", "PUT"],
                 description:"Get concert list",
                 link: host  + "/data/concert"
             },
@@ -74,7 +74,7 @@ module.exports = function(host, server){
             },
             {
                 route:"/data/ticket",
-                methods: ["GET", "POST", "PUT"],
+                methods: ["GET", "POST", "PUT", "DELETE"],
                 description:"Get ticket list",
                 link: host  + "/data/ticket"
             },

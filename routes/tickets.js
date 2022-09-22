@@ -39,4 +39,15 @@ module.exports = function(server, db){
         }
         response.json(result)
       })
+
+      server.delete('/data/ticket', (request, response) => {
+        let user = request.body
+        let result
+        try{
+          result = db.prepare('DELETE FROM ticket WHERE ticket_id = ?').run([user.ticket_id])
+        }catch(e){
+          console.error(e)
+        }
+        response.json(result)
+      })
 }

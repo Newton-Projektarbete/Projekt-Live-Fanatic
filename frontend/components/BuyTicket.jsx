@@ -27,22 +27,38 @@ function BuyTicket() {
   const addToCart = async () => {
     let exist = false
     let performed = false
+    let ticketAvailable = true
 
     if (concert.performance_date < today) {
       alert("The concert has already been!")
       performed = true
     }
 
+    if (concert.ticket_saldo <= 0) {
+      alert("No tickets available!")
+      ticketAvailable = false
+    }
+
     for (let i = 0; i < allTickets.length; i++) {
 
-      if (allTickets[i].concert_id === concert.concert_id && user.user_id === allTickets[i].user_id) {
+      if (allTickets[i].concert_id === concert.concert_id && user.user_id === allTickets[i].user_id && ticketAvailable != false) {
         alert("You can't buy duplicates right now!")
         exist = true
 
       }
     }
-    
-    if (exist != true && performed != true) {
+
+    let ticketSaldo = concert.ticket_saldo - 1;
+
+    if (exist != true && performed != true && ticketAvailable != false) {
+      fetch('/data/concert', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          ticket_saldo: ticketSaldo,
+          concert_id: concert.concert_id
+        })
+      })
 
       fetch('/data/ticket', {
         method: 'POST',
@@ -54,12 +70,12 @@ function BuyTicket() {
         })
       }).then((res) => {
         if (res.ok == true) {
-          /* alert("Ticket added to cart!") */
+
         } else {
           console.log("response failed:")
         }
       }).then(() => {
-        window.location.reload(true)
+         window.location.reload(true)
       })
     }
   }

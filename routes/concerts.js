@@ -24,4 +24,17 @@ module.exports = function(server, db){
       res.json(result)
     })
 
+    server.put('/data/concert', (request, response) => {
+      let user = request.body
+      let result
+      try{
+        result = db.prepare('UPDATE concert SET ticket_saldo = ? WHERE concert_id = ?').run([user.ticket_saldo, user.concert_id])
+      }catch(e){
+        console.error(e)
+      }
+      response.json(result)
+    })
+
+
+
   }

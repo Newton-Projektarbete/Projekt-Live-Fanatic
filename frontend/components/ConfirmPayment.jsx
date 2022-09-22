@@ -38,11 +38,41 @@ function ConfirmPayment() {
         }
     }
 
+    const deleteTicket = async (e, o, p) => {
+        fetch('/data/concert', {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              ticket_saldo: p + 1,
+              concert_id: o
+            })
+          })
+
+        fetch('/data/ticket', {
+            method: 'DELETE',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                ticket_id: e.currentTarget.id
+            })
+        }).then((res) => {
+            if (res.ok == true) {
+                console.log("Response ok")
+            } else {
+                console.log("Response failed")
+            }
+        }).then(() => {
+            window.location.reload(true)
+        })
+
+    }
+
     function getPendingTickets() {
         let count = 1
         for (let i = 0; i < allConcerts.length; i++) {
             for (let x = 0; x < allTickets.length; x++) {
                 if (allTickets[x].pending === "true" && allConcerts[i].concert_id === allTickets[x].concert_id && allTickets[x].user_id === user.user_id) {
+                    let o = allConcerts[i].concert_id
+                    let p = allConcerts[i].ticket_saldo
                     pendingTickets[count] = <div className="ticket-list-container">
                         <ol className="ticket-container" >
                             <p><b>{count}. </b>{allConcerts[i].concert_name}   <b>x 1 </b></p>
@@ -50,7 +80,7 @@ function ConfirmPayment() {
                         <ul className="ticket-amount-container" >
                             <p>{allConcerts[i].price}.00 SEK</p>
                         </ul>
-                        <button className="delete-btn">Delete</button>
+                        <button id={allTickets[x].ticket_id} onClick={(e)=>deleteTicket(e, o, p)} className="delete-btn">Delete</button>
                     </div>
                     count++
                 }
