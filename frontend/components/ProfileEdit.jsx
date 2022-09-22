@@ -9,39 +9,32 @@ const { user } = useContext(GlobalContext);
 const [email, setEmail] = useState(null);
 const [username, setUsername] = useState(null);
 
-
 const handleInputChange = (e) => {
     const { id, value } = e.target;
     if (id === "email") {
-        console.log(value)
         setEmail(value);
     }
     if (id === "username") {
         setUsername(value);
     }
-    if (id === "password") {
-        setPassword(value);
-    }
-    if (id === "confirmPassword") {
-        setConfirmPassword(value);
-    }
 }
 const handleSubmit = async () => {
-        console.log("handleSubmit")
 
         if(email == null  ) {
             setEmail(user.email)
+            console.log("email is null")
         }
         if(username == null ) {
             setUsername(user.username)
+            console.log("username is null")
         }
             fetch('/data/users/', {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     user_id: user.user_id,
-                    email: user.email,
-                    username: user.username,
+                    email: email,
+                    username: username,
                 })
             })
 }
