@@ -3,21 +3,31 @@ const GlobalContext = createContext();
 
 export const GlobalProvider = ({ children }) => {
 
-// useState for all variables 
-const [isLoading, setIsLoading] = useState(true)
-const [allConcerts, setAllConcerts] = useState([])
-const [allArtists, setAllArtists] = useState([])
-const [allTickets, setAllTickets] = useState([])
-const [isLoggedIn, setisLoggedIn] = useState(false)
-const [validTickets, setValidTickets] = useState([])
-const [sortedConcerts, setSortedConcerts] = useState([])
-const [user, setUser] = useState([])
-const [favorites, setFavorites] = useState([])
+  let today = new Date();
+  let dd = String(today.getDate()).padStart(2, '0');
+  let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+  let yyyy = today.getFullYear();
+  today = dd + '-' + mm + '-' + yyyy;
 
+  // useState for all variables 
+  const [isLoading, setIsLoading] = useState(true)
+  const [allConcerts, setAllConcerts] = useState([])
+  const [allArtists, setAllArtists] = useState([])
+  const [allTickets, setAllTickets] = useState([])
+  const [isLoggedIn, setisLoggedIn] = useState(false)
+  const [validTickets, setValidTickets] = useState([])
+  const [sortedConcerts, setSortedConcerts] = useState([])
+  const [user, setUser] = useState([])
+  const [favorites, setFavorites] = useState([])
 
-// useEffect to run methods upon load
-useEffect(() => {
+ /*  const [variableName, variableUpdateMethod] = useState([]) */
+  const [concertSortedByRecently, setConcertSortedByRecently] = useState([])
+  const [concertSortedByPerformanceDate, setConcertSortedByPerformanceDate] = useState([])
+  // useEffect to run methods upon load
+  useEffect(() => {
     loadAllConcerts()
+    loadRecently()
+    loadComing()
     loadAllArtists()
     loadAllTickets()
     loadValidTickets()
@@ -52,7 +62,7 @@ useEffect(() => {
     setSortedConcerts(result)
     setIsLoading(false)
   }
-  
+
   const loadAllArtists = async () => {
     setIsLoading(true)
     const response = await fetch("/data/artist")
@@ -83,70 +93,58 @@ useEffect(() => {
   const loadLoggedInUsers = () => {
     fetch('/data/login', {
       method: 'GET'
-  }).then(function (response) {
+    }).then(function (response) {
       return response.json();
-  }).then(function (myJson) {
+    }).then(function (myJson) {
       setIsLoading(true)
       setUser(myJson)
       setisLoggedIn(myJson.loggedIn)
     });
   }
 
-/*   const getTicketsInCart = async () => {
-    let count = 0
+  /*   const getTicketsInCart = async () => {
+      let count = 0
+  
+      for (let i = 0; i < allTickets.length; i++) {
+          if (user.user_id === allTickets[i].user_id && allTickets[i].pending === "true") {
+              count ++
+          }
+      }
+      setTicketInCart(count)
+    } */
 
-    for (let i = 0; i < allTickets.length; i++) {
-        if (user.user_id === allTickets[i].user_id && allTickets[i].pending === "true") {
-            count ++
-        }
-    }
-    setTicketInCart(count)
-  } */
+  async function loadRecently() {
+    let concerts = await fetch('data/concert/recently-added')
+    concerts = await concerts.json()
+    setConcertSortedByRecently(concerts)
+  }
+  async function loadComing() {
+    let concerts = await fetch('data/concert/coming-soon')
+    concerts = await concerts.json()
+    setConcertSortedByPerformanceDate(concerts)
 
-/*   useEffect (()=>{
-    fetch('/data/login', {
-        method: 'GET'
-    }).then(function (response) {
-        return response.json();
-    }).then(function (myJson) {
-        setIsLoading(true)
-        setisLoggedIn(myJson.loggedIn)
-      });
-  },[]); */
+  }
 
-/*   useEffect(()=>{
-    if (isLoading == false) return;
-
-    const currentUrl = location.pathname;
-
-      if(isLoggedIn){
-        if (loggedOutURLs.some(url => currentUrl === url)) {
-          navigate("/", { replace: true });
-        }
-      } else {
-        if (loggedInURLs.some(url => currentUrl === url)) {
-          navigate("/log-in", { replace: true });
-        }
-    }
-},[]) */
-
-    return (
-        <GlobalContext.Provider
-          value={{
-            isLoading,
-            allConcerts,
-            allArtists,
-            allTickets,
-            validTickets,
-            sortedConcerts,
-            isLoggedIn,
-            user,
-            favorites
-          }}
-        >
-          {children}
-        </GlobalContext.Provider>
-      );
+  return (
+    <GlobalContext.Provider
+      value={{
+        isLoading,
+        allConcerts,
+        allArtists,
+        allTickets,
+        validTickets,
+        sortedConcerts,
+        isLoggedIn,
+        user,
+        favorites,
+        concertSortedByRecently,
+        concertSortedByPerformanceDate,
+        today
+      }}
+    >
+      {children}
+    </GlobalContext.Provider>
+  );
 }
 
 export default GlobalContext;

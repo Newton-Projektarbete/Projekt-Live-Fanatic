@@ -3,15 +3,12 @@ import { useState, useEffect, useContext } from 'react';
 import GlobalContext from "../src/GlobalContext";
 
 function Main() {
-    const [variableName, variableUpdateMethod] = useState([])
-    const [concertSortedByRecently, setConcertSortedByRecently] = useState([])
-    const [concertSortedByPerformanceDate, setConcertSortedByPerformanceDate] = useState([])
+    const { favorites, user, allConcerts, concertSortedByRecently, concertSortedByPerformanceDate, today } = useContext(GlobalContext);
 
-    const { favorites, user } = useContext(GlobalContext);
-
+    const showMax = 6
     let genreId = useParams().genre
     let pageExist = false;
-    let genreStatus = false
+    let genreStatus = false;
 
     let genreArr = ["rock", "pop", "jazz", "blues", "hiphop"]
 
@@ -26,42 +23,8 @@ function Main() {
         }
     }
 
-    let today = new Date();
-    let dd = String(today.getDate()).padStart(2, '0');
-    let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-    let yyyy = today.getFullYear();
-    today = dd + '-' + mm + '-' + yyyy;
-
-
-    useEffect(() => {
-        async function load() {
-            let concerts = await fetch('data/concert/')
-            concerts = await concerts.json()
-            variableUpdateMethod(concerts)
-        }
-        async function loadRecently() {
-            let concerts = await fetch('data/concert/recently-added')
-            concerts = await concerts.json()
-            setConcertSortedByRecently(concerts)
-        }
-        async function loadComing() {
-            let concerts = await fetch('data/concert/coming-soon')
-            concerts = await concerts.json()
-            setConcertSortedByPerformanceDate(concerts)
-
-        }
-        load()
-        loadRecently()
-        loadComing()
-    }, [])
-
-
-    /*     const handleChange = (e)=>{
-            setFavorite (prev=>({...prev, [e.target.name]:e.target.value}))
-          }
-     */
-
-    const addToFavorite = async (con) => {
+// Function is not done
+/*     const addToFavorite = async (con) => {
         console.log("con:" + con)
         fetch('/data/favorite', {
             method: 'POST',
@@ -72,30 +35,28 @@ function Main() {
             })
         }).then((res) => {
             if (res.ok == true) {
-                alert("Concert added to favorites!")
+                console.log("Concert added to favorites!")
             } else {
-                alert("Concert already in favorites!")
+                console.log("Concert already in favorites!")
             }
         })
-    }
-
-
+    } */
 
     const liveConcertsToday = () => {
         let concertArr = []
-
+        let count = 0
         if (genreStatus == true) {
-            for (let i = 0; i < variableName.length; i++) {
+            for (let i = 0; i < allConcerts.length; i++) {
                 // find genre concerts
-                if (variableName[i].genre === genreId && variableName[i].performance_date === today) {
-                    concertArr[i] = <div className="main-content-box">
+                if (allConcerts[i].genre === genreId && allConcerts[i].performance_date === today) {
+                    concertArr[count] = <div className="main-content-box">
                         <div className="main-img-box"> <img className="main-img" src={
-                            variableName[i].concert_image_url} alt="" />
+                            allConcerts[i].concert_image_url} alt="" />
 
-                            <div className="material-symbols-outlined main-like-btn">
-                                <span className="like-btn-1 material-symbols-outlined" onClick={() => addToFavorite(variableName[i].concert_id)} type="button">favorite</span>
+                            {/* <div className="material-symbols-outlined main-like-btn">
+                                <span className="like-btn-1 material-symbols-outlined" onClick={() => addToFavorite(allConcerts[i].concert_id)} type="button">favorite</span>
 
-                            </div>
+                            </div> */}
 
                         </div>
 
@@ -103,153 +64,66 @@ function Main() {
 
                             <div className="child-div-div">
                                 <p>Title:</p>
-                                <Link to={"/concert/" + variableName[i].concert_id}>{variableName[i].concert_name}</Link>
+                                <Link to={"/concert/" + allConcerts[i].concert_id}>{allConcerts[i].concert_name}</Link>
                             </div>
                             <div className="child-div-div">
                                 <p>Artist:</p>
-                                <Link to={"/artist/" + variableName[i].artist_id}>{variableName[i].artist_name}</Link>
+                                <Link to={"/artist/" + allConcerts[i].artist_id}>{allConcerts[i].artist_name}</Link>
                             </div>
                         </div>
                     </div>
+                count++
                 }
             }
         } else {
             // find all concerts
-            for (let i = 0; i < variableName.length; i++) {
-                if (variableName[i].performance_date === today && genreId === undefined) {
-                    concertArr[i] = <div className="main-content-box">
+            for (let i = 0; i < allConcerts.length; i++) {
+                if (allConcerts[i].performance_date === today && genreId === undefined) {
+                    concertArr[count] = <div className="main-content-box">
                         <div className="main-img-box"> <img className="main-img" src={
-                            variableName[i].concert_image_url} alt="" />
+                            allConcerts[i].concert_image_url} alt="" />
 
-                            <div className="material-symbols-outlined main-like-btn">
-                                <span className="like-btn-1 material-symbols-outlined" onClick={() => addToFavorite(variableName[i].concert_id)} type="button">favorite</span>
+ {/*                            <div className="material-symbols-outlined main-like-btn">
+                                <span className="like-btn-1 material-symbols-outlined" onClick={() => addToFavorite(allConcerts[i].concert_id)} type="button">favorite</span>
 
-                            </div>
+                            </div> */}
                         </div>
 
                         <div className="child-div">
 
                             <div className="child-div-div">
                                 <p>Title:</p>
-                                <Link to={"/concert/" + variableName[i].concert_id}>{variableName[i].concert_name}</Link>
+                                <Link to={"/concert/" + allConcerts[i].concert_id}>{allConcerts[i].concert_name}</Link>
                             </div>
                             <div className="child-div-div">
                                 <p>Artist:</p>
-                                <Link to={"/artist/" + variableName[i].artist_id}>{variableName[i].artist_name}</Link>
+                                <Link to={"/artist/" + allConcerts[i].artist_id}>{allConcerts[i].artist_name}</Link>
                             </div>
                         </div>
                     </div>
-                }
+                    count++
+                } 
             }
         }
 
-        return concertArr
-    }
-
-    const allConcerts = () => {
-        let concertArr = []
-
-        if (genreStatus == true) {
-            for (let i = 0; i < variableName.length; i++) {
-                // find genre concerts
-                if (variableName[i].genre === genreId && variableName[i].performance_date === today) {
-                    concertArr[i] = <div className="main-content-box">
-                        <div className="main-img-box"> <img className="main-img" src={
-                            variableName[i].concert_image_url} alt="" />
-
-                            <div className="material-symbols-outlined main-like-btn">
-                                <span className="like-btn-1 material-symbols-outlined" onClick={() => addToFavorite(variableName[i].concert_id)} type="button">favorite</span>
-
-                            </div>
-                        </div>
-
-                        <div className="child-div">
-
-                            <div className="child-div-div">
-                                <p>Title:</p>
-                                <Link to={"/concert/" + variableName[i].concert_id}>{variableName[i].concert_name}</Link>
-                            </div>
-                            <div className="child-div-div">
-                                <p>Artist:</p>
-                                <Link to="">{variableName[i].artist_name}</Link>
-                            </div>
-                        </div>
-                    </div>
-                }
-            }
-        } else {
-            // find all concerts
-            for (let i = 0; i < variableName.length; i++) {
-                // find All concerts
-                if (variableName[i].performance_date === today) {
-                    concertArr[i] = <div className="main-content-box">
-                        <div className="main-img-box"> <img className="main-img" src={
-                            variableName[i].concert_image_url} alt="" />
-
-                            <div className="material-symbols-outlined main-like-btn">
-                                <span className="like-btn-1 material-symbols-outlined" onClick={() => addToFavorite(variableName[i].concert_id)} type="button">favorite</span>
-
-                            </div>
-                        </div>
-
-                        <div className="child-div">
-
-                            <div className="child-div-div">
-                                <p>Title:</p>
-                                <Link to={"/concert/" + variableName[i].concert_id}>{variableName[i].concert_name}</Link>
-                            </div>
-                            <div className="child-div-div">
-                                <p>Artist:</p>
-                                <Link to="">{variableName[i].artist_name}</Link>
-                            </div>
-                        </div>
-                    </div>
-                }
-            }
-        }
-
-
-
-        for (let i = 0; i < variableName.length; i++) {
-            concertArr[i] = <div className="main-content-box">
-                <div className="main-img-box"> <img className="main-img" src={
-                    variableName[i].concert_image_url} alt="" />
-                    <div className="material-symbols-outlined main-like-btn">
-                        <span className="like-btn-1 material-symbols-outlined" onClick={() => addToFavorite(variableName[i].concert_id)} type="button">favorite</span>
-
-                    </div>
-                </div>
-
-                <div className="child-div">
-
-                    <div className="child-div-div">
-                        <p>Title:</p>
-                        <Link to={"/concert/" + variableName[i].concert_id}>{variableName[i].concert_name}</Link>
-                    </div>
-                    <div className="child-div-div">
-                        <p>Artist:</p>
-                        <Link to="">{variableName[i].artist_name}</Link>
-                    </div>
-                </div>
-            </div>
-        }
-        return concertArr
+        const result = concertArr.slice(0, showMax)
+        return result
     }
 
     const recentlyAdded = () => {
         let concertArr = []
-
+        let count = 0
         if (genreStatus == true) {
             for (let i = 0; i < concertSortedByRecently.length; i++) {
                 if (concertSortedByRecently[i].genre === genreId) {
-                    concertArr[i] = <div className="main-content-box">
+                    concertArr[count] = <div className="main-content-box">
                         <div className="main-img-box"> <img className="main-img" src={
                             concertSortedByRecently[i].concert_image_url} alt="" />
 
-                            <div className="material-symbols-outlined main-like-btn">
-                                <span className="like-btn-1 material-symbols-outlined" onClick={() => addToFavorite(variableName[i].concert_id)} type="button">favorite</span>
+                            {/* <div className="material-symbols-outlined main-like-btn">
+                                <span className="like-btn-1 material-symbols-outlined" onClick={() => addToFavorite(allConcerts[i].concert_id)} type="button">favorite</span>
+                            </div> */}
 
-                            </div>
                         </div>
 
                         <div className="child-div">
@@ -264,18 +138,20 @@ function Main() {
                             </div>
                         </div>
                     </div>
+                    count++
                 }
             }
         } else {
             for (let i = 0; i < concertSortedByRecently.length; i++) {
                 if (genreId === undefined) {
-                    concertArr[i] = <div className="main-content-box">
+                    concertArr[count] = <div className="main-content-box">
                         <div className="main-img-box"> <img className="main-img" src={
                             concertSortedByRecently[i].concert_image_url} alt="" />
-                            <div className="material-symbols-outlined main-like-btn">
-                                <span className="like-btn-1 material-symbols-outlined" onClick={() => addToFavorite(variableName[i].concert_id)} type="button">favorite</span>
 
-                            </div>
+                            {/* <div className="material-symbols-outlined main-like-btn">
+                                <span className="like-btn-1 material-symbols-outlined" onClick={() => addToFavorite(allConcerts[i].concert_id)} type="button">favorite</span>
+                            </div> */}
+
                         </div>
 
                         <div className="child-div">
@@ -290,29 +166,29 @@ function Main() {
                             </div>
                         </div>
                     </div>
+                    count++
                 }
             }
         }
 
-
-        return concertArr
+        const result = concertArr.slice(0, showMax)
+        return result
     }
 
     const comingSoon = () => {
         let concertArr = []
-
+        let count = 0
         if (genreStatus == true) {
             for (let i = 0; i < concertSortedByPerformanceDate.length; i++) {
                 if (concertSortedByPerformanceDate[i].genre === genreId && concertSortedByPerformanceDate[i].performance_date > today) {
-                    concertArr[i] = <div className="main-content-box">
+                    concertArr[count] = <div className="main-content-box">
                         <div className="main-img-box"> <img className="main-img" src={
                             concertSortedByPerformanceDate[i].concert_image_url} alt="" />
 
+                            {/* <div className="material-symbols-outlined main-like-btn">
+                                <span className="like-btn-1 material-symbols-outlined" onClick={() => addToFavorite(allConcerts[i].concert_id)} type="button">favorite</span>
+                            </div> */}
 
-                            <div className="material-symbols-outlined main-like-btn">
-                                <span className="like-btn-1 material-symbols-outlined" onClick={() => addToFavorite(variableName[i].concert_id)} type="button">favorite</span>
-
-                            </div>
                         </div>
 
                         <div className="child-div">
@@ -327,19 +203,20 @@ function Main() {
                             </div>
                         </div>
                     </div>
+                    count++
                 }
             }
         } else {
             for (let i = 0; i < concertSortedByPerformanceDate.length; i++) {
                 if (concertSortedByPerformanceDate[i].performance_date > today && genreId === undefined) {
-                    concertArr[i] = <div className="main-content-box">
+                    concertArr[count] = <div className="main-content-box">
                         <div className="main-img-box"> <img className="main-img" src={
                             concertSortedByPerformanceDate[i].concert_image_url} alt="" />
 
-                            <div className="material-symbols-outlined main-like-btn">
-                                <span className="like-btn-1 material-symbols-outlined" onClick={() => addToFavorite(variableName[i].concert_id)} type="button">favorite</span>
+                            {/* <div className="material-symbols-outlined main-like-btn">
+                                <span className="like-btn-1 material-symbols-outlined" onClick={() => addToFavorite(allConcerts[i].concert_id)} type="button">favorite</span>
+                            </div> */}
 
-                            </div>
                         </div>
 
                         <div className="child-div">
@@ -354,10 +231,13 @@ function Main() {
                             </div>
                         </div>
                     </div>
+                    count++
                 }
             }
         }
-        return concertArr
+
+        const result = concertArr.slice(0, showMax)
+        return result
     }
 
     return <> {pageExist ? <>
