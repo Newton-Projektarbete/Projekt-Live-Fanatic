@@ -83,7 +83,7 @@ function QR() {
           {/* <a onClick={downloadQR}> Download QR </a> */}
 
           <table className="QR-info">
-            <tr className="table-header">
+            <tr className="table-header-qr">
               <th></th>
               <th>Concert:</th>
               <th>Date:</th>
