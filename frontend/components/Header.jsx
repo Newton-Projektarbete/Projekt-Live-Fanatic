@@ -8,10 +8,12 @@ function Header() {
     const { isLoggedIn, allTickets, user } = useContext(GlobalContext);
     const [ticketInCart, setTicketInCart] = useState(0)
     const [searchTerm, setSearchTerm] = useState('');
+    const [likedConcerts, setLikedConcerts] = useState(0)
     const navigate = useNavigate();
 
     useEffect(() => {
         getTicketsInCart()
+        getLikedConcerts()
     })
 
     const logoutUser = () => {
@@ -41,6 +43,26 @@ function Header() {
 
         if (ticketInCart != 0) {
             return <div className="like-amount">{ticketInCart}</div>
+        } else {
+            return <div></div>
+        }
+    }
+
+    const getLikedConcerts = async () => {
+        let count = 0
+
+        for (let i = 0; i < favorite.length; i++) {
+            if (user.user_id === favorite[i].user_id && favorite[i].pending === "true") {
+                count++
+            }
+        }
+        setLikedConcerts(count)
+    }
+
+    const displayLikedConcerts= () => {
+
+        if (likedConcerts != 0) {
+            return <div className="like-amount-con">{likedConcerts}</div>
         } else {
             return <div></div>
         }
@@ -96,7 +118,8 @@ function Header() {
                                 <Link to="/profile" className="like-link" >
                                     <div className="like-box">
                                         <span className="like-btn material-symbols-outlined">favorite</span>
-                                        <div className="like-amount">{displayCartNr()}</div>
+                                        <div className="like-amount"></div>
+                                        <div className="like-amount-con">{displayLikedConcerts()}</div>
                                     </div>
                                 </Link>
                                 <Link to="/cart" className="like-link" >
