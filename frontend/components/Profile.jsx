@@ -164,6 +164,8 @@ function Profile() {
                     </Link>
                 </div>
 
+                <h1 className="buy-ticket-h1">Your profile</h1>
+
                 <div className="main-table-content">
 
                     <div className="left-table">

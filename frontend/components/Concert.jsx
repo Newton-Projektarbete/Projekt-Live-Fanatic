@@ -19,7 +19,16 @@ function Concert() {
     })
 
     function streamAccess() {
-        
+        let streamBtn = '' 
+        for (let i = 0; i < allTickets.length; i++) {
+            if (allTickets[i].pending === "false" && concert.concert_id === allTickets[i].concert_id && allTickets[i].user_id === user.user_id) {
+                streamBtn = <Link to={"/concert/" + concert.concert_id +"/stream"}>
+                <button className="stream_button default_button">Stream</button>
+            </Link>
+
+            }
+        }
+        return streamBtn
     }
 
     return <> { pageExist  ? <>
@@ -53,9 +62,7 @@ function Concert() {
                         <Link to={"/concert/" + concert.concert_id + "/buy-ticket"}>
                             <button className="buy_button default_button">Buy ticket</button>
                         </Link>
-                        <Link to={"/concert/" + concert.concert_id +"/stream"}>
-                            <button className="stream_button default_button">Stream</button>
-                        </Link>
+                        {streamAccess()}
                     </div>
 
                     <div className="tickets_left">
