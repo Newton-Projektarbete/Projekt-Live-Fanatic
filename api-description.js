@@ -79,13 +79,23 @@ module.exports = function(host, server){
                 link: host  + "/data/ticket"
             },
             {
+                route:"/data/artist",
+                methods: ["GET"],
+                description:"Get artist list",
+                link: host  + "/data/artist"
+            },
+            {
+                route:"/data/artist/1",
+                methods: ["GET"],
+                description:"Get artist list",
+                link: host  + "/data/artist/1"
+            },
+            {
                 route:"/data/favorite",
                 methods: ["POST"],
                 description:"Add to favorite list",
                 link: host  + "/data/favorite"
             }
-
-
         ])
     })
 }
