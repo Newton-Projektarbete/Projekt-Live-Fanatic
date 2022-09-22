@@ -9,7 +9,6 @@ const { user } = useContext(GlobalContext);
 const [email, setEmail] = useState(null);
 const [username, setUsername] = useState(null);
 
-
 const handleInputChange = (e) => {
     const { id, value } = e.target;
     if (id === "email") {
