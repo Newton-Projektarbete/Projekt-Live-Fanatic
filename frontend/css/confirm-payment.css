@@ -1,11 +1,8 @@
 .confirm-payment{
     display: flex;
     justify-content: space-evenly;
-    margin-top: 15vh;
     border: 1px solid rgba(0, 0, 0, 0.2);
 }
-
-
 
 .your-tickets>h2{
     margin-bottom: 0;
@@ -13,12 +10,19 @@
 .ticket-list-container{
     display: flex;
     flex-direction: row;
+    margin: 0;
+    justify-content: space-between;
 }
 .ticket-container{
     padding-left: 25px;
+    margin: 0;
+    padding: 2px;
 }
 .ticket-amount-container{
     list-style-type: none;
+    justify-content: right;
+    margin: 0;
+    padding-top: 3px;
 }
 
 /* .confirm-payment-right-content{} */
@@ -51,4 +55,19 @@
     border-radius: 5px;
     height: 30px;
     width: 90px;
+    margin-bottom: 10px;
+}
+
+.confirm-btn{
+    background-color: rgb(74, 166, 230, 1);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    width: 90px;
+}
+
+.delete-btn{
+    margin-top: 12px;
+    margin-left: 30px;
 }

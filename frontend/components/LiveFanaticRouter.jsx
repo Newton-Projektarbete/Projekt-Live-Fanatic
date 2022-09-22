@@ -17,11 +17,12 @@ import Stream from "./Stream";
 import ConfirmPayment from "./ConfirmPayment";
 import Header from "./Header";
 import NoMatch from "./NoMatch";
+import ChangePass from "./ChangePass";
 import GlobalContext from "../src/GlobalContext";
 
 function LiveFanaticRouter(){
-    const loggedInURLs = ["/profile", "/buy-ticket", "/profile-edit"]
-    const loggedOutURLs = ["/sign-up", "/log-in", ]
+    const loggedInURLs = ["/profile", "/buy-ticket", "/profile-edit", "/concert/:concert_id/stream", "/profile/*", "/qr"]
+    const loggedOutURLs = ["/sign-up", "/log-in" ]
     const navigate = useNavigate()
     const location = useLocation()
     const { isLoading, isLoggedIn, user} = useContext(GlobalContext);
@@ -54,11 +55,12 @@ function LiveFanaticRouter(){
             <Route path="/profile" element={ < Profile />} />
             <Route path="/profile/:ticket_id" element={ < QR />} />
             <Route path="/profile-edit" element={ < ProfileEdit />} />
+            {/* <Route path="/change-password" element={ <ChangePass />} /> */}
             <Route path="/search" element={ < AdvancedSearch />} />
             <Route path="/artist/:artist_id" element={ < Artist />} />
             <Route path="/concert/:concert_id" element={ < Concert />} />
             <Route path="/concert/:concert_id/buy-ticket" element={ < BuyTicket />} />
-            <Route path="/concert/:concert_id/buy-ticket/confirm-payment" element={ < ConfirmPayment />} />
+            <Route path="/cart" element={ < ConfirmPayment />} />
             <Route path="/concert/:concert_id/stream" element={ < Stream />} />
             <Route path="/log-in" element={ < LogIn />} />
             <Route path="/sign-up" element={ < SignUp />} />

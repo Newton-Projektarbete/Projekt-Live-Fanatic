@@ -71,21 +71,7 @@ useEffect(() => {
     setIsLoading(false)
   }
 
-/* 
-  const addToFavorite = () => {
 
-   let rawResponse =  fetch('/data/favorite', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-        },
-        body: JSON.stringify({
-            user_id: user_id,
-            concert_id: concert_id
-        })
-         */
- 
   const addToFavorite = async () => {
     setIsLoading(true)
     const response = await fetch("/data/favorite")
