@@ -27,7 +27,7 @@ function LogIn() {
                 'Accept': 'application/json'
             },
             body: JSON.stringify({
-                email: user.email,
+                username: user.username,
                 password: user.password,
             })
         }).then(function (response) {
@@ -49,7 +49,7 @@ function LogIn() {
                 <h2>Log in</h2>
 
                 <div className="email">
-                    <input className="input-text" placeholder="Email" type="text" name="email" onChange={handleChange} />
+                    <input className="input-text" placeholder="Username" type="text" name="username" onChange={handleChange} />
                 </div>
 
                 <div className="password">

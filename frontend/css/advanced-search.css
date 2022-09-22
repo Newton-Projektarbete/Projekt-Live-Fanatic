@@ -95,16 +95,24 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    row-gap: 10px;
+    row-gap: 20px;
+    column-gap: 10px;
+}
+
+.adv-src-result-box:last-child{
+    margin-bottom: 50px;
 }
 
 .adv-src-img{
-    background-image: url("../examples/logo.png");
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: 50% 50%;
     height: 100px;
-    width: 100px;
+    width: 150px;
+    margin: 0;
+    padding: 0;
 }
 
 .adv-src-page-btn-box{
@@ -155,6 +163,8 @@
     border: 1px solid rgb(0, 0, 0, 0.4);
     padding: 0 20px 0 20px;
     column-gap: 20px;
+    width: 300px;
+    height: 100px;
 }
 
 .adv-src-p{
@@ -167,4 +177,10 @@
     align-items: flex-start;
     justify-content: space-evenly;
     height: 100px;
+}
+
+.adv-src-no-result{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

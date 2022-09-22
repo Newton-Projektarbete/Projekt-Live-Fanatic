@@ -1,3 +1,5 @@
+const { request } = require("express")
+
 module.exports = function (server, db) {
 
   server.get('/data/artist', (req, res) => {
@@ -11,6 +13,5 @@ module.exports = function (server, db) {
     let result = db.prepare(query).all()
     res.json(result[0])
   })
-
 
 }

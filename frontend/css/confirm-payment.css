@@ -2,10 +2,10 @@
     display: flex;
     justify-content: space-evenly;
     margin-top: 15vh;
+    border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-/* .confirm-payment-left-content{}
-.your-tickets{} */
+
 
 .your-tickets>h2{
     margin-bottom: 0;
@@ -35,4 +35,20 @@
     background-color: lightgray;
     width: 20vw;
     height: 40vh;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: center;
+    align-items: center;
+
+}
+
+.cancel-btn{
+    background-color: rgb(74, 166, 230, 1);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    width: 90px;
 }

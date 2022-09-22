@@ -46,18 +46,15 @@ function Stream() {
                     </iframe>
                 </div>
                 <div className="stream-content">
-                    <div>
-                        <h2>Going Live {concert.performance_date}</h2>
-                        <h2>{concert.location}</h2>
-                        <h2>Artists:</h2>
-                        <ul className="stream-artists">
-                            {loadArtists()}
-                        </ul>
+                    <div className="stream-info">
+                        <h2>Going live: {concert.performance_date}</h2>
+                        <p><b>Artist:</b> {loadArtists()}</p>
+                        <p><b>Location:</b> {concert.location}</p>
                     </div>
 
                     <div>
                         <div className="stream-link-pos">
-                            <h4 className="noMargin">Share Link with Friend: </h4>
+                            <h4 className="noMargin">Share link with a friend: </h4>
 
                             <button className="stream-copy-btn" onClick={() => {navigator.clipboard.writeText(window.location.href)}} >Copy Link</button>
                         </div>
