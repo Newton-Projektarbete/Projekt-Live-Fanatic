@@ -377,7 +377,7 @@ function Main() {
             <div className="main-content-page">
                 <div className="main-content-header">
                     <h1 className="main-h1" >Live concerts today </h1>
-                    <Link to="/main-view-all" className="view_all">View all</Link>
+                    <Link to="/main-view-all-live-today" className="view_all">View all</Link>
                 </div>
                 <div className="row">
                     {liveConcertsToday()}
@@ -387,7 +387,7 @@ function Main() {
             <div className="main-content-page">
                 <div className="main-content-header">
                     <h1 className="main-h1" >Recently added</h1>
-                    <Link to="/main-view-all" className="view_all">View all</Link>
+                    <Link to="/main-view-all-recently" className="view_all">View all</Link>
                 </div>
                 <div className="row">
                     {recentlyAdded()}
@@ -397,7 +397,7 @@ function Main() {
             <div className="main-content-page">
                 <div className="main-content-header">
                     <h1 className="main-h1" >Coming soon</h1>
-                    <Link to="/main-view-all" className="view_all">View all</Link>
+                    <Link to="/main-view-all-coming-soon" className="view_all">View all</Link>
                 </div>
                 <div className="row">
                     {comingSoon()}
