@@ -1,5 +1,5 @@
 import { useContext, useState, useEffect } from "react"
-import { Link, useNavigate, useSearchParams } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import React from "react"
 import GlobalContext from "../src/GlobalContext"
 
