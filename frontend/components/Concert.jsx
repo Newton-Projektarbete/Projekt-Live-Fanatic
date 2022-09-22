@@ -47,7 +47,7 @@ function Concert() {
                         <span className="material-symbols-outlined">calendar_month</span>
                         <p>{concert.performance_date}</p>
                         <span className="material-symbols-outlined">schedule</span>
-                        <p>7:30pm</p>
+                        <p>{concert.time}</p>
                         <p>|</p>
                         <span className="material-symbols-outlined">location_on</span>
                         <p>{concert.location}</p>
