@@ -1,9 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, Link, useNavigate, useLocation  } from "react-router-dom";
 import { useState, useEffect, useContext } from 'react'
 import Main from "./Main";
-import MainViewAllLiveToday from "./MainViewAllLiveToday";
-import MainViewAllRecently from "./MainViewAllRecently";
-import MainViewAllComingSoon from "./MainViewAllComingSoon";
+import ViewAll from "./ViewAll";
 import Profile from "./Profile";
 import ProfileEdit from "./ProfileEdit";
 import AdvancedSearch from "./AdvancedSearch";
@@ -49,9 +47,8 @@ function LiveFanaticRouter(){
         <Routes>
             <Route path="/" element={<Main />} />
             <Route path="/:genre" element={<Main />} />
-            <Route path="/main-view-all-Recently" element={<MainViewAllRecently />} />
-            <Route path="/main-view-all-Coming-Soon" element={<MainViewAllComingSoon  />} />
-            <Route path="/main-view-all-Live-Today" element={<MainViewAllLiveToday />} />
+            <Route path="/view-all/:section" element={<ViewAll />} />
+            <Route path="/view-all/:section/:genre" element={<ViewAll />} />
             <Route path="/profile" element={ < Profile />} />
             <Route path="/profile/:ticket_id" element={ < QR />} />
             <Route path="/profile-edit" element={ < ProfileEdit />} />

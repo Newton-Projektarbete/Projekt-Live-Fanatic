@@ -9,7 +9,6 @@ function Main() {
     let genreId = useParams().genre
     let pageExist = false;
     let genreStatus = false;
-
     let genreArr = ["rock", "pop", "jazz", "blues", "hiphop"]
 
     for (let i = 0; i < genreArr.length; i++) {
@@ -23,25 +22,13 @@ function Main() {
         }
     }
 
-// Function is not done
-/*     const addToFavorite = async (con) => {
-        console.log("con:" + con)
-        fetch('/data/favorite', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                user_id: user.user_id,
-                concert_id: con
-            })
-        }).then((res) => {
-            if (res.ok == true) {
-                console.log("Concert added to favorites!")
-            } else {
-                console.log("Concert already in favorites!")
-            }
-        })
-    } */
-
+    const liveTodayLink = () => {
+        if (genreStatus == true){
+            return <Link to={"/view-all/today/"+ genreId} className="view_all">View all</Link>
+        } else {
+            return<Link to="/view-all/today/" className="view_all">View all</Link>
+        }
+    }
     const liveConcertsToday = () => {
         let concertArr = []
         let count = 0
@@ -72,7 +59,7 @@ function Main() {
                             </div>
                         </div>
                     </div>
-                count++
+                    count++
                 }
             }
         } else {
@@ -83,7 +70,7 @@ function Main() {
                         <div className="main-img-box"> <img className="main-img" src={
                             allConcerts[i].concert_image_url} alt="" />
 
- {/*                            <div className="material-symbols-outlined main-like-btn">
+                            {/*                            <div className="material-symbols-outlined main-like-btn">
                                 <span className="like-btn-1 material-symbols-outlined" onClick={() => addToFavorite(allConcerts[i].concert_id)} type="button">favorite</span>
 
                             </div> */}
@@ -102,14 +89,21 @@ function Main() {
                         </div>
                     </div>
                     count++
-                } 
+                }
             }
         }
 
-        const result = concertArr.slice(0, showMax)
-        return result
+        
+        return concertArr
     }
 
+    const recentlyLink = () => {
+        if (genreStatus == true){
+            return <Link to={"/view-all/recently/"+ genreId} className="view_all">View all</Link>
+        } else {
+            return<Link to="/view-all/recently/" className="view_all">View all</Link>
+        }
+    }
     const recentlyAdded = () => {
         let concertArr = []
         let count = 0
@@ -175,6 +169,13 @@ function Main() {
         return result
     }
 
+    const soonLink = () => {
+        if (genreStatus == true){
+            return <Link to={"/view-all/soon/"+ genreId} className="view_all">View all</Link>
+        } else {
+            return<Link to="/view-all/soon/" className="view_all">View all</Link>
+        }
+    }
     const comingSoon = () => {
         let concertArr = []
         let count = 0
@@ -240,13 +241,15 @@ function Main() {
         return result
     }
 
+
+
     return <> {pageExist ? <>
         <div className="body">
 
             <div className="main-content-page">
                 <div className="main-content-header">
                     <h1 className="main-h1" >Live concerts today </h1>
-                    <Link to="/main-view-all-live-today" className="view_all">View all</Link>
+                    {liveTodayLink()}
                 </div>
                 <div className="row">
                     {liveConcertsToday()}
@@ -256,7 +259,7 @@ function Main() {
             <div className="main-content-page">
                 <div className="main-content-header">
                     <h1 className="main-h1" >Recently added</h1>
-                    <Link to="/main-view-all-recently" className="view_all">View all</Link>
+                    {recentlyLink()}
                 </div>
                 <div className="row">
                     {recentlyAdded()}
@@ -266,7 +269,7 @@ function Main() {
             <div className="main-content-page">
                 <div className="main-content-header">
                     <h1 className="main-h1" >Coming soon</h1>
-                    <Link to="/main-view-all-coming-soon" className="view_all">View all</Link>
+                    {soonLink()}
                 </div>
                 <div className="row">
                     {comingSoon()}

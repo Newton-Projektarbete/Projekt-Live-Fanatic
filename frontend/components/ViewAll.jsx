@@ -6,9 +6,12 @@ function ViewAll() {
     const { favorites, user, allConcerts, concertSortedByRecently, concertSortedByPerformanceDate, today } = useContext(GlobalContext);
 
     let genreId = useParams().genre
+    let sectionId = useParams().section
     let pageExist = false;
     let genreStatus = false;
+    let sectionStatus = false;
 
+    let sectionArr = ["recently", "soon", "today"]
     let genreArr = ["rock", "pop", "jazz", "blues", "hiphop"]
 
     for (let i = 0; i < genreArr.length; i++) {
@@ -22,7 +25,62 @@ function ViewAll() {
         }
     }
 
+    for (let i = 0; i < sectionArr.length; i++) {
+        if (sectionId === sectionArr[i]) {
+            pageExist = true;
+            sectionStatus = true;
+        }
+        /*  else if (genreId === undefined) {
+             pageExist = true;
+             genreStatus = false;
+         } */
+    }
+
+
+    const displayConcert = () => {
+        console.log("displayconcerts: " + sectionId)
+        switch (sectionId) {
+            case "today":
+                console.log("Showing: liveConcertsToday")
+                return liveConcertsToday()
+                break;
+                case "recently":
+                console.log("Showing: recentlyAdded")
+                return recentlyAdded()
+                break;
+                case "soon":
+                console.log("Showing: comingSoon")
+                return comingSoon()
+                break;
+                default:
+                console.log("Error")
+        }
+    }
+    const displayHeader = () => {
+        switch (sectionId) {
+            case "today":
+                return todayLink()
+                break;
+                case "recently":
+                return recentlyLink()
+                break;
+                case "soon":
+                return soonLink()
+                break;
+                default:
+                console.log("Error")
+        }
+    }
+    
+    const todayLink = () => {
+        if (genreStatus == true){
+            return <h1 className="main-view-all-h1" >All Live Concerts Today of {genreId}</h1>
+        } else {
+            return <h1 className="main-view-all-h1" >All Live Concerts Today</h1>
+        }
+    }
     const liveConcertsToday = () => {
+        console.log("liveConcertsToday run")
         let concertArr = []
         let count = 0
         if (genreStatus == true) {
@@ -85,12 +143,19 @@ function ViewAll() {
                 } 
             }
         }
-
-        const result = concertArr.slice(0, showMax)
-        return result
+        return concertArr
     }
 
+
+    const recentlyLink = () => {
+        if (genreStatus == true){
+            return <h1 className="main-view-all-h1" >Recently Added {genreId}</h1>
+        } else {
+            return <h1 className="main-view-all-h1" >Recently Added</h1>
+        }
+    }
     const recentlyAdded = () => {
+        console.log("recentlyAdded run")
         let concertArr = []
         let count = 0
         if (genreStatus == true) {
@@ -151,11 +216,19 @@ function ViewAll() {
             }
         }
 
-        const result = concertArr.slice(0, showMax)
-        return result
+        return concertArr
     }
 
+
+    const soonLink = () => {
+        if (genreStatus == true){
+            return <h1 className="main-view-all-h1" >Concerts Comming Soon of {genreId}</h1>
+        } else {
+            return <h1 className="main-view-all-h1" >Concerts Comming Soon</h1>
+        }
+    }
     const comingSoon = () => {
+        console.log("comingSoon run")
         let concertArr = []
         let count = 0
         if (genreStatus == true) {
@@ -216,8 +289,7 @@ function ViewAll() {
             }
         }
 
-        const result = concertArr.slice(0, showMax)
-        return result
+        return concertArr
     }
 
     return <><div className="body">
@@ -225,10 +297,10 @@ function ViewAll() {
         <div className="main-view-all-content-page">
 
             <div className="main-view-all-content-header">
-                <h1 className="main-view-all-h1" >All live concerts:</h1>
+                {displayHeader()}
             </div>
 
-            <div className="main-view-all-page-btns-box">
+{/*             <div className="main-view-all-page-btns-box">
 
                 <div href="#" className="main-view-all-icon-box">
                     <span className="material-symbols-outlined main-view-all-arrow-icon">
@@ -261,23 +333,11 @@ function ViewAll() {
                     </span>
                 </div>
 
-            </div>
+            </div> */}
 
             <div className="main-view-all-row">
 
-                <div className="main-view-all-content-box">
-
-                    <div className="main-view-all-img-box"> <img className="main-view-all-img" src="../images/playing-in-a-band-1020x498.jpg" alt=""/>
-                        <div className="material-symbols-outlined main-view-all-like-btn">
-                            <span className="material-symbols-outlined main-view-all-like-icon">favorite</span>
-                        </div>
-                    </div>
-
-                    <div className="main-view-all-child-div">
-                        <Link to="">Title</Link>
-                        <Link to="">Artist</Link>
-                    </div>
-                </div>
+                {displayConcert()}
 
             </div>
 
