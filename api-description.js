@@ -74,7 +74,7 @@ module.exports = function(host, server){
             },
             {
                 route:"/data/ticket",
-                methods: ["GET", "POST"],
+                methods: ["GET", "POST", "PUT"],
                 description:"Get ticket list",
                 link: host  + "/data/ticket"
             },

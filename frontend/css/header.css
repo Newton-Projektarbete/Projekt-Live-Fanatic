@@ -355,7 +355,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    justify-content: space-between;
+    padding-bottom: 5px;
   }
 
   .profile-icon-btn{
@@ -365,3 +366,19 @@
     pointer-events: none;
   }
 
+.profile-img-btn{
+  height: 52px;
+  color: transparent;
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+}
+
+.profile-img-btn:hover{
+  opacity: 0.8;
+}
+
+.profile-img-btn:active{
+  transform: none;
+  transform: scale(1.05)
+}
