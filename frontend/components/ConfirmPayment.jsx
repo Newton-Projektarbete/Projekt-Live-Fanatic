@@ -17,6 +17,12 @@ function ConfirmPayment() {
         }
     })
 
+    function getPendingTickets() {
+        return null;
+    }
+
+
+
 
 
     return <>

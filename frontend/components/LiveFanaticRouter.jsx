@@ -54,7 +54,7 @@ function LiveFanaticRouter(){
             <Route path="/artist/:artist_id" element={ < Artist />} />
             <Route path="/concert/:concert_id" element={ < Concert />} />
             <Route path="/concert/:concert_id/buy-ticket" element={ < BuyTicket />} />
-            <Route path="/concert/:concert_id/buy-ticket/confirm-payment" element={ < ConfirmPayment />} />
+            <Route path="/cart" element={ < ConfirmPayment />} />
             <Route path="/concert/:concert_id/stream" element={ < Stream />} />
             <Route path="/log-in" element={ < LogIn />} />
             <Route path="/sign-up" element={ < SignUp />} />

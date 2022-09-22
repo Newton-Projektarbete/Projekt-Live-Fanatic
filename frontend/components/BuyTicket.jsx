@@ -89,7 +89,7 @@ const addToCart = async () => {
           <div className="rightBuy-btn">
             <button onClick={() => addToCart()}>Add to cart
             </button>
-          <Link to={"/concert/" + concert.concert_id + "/buy-ticket/confirm-payment"}>
+          <Link to={"/cart"}>
             <button>Checkout
             </button>
           </Link>
