@@ -3,7 +3,7 @@ const encrypt = require('../modules/encrypt.js')
 module.exports = function(server, db){
 
   server.get('/data/users', (req, res)=>{
-    let query = "SELECT user_id, email FROM users"
+    let query = "SELECT user_id, email, username FROM users"
     let result = db.prepare(query).all()
     res.json(result)
     console.log(result)
@@ -33,7 +33,20 @@ module.exports = function(server, db){
     let user = request.body
     let result
     try{
-      result = db.prepare('UPDATE users SET password = NULL WHERE email = ?').run([user.email])
+      result = db.prepare('UPDATE users SET password = NULL WHERE user_id = ?').run([user.user_id])
+    }catch(e){
+      console.error(e)
+    }
+    response.json(result)
+  })
+
+
+// ändra användares username
+  server.put('/data/users/', (request, response) => {
+    let user = request.body
+    let result
+    try{
+      result = db.prepare("UPDATE users SET email = (?), username = (?) WHERE user_id = ?").run([user.email, user.username, user.user_id]) 
     }catch(e){
       console.error(e)
     }
