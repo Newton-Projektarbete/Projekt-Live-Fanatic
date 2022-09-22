@@ -71,3 +71,10 @@
   .videoPlayer{
     z-index: -1;
   }
+
+.stream-info>p{
+    margin: 0;
+    margin-bottom: 2px;
+    padding: 0;
+
+}
