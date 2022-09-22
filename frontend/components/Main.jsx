@@ -63,7 +63,6 @@ function Main() {
 
     const addToFavorite = async (con) => {
         console.log("con:" + con)
-        
         fetch('/data/favorite', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json'},
@@ -75,7 +74,7 @@ function Main() {
             if(res.ok == true){
               alert("Concert added to favorites!")
             } else {
-              console.log("response failed:")
+                alert("Concert already in favorites!")
             }
           })
     }
@@ -303,9 +302,10 @@ function Main() {
                     concertArr[i] = <div className="main-content-box">
                         <div className="main-img-box"> <img className="main-img" src={
                             concertSortedByPerformanceDate[i].concert_image_url} alt="" />
+                            
 
                             <div to="" className="material-symbols-outlined main-like-btn">
-                                <span className="like-btn-1 material-symbols-outlined">favorite</span>
+                                <span className="like-btn-1 material-symbols-outlined" onClick={()=>addToFavorite(variableName[i].concert_id)}>favorite</span>
                             </div>
                         </div>
 
