@@ -147,16 +147,6 @@ function ConfirmPayment() {
                         </Link>
                     </div>
                 </div>
-                <div className="confirm-payment-right-content" >
-
-                    <div>
-                        <h2 className="email-info">Sending tickets to: {user.email}</h2>
-                    </div>
-
-                    <div className="sprite-container">
-                        spripe container goes here
-                    </div>
-                </div>
             </div>
         </div>
     </>
