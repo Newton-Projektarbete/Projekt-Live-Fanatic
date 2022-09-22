@@ -90,9 +90,10 @@
     background-size: contain;
     background-position: 50% 50%;
     background-repeat: no-repeat;
-    width: 45vw;
-    height: 55vh;
+    width: 400px;
+    height: 400px;
     position: relative;
+    margin-right: 100px;
 }
 
 .button_content{
