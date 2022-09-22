@@ -5,7 +5,7 @@ import GlobalContext from "../src/GlobalContext";
 function Concert() {
 
     let id = useParams().concert_id;
-    const { allConcerts } = useContext(GlobalContext);
+    const { allConcerts, allTickets, user } = useContext(GlobalContext);
 
     let concert = []
     let pageExist = false
@@ -17,6 +17,10 @@ function Concert() {
             return concert
         }
     })
+
+    function streamAccess() {
+        
+    }
 
     return <> { pageExist  ? <>
         <div className="body">

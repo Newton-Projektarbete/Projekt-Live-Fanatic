@@ -26,6 +26,13 @@ function BuyTicket() {
 
   const addToCart = async () => {
     let exist = false
+    let performed = false
+
+    if (concert.performance_date < today) {
+      alert("The concert has already been!")
+      performed = true
+    }
+
     for (let i = 0; i < allTickets.length; i++) {
 
       if (allTickets[i].concert_id === concert.concert_id && user.user_id === allTickets[i].user_id) {
@@ -34,7 +41,8 @@ function BuyTicket() {
 
       }
     }
-    if (exist != true && concert.performance_date >= today) {
+    
+    if (exist != true && performed != true) {
 
       fetch('/data/ticket', {
         method: 'POST',
@@ -53,9 +61,6 @@ function BuyTicket() {
       }).then(() => {
         window.location.reload(true)
       })
-    }
-    else {
-      alert("The concert has already been!")
     }
   }
 

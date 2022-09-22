@@ -23,11 +23,12 @@ function ConfirmPayment() {
                         })
                     }).then((res) => {
                         if (res.ok == true) {
-                            alert("Payment successful!")
+                            console.log("Response ok")
                         } else {
-                            console.log("response failed:")
+                            console.log("Response failed")
                         }
                     }).then(() => {
+                        alert("Payment successful!")
                         window.location.reload(true)
                     })
                   
@@ -49,6 +50,7 @@ function ConfirmPayment() {
                         <ul className="ticket-amount-container" >
                             <p>{allConcerts[i].price}.00 SEK</p>
                         </ul>
+                        <button className="delete-btn">Delete</button>
                     </div>
                     count++
                 }
@@ -108,7 +110,7 @@ function ConfirmPayment() {
                     </div>
                     <div className="buttons">
                         <Link to="">
-                            <button onClick={() => confirmPayment()} className="cancel-btn">Confirm</button>
+                            <button onClick={() => confirmPayment()} className="confirm-btn">Confirm</button>
                         </Link>
                         <Link to={"/"}>
                             <button className="cancel-btn">Cancel</button>
