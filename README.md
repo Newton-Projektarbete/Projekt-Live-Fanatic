@@ -1,8 +1,13 @@
 # Projekt-Live-Fanatic
+How to start the project:
+Git Clone the project:
+Run npm install in project the folder
+Run cd frontend
+Run npm install again
+Run cd ..
+Run npm run all
 (dont forget to use "npm install") <br>
-(added a command in package.json to run npm install in the frontend folder without going into that folder. <br>
-It's called "npm run i")<br>
-Must have installed concurrently and express. (npm i -g express) (npm i -g concurrently) <br>
+If it dosen't start check if concurrently and express is installed. (npm i -g express) (npm i -g concurrently) <br>
 (if you clone the project use the "npm run i" to run npm i in both parent folder and frontend folder)<br>
 (Start project with "npm run all")<br>
 
