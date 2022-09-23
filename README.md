@@ -1,11 +1,12 @@
 # Projekt-Live-Fanatic
-How to start the project:
-Git Clone the project:
-Run npm install in project the folder
-Run cd frontend
-Run npm install again
-Run cd ..
-Run npm run all
+
+How to start the project: <br>
+Git Clone the project: <br>
+Run npm install in project the folder <br>
+Run cd frontend <br>
+Run npm install again <br>
+Run cd .. <br>
+Run npm run all <br>
 (dont forget to use "npm install") <br>
 If it dosen't start check if concurrently and express is installed. (npm i -g express) (npm i -g concurrently) <br>
 (if you clone the project use the "npm run i" to run npm i in both parent folder and frontend folder)<br>
@@ -17,11 +18,14 @@ Gruppmedlemar - Klass - Github namn
 [Google Drive](https://drive.google.com/drive/folders/18rmPzrKzYQlfpD0omCuNxm2K_i7DfESC) <br>
 [Postman](https://app.getpostman.com/join-team?invite_code=c7f1dfd2eb6f4645f2e29e610c5304ca) <br>
 [Backend repository](https://github.com/WeeHorse/live-fanatic-backend) <br>
+[Figma](https://www.figma.com/files/project/65757211/Team-project?fuid=1148517462470744354) <br>
 
 Scrum Master: <br>
 Sprint 1 - Daniel (2022-09-05 => 2022-09-13)<br>
-Sprint 2 - Jonathan (2022-09-13 => 2022-09-23)<br>
+Sprint 2 - Jonatan (2022-09-13 => 2022-09-23)<br>
 
+
+Namn:           Github-alias: <br>
 Simon - SYSJM5 - M0ller <br>
 Sanjin - SYSJM5 - Liha86 <br>
 Barkat - SYSJM5 - barkatrahimi <br>
