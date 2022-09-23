@@ -65,7 +65,7 @@ function LiveFanaticRouter(){
             
             <Route path="*" element={ < NoMatch />} />
         </Routes>
-        <div className="footer">
+{/*         <div className="footer">
         <footer >
         <Link to="/" >Main</Link>
         <Link to="/main-view-all" >Main view all</Link>
@@ -81,7 +81,7 @@ function LiveFanaticRouter(){
         <Link to="/stream" >Stream</Link>
         <Link to="/search" >Advanced Search</Link>
         </footer>
-        </div>
+        </div> */}
     </>
 }
 
