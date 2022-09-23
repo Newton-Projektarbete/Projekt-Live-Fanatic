@@ -14,7 +14,8 @@
     "react-dom": "^18.2.0",
     "react-qr-code": "^2.0.8",
     "react-qr-image": "^1.1.0",
-    "react-router-dom": "^6.3.0"
+    "react-router-dom": "^6.3.0",
+    "react-youtube": "^10.0.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.17",

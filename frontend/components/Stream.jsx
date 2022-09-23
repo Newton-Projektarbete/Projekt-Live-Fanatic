@@ -1,6 +1,7 @@
 import { Link, useParams} from "react-router-dom";
 import { useContext } from "react";
 import GlobalContext from "../src/GlobalContext";
+import Youtube from "react-youtube"
 // https://www.npmjs.com/package/react-youtube
 
 function Stream() {
@@ -40,10 +41,11 @@ function Stream() {
 
                 <div className="stream-video">
                     <h1 className="stream-h1">{concert.concert_name}</h1>
-                    {/* <Youtube videoId={concert.video_url} /> */}
-                    <iframe width="800" height="400"
-                        src={"https://www.youtube.com/embed/" + concert.video_url}>
-                    </iframe>
+                     <Youtube videoId={concert.video_url} />
+                    {/*<iframe width="800" height="400"
+                        src={"https://www.youtube.com/embed/TXGbhniTBrU"}>
+                         src={"https://www.youtube.com/embed/" + concert.video_url}> 
+                    </iframe>*/}
                 </div>
                 <div className="stream-content">
                     <div className="stream-info">
